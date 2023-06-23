@@ -1,0 +1,188 @@
+.footer {
+    background: $bg-c0-dark;
+
+    .footer-top {
+        position: relative;
+        z-index: 11;
+        padding: 130px 0 80px 0;
+
+        div {
+            .row {
+
+                .footer-widget {
+                    .footer-logo {
+                        a {
+                            img {}
+                        }
+                    }
+
+                    .footer-widget_text {
+                        margin-bottom: 32px;
+                        padding-right: 20px;
+
+                        p {
+                            font-size: $fs-c6;
+                            color: $text-c1-white;
+                            font-weight: $fw-semiBold ;
+
+                            span {
+                                font-size: $fs-c4;
+                                font-weight: $fw-light ;
+                            }
+                        }
+                    }
+
+                    .footer-widget_social {
+                        ul {
+                            display: inline-flex;
+
+                            .social_list {
+                                a {
+                                    background: $bg-c0-primary;
+                                    line-height: 37px;
+
+                                    &:hover i {
+                                        // color: $text-c0-white;
+                                    }
+
+                                }
+
+                                .facebook:hover {
+                                    background: #4064ac;
+                                }
+
+                                .tiktok:hover {
+                                    background: #000;
+                                }
+
+                                .instagram:hover {
+                                    background: #d1005c;
+                                }
+
+                                .youtube:hover {
+                                    background: #c00;
+                                }
+                            }
+                        }
+                    }
+
+                    .footer-widget_title {
+                        margin-bottom: 17px;
+
+                        h3 {
+                            color: $text-c1-white;
+                            font-size: $fs-c10;
+                            position: relative;
+                            padding-left: 15px;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                height: 15px;
+                                width: 5px;
+                                background: #0554f2;
+                                left: 0;
+                            }
+
+                        }
+
+
+                    }
+
+                    .footer-widget_menu {
+                        ul {
+                            li {
+                                margin-bottom: 17px;
+
+                                a {
+                                    color: $text-c1-white;
+                                    font-size: $fs-c4;
+                                    // font-family: "Roboto", sans-serif;
+                                    transition: 0.4s ease;
+                                    display: inline-block;
+                                    position: relative;
+
+                                    &:hover {
+                                        color: $text-c1-white ;
+                                    }
+
+                                    &::before {
+                                        position: absolute;
+                                        content: "";
+                                        bottom: 2px;
+                                        width: 0%;
+                                        left: 100%;
+                                        background: $bg-c0-white;
+                                        height: 1px;
+                                        opacity: 0;
+                                        visibility: hidden;
+                                        // transform: translateX(0%);
+                                    }
+
+                                    &:hover::before {
+                                        left: 0;
+                                        opacity: 1;
+                                        visibility: visible;
+                                        width: 100%;
+                                        transition: width 0.4s ease;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .footer-form {
+                        input {
+                            margin: 3px 0;
+                            outline: none;
+                            border: none;
+                            width: 300px;
+                            max-width: 100%;
+                            height: 40px;
+                            border: 2px solid $bg-c0-dark;
+                            border-radius: 8px;
+                            padding-left: 10px;
+                            background-color: #f5f5f5;
+                        }
+
+                    }
+
+                    button {
+                        padding: 5px 10px;
+                        background-color: $bg-c1-primary;
+                        color: $text-c0-white ;
+                        border: none;
+                        transition: all .5s;
+                        text-transform: uppercase;
+                        font-size: $fs-c3;
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #282b43;
+        padding: 16px 0;
+
+        .footer_copyright {
+            p {
+                color: $text-c1-dark;
+                font-size: $fs-c4;
+                // font-family: "Barlow", sans-serif;
+                text-align: center;
+                margin-bottom: 0;
+                position: relative;
+                z-index: 11;
+
+                a {
+                    color: $text-c0-white;
+                }
+            }
+        }
+
+    }
+}

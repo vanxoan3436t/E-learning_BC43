@@ -1,0 +1,7 @@
+
+/*-----Font size -----*/
+@for $i from 13 to 25 {//1 = 13px ;11 = 24px
+    .fs-#{$i} {
+        font-size: $i + 0px;
+    }
+}
