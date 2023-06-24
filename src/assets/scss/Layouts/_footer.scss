@@ -1,3 +1,4 @@
+@import '../Components/buttons';
 .footer {
     background: $bg-c0-dark;
 
@@ -149,16 +150,15 @@
 
                     }
 
-                    button {
-                        padding: 5px 10px;
-                        background-color: $bg-c1-primary;
-                        color: $text-c0-white ;
-                        border: none;
-                        transition: all .5s;
-                        text-transform: uppercase;
-                        font-size: $fs-c3;
-                        margin-top: 16px;
+                    .section-button{
+                        a {
+                            border: none;
+                            transition: all .4s;
+                            text-transform: uppercase;
+                            margin-top: 16px;
+                        }
                     }
+                  
                 }
             }
         }

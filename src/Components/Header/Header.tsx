@@ -141,6 +141,12 @@ const Header = (props: Props) => {
               </button>
               </div>
             </form>
+            <div className="heder-bottom_col">
+                <NavLink className='btn  btn--common btn-primary' to='/login'>
+                Đăng Nhập
+                <i className="fa-solid fa-arrow-right"></i>
+                </NavLink>
+            </div>
           </div>
         </div>
       </div>

@@ -1,1 +1,55 @@
 // chứa các file phần tử nhỏ của trang wed các button chính mà ta sử dụng code tại đây
+.btn--common {
+    padding: 11px 12px 11px 25px;
+    font-size: $fs-c4;
+    font-weight: 500;
+    background: $bg-c1-white;
+    color: $text-c2-dark ;
+    border-radius: 5px;
+    outline: 0;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    letter-spacing: 0.01em;
+
+    i {
+        fill: currentColor;
+        vertical-align: middle;
+        margin-left: 15px;
+        width: 26px;
+        z-index: 1;
+        display: inline-block;
+    }
+
+    &:hover i {
+        transform: rotate(180deg);
+        overflow: hidden;
+        animation: theflast 0.5s;
+    }
+}
+
+.btn--common:hover {
+    border: 1px solid transparent;
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background-color: $bg-c1-primary ;
+    color: $text-c0-white ;
+}
+
+@keyframes theflast {
+    49% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    51% {
+        opacity: 1;
+    }
+}

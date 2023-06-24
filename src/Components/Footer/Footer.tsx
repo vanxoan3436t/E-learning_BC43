@@ -17,7 +17,7 @@ const Footer = (props: Props) => {
                 <div className="footer-widget_text">
                   <p>Bắt đầu sự nghiệp lập trình
                     từ ZERO tại CyberSoft <br /> <span> 100% Thực Hành, Học Thật, Dự Án Thật, Việc Làm Thật</span>
-                   </p>
+                  </p>
                 </div>
                 <div className="footer-widget_social">
                   <ul>
@@ -107,7 +107,13 @@ const Footer = (props: Props) => {
                   <input type="text" placeholder='Số Điện Thoại' spellCheck='false' data-ms-editor='true' />
 
                 </form>
-                <button className='btn'>Gửi Đăng Kí</button>
+                <div className="section-button d-flex">
+                  <NavLink to='/' className='btn  btn--common btn-primary '>Gửi Đăng Kí
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </NavLink>
+
+                </div>
+
               </div>
             </div>
           </div>
