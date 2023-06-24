@@ -1,0 +1,87 @@
+.info-coure-box {
+    padding: 122px 0 80px;
+
+    .info-course-home {
+
+        .info-gird {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            color: $text-c0-white;
+            gap: 20px;
+
+            .info-item-home {
+                padding: 34px 35px 29px;
+                border-left: 2px solid $text-c1-primary;
+                position: relative;
+                overflow: hidden;
+
+                .info-overlay {
+                    display: block;
+                    position: absolute;
+                    width: 0%;
+                    height: 100%;
+                    top: 0%;
+                    left: 0%;
+                    color: #ffffff;
+                    background-color: #0554f2;
+                    z-index: 1;
+                    border-radius: 5px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.4s ease;
+                }
+
+                .info-item-content {
+                    h3 {
+                        font-size: $fs-c12;
+                        margin-bottom: 13px;
+                        position: relative;
+                        z-index: 2;
+                        font-size: $fs-c12 ;
+
+                    }
+
+                    p {
+                        position: relative;
+                        z-index: 2;
+
+                        ul {
+                            margin-left: 23px;
+                            li {
+                                list-style: unset;
+
+                            }
+                        }
+                    }
+                }
+
+
+                &:nth-child(1) {
+                    grid-row: 1/span 2;
+
+                }
+
+                &:hover {
+                    border-radius: 5px;
+                    border-left: 2px solid transparent;
+                }
+
+                &:hover .info-overlay {
+                    width: 100%;
+                    left: 0%;
+                    opacity: 1;
+                    visibility: visible;
+                    transition: all 0.4s ease;
+                }
+
+
+                &:hover .info-item-content h3,
+                &:hover .info-item-content p {
+                    color: $text-c0-white;
+
+                }
+
+            }
+        }
+    }
+}

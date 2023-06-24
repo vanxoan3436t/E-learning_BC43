@@ -23,14 +23,40 @@ li {
 p {
     margin-bottom: 0px;
     font-weight: $fw-light;
-    color: #5b6674;
-
+    color: $text-c4-dark;
     line-height: 1.75;
+}
+
+h3 {
+    color: $text-c2-dark;
 }
 
 .container {
     max-width: 1280px;
     margin: 0 auto;
+}
+
+.heading__title_small {
+    color: $text-c0-primary;
+    ;
+    font-size: $fs-c4;
+    font-weight: $fw-medium;
+    position: relative;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    display: inline-block;
+    margin-bottom: 28px;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        content: "";
+        height: 15px;
+        width: 5px;
+        background: #0554f2;
+    }
 }
 
 .container-custom {
@@ -39,7 +65,11 @@ p {
 }
 
 .white-bg {
-    background-color: #fff
+    background-color: $bg-c0-white;
+}
+
+.section-bg-common {
+    background: $bg-c2-white;
 }
 
 .social_list {

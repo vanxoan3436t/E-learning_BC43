@@ -12,7 +12,10 @@ const Footer = (props: Props) => {
             <div className="col-lg-4 col-md-6 mb-30">
               <div className="footer-widget">
                 <div className="footer-logo mb-30">
-                  <NavLink to={'/'}><img src="../../assets/img/logo.png" alt='logo' /></NavLink>
+                  <NavLink to={'/'}>
+                    {/* <img src="../../assets/img/logo.png" alt='logo' /> */}
+                    <h4>Cybersoft</h4>
+                    </NavLink>
                 </div>
                 <div className="footer-widget_text">
                   <p>Bắt đầu sự nghiệp lập trình
