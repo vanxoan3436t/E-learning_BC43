@@ -31,97 +31,15 @@ h3 {
     color: $text-c2-dark;
 }
 
+section {
+    // position: relative;
+}
 .container {
     max-width: 1280px;
     margin: 0 auto;
 }
 
-.heading__title_small {
-    color: $text-c0-primary;
-    ;
-    font-size: $fs-c4;
-    font-weight: $fw-medium;
-    position: relative;
-    padding-left: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1.6px;
-    display: inline-block;
-    margin-bottom: 28px;
-
-    &::before {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        content: "";
-        height: 15px;
-        width: 5px;
-        background: #0554f2;
-    }
-}
-
 .container-custom {
     padding-left: 185px;
     padding-right: 185px;
-}
-
-.white-bg {
-    background-color: $bg-c0-white;
-}
-
-.section-bg-common {
-    background: $bg-c2-white;
-}
-
-.social_list {
-    margin-left: 7px;
-
-    .facebook:hover {
-        background: #4064ac;
-    }
-
-    .tiktok:hover {
-        background: #000;
-    }
-
-    .instagram:hover {
-        background: #d1005c;
-    }
-
-    .youtube:hover {
-        background: #c00;
-    }
-
-    a {
-        height: 35px;
-        width: 35px;
-        display: inline-block;
-        text-align: center;
-        line-height: 35px;
-        background: transparent;
-        border-radius: 7px;
-        background-color: $bg-c1-white;
-        transition: 0.4s;
-
-        .fa-facebook-f {
-            color: #4064ac;
-        }
-
-        .fa-tiktok {
-            color: #000;
-        }
-
-        .fa-instagram {
-            color: #d1005c;
-        }
-
-        .fa-youtube {
-            color: #c00;
-        }
-
-
-        &:hover i {
-            color: $text-c0-white;
-        }
-    }
-
 }

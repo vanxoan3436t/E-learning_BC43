@@ -7,15 +7,18 @@ const InfoCoureHome = (props: Props) => {
         <div className="info-coure-box  section-bg-common">
 
             <div className="info-course-home container">
-                <h3 className='heading__title_small'>Thông tin quan trọng</h3>
+                <h3 className='section-heading__title_small'>Thông tin quan trọng</h3>
                 <div className="info-gird">
-                    <div className="info-item-home ">
+                    <div className="info-item-home wow animate__animated animate__fadeInDown animate-delay">
                         <div className="info-overlay"></div>
-                        <div className="info-item-content">
-                            <h3>Khóa học</h3>
+                        <div className="info-item-content ">
+                            <div>
+                                <i className="fa-solid fa-book-open"></i>
+                                <h3>  Khóa học</h3>
+                            </div>
+
                             <p>
                                 Học qua dự án thực tế, học đi đôi với hành, không lý thuyết lan man, phân tích cội nguồn của vấn đề, xây dựng từ các ví dụ nhỏ đến thực thi một dự án lớn ngoài thực tế để học viên học xong làm được ngay <br />
-
                                 <ul >
                                     <li>
 
@@ -40,10 +43,13 @@ const InfoCoureHome = (props: Props) => {
                             </p>
                         </div>
                     </div>
-                    <div className="info-item-home ">
+                    <div className="info-item-home wow animate__animated animate__fadeInLeft animate-delay-0_4">
                         <div className="info-overlay"></div>
                         <div className="info-item-content">
-                            <h3>Lộ trình phù hợp</h3>
+                            <div>
+                                <i className="fa-solid fa-road"></i>
+                                <h3>Lộ trình phù hợp</h3>
+                            </div>
                             <p>
                                 <ul>
                                     <li>
@@ -59,10 +65,13 @@ const InfoCoureHome = (props: Props) => {
                             </p>
                         </div>
                     </div>
-                    <div className="info-item-home  ">
+                    <div className="info-item-home  wow animate__animated animate__fadeInLeft animate-delay-0_6">
                         <div className="info-overlay"></div>
                         <div className="info-item-content">
-                            <h3>Hệ thống học tập</h3>
+                            <div>
+                                <i className="fa-solid fa-chalkboard-user"></i>
+                                <h3>Hệ thống học tập</h3>
+                            </div>
                             <p>
                                 <ul>
                                     <li>
@@ -79,10 +88,13 @@ const InfoCoureHome = (props: Props) => {
 
                         </div>
                     </div>
-                    <div className="info-item-home ">
+                    <div className="info-item-home wow animate__animated animate__fadeInLeft animate-delay-0_8">
                         <div className="info-overlay"></div>
                         <div className="info-item-content">
-                            <h3>Giảng viên</h3>
+                            <div>
+                                <i className="fa-solid fa-users"></i>
+                                <h3>Giảng viên</h3>
+                            </div>
                             <p>
                                 <ul>
                                     <li>
@@ -97,10 +109,13 @@ const InfoCoureHome = (props: Props) => {
                             </p>
                         </div>
                     </div>
-                    <div className="info-item-home ">
+                    <div className="info-item-home wow animate__animated animate__fadeInLeft animate-delay-1">
                         <div className="info-overlay"></div>
                         <div className="info-item-content">
-                            <h3>Chứng nhận</h3>
+                            <div>
+                                <i className="fa-solid fa-graduation-cap"></i>
+                                <h3>Chứng nhận</h3>
+                            </div>
                             <p>
                                 <ul >
                                     <li>
@@ -110,16 +125,16 @@ const InfoCoureHome = (props: Props) => {
                                         <span>Hệ thống của chúng tôi cũng tạo ra cho bạn một CV trực tuyến độc đáo</span>
                                     </li>
                                     <li>
-                                    <span>Kết nối CV của bạn đến với các đối tác của Cyberfoft</span>
-                                </li>
-                            </ul>
-                        </p>
-                    </div>
+                                        <span>Kết nối CV của bạn đến với các đối tác của Cyberfoft</span>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>
-</div>
 
     )
 }

@@ -5,3 +5,120 @@
         font-size: $i + 0px;
     }
 }
+
+.show{
+    display: block;
+}
+
+
+.white-bg {
+    background-color: $bg-c0-white;
+}
+.section-button {
+    display: flex;
+    justify-content: flex-end;
+}
+.section-bg-common {
+    background: $bg-c2-white;
+}
+
+.secondary-bg-color {
+    background: #14133b;
+}
+.section-heading__title_small {
+    color: $text-c0-primary;
+    ;
+    font-size: $fs-c4;
+    font-weight: $fw-medium;
+    position: relative;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    display: inline-block;
+    margin-bottom: 28px;
+
+    &::before {
+        position: absolute;
+        top: 50%;left: 0;
+        transform: translateY(-50%);
+        content: "";
+        height: 15px;
+        width: 5px;
+        background: $bg-c1-primary;
+    }
+}
+
+.section-heading__title_big {
+    font-size: calc(1.375rem + 1.5vw);
+    font-weight: $fw-semiBold;
+}
+
+.social_list {
+    margin-left: 7px;
+
+    .facebook:hover {
+        background: #4064ac;
+    }
+
+    .tiktok:hover {
+        background: #000;
+    }
+
+    .instagram:hover {
+        background: #d1005c;
+    }
+
+    .youtube:hover {
+        background: #c00;
+    }
+
+    a {
+        height: 35px;
+        width: 35px;
+        display: inline-block;
+        text-align: center;
+        line-height: 35px;
+        background: transparent;
+        border-radius: 7px;
+        background-color: $bg-c1-white;
+        transition: 0.4s;
+
+        .fa-facebook-f {
+            color: #4064ac;
+        }
+
+        .fa-tiktok {
+            color: #000;
+        }
+
+        .fa-instagram {
+            color: #d1005c;
+        }
+
+        .fa-youtube {
+            color: #c00;
+        }
+
+
+        &:hover i {
+            color: $text-c0-white;
+        }
+    }
+
+}
+
+.counter--bg{
+     position: relative;
+     z-index: 2;
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 0;
+    }
+}

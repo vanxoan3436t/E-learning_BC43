@@ -6,7 +6,7 @@ type Props = {}
 const Header = (props: Props) => {
   return (
     <header className='header white-bg'>
-      <div className="header-top container-custom">
+      <div className="header-top container">
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-9">
@@ -85,8 +85,8 @@ const Header = (props: Props) => {
         </div>
       </div>
 
-      <div className="white-bg header-bottom  container-custom">
-        <div className="container-fluid">
+      <div className="white-bg header-bottom  container">
+        <div className="container-fuild ">
           <div className="header-bottom_row d-flex justify-content-between align-items-center">
             <div className="header-bottom_col">
               <div className="logo">
