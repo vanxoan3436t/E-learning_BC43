@@ -12,12 +12,15 @@ const Footer = (props: Props) => {
             <div className="col-lg-4 col-md-6 mb-30">
               <div className="footer-widget">
                 <div className="footer-logo mb-30">
-                  <NavLink to={'/'}><img src="../../assets/img/logo.png" alt='logo' /></NavLink>
+                  <NavLink to={'/'}>
+                    {/* <img src="../../assets/img/logo.png" alt='logo' /> */}
+                    <h4>Cybersoft</h4>
+                    </NavLink>
                 </div>
                 <div className="footer-widget_text">
                   <p>Bắt đầu sự nghiệp lập trình
                     từ ZERO tại CyberSoft <br /> <span> 100% Thực Hành, Học Thật, Dự Án Thật, Việc Làm Thật</span>
-                   </p>
+                  </p>
                 </div>
                 <div className="footer-widget_social">
                   <ul>
@@ -105,9 +108,15 @@ const Footer = (props: Props) => {
                   <input type="text" placeholder='Họ Và Tên' spellCheck='false' data-ms-editor='true' />
                   <input type="text" placeholder='Email' spellCheck='false' data-ms-editor='true' />
                   <input type="text" placeholder='Số Điện Thoại' spellCheck='false' data-ms-editor='true' />
+                  <div className="section-button ">
+                  <NavLink to='/' className='btn  btn--common btn-primary '>Gửi Đăng Kí
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </NavLink>
 
+                </div>
                 </form>
-                <button className='btn'>Gửi Đăng Kí</button>
+                
+
               </div>
             </div>
           </div>

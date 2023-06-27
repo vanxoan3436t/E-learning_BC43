@@ -1,7 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;900&display=swap');
+@import 'animate.css';
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+//Helpers
 @import './Helpers/variables';
 @import './Helpers/mixin';
-@import './Base/customizeBrowser';
+//vendors
 @import './Base/reset';
+//Components
+@import './Base/customizeBrowser';
+@import './Components/buttons';
+//Layouts
 @import './Layouts/header';
 @import './Layouts/footer';
+@import './Layouts/carouselHome';
+//Pages
+@import './Pages/Home/home';

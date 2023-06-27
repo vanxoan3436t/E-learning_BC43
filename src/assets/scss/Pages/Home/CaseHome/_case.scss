@@ -1,0 +1,105 @@
+@import '../../../Helpers/variables';
+
+.case {
+    margin-top: -434px;
+    padding: 100px 0 60px 0;
+
+    .container {
+        .row {
+            .col-lg-4 {
+                .section-heading {
+                    margin-bottom: 50px;
+                    span {
+                        color: $text-c5-dark ;
+
+                        &::before {
+                            background-color: $bg-c1-dark;
+                        }
+                    }
+
+                    h2 {
+                        color: $text-c0-white;
+                    }
+                }
+            }
+
+            .col-lg-8 {
+                .section-button {
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+
+    .case-active {
+        .slick-slider {
+            .slick-list {
+                .slick-track {
+                    .slick-slide {
+                        div {
+                            .case-item {
+                                padding: 0 20px;
+                                transition: all 0.4s ease;
+                                position: relative;
+                                animation-duration: 2s;
+
+                                &:hover .case-item__image a img {
+                                    transform: scale(1.1);
+                                    transition: 2s;
+                                }
+
+                                &:hover .case-item__content {
+                                    background-color: $bg-c1-primary;
+                                }
+
+                                .case-item__image {
+                                    border-radius: 10px;
+                                    overflow: hidden;
+                                    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
+
+                                    a {
+                                        display: block;
+                                        overflow: hidden;
+
+                                        img {
+                                            transition: 1.5s;
+                                        }
+                                    }
+                                }
+
+                                .case-item__content {
+                                    padding: 15px 15px;
+                                    border-radius: 5px;
+                                    margin: 0 30px;
+                                    margin-top: -40px;
+                                    position: relative;
+                                    z-index: 1;
+                                    transition: all 0.4s ease;
+
+                                    h5 {
+
+                                        margin-bottom: 2px;
+                                        transition: all 0.4s ease;
+
+                                        a {
+                                            color: $text-c0-white;
+                                            font-size: $fs-c12 ;
+                                        }
+                                    }
+
+                                    span {
+                                        color: $text-c0-white;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+    }
+}

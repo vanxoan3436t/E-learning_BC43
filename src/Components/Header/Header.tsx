@@ -6,7 +6,7 @@ type Props = {}
 const Header = (props: Props) => {
   return (
     <header className='header white-bg'>
-      <div className="header-top container-custom">
+      <div className="header-top container">
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-9">
@@ -67,7 +67,7 @@ const Header = (props: Props) => {
                     </NavLink>
                   </li>
                   <li className="social_list">
-                  <NavLink className='instagram'  to="/">
+                    <NavLink className='instagram' to="/">
                       <i className="fab fa-instagram"></i>
                     </NavLink>
                   </li>
@@ -85,13 +85,14 @@ const Header = (props: Props) => {
         </div>
       </div>
 
-      <div className="white-bg header-bottom  container-custom">
-        <div className="container-fluid">
+      <div className="white-bg header-bottom  container">
+        <div className="container-fuild ">
           <div className="header-bottom_row d-flex justify-content-between align-items-center">
             <div className="header-bottom_col">
               <div className="logo">
                 <NavLink to={'/'} className='logo_link'>
-                  <img src="./src/assets/img/logo.png" alt="logo" />
+                  {/* <img src="./src/assets/img/logo.png" alt="logo" /> */}
+                  <h4>Cybersoft</h4>
                 </NavLink>
               </div>
             </div>
@@ -120,9 +121,9 @@ const Header = (props: Props) => {
                     <li className="nav-sub">
                       <NavLink to={'/'} >SỰ KIỆN</NavLink>
                       <ul className='main-menu_dropdown'>
-                      <li><NavLink to={'/'}>SỰ KIỆN SALE CUỐI NĂM</NavLink></li>
-                      <li><NavLink to={'/'}>SỰ KIỆN GIÁNG SINH</NavLink></li>
-                      <li><NavLink to={'/'}>SỰ KIỆN NOEL</NavLink></li>
+                        <li><NavLink to={'/'}>SỰ KIỆN SALE CUỐI NĂM</NavLink></li>
+                        <li><NavLink to={'/'}>SỰ KIỆN GIÁNG SINH</NavLink></li>
+                        <li><NavLink to={'/'}>SỰ KIỆN NOEL</NavLink></li>
                       </ul>
                     </li>
                     <li className="nav-sub">
@@ -135,12 +136,18 @@ const Header = (props: Props) => {
 
             <form className="header-bottom_col">
               <div className="header-search d-flex justify-content-between">
-                <input type="text" placeholder='Tìm kiếm' className='header-search_input'  data-ms-editor='true'/>
+                <input type="text" placeholder='Tìm kiếm' className='header-search_input' data-ms-editor='true' />
                 <button className="header-search_button">
-                <i className="fas fa-search"></i>
-              </button>
+                  <i className="fas fa-search"></i>
+                </button>
               </div>
             </form>
+            <div className="heder-bottom_col">
+              <NavLink className='btn  btn--common btn-primary' to='/login'>
+                Đăng Nhập
+                <i className="fa-solid fa-arrow-right"></i>
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>

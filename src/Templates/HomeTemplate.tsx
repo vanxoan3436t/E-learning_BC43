@@ -9,7 +9,7 @@ const HomeTemplate: React.FC = ({ }: Props): JSX.Element => {
     return (
         <>
             <Header></Header>
-            <div className="content-layout" style={{ minHeight: '15vw' }}>
+            <div className="content-layout" >
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
