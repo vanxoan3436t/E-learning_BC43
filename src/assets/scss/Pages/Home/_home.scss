@@ -1,6 +1,8 @@
 @import '../../Base/animate';
 
 @import './CaseHome/case';
+@import './BlogsHome/blogs';
+@import './ContactHome/contact';
 
 .info-coure-box {
     padding: 122px 0 80px;
@@ -104,7 +106,7 @@
 
 .counter {
     padding: 140px 0 125px;
-    background-image: url(../../../../assets/img/img-counter1.jpg);
+    background-image: url(../../../../../public/img/img-counter1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -137,6 +139,7 @@
 }
 
 .services-home {
+    display: none;//chưa xong
     padding: 122px 0 100px;
     background: $bg-c0-white;
 
@@ -213,7 +216,7 @@
             div {
                 .tab-content {
                     &>.tab-pane {
-                        display: none;
+                        // display: none;
                     }
 
                     .tab-pane {
@@ -221,21 +224,78 @@
 
                         .row {
                             .services__item {
-                                .services__item-overlay {}
+                                padding: 34px 35px 29px;
+                                border-left: 2px solid #dee9fe;
+                                position: relative;
+                                overflow: hidden;
+                                transition: all 0.4s ease;
+                                margin-bottom: 30px;
 
+                                .services__item-overlay {
+                                    display: block;
+                                    position: absolute;
+                                    width: 0%;
+                                    height: 100%;
+                                    top: 0%;
+                                    left: 0%;
+                                    color: #ffffff;
+                                    background-color: #0554f2;
+                                    z-index: 1;
+                                    opacity: 0;
+                                    visibility: hidden;
+                                    transition: all 0.4s ease;
+                                    border-radius: 15px;
+                                }
+                                .services-key__content_overlay {
+                                  
+                                }
                                 .services__item_header {
-                                    i {}
+                                    margin-bottom: 8px;
+                                    i {
+                                        position: relative;
+                                        z-index: 2;
+                                        display: inline-flex;
+
+                                        margin-bottom: 18px;
+                                        color: #000000;
+                                    }
 
                                     h3 {
-                                        a {}
+                                        padding-left: 0;
+                                        font-size:$fs-c12 ;
+                                        margin-bottom: 13px;
+                                        position: relative;
+                                        z-index: 2;
+                                        a {
+                                            color: $text-c2-dark;
+                                        }
                                     }
                                 }
 
                                 .services__item_content {
-                                    p {}
+                                    p {
+                                        transition: all 0.4s ease;
+                                        margin-bottom: 14px;
+                                        position: relative;
+                                        z-index: 2;
+                                    }
 
-                                    a {}
+                                    a {
+                                        position: relative;
+                                        z-index: 2;
+                                        color: #0554f2;
+                                        font-size: 16px;
+                                    }
                                 }
+                            }
+
+                            .services-key__content {
+                                background: #edf6ff;
+                                border: 2px solid transparent;
+                                padding: 50px 25px 43px;
+                                border-radius: 15px;
+                                transition: all 0.4s ease;                  
+                                   
                             }
                         }
                     }
@@ -248,7 +308,7 @@
 
 .support--bg {
     padding-bottom: 362px;
-    background-image: url(../../../img/support-image-backround1.png);
+    background-image: url(../../../../../public/img/support-image-backround1.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

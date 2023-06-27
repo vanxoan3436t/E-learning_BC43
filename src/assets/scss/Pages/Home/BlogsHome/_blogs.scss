@@ -1,0 +1,150 @@
+.blog {
+    padding: 122px 0 100px;
+
+    .row:nth-child(1) {
+        .section-heading {
+            margin-bottom: 55px;
+        }
+    }
+
+    .row {
+
+        .blog--wrapper {
+            .blog-item__column {
+                .blog-item__column:first-child .blog-item {
+                    border-left: 2px solid $text-c2-white;
+                    border-radius: 20px 0px 0px 20px;
+                }
+
+                .blog-item {
+                    padding: 28px;
+                    border-top: 2px solid $text-c2-white;
+                    border-bottom: 2px solid $text-c2-white;
+                    border-left: 1px solid $text-c2-white;
+                    border-right: 1px solid $text-c2-white;
+                    position: relative;
+                    transition: all 0.4s ease;
+                
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        background-color: $text-c0-white;
+                        transform: scaleX(1.012) scaleY(1.01);
+                        opacity: 0;
+                        visibility: hidden;
+                        box-shadow: 0px 0px 80.64px 3.36px rgba(0, 0, 0, 0.04);
+                        z-index: 1;
+                        transition: all 0.4s ease;
+                    }
+
+                    &:hover::before {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+
+
+                    .blog-item__header {
+                        position: relative;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        z-index: 2;
+                        margin-bottom: 35px;
+
+                        .blog-item__img_link {
+                            display: block;
+                            position: relative;
+                            transition: all 0.4s ease;
+
+                            &::after {
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: all 0.4s ease;
+                                top: 50%;
+                                height: 0%;
+                                width: 0%;
+                                border-radius: 100%;
+                                transform: translateY(-50%);
+                                right: 0;
+                                margin: 0 auto;
+                            }
+
+                        }
+
+                        .blog-item__tags {
+                            position: absolute;
+                            font-size: 16px;
+                            background: $bg-c1-primary;
+                            color: $text-c0-white;
+                            padding: 6px 15px;
+                            display: inline-block;
+                            text-transform: capitalize;
+                            top: 20px;
+                            right: 20px;
+                            border-radius: 5px;
+                            border: 2px solid transparent;
+                        }
+
+                    }
+
+                    .blog-item__article {
+                        position: relative;
+                        z-index: 2;
+
+                        .blog-item__date {
+                            font-size: $fs-c4;
+                            color: $text-c0-primary;
+                            display: block;
+                            margin-bottom: 3px;
+                        }
+
+                        .blog-item__title {
+                            margin-bottom: 16px;
+
+                            a {
+                                color: $text-c2-dark;
+                            }
+                        }
+
+                        ul {
+                           
+
+                            li {
+                                display: inline-block;
+                                margin-right: 33px;
+                                font-size: $fs-c2;
+                                font-weight: $fw-medium;
+
+                                &:last-child {
+                                    margin-right: 0;
+                                }
+
+                                i {
+                                    color: $text-c0-primary;
+                                    font-size: $fs-c3;
+                                    margin-right: 9px;
+                                }
+
+                            }
+                        }
+                    }
+
+                    &:hover .blog-item__img_link::after {
+                        opacity: 1;
+                        visibility: visible;
+                        transition: all 0.4s ease;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+
+    }
+}

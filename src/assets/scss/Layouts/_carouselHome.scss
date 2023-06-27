@@ -41,15 +41,15 @@
             .carousel-item {
                 height: 100%;
                 width: 100%;
-                background-image: url(../../img/img-carousel1.jpg);
+                background-image: url(../../../../public/img/img-carousel1.jpg);
                 background-repeat: no-repeat;
 
                 &:nth-child(2) {
-                    background-image: url(../../img/img-carousel4.jpg);
+                    background-image: url(../../../../public/img/img-carousel4.jpg);
                 }
 
                 &:nth-child(3) {
-                    background-image: url(../../img/img-carousel6.jpg);
+                    background-image: url(../../../../public/img/img-carousel6.jpg);
                 }
 
                 .carousel-caption {

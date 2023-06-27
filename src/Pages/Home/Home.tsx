@@ -5,6 +5,8 @@ import NumberUp from './NumberBox/NumberUp'
 import Services from './Services/Services'
 import Case from './Case/Case'
 import Support from './SupportBG/Support'
+import BlogsHome from './BlogsHome/BlogsHome'
+import Contact from './ContactHome/Contact'
 
 type Props = {}
 
@@ -18,6 +20,8 @@ const Home = (props: Props) => {
     <Services></Services>
     <Support></Support>
     <Case></Case>
+    <BlogsHome></BlogsHome>
+    <Contact></Contact>
     </div>
   )
 }

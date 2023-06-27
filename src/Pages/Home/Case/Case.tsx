@@ -48,7 +48,7 @@ const Case = (props: Props) => {
                         <div className="case-item wow animate__animated  animate__fadeInUp animated__delay-0_3" >
                             <div className="case-item__image">
                                 <NavLink to='/' >
-                                    <img src="https://i.pravatar.cc?u=40" alt="Case 1" />
+                                    <img src="./img/case-image-4.jpg" alt="Case 1" />
                                 </NavLink>
                             </div>
                             <div className="case-item__content secondary-bg-color ">
@@ -62,7 +62,7 @@ const Case = (props: Props) => {
                         <div className="case-item wow animate__animated  animate__fadeInUp animated__delay-0_5" >
                             <div className="case-item__image">
                                 <NavLink to='/' >
-                                    <img src="https://i.pravatar.cc?u=41" alt="Case 2" />
+                                    <img src="./img/case-image-5.jpg" alt="Case 2" />
                                 </NavLink>
                             </div>
                             <div className="case-item__content secondary-bg-color ">
@@ -76,7 +76,7 @@ const Case = (props: Props) => {
                         <div className="case-item wow animate__animated  animate__fadeInUp animated__delay-0_7"  >
                             <div className="case-item__image">
                                 <NavLink to='/' >
-                                    <img src="https://i.pravatar.cc?u=43" alt="Case 3" />
+                                    <img src="./img/case-image-1.jpg" alt="Case 3" />
                                 </NavLink>
                             </div>
                             <div className="case-item__content secondary-bg-color ">
@@ -90,7 +90,7 @@ const Case = (props: Props) => {
                         <div className="case-item wow animate__animated  animate__fadeInUp animated__delay-1_2" >
                             <div className="case-item__image">
                                 <NavLink to='/' >
-                                    <img src="https://i.pravatar.cc?u=48" alt="Case 4" />
+                                    <img src="./img/case-image-2.jpg" alt="Case 4" />
                                 </NavLink>
                             </div>
                             <div className="case-item__content secondary-bg-color ">
@@ -104,7 +104,7 @@ const Case = (props: Props) => {
                         <div className="case-item wow animate__animated  animate__fadeInUp animated__delay-0_3"  >
                             <div className="case-item__image">
                                 <NavLink to='/' >
-                                    <img src="https://i.pravatar.cc?u=49" alt="Case 5" />
+                                    <img src="./img/case-image-3.jpg" alt="Case 5" />
                                 </NavLink>
                             </div>
                             <div className="case-item__content secondary-bg-color ">
@@ -118,7 +118,7 @@ const Case = (props: Props) => {
                         <div className="case-item wow animate__animated  animate__fadeInUp animated__delay-0_5" >
                             <div className="case-item__image">
                                 <NavLink to='/' >
-                                    <img src="https://i.pravatar.cc?u=18" alt="Case 6" />
+                                    <img src="./img/case-image-4.jpg" alt="Case 6" />
                                 </NavLink>
                             </div>
                             <div className="case-item__content secondary-bg-color ">
@@ -132,7 +132,7 @@ const Case = (props: Props) => {
                         <div className="case-item wow animate__animated  animate__fadeInUp animated__delay-0_7"  >
                             <div className="case-item__image">
                                 <NavLink to='/' >
-                                    <img src="https://i.pravatar.cc?u=55" alt="Case 7" />
+                                    <img src="./img/case-image-5.jpg" alt="Case 7" />
                                 </NavLink>
                             </div>
                             <div className="case-item__content secondary-bg-color ">
@@ -146,7 +146,7 @@ const Case = (props: Props) => {
                         <div className="case-item wow animate__animated  animate__fadeInUp animated__delay-1_2"  >
                             <div className="case-item__image">
                                 <NavLink to='/' >
-                                    <img src="https://i.pravatar.cc?u=62" alt="Case 8" />
+                                    <img src="./img/case-image-2.jpg" alt="Case 8" />
                                 </NavLink>
                             </div>
                             <div className="case-item__content secondary-bg-color ">
@@ -154,6 +154,20 @@ const Case = (props: Props) => {
                                     <NavLink to="/" >Airpods Technology</NavLink>
                                 </h5>
                                 <span>Công nghệ hiện đại</span>
+                            </div>
+                        </div>
+
+                        <div className="case-item wow animate__animated  animate__fadeInUp animated__delay-0_3"  >
+                            <div className="case-item__image">
+                                <NavLink to='/' >
+                                    <img src="./img/case-image-3.jpg" alt="Case 9" />
+                                </NavLink>
+                            </div>
+                            <div className="case-item__content secondary-bg-color ">
+                            <h5 >
+                                    <NavLink to="/" >eCommerce Website</NavLink>
+                                </h5>
+                                <span>Phát triển / Thiết kế</span>
                             </div>
                         </div>
                     </Slider>

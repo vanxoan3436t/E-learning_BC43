@@ -108,14 +108,14 @@ const Footer = (props: Props) => {
                   <input type="text" placeholder='Họ Và Tên' spellCheck='false' data-ms-editor='true' />
                   <input type="text" placeholder='Email' spellCheck='false' data-ms-editor='true' />
                   <input type="text" placeholder='Số Điện Thoại' spellCheck='false' data-ms-editor='true' />
-
-                </form>
-                <div className="section-button d-flex">
+                  <div className="section-button ">
                   <NavLink to='/' className='btn  btn--common btn-primary '>Gửi Đăng Kí
                     <i className="fa-solid fa-arrow-right"></i>
                   </NavLink>
 
                 </div>
+                </form>
+                
 
               </div>
             </div>

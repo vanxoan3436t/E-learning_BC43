@@ -147,17 +147,19 @@
                             padding-left: 10px;
                             background-color: #f5f5f5;
                         }
-
-                    }
-
-                    .section-button{
-                        a {
-                            border: none;
-                            transition: all .4s;
-                            text-transform: uppercase;
-                            margin-top: 16px;
+                        .section-button{
+                            justify-content: start;
+            
+                            a {
+                                border: none;
+                                transition: all .4s;
+                                text-transform: uppercase;
+                                margin-top: 16px;
+                            }
                         }
                     }
+
+                   
                   
                 }
             }
