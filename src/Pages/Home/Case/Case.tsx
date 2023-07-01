@@ -14,7 +14,9 @@ const Case = (props: Props) => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        pauseOnHover: true
+        pauseOnHover: true,
+       
+  
       };
     return (
         <section className='case'>
@@ -41,7 +43,7 @@ const Case = (props: Props) => {
                 </div>
 
             </div>
-            <div className="container-fuild ">
+            <div className="container-fluid ">
                 <div className="case-wrapper">
                     <div className="row case-active">
                     <Slider {...settings}>

@@ -15,7 +15,7 @@ const Home = (props: Props) => {
     <div >
     <CarouselHome></CarouselHome>
     <InfoCoureHome></InfoCoureHome>
-    <h2 className='text-white container' style={{height:'200px'}}>Danh mục khoá học <br /> phần này bổ sung sau khi call api danh sách khoá học vô sau sẽ để ở đây là đẹp</h2>
+    <h2 className='text-dark container' style={{height:'200px'}}>Danh mục khoá học <br /> phần này bổ sung sau khi call api danh sách khoá học vô sau sẽ để ở đây là đẹp</h2>
     <NumberUp></NumberUp>
     <Services></Services>
     <Support></Support>

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-type Props = {}
+
+type Props = {
+}
 
 const Header = (props: Props) => {
   return (
-    <header className='header white-bg'>
+    <header className='header white-bg '>
       <div className="header-top container">
         <div className="container-fluid">
           <div className="row align-items-center">
@@ -142,8 +144,11 @@ const Header = (props: Props) => {
                 </button>
               </div>
             </form>
-            <div className="heder-bottom_col">
-              <NavLink className='btn  btn--common btn-primary' to='/login'>
+            <div className="heder-bottom_col ">
+              <NavLink className='btn  btn--common btn-primary' to='/login' onClick={() => {
+              
+              }
+              }>
                 Đăng Nhập
                 <i className="fa-solid fa-arrow-right"></i>
               </NavLink>
@@ -153,7 +158,7 @@ const Header = (props: Props) => {
       </div>
 
 
-    </header>
+    </header >
   )
 }
 

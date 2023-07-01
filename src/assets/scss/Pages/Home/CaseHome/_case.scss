@@ -9,6 +9,7 @@
             .col-lg-4 {
                 .section-heading {
                     margin-bottom: 50px;
+
                     span {
                         color: $text-c5-dark ;
 
@@ -33,11 +34,20 @@
 
     .case-active {
         .slick-slider {
+
+            .slick-prev,
+            .slick-next {
+                position: static;
+                transform: translate(0, 0);
+            }
+
             .slick-list {
                 .slick-track {
+
                     .slick-slide {
                         div {
                             .case-item {
+
                                 padding: 0 20px;
                                 transition: all 0.4s ease;
                                 position: relative;

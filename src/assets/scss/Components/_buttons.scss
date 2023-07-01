@@ -12,7 +12,6 @@
     -webkit-box-align: center;
     align-items: center;
     letter-spacing: 0.01em;
-
     i {
         fill: currentColor;
         vertical-align: middle;
@@ -30,7 +29,7 @@
 }
 
 .btn--common:hover {
-    border: 1px solid transparent;
+    border: 0px solid transparent;
     outline: 0;
     box-shadow: none;
 }

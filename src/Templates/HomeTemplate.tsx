@@ -8,7 +8,7 @@ type Props = {}
 const HomeTemplate: React.FC = ({ }: Props): JSX.Element => {
     return (
         <>
-            <Header></Header>
+            <Header ></Header>
             <div className="content-layout" >
                 <Outlet></Outlet>
             </div>
