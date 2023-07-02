@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 type Props = {}
 
@@ -57,15 +58,17 @@ const Services = (props: Props) => {
                     <div className="row">
                         <div className="col-sm-12">
                             <div className="tab-content">
-                                <div className="tab-pane fade show active ">
+
+                                <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                     <div className="row">
-                                        <div className="col-md-6 col-lg-3">
+
+                                        <div className="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp animate-delay" >
                                             <div className="services__item services-key__content mb-30">
                                                 <div className="services__item_overlay services-key__content_overlay" />
                                                 <header className="services__item_header services-key__content_header sticky">
-                                                    <i className="flaticon flaticon-graphic-design services__item_icon services-key__content_icon" />
+                                                    <i className="fa-solid fa-pen-ruler services__item_icon"></i>
                                                     <h3 className="services__item_title services-key__content_title">
-                                                        <a href="services-details.html">Product Design</a>
+                                                        <NavLink to='/' >Thiết kế sản phẩm</NavLink>
                                                     </h3>
                                                 </header>
                                                 <div className="services__item_content services-key__content_text">
@@ -73,77 +76,226 @@ const Services = (props: Props) => {
                                                         Grursus mal suada lisis more ametion consectet
                                                         elit. Vesti at suada consectetur elit.
                                                     </p>
-                                                    <a className="services-key__content_link" href="services-details.html">Discover now</a>
+                                                    <NavLink className="services-key__content_link" to="/">Khám phá ngay</NavLink>
                                                 </div>
                                             </div>
-
                                         </div>
-
-                                        <div className="col-md-6 col-lg-3">
+                                        <div className="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp animate-delay-0_4" >
                                             <div className="services__item services-key__content mb-30">
                                                 <div className="services__item_overlay services-key__content_overlay" />
                                                 <header className="services__item_header services-key__content_header sticky">
-                                                    <i className="flaticon flaticon-web-development services__item_icon services-key__content_icon" />
-                                                    <h2 className="services__item_title services-key__content_title">
-                                                        <a href="services-details.html">Web Development</a>
-                                                    </h2>
+                                                    <i className="fa-solid fa-code services__item_icon"></i>
+                                                    <h3 className="services__item_title services-key__content_title">
+                                                        <NavLink to='/'>Phát triển web</NavLink>
+                                                    </h3>
                                                 </header>
                                                 <div className="services__item_content services-key__content_text">
                                                     <p className="services__item_paragraph services-key__content_paragraph">
                                                         Grursus mal suada lisis more ametion consectet
                                                         elit. Vesti at suada consectetur elit.
                                                     </p>
-                                                    <a className="services-key__content_link" href="services-details.html">Discover now</a>
+                                                    <NavLink className="services-key__content_link" to="/">Khám phá ngay</NavLink>
                                                 </div>
                                             </div>
-
-
                                         </div>
-
-                                        <div className="col-md-6 col-lg-3">
+                                        <div className="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp animate-delay-0_6" >
                                             <div className="services__item services-key__content mb-30">
                                                 <div className="services__item_overlay services-key__content_overlay" />
                                                 <header className="services__item_header services-key__content_header sticky">
-                                                    <i className="flaticon flaticon-analysis services__item_icon services-key__content_icon" />
-                                                    <h2 className="services__item_title services-key__content_title">
-                                                        <a href="services-details.html">Data Analytics</a>
-                                                    </h2>
+                                                    <i className="services__item_icon fa-solid fa-database"></i>
+                                                    <h3 className="services__item_title services-key__content_title">
+                                                        <a href="/">Phân tích dữ liệu</a>
+                                                    </h3>
                                                 </header>
                                                 <div className="services__item_content services-key__content_text">
                                                     <p className="services__item_paragraph services-key__content_paragraph">
                                                         Grursus mal suada lisis more ametion consectet
                                                         elit. Vesti at suada consectetur elit.
                                                     </p>
-                                                    <a className="services-key__content_link" href="services-details.html">Discover now</a>
+                                                    <NavLink className="services-key__content_link" to="/">Khám phá ngay</NavLink>
                                                 </div>
                                             </div>
-
-
                                         </div>
-
-                                        <div className="col-md-6 col-lg-3">
+                                        <div className="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp animate-delay-0_8" >
                                             <div className="services__item services-key__content mb-30">
                                                 <div className="services__item_overlay services-key__content_overlay" />
                                                 <header className="services__item_header services-key__content_header sticky">
-                                                    <i className="flaticon flaticon-cyber-security services__item_icon services-key__content_icon" />
-                                                    <h2 className="services__item_title services-key__content_title">
-                                                        <a href="services-details.html">Cyber Security</a>
-                                                    </h2>
+                                                    <i className="fa-solid fa-shield-halved services__item_icon"></i>
+                                                    <h3 className="services__item_title services-key__content_title">
+                                                        <a href="/">An ninh mạng</a>
+                                                    </h3>
                                                 </header>
                                                 <div className="services__item_content services-key__content_text">
                                                     <p className="services__item_paragraph services-key__content_paragraph">
                                                         Grursus mal suada lisis more ametion consectet
                                                         elit. Vesti at suada consectetur elit.
                                                     </p>
-                                                    <a className="services-key__content_link" href="services-details.html">Discover now</a>
+                                                    <NavLink className="services-key__content_link" to="/">Khám phá ngay</NavLink>
                                                 </div>
                                             </div>
-
-
-
                                         </div>
                                     </div>
                                 </div>
+
+                                <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div className="row">
+                                        <div className="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp animate-delay">
+                                            <div className="services__item services__tech text-center mb-30">
+                                                <div className="services__item_overlay services__tech_overlay" />
+                                                <header className="services__item_header mb-0 sticky">
+                                                    <i className="fa-solid fa-desktop services__tech_icon "></i>
+                                                    <h4 className="services__item_title services__tech_title">
+                                                        <a href="services-details.html">Trang Wed</a>
+                                                    </h4>
+                                                </header>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp animate-delay-0_4" >
+                                            <div className="services__item services__tech text-center mb-30">
+                                                <div className="services__item_overlay services__tech_overlay" />
+                                                <header className="services__item_header mb-0 sticky">
+                                                    <i className="fa-brands fa-android services__tech_icon "></i>
+                                                    <h4 className="services__item_title services__tech_title">
+                                                        <a href="services-details.html">Android Apps</a>
+                                                    </h4>
+                                                </header>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-4 col-md-6 wow  animate__animated animate__fadeInUp animate-delay-0_6">
+                                            <div className="services__item services__tech text-center mb-30">
+                                                <div className="services__item_overlay services__tech_overlay" />
+                                                <header className="services__item_header mb-0 sticky">
+                                                    <i className="fa-brands fa-apple services__tech_icon "></i>
+                                                    <h4 className="services__item_title services__tech_title">
+                                                        <a href="services-details.html">ios Apps</a>
+                                                    </h4>
+                                                </header>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp animate-delay-0_8">
+                                            <div className="services__item services__tech text-center mb-30">
+                                                <div className="services__item_overlay services__tech_overlay" />
+                                                <header className="services__item_header mb-0 sticky">
+                                                    <i className="fa-solid fa-spinner services__tech_icon "></i>
+                                                    <h4 className="services__item_title services__tech_title">
+                                                        <a href="services-details.html">Iot Program</a>
+                                                    </h4>
+                                                </header>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp animate-delay-1_2" >
+                                            <div className="services__item services__tech text-center mb-30">
+                                                <div className="services__item_overlay services__tech_overlay" />
+                                                <header className="services__item_header mb-0 sticky">
+                                                    <i className="fa-solid fa-bomb services__tech_icon "></i>
+                                                    <h4 className="services__item_title services__tech_title">
+                                                        <a href="services-details.html">Wearalables</a>
+                                                    </h4>
+                                                </header>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp animate-delay-1_5">
+                                            <div className="services__item services__tech text-center mb-30">
+                                                <div className="services__item_overlay services__tech_overlay" />
+                                                <header className="services__item_header mb-0 sticky">
+                                                    <i className="fa-solid fa-tv services__tech_icon "></i>
+                                                    <h4 className="services__item_title services__tech_title">
+                                                        <a href="services-details.html">tv Program</a>
+                                                    </h4>
+                                                </header>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="tab-pane fade " id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                    <div className="services-partners overflow-hidden mb-20">
+                                        <ul className="services-partners__wrapper overflow-hidden">
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay">
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-01.png" alt='service-1' /></a>
+                                            </li>
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_3">
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-02.png" alt='service-2' /></a>
+                                            </li>
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_4" >
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-03.png" alt='service-3' /></a>
+                                            </li>
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_5">
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-04.png" alt='service-4' /></a>
+                                            </li>
+                                            <li className="services-partners__item animate__animated animate__fadeInUp animate-delay-0_6">
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-05.png" alt='service-5' /></a>
+                                            </li>
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_7" >
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-06.png" alt='service-6' /></a>
+                                            </li>
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_8" >
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-07.png" alt='service-7' /></a>
+                                            </li>
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_9">
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-08.png" alt='service-8' /></a>
+                                            </li>
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-1">
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-09.png" alt='service-9' /></a>
+                                            </li>
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-1_1">
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-10.png" alt='service-10' /></a>
+                                            </li>
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-1_2">
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-11.png" alt='service-11' /></a>
+                                            </li>
+                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-1_5">
+                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-12.png" alt='service-12' /></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div className="tab-pane fade " id="awards" role="tabpanel" aria-labelledby="awards-tab">
+                                    <div className="row">
+                                        <div className="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp animate-delay" >
+                                            <div className="services__awards mb-30">
+                                                <img src="./img/services-awards-img-1.png" alt='services-awards-1' className="services__awards_board" />
+                                                <h3 className="services__awards_title">
+                                                    <a href="/">Top 10 Công ty Công nghệ 2018</a>
+                                                </h3>
+                                                <p className="services__awards_text">
+                                                    Grursus mal suada faci lisis Lorem ipsum is
+                                                    dolarorit more ametion consectetur elit. Vesti ipsum
+                                                    suada to the consectetur elit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp animate-delay-0_4" >
+                                            <div className="services__awards mb-30">
+                                                <img src="./img/services-awards-img-2.png" alt='services-awards-2' className="services__awards_board" />
+                                                <h3 className="services__awards_title">
+                                                    <a href="/">Giải thưởng hàng đầu về thuế thu nhập 2019</a>
+                                                </h3>
+                                                <p className="services__awards_text">
+                                                    Grursus mal suada faci lisis Lorem ipsum is
+                                                    dolarorit more ametion consectetur elit. Vesti ipsum
+                                                    suada to the consectetur elit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp animate-delay-0_6" >
+                                            <div className="services__awards mb-30">
+                                                <img src="./img/services-awards-img-3.png" alt='services-awards-3' className="services__awards_board" />
+                                                <h3 className="services__awards_title">
+                                                    <a href="/">Trung tâm đào tạo hàng đầu 2020</a>
+                                                </h3>
+                                                <p className="services__awards_text">
+                                                    Grursus mal suada faci lisis Lorem ipsum is
+                                                    dolarorit more ametion consectetur elit. Vesti ipsum
+                                                    suada to the consectetur elit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
