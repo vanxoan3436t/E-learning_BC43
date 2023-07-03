@@ -20,9 +20,11 @@ root.render(
                 <Route index element={<Home />}></Route>
                 <Route path="login" element={<Login />}></Route>
                 <Route path="search" element={<Search />}></Route>
+               
             </Route>
         </Routes>
     </HistoryRouter>
 );
 
 ////tsrafce dùng tạo function có typescript
+//https://i.pravatar.cc?u=40

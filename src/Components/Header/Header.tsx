@@ -1,14 +1,24 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { history } from '../..'
 
 
 type Props = {
 }
 
 const Header = (props: Props) => {
+  let keyInput = useRef(null)
+
+  const handleSubmitSearch = async (e: any) => {
+    e.preventDefault()
+    // console.log(keyInput.current.value);    
+    history.push('/search')
+  }
+
   return (
-    <header className='header white-bg '>
-      <div className="header-top container">
+    <header className='header white-bg sticky-on container '>
+      <div id="sticky-placeholder"></div>
+      <div className="header-top ">
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-9">
@@ -40,7 +50,7 @@ const Header = (props: Props) => {
                   </div>
                   <div className="header-top_info_text">
                     <p>Email chúng tôi:</p>
-                    <span>cybersoft@gmail.com</span>
+                    <span>elearning@gmail.com</span>
                   </div>
                 </div>
 
@@ -87,14 +97,13 @@ const Header = (props: Props) => {
         </div>
       </div>
 
-      <div className="white-bg header-bottom  container">
+      <div id='navbar-wrap' className="white-bg header-bottom navbar-wrap container">
         <div className="container-fuild ">
           <div className="header-bottom_row d-flex justify-content-between align-items-center">
             <div className="header-bottom_col">
               <div className="logo">
                 <NavLink to={'/'} className='logo_link'>
-                  {/* <img src="./src/assets/img/logo.png" alt="logo" /> */}
-                  <h4>Cybersoft</h4>
+                  <h4>E Learning</h4>
                 </NavLink>
               </div>
             </div>
@@ -136,7 +145,7 @@ const Header = (props: Props) => {
               </div>
             </div>
 
-            <form className="header-bottom_col">
+            <form className="header-bottom_col" onSubmit={handleSubmitSearch}>
               <div className="header-search d-flex justify-content-between">
                 <input type="text" placeholder='Tìm kiếm' className='header-search_input' data-ms-editor='true' />
                 <button className="header-search_button">
@@ -146,7 +155,7 @@ const Header = (props: Props) => {
             </form>
             <div className="heder-bottom_col ">
               <NavLink className='btn  btn--common btn-primary' to='/login' onClick={() => {
-              
+
               }
               }>
                 Đăng Nhập

@@ -204,7 +204,7 @@
                                 border: 1px solid transparent;
                                 width: 100%;
                                 background: transparent;
-
+                                outline: transparent;
                             }
 
                             .header-search_button {
@@ -223,4 +223,16 @@
             }
         }
     }
+
+  
+}
+header.sticky-on.sticky .navbar-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0px 7px 65px 0px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
 }

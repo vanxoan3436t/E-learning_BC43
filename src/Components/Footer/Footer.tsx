@@ -13,13 +13,13 @@ const Footer = (props: Props) => {
               <div className="footer-widget">
                 <div className="footer-logo mb-30">
                   <NavLink to={'/'}>
-                    {/* <img src="../../assets/img/logo.png" alt='logo' /> */}
-                    <h4>Cybersoft</h4>
+                   
+                    <h4>E-Learning</h4>
                     </NavLink>
                 </div>
                 <div className="footer-widget_text">
                   <p>Bắt đầu sự nghiệp lập trình
-                    từ ZERO tại CyberSoft <br /> <span> 100% Thực Hành, Học Thật, Dự Án Thật, Việc Làm Thật</span>
+                    từ ZERO tại <br /> E-Learning <br /> <span> 100% Thực Hành, Học Thật, Dự Án Thật, Việc Làm Thật</span>
                   </p>
                 </div>
                 <div className="footer-widget_social">
@@ -129,7 +129,7 @@ const Footer = (props: Props) => {
             <div className="col-sm-12">
               <div className="footer_copyright">
                 <p >
-                  © Bản quyền CyberSoft 2017 - 2023 - Empower by <NavLink to="/">Cybersoft</NavLink>
+                  © Bản quyền E-Learning 2017 - 2023 - Empower by <NavLink to="/">E-Learning</NavLink>
                 </p>
               </div>
             </div>
