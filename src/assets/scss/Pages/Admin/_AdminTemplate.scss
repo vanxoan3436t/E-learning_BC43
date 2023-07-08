@@ -1,0 +1,48 @@
+.admin {
+
+    .admin-header {
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .admin-header-left {
+            font-size: 17px;
+            color: #14133b;
+            font-weight: 500;
+            padding: 33px 6px;
+
+            a {
+                font-size: 40px;
+                margin-right: 5px;
+            }
+        }
+
+        .admin-header-right {
+            display: flex;
+
+            span {}
+
+            .your-avatar {
+                img{}
+            }
+
+            .admin-header-dropdown {
+                button{
+
+                }
+                .dropdown-menu{
+                    li{
+                        a{
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+.admin-body{
+    
+}
+}

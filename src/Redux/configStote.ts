@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
+import quanLyNguoiDungReducer from "./reducer/quanLyNguoiDungReducer";
 export const store = configureStore({
  reducer:{
-   
+    quanLyNguoiDungReducer:quanLyNguoiDungReducer
  }
     
 })
