@@ -25,17 +25,15 @@ root.render(
             <Routes>
                 <Route path='' element={<HomeTemplate />}>
                     <Route index element={<Home />}></Route>
-                    {/* <Route path="login" element={<Login />}></Route> */}
                     <Route path="search" element={<Search />}></Route>
                     <Route path="info" element={<Info />}></Route>
+                    <Route path='infoadmin' element={<InfoAdmin />}></Route>
                     <Route path='*' element={<Navigate to='/' />}></Route>
                 </Route>
                 
                 <Route path='admin' element={<AdminTemplate />}>
                     <Route index element={<DashBoard />}></Route>
                     <Route path='dashboard' element={<DashBoard />}></Route>
-                    <Route path='infoadmin' element={<InfoAdmin />}></Route>
-
                     <Route path="*" element={<Navigate to="/admin" />}></Route>
                 </Route>
                 <Route path='login'  element={<Login />}>

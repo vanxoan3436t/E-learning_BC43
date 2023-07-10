@@ -1,0 +1,243 @@
+@import '../../Helpers/variables';
+
+.info-page {
+    .info-page-content {
+        padding: 50px;
+
+        .infoLeft * {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .info-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 500px;
+
+            .info-avatar {
+                img {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+            button {
+                padding: 10px;
+                border-radius: 20px;
+                color: $text-c0-white;
+                background-color: $bg-c5-primary;
+                border: none;
+            }
+        }
+
+        .info-right {
+            .tab {
+                overflow: hidden;
+
+                & .tab-link.active {
+                    background-color: $bg-c0-white;
+                    color: $text-c2-dark;
+                    border-top: 2px solid $bg-c5-primary;
+                }
+
+                .tab-link {
+                    cursor: pointer;
+                    color: $text-c0-white;
+                    border: none;
+                    border-top: 2px solid transparent;
+                    background-color: $bg-c5-primary;
+                    outline: none;
+                    padding: 14px 16px;
+                    transition: all .3s;
+                }
+            }
+
+            .tab-content {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+
+                .user-info {
+                    .user-info-top {
+                        padding-bottom: 15px;
+                        border-bottom: 1px solid $text-c5-dark;
+
+                        .row {
+                            div {
+                                p {
+                                    padding: 10px 0;
+                                    font-size: $fs-c6;
+                                    font-weight: $fw-medium;
+
+                                    span {
+                                        font-size: $fs-c4;
+                                        font-weight: $fw-regular;
+                                        color: $text-c2-dark;
+                                        margin-left: 0.5rem;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                    .user-info-bot {
+                        padding: 30px 0;
+
+                        h4 {
+                            text-transform: uppercase;
+                        }
+
+                        .skill-all {
+                            padding-bottom: 20px;
+
+                            .my-skill {
+                                display: flex;
+                                padding: 10px 0;
+                                align-items: center;
+
+                                span {
+                                    width: 60px;
+                                    height: 45px;
+                                    border-radius: 8px;
+                                    border: none;
+                                    margin-right: 5px;
+                                    display: inline-block;
+                                    color: $text-c0-white;
+                                    font-size: $fs-c4;
+                                    line-height: 2;
+                                    text-align: start;
+                                }
+
+                                .progress {
+                                    width: 100%;
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+
+                        .time-study {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-gap: 20px;
+                            gap: 20px;
+
+                            .time-study-item {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 15px;
+                                border-radius: 20px;
+                                background: $bg-c5-primary;
+                                color: $text-c0-white;
+
+                                i {
+                                    margin-right: 10px;
+                                }
+
+                                p {
+                                    color: $text-c0-white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .my-course-info {
+                padding: 20px 0;
+                min-height: 300px;
+
+                .find-course-net {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    h6 {
+                        text-transform: uppercase;
+                        font-size: $fs-c5;
+                    }
+
+                    form {
+                        .search-main {
+                            padding: 8px 20px;
+                            width: 320px;
+                        }
+                    }
+                }
+
+                .my-course-item {
+                    margin: 30px 0;
+                }
+            }
+        }
+    }
+}
+
+.info-modal-update {
+    .modal-content {
+        background: $bg-c0-primary ;
+
+        .modal-header {
+            color: $text-c0-white;
+            padding: 10px 50px;
+
+            .close {
+                color: $text-c0-white;
+            }
+        }
+
+        .modal-body {
+            padding: 20px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            form {
+                width: 100%;
+
+                .message {
+                    height: 22px;
+                }
+
+                h6 {
+                    padding-top: 10px;
+                    color: $text-c0-white;
+                }
+
+                input {
+                    width: 100%;
+                    margin: 5px 0;
+                    padding: 5px 15px;
+                    border-radius: 5px;
+                    border: 2px solid $text-c0-primary;
+                    outline: none;
+                }
+
+                .modal-footer {
+                    border-top: none;
+
+                    button {
+                        border-radius: 5px;
+                        padding: 10px;
+
+                    }
+
+                    .btn-changes {
+                        background-color: $bg-c1-primary;
+                        color: $text-c0-white;
+                    }
+
+                }
+            }
+        }
+
+    }
+}

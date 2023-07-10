@@ -10,7 +10,9 @@
     display: block;
 }
 
-
+.logo{
+    width: 104px;
+}
 .white-bg {
     background-color: $bg-c0-white;
 }
@@ -140,4 +142,87 @@ section {
 
 .contact--bg{
 background: $bg-c3-white;
+}
+
+.title-course{
+    padding: 50px;
+    text-transform: uppercase;
+    background-color:$bg-c0-primary;
+    h3,p{
+        color: $text-c0-white;
+
+    }
+}
+.search-main {
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    padding: 10px 22px;
+    width: 330px;
+    position: relative;
+    padding-right: 45px;
+
+    .search_input {
+        border: 1px solid transparent;
+        width: 100%;
+        background: transparent;
+        outline: transparent;
+    }
+
+    .search_button {
+        background: transparent;
+        color: $text-c2-dark;
+        border: 1px solid transparent;
+        font-size: $fs-c3;
+        right: 22px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.my-course-item {
+    .img-net {
+        object-fit: fill;
+        width: 100%;
+        height: 255px;
+        min-height: 200px;
+    }
+
+    .card-net-content * {
+        margin-bottom: 5px;
+    }
+
+    .card-net-content {
+        .color-card-title {
+            color: $text-c5-dark;
+        }
+
+        .icon-net-card {
+            .text-card-title {
+                padding-right: 15px;
+
+                .icon-oclock {
+                    color: #f5c002;
+                }
+
+                .icon-calendar {
+                    color: #f06f68;
+                }
+
+                .icon-level {
+                    color: #65c9ff;
+                }
+            }
+        }
+
+        .icon-star-net i {
+            color: #f6ba35;
+        }
+    }
+    .img-net-footer {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    
+    }
 }

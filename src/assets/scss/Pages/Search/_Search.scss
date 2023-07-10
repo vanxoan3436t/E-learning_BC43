@@ -99,53 +99,6 @@
             }
 
             .course-search-result {
-                .my-course-item {
-                    .img-net {
-                        object-fit: fill;
-                        width: 100%;
-                        height: 255px;
-                        min-height: 200px;
-                    }
-
-                    .card-net-content * {
-                        margin-bottom: 5px;
-                    }
-
-                    .card-net-content {
-                        .color-card-title {
-                            color: $text-c5-dark;
-                        }
-
-                        .icon-net-card {
-                            .text-card-title {
-                                padding-right: 15px;
-
-                                .icon-oclock {
-                                    color: #f5c002;
-                                }
-
-                                .icon-calendar {
-                                    color: #f06f68;
-                                }
-
-                                .icon-level {
-                                    color: #65c9ff;
-                                }
-                            }
-                        }
-
-                        .icon-star-net i {
-                            color: #f6ba35;
-                        }
-                    }
-                    .img-net-footer {
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        object-fit: cover;
-                    
-                    }
-                }
 
             }
         }

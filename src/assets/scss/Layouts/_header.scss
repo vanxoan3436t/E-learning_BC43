@@ -192,32 +192,8 @@
 
                     &:nth-child(3) {
 
-                        .header-search {
-                            border: 1px solid #e2e2e2;
-                            border-radius: 5px;
-                            padding: 10px 22px;
-                            width: 330px;
-                            position: relative;
-                            padding-right: 45px;
-
-                            .header-search_input {
-                                border: 1px solid transparent;
-                                width: 100%;
-                                background: transparent;
-                                outline: transparent;
-                            }
-
-                            .header-search_button {
-                                background: transparent;
-                                color: $text-c2-dark;
-                                border: 1px solid transparent;
-                                font-size: $fs-c3;
-                                right: 22px;
-                                position: absolute;
-                                top: 50%;
-                                transform: translateY(-50%);
-                            }
-                        }
+                        
+                        
                     }
                 }
             }

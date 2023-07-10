@@ -9,7 +9,7 @@ const Search = (props: Props) => {
       <section className='search-page-container'>
         <div className='title-course'>
           <h3>Tìm kiếm</h3>
-          <p>Kết quả tìm kiếm khóa học!!!  chỗ này css sau</p>
+          <p>Kết quả tìm kiếm khóa học</p>
         </div>
         <div className='search-page container-fluid'>
           <div className='row'>

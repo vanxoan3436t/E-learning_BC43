@@ -13,7 +13,6 @@ const Footer = (props: Props) => {
               <div className="footer-widget">
                 <div className="footer-logo mb-30">
                   <NavLink to={'/'}>
-                   
                     <h4>E-Learning</h4>
                     </NavLink>
                 </div>

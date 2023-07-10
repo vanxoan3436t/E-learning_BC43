@@ -100,10 +100,10 @@ const Header = (props: Props) => {
       <div id='navbar-wrap' className="white-bg header-bottom navbar-wrap container">
         <div className="container-fuild ">
           <div className="header-bottom_row d-flex justify-content-between align-items-center">
-            <div className="header-bottom_col">
-              <div className="logo">
+            <div className="header-bottom_col logo">
+              <div>
                 <NavLink to={'/'} className='logo_link'>
-                  <h4>E Learning</h4>
+                <img  src="./img/elearning-logo.png" alt="logo" />
                 </NavLink>
               </div>
             </div>
@@ -138,7 +138,8 @@ const Header = (props: Props) => {
                       </ul>
                     </li>
                     <li className="nav-sub">
-                      <NavLink to={'/'} >THÔNG TIN</NavLink>
+                      <NavLink to={'/info'} >THÔNG TIN</NavLink>
+                      {/* để tạm link qua info dễ qua lại  */}
                     </li>
                   </ul>
                 </nav>
@@ -146,9 +147,9 @@ const Header = (props: Props) => {
             </div>
 
             <form className="header-bottom_col" onSubmit={handleSubmitSearch}>
-              <div className="header-search d-flex justify-content-between">
-                <input type="text" placeholder='Tìm kiếm' className='header-search_input' data-ms-editor='true' />
-                <button className="header-search_button">
+              <div className="search-main d-flex justify-content-between">
+                <input type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true' />
+                <button className="search_button">
                   <i className="fas fa-search"></i>
                 </button>
               </div>
