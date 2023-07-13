@@ -1,4 +1,4 @@
-// chứa các file phần tử nhỏ của trang wed các button chính mà ta sử dụng code tại đây
+// chứa các file phần tử nhỏ của trang wed các button chính mà ta sử dụng code tại đây 
 .btn--common {
     padding: 11px 12px 11px 25px;
     font-size: $fs-c4;
@@ -42,6 +42,16 @@
 .btn {
     --bs-btn-border-width: 0;
     --bs-btn-border-radius:0;
+}
+
+.btn-modal1{
+    border-radius: 5px;
+    background: $bg-c4-primary;
+    color: $text-c0-white;
+    &:hover{
+        background: $bg-c3-primary;
+        color: $text-c0-white;
+    }
 }
 @keyframes theflast {
     49% {
