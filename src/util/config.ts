@@ -50,7 +50,7 @@ http.interceptors.request.use((config: any) => {//cấu hình cho page cần đ�
     config.headers = { ...config.headers }
     let token = getStoreJson(USER_LOGIN)?.accessToken;
     config.headers.Authorization = `Bearer ${token}`;
-    config.headers.tokenCybersoft = `TOKEN_CYBERSOFT`;
+    config.headers.tokenCybersoft = TOKEN_CYBERSOFT;
     return config
 }, err => {
     return Promise.reject(err)

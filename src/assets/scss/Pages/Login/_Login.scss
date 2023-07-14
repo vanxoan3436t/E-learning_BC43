@@ -67,7 +67,12 @@
                         color: $text-c4-dark;
                         margin-bottom: 10px;
                     }
-
+                    select {
+                        border: none;
+                        &:focus-visible {
+                            outline: none;
+                        }
+                    }
                     .input-field {
                         max-width: 380px;
                         width: 100%;
@@ -83,7 +88,7 @@
                         i {
                             text-align: center;
                             line-height: 55px;
-                            color: $text-c1-dark;
+                            color: $text-c0-primary;
                             font-size: $fs-c12;
                         }
 
@@ -94,7 +99,7 @@
                             line-height: 1;
                             font-weight: $fw-semiBold;
                             font-size: $fs-c6;
-                            color: $text-c5-dark;
+                            color: $text-c2-dark;
 
                             &:placeholder-shown {
                                 color: $text-c1-dark;
@@ -103,6 +108,8 @@
                         }
 
                     }
+
+                  
 
                     .btn {
                         width: 150px;

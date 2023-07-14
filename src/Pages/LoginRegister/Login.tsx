@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import ButtonMouseEvent from '../../Components/ButtonProps/ButtonMouseEvent'
 import { useFormik } from 'formik'
-import { loginAsyncAction } from '../../Redux/reducer/quanLyNguoiDungReducer'
+import { loginAsyncActionApi, signUpAsyncActionApi } from '../../Redux/reducer/quanLyNguoiDungReducer'
 import { DispatchType } from '../../Redux/configStote'
 import { useDispatch } from 'react-redux'
-
+import * as Yup from 'yup'
+import { history } from '../..'
+import { setStore, setStoreJson } from '../../util/config'
 type Props = {}
 
 export interface UserLoginFrm {
@@ -13,16 +15,61 @@ export interface UserLoginFrm {
   matKhau: string,
 }
 
+export interface UserSignUpFrm {
+  taiKhoan: string,
+  matKhau: string,
+  hoTen: string,
+  email: string,
+  soDT: string,
+  maNhom: string,
+}
+
 const Login = (props: Props) => {
   const [classState, toggleClass] = useState(false)
   const dispatch: DispatchType = useDispatch();
+  //formSingup
+  const signUpFrm = useFormik<UserSignUpFrm>({
+    initialValues: {
+      taiKhoan: "",
+      matKhau: "",
+      hoTen: "",
+      email: "",
+      soDT: "",
+      maNhom: "GP01",
+    },
+    // validationSchema: Yup.object().shape({
+    //   taiKhoan: Yup.string()
+    //     .min(2, 'Tài khoản quá ít kí tự')
+    //     .max(16, 'Tài khoản quá 16 kí tự')
+    //     .required('Tài khoản không được để trống'),
+
+    //   matKhau: Yup.string()
+    //     .required('Tài khoản không được để trống')
+    //     .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/, 'Mật khẩu phải ít nhất 8 tự gồm chữ, số, và kí tự đặc biệt'),
+
+    //   hoTen: Yup.string()
+    //     .required('Tên không được để trống')
+    //     .matches(/^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/, 'Chỉ nhập kí tự chữ'),
+
+    //   email: Yup.string().email('Email không hợp lệ').required('Email không được để trống'),
+
+    //   soDT: Yup.string()
+    //     .required('Số điện thoại không được để trống')
+    //     .matches(/([\+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/, 'Số điện thoại chưa đúng định đạng'),
+    // }),
+    onSubmit: (values: UserSignUpFrm) => {// handleLogin sẽ ở đây
+      console.log('values', values)
+      const actionApi = signUpAsyncActionApi(values)
+      dispatch(actionApi);
+    }
+  })
+
   const loginFrm = useFormik<UserLoginFrm>({
     initialValues: {
       taiKhoan: '',
       matKhau: '',
     }, onSubmit: (values: UserLoginFrm) => {
-      console.log('values', values)
-      const actionApi = loginAsyncAction(values)
+      const actionApi = loginAsyncActionApi(values)
       dispatch(actionApi);
     }
   })
@@ -38,11 +85,11 @@ const Login = (props: Props) => {
 
               <div className="input-field">
                 <i className="fa-solid fa-user"></i>
-                <input type="text" placeholder="Tài khoản" name="taiKhoan" onInput={loginFrm.handleChange} />
+                <input type="text" placeholder="Tài khoản" name="taiKhoan" onInput={loginFrm.handleChange} value={loginFrm.values.taiKhoan}/>
               </div>
               <div className="input-field">
                 <i className="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Mật khẩu" name='matKhau' onInput={loginFrm.handleChange} />
+                <input type="password" placeholder="Mật khẩu" name='matKhau' onInput={loginFrm.handleChange} value={loginFrm.values.matKhau}/>
 
               </div>
               <input type="submit" className='btn btn--common btn-primary' value='Đăng nhập' />
@@ -59,34 +106,47 @@ const Login = (props: Props) => {
 
           <div className="signin-signup">
 
-            <form action="#" className={`sign-up-form`}>
+            <form onSubmit={signUpFrm.handleSubmit} action="#" className={`sign-up-form`}>
               <h2 className='login-title'>Đăng kí</h2>
 
               <div className="input-field">
                 <i className="fa-solid fa-user"></i>
-                <input type="email" placeholder="Tài khoản" name="username" />
+                <input type="text" placeholder="Tài khoản" name="taiKhoan" onInput={signUpFrm.handleChange}/>
               </div>
               <div className="input-field">
                 <i className="fa-solid fa-file-signature"></i>
-                <input type="text" placeholder="Họ Tên" />
+                <input type="text" placeholder="Họ Tên" name='hoTen' onInput={signUpFrm.handleChange}/>
               </div>
               <div className="input-field">
                 <i className="fa-solid fa-envelope"></i>
-                <input type="text" placeholder="Email" name="email" />
+                <input type="email" placeholder="Email" name="email"  onInput={signUpFrm.handleChange}/>
               </div>
               <div className="input-field">
                 <i className="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Password" name='matKhau' onInput={signUpFrm.handleChange}/>
               </div>
 
               <div className="input-field">
                 <i className="fa-solid fa-phone-flip"></i>
-                <input type="text" placeholder="Số điện thoại" />
+                <input type="text" placeholder="Số điện thoại" name='soDT' onInput={signUpFrm.handleChange}/>
               </div>
-              <div className="input-field">
-                <i className="fa-solid fa-hashtag"></i>
-                <input type="text" placeholder="Mã khoá học" />
-              </div>
+             
+              <select id="" className='input-field'
+                                onChange={signUpFrm.handleChange}
+                                name='maNhom'
+                               >
+                                <option value="GP01">GP01</option>
+                                <option value="GP02">GP02</option>
+                                <option value="GP03">GP03</option>
+                                <option value="GP04">GP04</option>
+                                <option value="GP05">GP05</option>
+                                <option value="GP06">GP06</option>
+                                <option value="GP07">GP07</option>
+                                <option value="GP08">GP08</option>
+                                <option value="GP09">GP09</option>
+                                <option value="GP010">GP010</option>
+                            </select>
+            
               <input type="submit" className='btn btn--common btn-primary' value='Đăng kí' />
               <p className='social-text'>Hoặc đăng kí bằng </p>
 
