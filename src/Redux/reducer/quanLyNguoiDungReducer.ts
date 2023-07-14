@@ -3,16 +3,20 @@ import { USER_LOGIN, getStoreJson, http } from '../../util/config';
 import { UserLoginFrm } from '../../Pages/LoginRegister/Login';
 
 
+
+
 export interface UserLoginApi {
-  taiKhoan: '',
-  matKhau: ''
+  taiKhoan: string,
+  matKhau: string
 }
 
 export interface UserState {
   userLogin: UserLoginApi | undefined
+
 }
 const initialState = {
-  userLogin: getStoreJson(USER_LOGIN)
+  userLogin: getStoreJson(USER_LOGIN),
+
 }
 
 const quanLyNguoiDungReducer = createSlice({
@@ -31,11 +35,11 @@ const quanLyNguoiDungReducer = createSlice({
   }
 });
 
-export const { } = quanLyNguoiDungReducer.actions
+export const {loginAction} = quanLyNguoiDungReducer.actions
 
 export default quanLyNguoiDungReducer.reducer
 
-//----------areate action async
+//----------create action async
 export const loginAsyncAction = createAsyncThunk('loginAsyncAction', async (userLogin: UserLoginFrm) => {
   //call api
   const res = await http.post(`/api/QuanLyNguoiDung/DangNhap`, userLogin);

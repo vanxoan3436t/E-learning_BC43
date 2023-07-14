@@ -27,7 +27,7 @@ root.render(
             <Routes>
                 <Route path='' element={<HomeTemplate />}>
                     <Route index element={<Home />}></Route>
-                    <Route path="search" element={<Search />}></Route>
+                    <Route path="search/:key" element={<Search />}></Route>
                     <Route path="info" element={<Info />}></Route>
                     <Route path='infoadmin' element={<InfoAdmin />}></Route>
                     <Route path='*' element={<Navigate to='/' />}></Route>
@@ -36,8 +36,8 @@ root.render(
                 <Route path='admin' element={<AdminTemplate />}>
                     <Route index element={<DashBoard />}></Route>
                     <Route path='dashboard' element={<DashBoard />}></Route>
-                    <Route path='usermanagement' element={<UserManageme />}></Route>
-                    <Route path='coursemanagement' element={<CourseManagement />}></Route>
+                    <Route path='./usermanagement' element={<UserManageme />}></Route>
+                    <Route path='./coursemanagement' element={<CourseManagement />}></Route>
                     <Route path="*" element={<Navigate to="/admin" />}></Route>
                 </Route>
                 <Route path='login'  element={<Login />}>

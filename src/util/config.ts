@@ -4,6 +4,7 @@ import { history } from "..";
 //setup hằng số
 export const DOMAIN = 'https://elearningnew.cybersoft.edu.vn';
 export const USER_LOGIN = 'userLogin';
+export const COURSEDETAIL = 'courseDetail';
 export const TOKEN_CYBERSOFT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA0MyIsIkhldEhhblN0cmluZyI6IjA0LzExLzIwMjMiLCJIZXRIYW5UaW1lIjoiMTY5OTA1NjAwMDAwMCIsIm5iZiI6MTY2OTQ4MjAwMCwiZXhwIjoxNjk5MjAzNjAwfQ.7A1g8RqPPK_ttr9NYitsWT7Cbe11nz4qye-QxZ_b8fk';
 
 //interceptor
@@ -40,7 +41,7 @@ export const { getStoreJson, setStoreJson, getStore, setStore } = {
 httpNonAuth.interceptors.request.use((config: any) => {//cấu hình cho page không cần đăng nhập 
     config.baseURL = DOMAIN;
     config.headers = { ...config.headers }
-    config.headers.tokenCybersoft = `TOKEN_CYBERSOFT`;
+    config.headers.tokenCybersoft = TOKEN_CYBERSOFT;
     return config
 }, err => {
     return Promise.reject(err)

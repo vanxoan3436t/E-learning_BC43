@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import quanLyNguoiDungReducer from "./reducer/quanLyNguoiDungReducer";
+import quanLyKhoaHocReducer from "./reducer/quanLyKhoaHocReducer";
 export const store = configureStore({
  reducer:{
-    quanLyNguoiDungReducer:quanLyNguoiDungReducer
+   quanLyNguoiDungReducer:quanLyNguoiDungReducer,
+    quanLyKhoaHocReducer:quanLyKhoaHocReducer
+    
  }
     
 })

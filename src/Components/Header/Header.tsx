@@ -1,18 +1,24 @@
-import React, { useRef, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import  { useRef } from 'react'
+import { NavLink} from 'react-router-dom'
 import { history } from '../..'
-
-
+import { useDispatch } from 'react-redux'
 type Props = {
 }
 
 const Header = (props: Props) => {
-  let keyInput = useRef(null)
+  const dispatch = useDispatch();
+  const keyInput = useRef('')
 
+  const handleChange = (e: any) => {
+    const { value } = e.target;
+    keyInput.current = value
+  }
   const handleSubmitSearch = async (e: any) => {
     e.preventDefault()
-    // console.log(keyInput.current.value);    
-    history.push('/search')
+    // console.log('keyInput.current', keyInput.current)
+    if (keyInput.current !== '') {
+      await history.push(`/search/${keyInput.current}`)
+    }
   }
 
   return (
@@ -103,7 +109,7 @@ const Header = (props: Props) => {
             <div className="header-bottom_col logo">
               <div>
                 <NavLink to={'/'} className='logo_link'>
-                <img  src="./img/elearning-logo.png" alt="logo" />
+                  <img src="./img/elearning-logo.png" alt="logo" />
                 </NavLink>
               </div>
             </div>
@@ -148,7 +154,7 @@ const Header = (props: Props) => {
 
             <form className="header-bottom_col" onSubmit={handleSubmitSearch}>
               <div className="search-main d-flex justify-content-between">
-                <input type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true' />
+                <input onInput={handleChange} type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true' />
                 <button className="search_button">
                   <i className="fas fa-search"></i>
                 </button>

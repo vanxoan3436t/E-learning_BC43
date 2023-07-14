@@ -1,9 +1,61 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { NavLink, useSearchParams, useParams, Params } from 'react-router-dom'
+import { DispatchType, RootState } from '../../Redux/configStote'
+import { CourseDetail, searchAsyncActionApi } from '../../Redux/reducer/quanLyKhoaHocReducer'
+
 
 type Props = {}
 
 const Search = (props: Props) => {
+  let key: any = useParams();
+// console.log('key.key', key.key)
+  const dispatch: DispatchType = useDispatch();
+  const { coursesSearchList } = useSelector((state: RootState) => state.quanLyKhoaHocReducer);
+  useEffect(() => {
+    dispatch(searchAsyncActionApi(key.key))
+  }, [key.key]);
+  const renderSearchPage = (): JSX.Element[] => {
+    return coursesSearchList.map((course: CourseDetail) => {
+      return (
+        <div className="my-course-item">
+          <div className="row">
+            <div className="col-xl-3 col-lg-4">
+              <img className='img-net' src={course.hinhAnh} alt="..." />
+            </div>
+            <div className="col-xl-7 col-lg-6 card-net-content">
+              <h6>{course.tenKhoaHoc}</h6>
+              <p className='color-card-title'>{course.moTa.length > 50 ? course.moTa.substr(0, 50) + '...' : 'ES6 là một chuẩn Javascript mới được đưa ra vào năm 2015 với nhiều quy tắc và cách sử dụng khác nhau...'}</p>
+              <div className="icon-net-card">
+                <span className="text-card-title"><i className="fa-solid fa-clock icon-oclock" /> 8 giờ</span>
+                <span className="text-card-title"><i className="fa-solid fa-calendar icon-calendar" /> 23 giờ</span>
+                <span className="text-card-title"><i className="fa-solid fa-signal icon-level " /> All level</span>
+              </div>
+              <p className="icon-star-net">
+                <i className="fa-solid fa-star" />
+                <i className="fa-solid fa-star" />
+                <i className="fa-solid fa-star" />
+                <i className="fa-solid fa-star" />
+                <i className="fa-solid fa-star" />
+              </p>
+              <div >
+                <img className="img-net-footer" src='https://i.bloganchoi.com/bloganchoi.com/wp-content/uploads/2020/02/rose-cake-820x1024.jpg?fit=640%2C20000&quality=95&ssl=1' alt='...' />
+                <span className="ml-2">Nguyễn Nam</span>
+              </div>
+
+            </div>
+            <div className="col-xl-2">
+              <NavLink className='btn  btn--common btn-primary' to='/detail'
+              >
+                Xem chi tiết
+                <i className="fa-solid fa-arrow-right"></i>
+              </NavLink>
+            </div>
+          </div>
+        </div>
+      )
+    })
+  };
   return (
     <>
       <section className='search-page-container'>
@@ -145,44 +197,11 @@ const Search = (props: Props) => {
 
             <div className="col-xl-10 col-lg-9 col-md-8">
               <h6>
-                Hiển thị 0 kết quả
+                Hiển thị {coursesSearchList.length}  kết quả
               </h6>
               <div className="course-search-result mt-3">
-                <div className="my-course-item">
-                  <div className="row">
-                    <div className="col-xl-3 col-lg-4">
-                      <img className='img-net' src="https://i.pravatar.cc?u=40" alt="..." />
-                    </div>
-                    <div className="col-xl-7 col-lg-6 card-net-content">
-                      <h6>tên khoá học</h6>
-                      <p className='color-card-title'>desription</p>
-                      <div className="icon-net-card">
-                        <span className="text-card-title"><i className="fa-solid fa-clock icon-oclock" /> 8 giờ</span>
-                        <span className="text-card-title"><i className="fa-solid fa-calendar icon-calendar" /> 23 giờ</span>
-                        <span className="text-card-title"><i className="fa-solid fa-signal icon-level " /> All level</span>
-                      </div>
-                      <p className="icon-star-net">
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                      </p>
-                      <div >
-                        <img className="img-net-footer" src="/static/media/instrutor10.89946c43.jpg" alt='...' />
-                        <span className="ml-2">Nguyễn Nam</span>
-                      </div>
-                     
-                    </div>
-                    <div className="col-xl-2">
-                        <NavLink className='btn  btn--common btn-primary' to='/detail'
-                        >
-                          Xem chi tiết
-                          <i className="fa-solid fa-arrow-right"></i>
-                        </NavLink>
-                      </div>
-                  </div>
-                </div>
+                {renderSearchPage()}
+
               </div>
             </div>
           </div>
