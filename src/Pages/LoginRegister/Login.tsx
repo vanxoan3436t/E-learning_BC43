@@ -37,26 +37,26 @@ const Login = (props: Props) => {
       soDT: "",
       maNhom: "GP01",
     },
-    // validationSchema: Yup.object().shape({
-    //   taiKhoan: Yup.string()
-    //     .min(2, 'Tài khoản quá ít kí tự')
-    //     .max(16, 'Tài khoản quá 16 kí tự')
-    //     .required('Tài khoản không được để trống'),
+    validationSchema: Yup.object().shape({
+      taiKhoan: Yup.string()
+        .min(2, 'Tài khoản quá ít kí tự')
+        .max(16, 'Tài khoản quá 16 kí tự')
+        .required('Tài khoản không được để trống'),
 
-    //   matKhau: Yup.string()
-    //     .required('Tài khoản không được để trống')
-    //     .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/, 'Mật khẩu phải ít nhất 8 tự gồm chữ, số, và kí tự đặc biệt'),
+      matKhau: Yup.string()
+        .required('Tài khoản không được để trống')
+        .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/, 'Mật khẩu phải ít nhất 8 tự gồm chữ, số, và kí tự đặc biệt'),
 
-    //   hoTen: Yup.string()
-    //     .required('Tên không được để trống')
-    //     .matches(/^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/, 'Chỉ nhập kí tự chữ'),
+      hoTen: Yup.string()
+        .required('Tên không được để trống')
+        .matches(/^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/, 'Chỉ nhập kí tự chữ'),
 
-    //   email: Yup.string().email('Email không hợp lệ').required('Email không được để trống'),
+      email: Yup.string().email('Email không hợp lệ').required('Email không được để trống'),
 
-    //   soDT: Yup.string()
-    //     .required('Số điện thoại không được để trống')
-    //     .matches(/([\+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/, 'Số điện thoại chưa đúng định đạng'),
-    // }),
+      soDT: Yup.string()
+        .required('Số điện thoại không được để trống')
+        .matches(/([\+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/, 'Số điện thoại chưa đúng định đạng'),
+    }),
     onSubmit: (values: UserSignUpFrm) => {// handleLogin sẽ ở đây
       console.log('values', values)
       const actionApi = signUpAsyncActionApi(values)

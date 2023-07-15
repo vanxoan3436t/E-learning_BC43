@@ -1,10 +1,83 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom'
+import { DispatchType, RootState } from '../../Redux/configStote';
+import { getStoreJson } from '../../util/config';
+import { getUserInfoActionApi } from '../../Redux/reducer/quanLyNguoiDungReducer';
 
 type Props = {}
 
 const Info = (props: Props) => {
-  const [classState, toggleClass] = useState(false)
+  const [classState, toggleClass] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('')
+  const dispatch: DispatchType = useDispatch();
+  const infoUser = getStoreJson('credentials');
+  const  {...userPersonalInfo}  = useSelector((state : RootState) => state.quanLyNguoiDungReducer.userPersonalInfo);
+  let { chiTietKhoaHocGhiDanh, taiKhoan, maLoaiNguoiDung } = {...userPersonalInfo};
+
+ // RenderCourser
+ const RenderUserCourses = () => {
+
+  if (chiTietKhoaHocGhiDanh) {
+      return chiTietKhoaHocGhiDanh.filter((courses) => {
+          if (searchTerm.trim() === '') {
+              return courses
+          } else if (courses.tenKhoaHoc.trim().toLocaleLowerCase().includes(searchTerm.trim().toLocaleLowerCase())) {
+              return courses
+          }
+      }).map((course, index) => {
+          return (
+              <div key={index} className="my-course-item">
+                    <div className="row">
+                      <div className="col-xl-3 col-lg-4">
+                        <img className='img-net' src={course.hinhAnh} onError={(e : any) => { e.target.onError = null; e.target.src = "https://static2.yan.vn/YanNews/2167221/201911/70868668_2079835275450016_6414538479824273408_o-1ab2f5b2.jpg" }} alt="..." />
+                      </div>
+                      <div className="col-xl-7 col-lg-6 card-net-content">
+                        <h6>{course.tenKhoaHoc}</h6>
+                        <p className='color-card-title'>{course.moTa.length > 50 ? course.moTa.substring(0, 50) + '...' : 'ES6 là một chuẩn Javascript mới được đưa ra vào năm 2015 với nhiều quy tắc và cách sử dụng khác nhau...'}</p>
+                        <div className="icon-net-card">
+                          <span className="text-card-title"><i className="fa-solid fa-clock icon-oclock" /> 8 giờ</span>
+                          <span className="text-card-title"><i className="fa-solid fa-calendar icon-calendar" /> 23 giờ</span>
+                          <span className="text-card-title"><i className="fa-solid fa-signal icon-level " /> All level</span>
+                        </div>
+                        <p className="icon-star-net">
+                          <i className="fa-solid fa-star" />
+                          <i className="fa-solid fa-star" />
+                          <i className="fa-solid fa-star" />
+                          <i className="fa-solid fa-star" />
+                          <i className="fa-solid fa-star" />
+                        </p>
+                        <div >
+                          <img className="img-net-footer" src="https://nld.mediacdn.vn/291774122806476800/2022/3/19/20200403104047-41cb-16476717856591379514951.jpg" alt='...' />
+                          <span className="ml-2">Nguyễn Nam</span>
+                        </div>
+
+                      </div>
+                      <div className="col-xl-2">
+                        <NavLink className='btn  btn--common btn-primary' to='/info'
+                        onClick={()=>{
+                          //phần này mai làm tiếp 15/7/2023 10h30pm
+                          // const action = userCancelCourse(course.maKhoaHoc)
+                          // dispatch(action)
+                        }
+                        }>
+                         Hủy Khóa Học
+                          {/* <i className="fa-solid fa-arrow-right"></i> */}
+                        </NavLink>
+                      </div>
+                    </div>
+              </div>
+          )
+      })
+
+  } else {
+      return ''
+  }
+}
+
+  useEffect(()=> {
+   dispatch(getUserInfoActionApi());
+  },[])
   return (<>
     {/* info */}
     <section className='info-page'>
@@ -40,26 +113,26 @@ const Info = (props: Props) => {
                     <div className="row">
                       <div className="col-md-7">
                         <p>Email:
-                          <span> r0qwe@gmail.com</span>
+                          <span>{infoUser?.email}</span>
                         </p>
                         <p>Họ và tên:
-                          <span> tên là</span>
+                          <span>{infoUser?.hoTen}</span>
                         </p>
                         <p>Số điện thoại:
-                          <span> 000000000000</span>
+                          <span>{infoUser?.soDT}</span>
                         </p>
                       </div>
                       <div className="col-md-5">
                         <p>Tài khoản :
-                          <span>12s1!</span>
+                          <span>{infoUser?.taiKhoan}</span>
                         </p>
                         <p>Nhóm :
-                          <span>GP01</span>
+                          <span>{infoUser?.maNhom}</span>
                         </p>
                         <p>Đối tượng :
-                          <span>Học viên</span>
+                          <span>{infoUser?.maLoaiNguoiDung}</span>
                         </p>
-                        <NavLink to='/' className='btn btn--common btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal">Cập nhật
+                        <NavLink to='' className='btn btn--common btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal">Cập nhật
                           <i className="fa-solid fa-arrow-right"></i>
                         </NavLink>
                       </div>
@@ -155,41 +228,8 @@ const Info = (props: Props) => {
                       </div>
                     </form>
                   </div>
-                  <div className="my-course-item">
-                    <div className="row">
-                      <div className="col-xl-3 col-lg-4">
-                        <img className='img-net' src="https://i.pravatar.cc?u=40" alt="..." />
-                      </div>
-                      <div className="col-xl-7 col-lg-6 card-net-content">
-                        <h6>tên khoá học</h6>
-                        <p className='color-card-title'>desription</p>
-                        <div className="icon-net-card">
-                          <span className="text-card-title"><i className="fa-solid fa-clock icon-oclock" /> 8 giờ</span>
-                          <span className="text-card-title"><i className="fa-solid fa-calendar icon-calendar" /> 23 giờ</span>
-                          <span className="text-card-title"><i className="fa-solid fa-signal icon-level " /> All level</span>
-                        </div>
-                        <p className="icon-star-net">
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                        </p>
-                        <div >
-                          <img className="img-net-footer" src="/static/media/instrutor10.89946c43.jpg" alt='...' />
-                          <span className="ml-2">Nguyễn Nam</span>
-                        </div>
-
-                      </div>
-                      <div className="col-xl-2">
-                        <NavLink className='btn  btn--common btn-primary' to='/detail'
-                        >
-                          Xem chi tiết
-                          <i className="fa-solid fa-arrow-right"></i>
-                        </NavLink>
-                      </div>
-                    </div>
-                  </div>
+                  {/*  */}
+                  {RenderUserCourses()}
                 </section>
 
               </div>

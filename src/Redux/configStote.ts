@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import quanLyNguoiDungReducer from "./reducer/quanLyNguoiDungReducer";
 import quanLyKhoaHocReducer from "./reducer/quanLyKhoaHocReducer";
+import isLoadingReducer from "./reducer/isLoadingReducer";
 export const store = configureStore({
  reducer:{
    quanLyNguoiDungReducer:quanLyNguoiDungReducer,
-    quanLyKhoaHocReducer:quanLyKhoaHocReducer
-    
+    quanLyKhoaHocReducer:quanLyKhoaHocReducer,
+    isLoadingReducer:isLoadingReducer
  }
     
 })

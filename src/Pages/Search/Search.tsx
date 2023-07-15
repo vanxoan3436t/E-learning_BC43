@@ -25,7 +25,7 @@ const Search = (props: Props) => {
             </div>
             <div className="col-xl-7 col-lg-6 card-net-content">
               <h6>{course.tenKhoaHoc}</h6>
-              <p className='color-card-title'>{course.moTa.length > 50 ? course.moTa.substr(0, 50) + '...' : 'ES6 là một chuẩn Javascript mới được đưa ra vào năm 2015 với nhiều quy tắc và cách sử dụng khác nhau...'}</p>
+              <p className='color-card-title'>{course.moTa.length > 50 ? course.moTa.substring(0, 50) + '...' : 'ES6 là một chuẩn Javascript mới được đưa ra vào năm 2015 với nhiều quy tắc và cách sử dụng khác nhau...'}</p>
               <div className="icon-net-card">
                 <span className="text-card-title"><i className="fa-solid fa-clock icon-oclock" /> 8 giờ</span>
                 <span className="text-card-title"><i className="fa-solid fa-calendar icon-calendar" /> 23 giờ</span>

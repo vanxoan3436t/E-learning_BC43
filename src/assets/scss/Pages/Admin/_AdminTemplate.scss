@@ -78,12 +78,9 @@
                             padding: 8px 12px
                         }
 
-
                     }
 
                     .card-header-right {
-                        form {}
-
                         .login-info {
                             span {
                                 text-align: right;
@@ -96,6 +93,8 @@
                                 height: 50px;
                                 width: 50px;
                                 border-radius: 50%;
+                                object-fit: cover;
+                            
                             }
 
                             .dropdown {

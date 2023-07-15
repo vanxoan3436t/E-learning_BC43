@@ -79,7 +79,7 @@ export default function UserUpdateInfo({}: Props) {
               </form>
         </div>
         <div className="modal-footer">
-        <button type="button" className="btn btn-danger">Đóng</button>
+        <button type="button" className="btn btn-danger" data-bs-dismiss='modal'>Đóng</button>
           <button type="button" className="btn" data-bs-dismiss="modal">Cập nhật</button>
        
         </div>

@@ -55,7 +55,7 @@ const quanLyKhoaHocReducer = createSlice({
     reducers: {
         getCourseListAction: (state: StateDefault, action: PayloadAction<[]>) => {
             state.courseList = action.payload
-            console.log('action.payload', action.payload)
+            // console.log('action.payload', action.payload)
         },
         getSearchListAction: (state: StateDefault, action: PayloadAction<[]>) => {
             state.coursesSearchList = action.payload

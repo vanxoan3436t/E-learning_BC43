@@ -1,5 +1,6 @@
 import axios from "axios";
 import { history } from "..";
+// import  jwt_decode  from 
 
 //setup hằng số
 export const DOMAIN = 'https://elearningnew.cybersoft.edu.vn';
@@ -18,7 +19,7 @@ export const httpNonAuth = axios.create({
 })
 
 
-export const { getStoreJson, setStoreJson, getStore, setStore } = {
+export const { getStoreJson, setStoreJson, getStore, setStore, clearStorage } = {
     //  tại sao lại dùng any vì local stote của mình khi parse ra ob ra format model ,user login ... sẽ ra nhiều kiểu format  
     getStoreJson: (name: string): any => {
         if (localStorage.getItem(name)) {
@@ -36,6 +37,9 @@ export const { getStoreJson, setStoreJson, getStore, setStore } = {
     },
     setStore: (name: string, data: string): void => {
         localStorage.setItem(name, data);
+    },
+    clearStorage: (name: string): any => {//removeItem xoá 
+        localStorage.removeItem(name)
     }
 }
 httpNonAuth.interceptors.request.use((config: any) => {//cấu hình cho page không cần đăng nhập 
@@ -48,13 +52,29 @@ httpNonAuth.interceptors.request.use((config: any) => {//cấu hình cho page kh
 });
 http.interceptors.request.use((config: any) => {//cấu hình cho page cần đăng nhập 
     config.headers = { ...config.headers }
-    let token = getStoreJson(USER_LOGIN)?.accessToken;
+    let token = getStoreJson('credentials')?.accessToken;
     config.headers.Authorization = `Bearer ${token}`;
     config.headers.tokenCybersoft = TOKEN_CYBERSOFT;
     return config
 }, err => {
-    return Promise.reject(err)
+    console.log('err', err)
+    // return Promise.reject(err)
 });
 
-
-
+//Cấu hình cho response (kết quả trả về từ api)
+http.interceptors.response.use((res) => {
+    return res;
+}, (err) => {
+    //Xử lý lỗi cho api bị lỗi theo status code 
+    console.log(err);
+    if (err.response?.status === 401) {
+        alert('Đăng nhập để vào trang này !')
+        history.push('/login')
+        if (err.response?.status === 403) {
+            alert('Không đủ quyền truy cập vào trang này !');
+            history.push('/admin/login');
+        }
+        return Promise.reject(err);
+    }
+}
+)

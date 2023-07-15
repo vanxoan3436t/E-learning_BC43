@@ -15,6 +15,7 @@ import DashBoard from './Pages/Admin/DashBoard/DashBoard';
 import InfoAdmin from './Pages/Admin/InfoAdmin/InfoAdmin';
 import UserManageme from './Pages/Admin/UserManagement/UserManagement';
 import CourseManagement from './Pages/Admin/CourseManagement/CourseManagement';
+import Loading from './Components/Loading/Loading';
 
 export const history: any = createBrowserHistory();
 
@@ -23,25 +24,28 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <Provider store={store} >
+        <Loading></Loading>
         <HistoryRouter history={history}>
             <Routes>
-                <Route path='' element={<HomeTemplate />}>
+                <Route path='/' element={<HomeTemplate />}>
                     <Route index element={<Home />}></Route>
                     <Route path="search/:key" element={<Search />}></Route>
                     <Route path="info" element={<Info />}></Route>
                     <Route path='infoadmin' element={<InfoAdmin />}></Route>
+                 
                     <Route path='*' element={<Navigate to='/' />}></Route>
                 </Route>
-                
+
                 <Route path='admin' element={<AdminTemplate />}>
                     <Route index element={<DashBoard />}></Route>
                     <Route path='dashboard' element={<DashBoard />}></Route>
-                    <Route path='./usermanagement' element={<UserManageme />}></Route>
-                    <Route path='./coursemanagement' element={<CourseManagement />}></Route>
+                  
+                    <Route path='usermanagement' element={<UserManageme />}></Route>
+                    <Route path='coursemanagement' element={<CourseManagement />}></Route>
                     <Route path="*" element={<Navigate to="/admin" />}></Route>
                 </Route>
-                <Route path='login'  element={<Login />}>
-                <Route path="*" element={<Navigate to="/login" />}></Route>
+                <Route path='login' element={<Login />}>
+                    <Route path="*" element={<Navigate to="/login" />}></Route>
                 </Route>
             </Routes>
         </HistoryRouter>

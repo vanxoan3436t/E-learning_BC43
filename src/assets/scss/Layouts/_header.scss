@@ -19,7 +19,7 @@
         padding-bottom: 16.5px;
         border-bottom: 1px solid #e1e1e1;
 
-        .container-fluid{
+        .container-fluid {
             .row {
                 .col-lg-9 {
 
@@ -69,7 +69,7 @@
                         ul {
                             display: inline-flex;
 
-                           
+
                         }
 
                     }
@@ -190,18 +190,60 @@
                         }
                     }
 
-                    &:nth-child(3) {
+                    &:nth-child(4) {
+                        display: flex;
+                        align-items: center;
+                        span {
+                            font-size: $fs-c8;
+                        }
 
-                        
-                        
+                        .header-avatar {
+                    
+                            .header-set {
+                                display: inline-block;
+                                margin-right: 5px;
+                                cursor: pointer;
+                            }
+
+                            .to-info {
+                                position: relative;
+                                display: inline-block;
+                                width: 50px;
+                                height: 50px;
+                              
+                                .your-avatar {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 50%;
+                                    object-fit: cover;
+                                }
+
+                                .logout {
+                                    position: absolute;
+                                    top: 18%;
+                                    right: 1%;
+                                    opacity: 0;
+                                    transition: .5s;
+                                }
+                                &:hover .logout{
+                                  opacity: 1;
+                                    right: -55%;
+                                    transition: .5s;
+                                }
+                            }
+                        }
+
+
+
                     }
                 }
             }
         }
     }
 
-  
+
 }
+
 header.sticky-on.sticky .navbar-wrap {
     position: fixed;
     top: 0;
