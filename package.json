@@ -29,6 +29,7 @@
     "react-scroll-trigger": "^0.6.14",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "sweetalert": "^2.1.2",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
     "wowjs": "^1.1.3",

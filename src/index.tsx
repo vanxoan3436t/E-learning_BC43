@@ -24,7 +24,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <Provider store={store} >
-        <Loading></Loading>
+        {/* <Loading></Loading> */}
         <HistoryRouter history={history}>
             <Routes>
                 <Route path='/' element={<HomeTemplate />}>
@@ -54,3 +54,4 @@ root.render(
 
 ////tsrafce dùng tạo function có typescript
 //https://i.pravatar.cc?u=40
+//  window.location.reload();

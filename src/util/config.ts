@@ -48,7 +48,9 @@ httpNonAuth.interceptors.request.use((config: any) => {//cấu hình cho page kh
     config.headers.tokenCybersoft = TOKEN_CYBERSOFT;
     return config
 }, err => {
-    return Promise.reject(err)
+    // return Promise.reject(err)
+    console.log('err', err)
+
 });
 http.interceptors.request.use((config: any) => {//cấu hình cho page cần đăng nhập 
     config.headers = { ...config.headers }
@@ -74,7 +76,8 @@ http.interceptors.response.use((res) => {
             alert('Không đủ quyền truy cập vào trang này !');
             history.push('/admin/login');
         }
-        return Promise.reject(err);
+        // return Promise.reject(err);
+        console.log('err', err)
     }
 }
 )

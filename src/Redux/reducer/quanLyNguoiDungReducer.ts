@@ -1,9 +1,10 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { USER_LOGIN, getStore, getStoreJson, http, httpNonAuth, setStoreJson } from '../../util/config';
-import { UserLoginFrm } from '../../Pages/LoginRegister/Login';
+import { UserLoginFrm, UserSignUpFrm } from '../../Pages/LoginRegister/Login';
 import { history } from '../..';
 import { DispatchType } from '../configStote';
-
+import swal from 'sweetalert';
+import { UserUpdateFrm } from '../../Pages/Info/Info';
 export interface ChiTietKhoaHocGhiDanh {
   maKhoaHoc: string;
   tenKhoaHoc: string;
@@ -29,14 +30,23 @@ export interface InFoUser {
 export interface IsLoading {
   isLoading: boolean
 }
-export interface UserSignUpApi {
+
+export interface UserSignUp {
   taiKhoan: string,
   matKhau: string,
   hoTen: string,
   email: string,
   soDT: string,
   maNhom: string,
+}
+export interface UserModel {
+  taiKhoan: string,
+  matKhau: string,
+  hoTen: string,
+  soDT: string,
+  maNhom: string,
   maLoaiNguoiDung: string,
+  email: string,
 }
 
 export interface UserLoginApi {
@@ -44,11 +54,10 @@ export interface UserLoginApi {
   matKhau: string
 }
 
-
 export interface UserState {
   userLogin: UserLoginApi | undefined
-  userSignUp: UserSignUpApi | undefined
-  credentials : {}
+  userSignUp: UserSignUp | undefined
+  credentials: {}
   userPersonalInfo: InFoUser | {}
   myCourseDetail: []
   userArray: []
@@ -76,15 +85,16 @@ const quanLyNguoiDungReducer = createSlice({
   reducers: {
     // credentials: (state: UserState, action: PayloadAction<{}>) => {
     //   state.credentials = action.payload
-
     // },
-    signUpAction: (state: UserState, action: PayloadAction<UserSignUpApi>) => {
+    signUpAction: (state: UserState, action: PayloadAction<UserSignUp>) => {
       state.userSignUp = action.payload
     },
     getUserInfoAction: (state: UserState, action: PayloadAction<InFoUser>) => {
       state.userPersonalInfo = action.payload
     },
-
+    upDateInfoAction: (state: UserState, action: PayloadAction<UserModel>) => {
+      state.userPersonalInfo = action.payload
+    }
   },
   extraReducers: (builder) => {
     /*
@@ -94,25 +104,21 @@ const quanLyNguoiDungReducer = createSlice({
          + rejected: Khi kết quả api trả về thất bại
       */
     // Xử lý dữ liệu trả về api
-    //    builder.addCase(loginAsyncAction.fulfilled, (state: UserState, action: PayloadAction<UserLoginApi>) => {
-    //     state.userLogin = action.payload;
-    //     // state.isLoading = false;
-    // })
-
     builder.addCase(loginAsyncActionApi.pending, (state: UserState, action) => {
-      // state.isLoading = true;
     }).addCase(loginAsyncActionApi.fulfilled, (state: UserState, action: PayloadAction<UserLoginApi>) => {
       state.userLogin = action.payload;
-      // state.isLoading = false;
     }).addCase(loginAsyncActionApi.rejected, (state: UserState, action) => {
-      alert('Đăng nhập thất bại !');
-      // state.isLoading = false;
+      swal({
+        title: "Đăng nhập thất bại !",
+        icon: "warning",
+        timer: 2000,
+      });
     })
   }
 
 });
 
-export const { getUserInfoAction } = quanLyNguoiDungReducer.actions
+export const { getUserInfoAction, upDateInfoAction } = quanLyNguoiDungReducer.actions
 
 export default quanLyNguoiDungReducer.reducer
 
@@ -127,31 +133,78 @@ export default quanLyNguoiDungReducer.reducer
     403: Forbiden ( Lỗi chưa đủ quyền truy cập vào api )
 
 */
+//Đăng nhập
 export const loginAsyncActionApi = createAsyncThunk('loginAsyncActionApi', async (userlogin: UserLoginFrm) => {
-
-  //call api
   const result = await http.post(`/api/QuanLyNguoiDung/DangNhap`, userlogin);
   setStoreJson('credentials', result.data)
   const maLoaiNguoiDung = result.data.maLoaiNguoiDung;
-  if (maLoaiNguoiDung === 'GV') {
-    history.push('/admin/')
-  } else {
-    history.push('/')
+  if (result.request?.status === 200) {
+    swal({
+      title: "Đăng nhập thành công !",
+      icon: "success",
+      timer: 1350,
+    });
+    if (maLoaiNguoiDung === 'GV') {
+      history.push('/admin/')
+    } else {
+      history.push('/')
+    }
   }
-
   return result.data
 });
-
-export const signUpAsyncActionApi = createAsyncThunk('signUpAsyncActionApi', async (userSignUp: UserLoginFrm) => {
-  //call api
-  const result = await http.post(`/api/QuanLyNguoiDung/DangKy`, userSignUp);
+//Đăng kí
+export const signUpAsyncActionApi = createAsyncThunk('signUpAsyncActionApi', async (userSignUp: UserSignUpFrm) => {
+  const result = await httpNonAuth.post(`/api/QuanLyNguoiDung/DangKy`, userSignUp);
+  console.log('result', result)
   return result.data
 });
-
+// Lấy thông tin người dùng
 export const getUserInfoActionApi = () => {
   return async (dispacth: DispatchType) => {
-      const result = await http.post(`/api/QuanLyNguoiDung/ThongTinTaiKhoan`,)
-      const action: PayloadAction<{}> = getUserInfoAction(result.data);
+    const result = await http.post(`/api/QuanLyNguoiDung/ThongTinTaiKhoan`,)
+    const action: PayloadAction<{}> = getUserInfoAction(result?.data);
+    dispacth(action)
+  }
+}
+//Update thông tin người dùng
+export const updateUserInfoActionApi = (values: UserUpdateFrm) => {
+  return async (dispacth: DispatchType,) => {
+    try {
+      const result = await http.put(`/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung`, values)
+      if (result.request?.status === 200) {
+        swal({
+          title: "Cập nhật thành công",
+          icon: "success",
+          timer: 2000,
+        });
+      } 
+      const action: PayloadAction<{}> = upDateInfoAction(result.data);
       dispacth(action)
+    } catch (err : any) {
+        swal({
+          // title: err.response?.data,
+          title: "Kiểm tra lại email ",
+          icon: "warning",
+          timer: 2000,
+
+      });
+    }
+  }
+}
+
+//Hủy khóa học (phải đăng kí khóa học - mới hủy khóa học)
+export const userCancelCourseActionApi = (key: string) => {
+  return async (dispacth: DispatchType,) => {
+
+    try {
+      const result = await http.post(`/api/QuanLyKhoaHoc/HuyGhiDanh`, key)
+      if (result.request?.status === 200) {
+      
+      } 
+      const action: PayloadAction<{}> = upDateInfoAction(result.data);
+      dispacth(action)
+    } catch (err : any) {
+       
+    }
   }
 }
