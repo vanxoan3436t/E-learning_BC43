@@ -1,18 +1,9 @@
 import React from 'react'
 
- interface SwitchProps {
-value:boolean ;
-onChange :() => void ;
+type Props = {}
 
-}
-
-const Demo = (props : SwitchProps) => {
+export default function Demo({}: Props) {
   return (
-    <div onClick = {props.onChange} className={`$p`}>
-
-
-    </div>
+    <div>Demo</div>
   )
 }
-
-export default Demo

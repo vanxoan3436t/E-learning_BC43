@@ -4,6 +4,7 @@ import UserUpdateInfo from '../../Pages/Admin/UserManagement/UserUpdateInfo'
 import { getStoreJson } from '../../util/config'
 // import { logOut } from '../../Redux/reducer/quanLyNguoiDungReducer'
 import { history } from '../..'
+import swal from 'sweetalert'
 
 type Props = {}
 
@@ -20,11 +21,13 @@ export default function LoginInfo({}: Props) {
       </button>
       <ul className="dropdown-menu">
         <li><NavLink className="dropdown-item" to="/info" data-bs-toggle="modal" data-bs-target="#userUpdateInfo">Cập nhật thông tin</NavLink></li>
-        <li><NavLink className="dropdown-item" to="/login"  onClick={()=>{
-           
-            alert('Cần đăng nhập tài khoản quản trị !')
-            window.location.reload();
-
+        <li><NavLink className="dropdown-item" to="/"  onClick={()=>{
+           localStorage.removeItem("credentials");
+           swal({
+             title: "Đăng xuất thành công !",
+             icon: "success",
+             timer: 2000,
+           });
             }}>Đăng xuất</NavLink></li>
       </ul>
     </span>

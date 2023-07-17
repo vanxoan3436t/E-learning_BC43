@@ -11,11 +11,10 @@ import Info from './Pages/Info/Info';
 import { Provider } from 'react-redux';
 import { store } from './Redux/configStote';
 import AdminTemplate from './Templates/AdminTemplate/AdminTemplate';
-import DashBoard from './Pages/Admin/DashBoard/DashBoard';
 import InfoAdmin from './Pages/Admin/InfoAdmin/InfoAdmin';
 import UserManageme from './Pages/Admin/UserManagement/UserManagement';
 import CourseManagement from './Pages/Admin/CourseManagement/CourseManagement';
-import Loading from './Components/Loading/Loading';
+import Demo from './Demo';
 
 export const history: any = createBrowserHistory();
 
@@ -37,10 +36,7 @@ root.render(
                 </Route>
 
                 <Route path='admin' element={<AdminTemplate />}>
-                    <Route index element={<DashBoard />}></Route>
-                    <Route path='dashboard' element={<DashBoard />}></Route>
-                  
-                    <Route path='usermanagement' element={<UserManageme />}></Route>
+                    <Route index  element={<UserManageme />}></Route>
                     <Route path='coursemanagement' element={<CourseManagement />}></Route>
                     <Route path="*" element={<Navigate to="/admin" />}></Route>
                 </Route>

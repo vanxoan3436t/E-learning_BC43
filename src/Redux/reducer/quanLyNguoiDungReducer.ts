@@ -27,10 +27,6 @@ export interface InFoUser {
   email: string;
 }
 
-export interface IsLoading {
-  isLoading: boolean
-}
-
 export interface UserSignUp {
   taiKhoan: string,
   matKhau: string,

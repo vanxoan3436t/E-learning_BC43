@@ -28,7 +28,7 @@ export default function CourseManagement({ }: Props) {
         </div>
       </div>
 
-      <div className="container-fluid px-0">
+      <div className="container-fluid ">
         <table className="table table-bordered table-hover myTable">
           <thead className="text-dark bg-light">
             <tr style={{ width: '100%' }}>

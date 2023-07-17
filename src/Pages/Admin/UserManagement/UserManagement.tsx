@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import LoginInfo from '../../../Components/LoginInfo/LoginInfo'
 import ModalAddUser from './ModalAddUser'
 import EditUserInfoModal from './EditUserInfoModal'
 import UserRegisterModal from './UserRegisterModal'
+import { useDispatch, useSelector } from 'react-redux'
+import { DispatchType, RootState } from '../../../Redux/configStote'
 
 type Props = {}
 
 export default function UserManagement({ }: Props) {
+const  dispatch : DispatchType = useDispatch()
+const userArray = useSelector((state : RootState) => state.quanLyNguoiDungReducer.userArray)
+console.log('userArray', userArray)
+const [currentItems, setCurrentItems] = useState([]);//mục hiện tại
+const [pageCount, setPageCount] = useState(0);// số lượng trang
+const [itemOffset, setItemOffset] = useState(0);//mục tắt đặt
   return (
     <div className='details user-management card container-fluid'>
       <div className="card-header">
@@ -21,9 +29,7 @@ export default function UserManagement({ }: Props) {
                 <input type="text" placeholder='Nhập vào tài khoản hoặc tên người dùng' className='header-search_input form-control' data-ms-editor='true' />
               </form>
             </div>
-            {/* Login info */}
             <LoginInfo />
-
           </div>
         </div>
       </div>
@@ -79,7 +85,6 @@ export default function UserManagement({ }: Props) {
           </tbody>
         </table>
       </div>
-      {/* các modal */}
       {/* modal thêm người dùng */}
       <ModalAddUser />
       {/* modal ghi danh */}

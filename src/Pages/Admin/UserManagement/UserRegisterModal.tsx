@@ -6,7 +6,7 @@ type Props = {}
 export default function UserRegisterModal({ }: Props) {
     return (
         <div className="modal fade" id="userReg">
-            <div className="modal-dialog formCourse">
+            <div className="modal-dialog form-course">
                 <div className="modal-content">
                     {/* modal footer */}
                     <div className="modal-body ">
