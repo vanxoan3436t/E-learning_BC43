@@ -50,6 +50,14 @@ export interface UserLoginApi {
   matKhau: string
 }
 
+export interface UserArr {
+  taiKhoan: string
+  hoTen: string
+  email: string
+  soDt: string
+  maLoaiNguoiDung: string
+}
+
 export interface UserState {
   userLogin: UserLoginApi | undefined
   userSignUp: UserSignUp | undefined
@@ -90,6 +98,9 @@ const quanLyNguoiDungReducer = createSlice({
     },
     upDateInfoAction: (state: UserState, action: PayloadAction<UserModel>) => {
       state.userPersonalInfo = action.payload
+    },
+    getListUserAction: (state: UserState, action: PayloadAction<[]>) => {
+      state.userArray = action.payload
     }
   },
   extraReducers: (builder) => {
@@ -114,7 +125,7 @@ const quanLyNguoiDungReducer = createSlice({
 
 });
 
-export const { getUserInfoAction, upDateInfoAction } = quanLyNguoiDungReducer.actions
+export const { getUserInfoAction, upDateInfoAction, getListUserAction } = quanLyNguoiDungReducer.actions
 
 export default quanLyNguoiDungReducer.reducer
 
@@ -173,15 +184,15 @@ export const updateUserInfoActionApi = (values: UserUpdateFrm) => {
           icon: "success",
           timer: 2000,
         });
-      } 
+      }
       const action: PayloadAction<{}> = upDateInfoAction(result.data);
       dispacth(action)
-    } catch (err : any) {
-        swal({
-          // title: err.response?.data,
-          title: "Kiểm tra lại email ",
-          icon: "warning",
-          timer: 2000,
+    } catch (err: any) {
+      swal({
+        // title: err.response?.data,
+        title: "Kiểm tra lại email ",
+        icon: "warning",
+        timer: 2000,
 
       });
     }
@@ -195,12 +206,33 @@ export const userCancelCourseActionApi = (key: string) => {
     try {
       const result = await http.post(`/api/QuanLyKhoaHoc/HuyGhiDanh`, key)
       if (result.request?.status === 200) {
-      
-      } 
+
+      }
       const action: PayloadAction<{}> = upDateInfoAction(result.data);
       dispacth(action)
-    } catch (err : any) {
-       
+    } catch (err: any) {
+
     }
+  }
+}
+
+export const getUserArrActionApi = () => {
+  return async (dispatch: DispatchType) => {
+    const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa?=1`)
+    const action: PayloadAction<UserArr[]> = getListUserAction(result.data);
+    dispatch(action)
+  }
+}
+
+export const searchUserActionApi = (key: string) => {
+  return async (dispacth: DispatchType) => {
+    try {
+      const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa=${key}`)
+      const action: PayloadAction<UserArr[]> = getListUserAction(result.data);
+      dispacth(action)
+      console.log('action.payload', action.payload)
+    } catch (error) {
+      console.log('error', error)
+    };
   }
 }

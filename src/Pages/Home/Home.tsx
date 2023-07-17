@@ -7,10 +7,9 @@ import Case from './Case/Case'
 import Support from './SupportBG/Support'
 import BlogsHome from './BlogsHome/BlogsHome'
 import Contact from './ContactHome/Contact'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { getListCourseActionApi } from '../../Redux/reducer/quanLyKhoaHocReducer'
-import { DispatchType, RootState } from '../../Redux/configStote'
-import { useSearchParams } from 'react-router-dom'
+import { DispatchType } from '../../Redux/configStote'
 
 type Props = {}
 const Home = (props: Props) => {

@@ -2,8 +2,16 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { Layout } from 'antd';
 import Sider from 'antd/es/layout/Sider';
 import { Content } from 'antd/es/layout/layout';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { DispatchType } from '../../Redux/configStote';
+import { getUserArrActionApi } from '../../Redux/reducer/quanLyNguoiDungReducer';
 type Props = {}
 const AdminTemplate = (props: Props) => {
+const dispatch : DispatchType= useDispatch();
+  useEffect(()=> {
+    dispatch(getUserArrActionApi());
+  },[]);
   return (
     <Layout className='admin container-fluid'>
       <Sider width={80} style={{ height: '100%' }} className=' admin-body align-middle'>

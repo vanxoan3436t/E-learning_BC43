@@ -1,3 +1,15 @@
+Do phần đa chỉ có 1 người code nên là sẽ không tạo nhánh tránh việc merge nhánh lỗi và gây mất thêm thời gian 
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

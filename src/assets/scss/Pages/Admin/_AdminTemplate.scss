@@ -1,6 +1,9 @@
+@import '../../Components/reactPaginate';
+// @import '../../Helpers/variables';
 .admin {
     background: $bg-c5-primary;
-padding: 20px;
+    padding: 20px;
+
     .admin-body {
         display: flex;
         height: 100%;
@@ -14,7 +17,7 @@ padding: 20px;
             // background-size: cover;
             color: #fff;
             transition: all .3s;
-            border-radius: 10px 10px;
+            // border-radius: 10px 10px;
             padding: 5px 10px;
             min-height: 90vh;
             text-align: center;
@@ -54,16 +57,17 @@ padding: 20px;
 
         }
 
-       
+
     }
+
     .details {
         background: #fff;
         border-radius: 10px;
         box-shadow: 2px 2px 2px rgba(34, 144, 115, .205);
         margin-left: 5px;
         text-align: center;
-height: 90vh;
-padding: 20px 0;
+        height: 90vh;
+        padding: 20px 0;
 
         .card-header {
             background: none;
@@ -97,7 +101,7 @@ padding: 20px 0;
                             width: 50px;
                             border-radius: 50%;
                             object-fit: cover;
-                        
+
                         }
 
                         .dropdown {
@@ -139,10 +143,15 @@ padding: 20px 0;
         }
 
         table {
+            font-size: $fs-c4;
             thead {
                 tr {
+                    border-color: #000;
                     th {
-                        span {}
+                        border-color:#000;
+                        span {
+                            font-weight: $fw-semiBold;
+                        }
                     }
                 }
 
@@ -150,8 +159,10 @@ padding: 20px 0;
 
             tbody {
                 tr {
+                    border-color: $bg-c1-dark;
                     td {
-
+                        border-color: $bg-c1-dark;
+font-weight: 400;
                         & {
                             button {
                                 border-radius: 5px;

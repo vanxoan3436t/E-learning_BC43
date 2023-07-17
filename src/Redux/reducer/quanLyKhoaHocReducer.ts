@@ -31,7 +31,7 @@ export interface CourseDetail {
 
 
 export interface StateDefault {
-    courseList: [],
+    coursesList: [],
     courseDetail: CourseDetail[],
     coursesCategary: [],
     coursesCategaryList: [],
@@ -40,7 +40,7 @@ export interface StateDefault {
 }
 
 const initialState: StateDefault = {
-    courseList: [],// gọi api luôn khi load trang 
+    coursesList: [],// gọi api luôn khi load trang 
     courseDetail: [],
     coursesCategary: [],// kiểu ở trên navlink danh mục
     coursesCategaryList: [],// gọi api sau khi ấn vô navlink page danh mục khóa học
@@ -53,9 +53,8 @@ const quanLyKhoaHocReducer = createSlice({
     name: 'quanLyKhoaHocReducer',
     initialState,
     reducers: {
-        getCourseListAction: (state: StateDefault, action: PayloadAction<[]>) => {
-            state.courseList = action.payload
-            // console.log('action.payload', action.payload)
+        getCoursesListAction: (state: StateDefault, action: PayloadAction<[]>) => {
+            state.coursesList = action.payload
         },
         getSearchListAction: (state: StateDefault, action: PayloadAction<[]>) => {
             state.coursesSearchList = action.payload
@@ -64,7 +63,7 @@ const quanLyKhoaHocReducer = createSlice({
     }
 });
 
-export const { getCourseListAction, getSearchListAction } = quanLyKhoaHocReducer.actions
+export const { getCoursesListAction, getSearchListAction } = quanLyKhoaHocReducer.actions
 
 export default quanLyKhoaHocReducer.reducer
 
@@ -79,13 +78,10 @@ export default quanLyKhoaHocReducer.reducer
     403: Forbiden ( Lỗi chưa đủ quyền truy cập vào api )
 
 */
-
-
 export const getListCourseActionApi = () => {
     return async (dispacth: DispatchType) => {
         const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01`)
-        const action: PayloadAction<CourseDetail[]> = getCourseListAction(result.data);
-        // console.log('action', action)
+        const action: PayloadAction<CourseDetail[]> = getCoursesListAction(result.data);
         dispacth(action)
     }
 }
@@ -96,6 +92,20 @@ export const searchAsyncActionApi = (key: string) => {
             const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${key}&MaNhom=GP01`)
             const action: PayloadAction<CourseDetail[]> = getSearchListAction(result.data);
             dispacth(action)
+            console.log('action.payload', action.payload)
+        } catch (error) {
+            console.log('error', error)
+        };
+    }
+}
+
+export const searchCoursesAsyncActionApi = (key: string) => {
+    return async (dispacth: DispatchType) => {
+        try {
+            const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${key}&MaNhom=GP01`)
+            const action: PayloadAction<CourseDetail[]> = getCoursesListAction(result.data);
+            dispacth(action)
+            console.log('action.payload', action.payload)
         } catch (error) {
             console.log('error', error)
         };
