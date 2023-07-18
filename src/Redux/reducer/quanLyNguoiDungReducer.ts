@@ -175,7 +175,7 @@ export const getUserInfoActionApi = () => {
 }
 //Update thông tin người dùng
 export const updateUserInfoActionApi = (values: UserUpdateFrm) => {
-  return async (dispacth: DispatchType,) => {
+  return async (dispacth: DispatchType) => {
     try {
       const result = await http.put(`/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung`, values)
       if (result.request?.status === 200) {
@@ -187,7 +187,7 @@ export const updateUserInfoActionApi = (values: UserUpdateFrm) => {
       }
       const action: PayloadAction<{}> = upDateInfoAction(result.data);
       dispacth(action)
-    } catch (err: any) {
+    } catch (err) {
       swal({
         // title: err.response?.data,
         title: "Kiểm tra lại email ",
@@ -234,5 +234,30 @@ export const searchUserActionApi = (key: string) => {
     } catch (error) {
       console.log('error', error)
     };
+  }
+}
+//Thêm người dùng
+export const addUserActionApi = (values: UserModel) => {
+
+  return async (dispatch: DispatchType) => {
+    try {
+      const result = await http.post(`/api/QuanLyNguoiDung/ThemNguoiDung`,values)
+      if (result.request?.status === 200) {
+        swal({
+          title: "Thêm thành công",
+          icon: "success",
+          timer: 2000,
+        });
+      }
+      dispatch(getUserArrActionApi());//dữ liệu thêm người dùng đã được gửi thành công trên sever backend nên ta chỉ cần dispacth lại(gọi lại hàm lấy danh sách người dùng và render lại)
+    
+    } catch (err) {
+      swal({
+        // title: errors.response?.data,
+        icon: "warning",
+        text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
+        timer: 2000,
+      });
+    }
   }
 }

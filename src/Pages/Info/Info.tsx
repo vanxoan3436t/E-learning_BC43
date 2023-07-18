@@ -6,7 +6,6 @@ import { getStoreJson } from '../../util/config';
 import { getUserInfoActionApi, updateUserInfoActionApi, } from '../../Redux/reducer/quanLyNguoiDungReducer';
 import * as Yup from 'yup'
 import { useFormik } from 'formik';
-
 type Props = {}
 export interface UserUpdateFrm {
   taiKhoan: string,
@@ -171,7 +170,7 @@ const Info = (props: Props) => {
                         <p>Đối tượng :
                           <span>{maLoaiNguoiDung}</span>
                         </p>
-                        <NavLink to='' className='btn btn--common btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal">Cập nhật
+                        <NavLink to='' className='btn btn--common btn-primary' data-bs-toggle="modal" data-bs-target="#update-info">Cập nhật
                           <i className="fa-solid fa-arrow-right"></i>
                         </NavLink>
                       </div>

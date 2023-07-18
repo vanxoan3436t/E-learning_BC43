@@ -1,4 +1,5 @@
 @import '../../Components/reactPaginate';
+
 // @import '../../Helpers/variables';
 .admin {
     background: $bg-c5-primary;
@@ -78,7 +79,7 @@
                     padding: 10px;
                     margin-right: auto;
 
-                    a {
+                    button {
                         background-color: $bg-c4-primary;
                         border-radius: 5px;
                         color: $text-c0-white;
@@ -144,11 +145,14 @@
 
         table {
             font-size: $fs-c4;
+
             thead {
                 tr {
                     border-color: #000;
+
                     th {
-                        border-color:#000;
+                        border-color: #000;
+
                         span {
                             font-weight: $fw-semiBold;
                         }
@@ -160,9 +164,11 @@
             tbody {
                 tr {
                     border-color: $bg-c1-dark;
+
                     td {
                         border-color: $bg-c1-dark;
-font-weight: 400;
+                        font-weight: 400;
+
                         & {
                             button {
                                 border-radius: 5px;
@@ -217,8 +223,8 @@ font-weight: 400;
 
                     form {
                         .form-group {
-                            margin-bottom: 1rem;
-
+                            margin-bottom: 1.5rem;
+position: relative;
                             .input-group {
                                 position: relative;
                                 display: flex;
@@ -256,6 +262,11 @@ font-weight: 400;
                                     color: $text-c2-dark;
                                     font-weight: $fw-regular ;
                                 }
+
+                                
+                            }
+                            .text-err {
+                                position: absolute;
                             }
                         }
                     }

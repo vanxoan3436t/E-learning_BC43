@@ -38,14 +38,14 @@ export default function CourseManagement({ }: Props) {
   const handleChange = (e: any) => {
     const { value } = e.target;
     keyRef.current = value;
-    dispatch(searchCoursesAsyncActionApi(keyRef.current))
-  }
+    dispatch(searchCoursesAsyncActionApi(keyRef.current));
+  };
   const handleSubmit = (e: any) => {
     e.preventDefault();
   }
   useEffect(()=> {
-    dispatch(getListCourseActionApi())
-  },[])
+      dispatch(getListCourseActionApi());
+  },[]);
   //render danh sách khóa học
   const renderCourseList = (currentItems: any) => {
     return currentItems.map((item: CourseDetail, index: number) => {
@@ -75,7 +75,7 @@ export default function CourseManagement({ }: Props) {
       <div className="card-header">
         <div className="row">
           <div className='col-auto me-auto card-header-left'>
-            <NavLink className='btn btn-modal1' to="/admin" id='btnThem' data-bs-toggle="modal" data-bs-target="#addCourse">Thêm Khóa Học</NavLink>
+            <button className='btn btn-modal1' id='btnThem' data-bs-toggle="modal" data-bs-target="#addCourse">Thêm Khóa Học</button>
           </div>
           <div className="col-7 row ms-auto card-header-right ">
             <div className='col-7 p-1'>
