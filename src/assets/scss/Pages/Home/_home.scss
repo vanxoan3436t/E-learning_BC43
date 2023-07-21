@@ -4,11 +4,11 @@
 @import './BlogsHome/blogs';
 @import './ContactHome/contact';
 @import './Services/ServicesHome';
+
 .info-coure-box {
-    padding: 122px 0 80px;
+    padding: 50px 0 50px;
 
     .info-course-home {
-
         .info-gird {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -36,7 +36,6 @@
                     visibility: hidden;
                     transition: all 0.4s ease;
                 }
-
                 .info-item-content {
                     div {
                         position: relative;
@@ -56,7 +55,6 @@
                             font-size: $fs-c12 ;
                         }
                     }
-
 
                     p {
                         position: relative;
@@ -111,10 +109,14 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center 10.5141px;
-
+    @include ScreenSize($md){
+        padding: 75px 0 50px;
+    }
     .container {
         .row {
             div {
+                @include ScreenSize($md){
+                }
                 .counter__item {
                     span {
                         font-size: $fs-6xl;
@@ -122,6 +124,9 @@
                         line-height: 1;
                         margin-bottom: 13px;
                         display: inline-block;
+                        @include ScreenSize($md){
+                            margin-bottom: 5px;
+                        }
                     }
 
                     h3 {
@@ -129,6 +134,9 @@
                         font-size: $fs-c12;
                         margin-bottom: 0;
                         font-weight: $fw-regular;
+                        @include ScreenSize($md){
+                            margin-bottom: 20px;
+                        }
                     }
                 }
 
@@ -137,9 +145,6 @@
         }
     }
 }
-
-
-
 
 .support--bg {
     padding-bottom: 362px;

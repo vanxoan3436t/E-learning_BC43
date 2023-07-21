@@ -13,6 +13,9 @@ import { store } from './Redux/configStote';
 import AdminTemplate from './Templates/AdminTemplate/AdminTemplate';
 import UserManageme from './Pages/Admin/UserManagement/UserManagement';
 import CourseManagement from './Pages/Admin/CourseManagement/CourseManagement';
+import CategoryCourese from './Pages/CategoryCourses/CategoryCourses';
+import Detail from './Pages/Detail/Detail';
+
 export const history: any = createBrowserHistory();
 
 const root = ReactDOM.createRoot(
@@ -26,10 +29,18 @@ root.render(
                     <Route index element={<Home />}></Route>
                     <Route path="search/:key" element={<Search />}></Route>
                     <Route path="info" element={<Info />}></Route>
+                    <Route path="categorycourses">
+                        <Route path=':id' element={< CategoryCourese />}>
+                        </Route>
+                    </Route>
+                    <Route path="detail">
+                        <Route path=':id' element={< Detail />}>
+                        </Route>
+                    </Route>
                     <Route path='*' element={<Navigate to='/' />}></Route>
                 </Route>
                 <Route path='admin' element={<AdminTemplate />}>
-                    <Route index  element={<UserManageme />}></Route>
+                    <Route index element={<UserManageme />}></Route>
                     <Route path='coursemanagement' element={<CourseManagement />}></Route>
                     <Route path="*" element={<Navigate to="/admin" />}></Route>
                 </Route>

@@ -16,9 +16,9 @@ const Search = (props: Props) => {
     dispatch(searchAsyncActionApi(key.key))
   }, [key.key]);
   const renderSearchPage = (): JSX.Element[] => {
-    return coursesSearchList.map((course: CourseDetail) => {
+    return coursesSearchList.map((course: CourseDetail, index : number) => {
       return (
-        <div className="my-course-item">
+        <div className="my-course-item" key={index}>
           <div className="row">
             <div className="col-xl-3 col-lg-4">
               <img className='img-net' src={course.hinhAnh} alt="..." />

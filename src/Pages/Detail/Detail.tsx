@@ -2,10 +2,8 @@ import React from 'react'
 
 type Props = {}
 
-const Detail = (props: Props) => {
+export default function Detail({}: Props) {
   return (
     <div>Detail</div>
   )
 }
-
-export default Detail

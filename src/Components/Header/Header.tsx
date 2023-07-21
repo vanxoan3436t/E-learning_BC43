@@ -1,16 +1,30 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import { history } from '../..'
-import { useDispatch } from 'react-redux'
-import { DispatchType } from '../../Redux/configStote'
+import { useDispatch, useSelector } from 'react-redux'
+import { DispatchType, RootState } from '../../Redux/configStote'
 import { getStore } from '../../util/config'
 import swal from 'sweetalert'
+import { courseCategaryActionApi } from '../../Redux/reducer/quanLyKhoaHocReducer'
 type Props = {
 }
 const Header = (props: Props) => {
   const dispatch: DispatchType = useDispatch();
   const login: any = getStore('credentials')
   const keyInput = useRef('')
+  const {coursesCategary} = useSelector((state : RootState)=> state.quanLyKhoaHocReducer)
+// console.log('coursesCategary',coursesCategary )
+      // renderCourseCate
+      const renderCourseCate = () => {
+        return coursesCategary.map((coursesCategary : any, index : number) => {
+            return (
+                <li key={index}>
+                    <NavLink to={`/categorycourses/${coursesCategary.maDanhMuc}`} style={{textTransform:'uppercase'}}>{coursesCategary.tenDanhMuc}</NavLink>
+                </li>
+            )
+        })
+    }
+
   // Đăng xuất
   const logOut = () => {
     localStorage.removeItem("credentials");
@@ -46,12 +60,14 @@ const Header = (props: Props) => {
     keyInput.current = value
   }
   const handleSubmitSearch = async (e: any) => {
-    e.preventDefault()
+    e.preventDefault();
     if (keyInput.current !== '') {
-      await history.push(`/search/${keyInput.current}`)
+      await history.push(`/search/${keyInput.current}`);
     }
   }
-
+  useEffect(()=> {
+   dispatch( courseCategaryActionApi());
+  },[])
   return (
     <header className='header white-bg sticky-on container '>
       <div id="sticky-placeholder"></div>
@@ -125,9 +141,7 @@ const Header = (props: Props) => {
                       <i className="fa-brands fa-youtube"></i>
                     </NavLink>
                   </li>
-
                 </ul>
-
               </div>
             </div>
           </div>
@@ -140,7 +154,7 @@ const Header = (props: Props) => {
             <div className="header-bottom_col logo">
               <div>
                 <NavLink to={'/'} className='logo_link'>
-                  <img src="./img/elearning-logo.png" alt="logo" />
+                  <img src="/img/elearning-logo.png" alt="logo" />
                 </NavLink>
               </div>
             </div>
@@ -152,12 +166,13 @@ const Header = (props: Props) => {
                     <li className="nav-sub">
                       <NavLink to={'/'} >DANH MỤC</NavLink>
                       <ul className='main-menu_dropdown'>
-                        <li><NavLink to={'/'}>LẬP TRÌNH BACKEND</NavLink></li>
+                      {renderCourseCate()}
+                        {/* <li><NavLink to={'/'}>LẬP TRÌNH BACKEND</NavLink></li>
                         <li><NavLink to={'/'}>THIẾT KẾ WEB</NavLink></li>
                         <li><NavLink to={'/'}>LẬP TRÌNH DI ĐỘNG</NavLink></li>
                         <li><NavLink to={'/'}>LẬP TRÌNH FRONT END</NavLink></li>
                         <li><NavLink to={'/'}>LẬP TRÌNH FULL STACK</NavLink></li>
-                        <li><NavLink to={'/'}>TƯ DUY LẬP TRÌNH</NavLink></li>
+                        <li><NavLink to={'/'}>TƯ DUY LẬP TRÌNH</NavLink></li> */}
                       </ul>
                     </li>
                     <li className="nav-sub">

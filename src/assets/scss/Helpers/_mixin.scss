@@ -1,29 +1,69 @@
-
 /*-----Font size -----*/
-@for $i from 13 to 25 {//1 = 13px ;11 = 24px
-    .fs-#{$i} {
-        font-size: $i + 0px;
+$i6: 375px;
+$i6plus: 414px;
+$xs: 575.98px;
+$sm: 767.98px;
+$md: 991.98px;
+$lg: 1199.98px;
+
+
+@mixin ScreenSize ($type) {
+    @if $type ==$i6 {
+        @media screen and (max-width:$i6) {
+            @content;
+        }
+    }
+     @else if $type ==$i6plus {
+        @media screen and (max-width:$i6plus) {
+            @content;
+        }
+    }
+     @else if $type ==$xs {
+        @media screen and (max-width:$xs) {
+            @content;
+        }
+    } 
+    @else if $type ==$md {
+        @media screen and (max-width:$md) {
+            @content;
+        }
+    }
+     @if $type == $lg {
+        @media screen and (max-width:$lg) {
+            @content;
+        }
     }
 }
 
-.show{
+.show {
     display: block;
+    @media screen and (max-width:767.98px) {
+     
+    }
+    @media screen and (max-width:575.98px) {
+    
+    }
+    @media screen and (max-width:414px) {
+       //ipplus
+    }
+    @media screen and (max-width:375px) {
+      //ip
+    }
 }
 
-.logo{
+.logo {
     width: 104px;
 }
+
 .white-bg {
     background-color: $bg-c0-white;
-}
-section {
-    position: relative;
 }
 
 .section-button {
     display: flex;
     justify-content: flex-end;
 }
+
 .section-bg-common {
     background: $bg-c2-white;
 }
@@ -31,6 +71,7 @@ section {
 .secondary-bg-color {
     background: #14133b;
 }
+
 .section-heading__title_small {
     color: $text-c0-primary;
     ;
@@ -45,7 +86,8 @@ section {
 
     &::before {
         position: absolute;
-        top: 50%;left: 0;
+        top: 50%;
+        left: 0;
         transform: translateY(-50%);
         content: "";
         height: 15px;
@@ -113,11 +155,11 @@ section {
 
 }
 
-.counter--bg{
-     position: relative;
-     z-index: 2;
+.counter--bg {
+    position: relative;
+    z-index: 2;
 
-    &::after{
+    &::after {
         content: "";
         position: absolute;
         top: 0;
@@ -140,19 +182,22 @@ section {
     z-index: 0;
 }
 
-.contact--bg{
-background: $bg-c3-white;
+.contact--bg {
+    background: $bg-c3-white;
 }
 
-.title-course{
+.title-course {
     padding: 50px;
     text-transform: uppercase;
-    background-color:$bg-c0-primary;
-    h3,p{
+    background-color: $bg-c0-primary;
+
+    h3,
+    p {
         color: $text-c0-white;
 
     }
 }
+
 .search-main {
     border: 1px solid #e2e2e2;
     border-radius: 5px;
@@ -161,11 +206,24 @@ background: $bg-c3-white;
     position: relative;
     padding-right: 45px;
 
+    @include ScreenSize($lg) {
+        width: 180px;
+    }
+
+    @include ScreenSize($md) {
+        width: 330px;
+    }
+
     .search_input {
         border: 1px solid transparent;
         width: 100%;
         background: transparent;
         outline: transparent;
+
+        @include ScreenSize($lg) {
+            // position: absolute;
+
+        }
     }
 
     .search_button {
@@ -177,8 +235,15 @@ background: $bg-c3-white;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+
+        @include ScreenSize($lg) {
+            // position: absolute;
+            // font-size: 26px;
+            // display: none;
+        }
     }
 }
+
 .my-course-item {
     .img-net {
         object-fit: fill;
@@ -200,17 +265,17 @@ background: $bg-c3-white;
             .text-card-title {
                 padding-right: 15px;
 
-                .icon-oclock {
-                    color: #f5c002;
-                }
+                // .icon-oclock {
+                //     color: #f5c002;
+                // }
 
-                .icon-calendar {
-                    color: #f06f68;
-                }
+                // .icon-calendar {
+                //     color: #f06f68;
+                // }
 
-                .icon-level {
-                    color: #65c9ff;
-                }
+                // .icon-level {
+                //     color: #65c9ff;
+                // }
             }
         }
 
@@ -218,11 +283,24 @@ background: $bg-c3-white;
             color: #f6ba35;
         }
     }
+
     .img-net-footer {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
-    
+
     }
+}
+
+.icon-oclock {
+    color: #f5c002;
+}
+
+.icon-calendar {
+    color: #f06f68;
+}
+
+.icon-level {
+    color: #65c9ff;
 }

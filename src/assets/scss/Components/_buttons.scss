@@ -53,6 +53,17 @@
         color: $text-c0-white;
     }
 }
+
+.btn-card-global{
+    outline: none;
+    border: transparent;
+    transition: all .5s;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 5px 10px;
+    background-color: $bg-c1-primary;
+    background-color: $bg-c1-primary;
+}
 @keyframes theflast {
     49% {
         opacity: 0;

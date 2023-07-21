@@ -1,3 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+}
+
+body {
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    margin-bottom: 0px;
+    font-weight: $fw-light;
+    color: $text-c4-dark;
+    line-height: 1.75;
+}
+
+h3 {
+    color: $text-c2-dark;
+}
+
+section {
+    position: relative;
+}
 ul {
     margin: 0;
     padding: 0;
@@ -5,4 +38,8 @@ ul {
 img {
     max-width: 100%;
     height: auto;
+}
+a, h1, h2, h3, h4, h5, h6, li, p, ul {
+    margin: 0;
+    padding: 0;
 }
