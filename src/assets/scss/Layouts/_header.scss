@@ -1,3 +1,4 @@
+
 .main-menu_nav ul .nav-sub a::before {
     &::before {
         content: "";
@@ -14,90 +15,87 @@
 }
 
 .header {
+    padding-left: 0;
+    padding-right: 0;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+  
     .header-top {
         padding-top: 16.5px;
         padding-bottom: 16.5px;
         border-bottom: 1px solid #e1e1e1;
-
-        @include ScreenSize ($md) {
-            display: none;
+        @media screen and (max-width:991.98px) {
+         display: none;
         }
 
-        .container-fluid {
-            .row {
-                .col-lg-9 {
+        .row {
+            .col-lg-9 {
 
-                    .header-top_info {
+                .header-top_info {
 
+                    display: flex;
+                    align-items: center;
+
+                    .header-top_info_item {
                         display: flex;
                         align-items: center;
-                        -webkit-box-align: center;
+                        padding-right: 20px;
+                        margin-right: 40px;
+                        border-right: 1px solid #d4d3d3;
 
-                        .header-top_info_item {
-                            display: flex;
-                            -webkit-box-align: center;
-                            align-items: center;
-                            padding-right: 20px;
-                            margin-right: 40px;
-                            border-right: 1px solid #d4d3d3;
+                        &:last-of-type {
+                            // @media screen and (max-width : 1279.98px) {
+                            //     display: none;
 
-                            &:last-of-type {
-                                // @media screen and (max-width : 1279.98px) {
-                                //     display: none;
-
-                                // }
-                                @include ScreenSize($lg) {
-                                    display: none;
-                                }
-                            }
-
-                            .header-top_info_icon {
-                                line-height: $lh-c1;
-
-                                i {
-                                    display: inline-block;
-                                    margin-right: 15px;
-
-                                    &::before {
-                                        color: $text-c0-primary;
-                                        font-size: 27px;
-                                    }
-                                }
-                            }
-
-                            .header-top_info_text {
-                                p {
-                                    color: $text-c1-dark;
-                                }
-
-                                span {}
-                            }
-                        }
-                    }
-                }
-
-                .col-lg-3 {
-                    .header-top_social {
-                        text-align: right;
-
-                        ul {
-                            display: inline-flex;
-
-
+                            // }
                         }
 
+                        .header-top_info_icon {
+                            line-height: $lh-c1;
+
+                            i {
+                                display: inline-block;
+                                margin-right: 15px;
+
+                                &::before {
+                                    color: $text-c0-primary;
+                                    font-size: 27px;
+                                }
+                            }
+                        }
+
+                        .header-top_info_text {
+                            p {
+                                color: $text-c1-dark;
+                            }
+
+                            span {}
+                        }
                     }
                 }
             }
+
+            .col-lg-3 {
+                .header-top_social {
+                    text-align: right;
+
+                    ul {
+                        display: inline-flex;
+                    }
+
+                }
+            }
         }
+
     }
 
     .header-bottom {
-        .container-fuild {
+        div {
             .header-bottom_row {
-                @include ScreenSize ($md) {
-                   padding: 21px 0px;;
-                }
                 .header-bottom_col {
                     &:nth-child(1) {
                         .logo {
@@ -108,15 +106,12 @@
                     }
 
                     &:nth-child(2) {
-                        @include ScreenSize ($md) {
-                            display: none;
-                        }
+                
                         .main-menu {
                             .main-menu_nav {
                                 ul {
                                     .nav-sub {
                                         display: inline-block;
-                                        -webkit-box-align: center;
                                         position: relative;
                                         padding: 0 0px 0 17px;
 
@@ -252,16 +247,12 @@
                                 }
                             }
                         }
-
-
-
                     }
                 }
             }
         }
     }
-
-
+    
 }
 
 header.sticky-on.sticky .navbar-wrap {
@@ -270,7 +261,7 @@ header.sticky-on.sticky .navbar-wrap {
     left: 0;
     right: 0;
     z-index: 100;
-    background-color: white;
+    background-color: $bg-c0-white;
     box-shadow: 0px 7px 65px 0px rgba(0, 0, 0, 0.05);
-    transition: all 0.4s ease;
+    transition: all 5s ease;
 }

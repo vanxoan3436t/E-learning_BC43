@@ -10,6 +10,7 @@ import Contact from './ContactHome/Contact'
 import { useDispatch } from 'react-redux'
 import { getListCourseActionApi } from '../../Redux/reducer/quanLyKhoaHocReducer'
 import { DispatchType } from '../../Redux/configStote'
+import ListCourses from './ListCourses/ListCourses'
 
 type Props = {}
 const Home = (props: Props) => {
@@ -27,7 +28,7 @@ dispatch (actionApi)
     <div >
       <CarouselHome></CarouselHome>
       <InfoCoureHome></InfoCoureHome>
-      <h2 className='text-dark container' style={{ height: '200px' }}>Danh mục khoá học <br /> phần này bổ sung sau khi call api danh sách khoá học vô sau sẽ để ở đây là đẹp <br /> ĐÃ CALL API thành công</h2>
+     <ListCourses></ListCourses>
       <NumberUp></NumberUp>
       <Services></Services>
       <Support></Support>

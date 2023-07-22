@@ -10,8 +10,6 @@ type Props = {}
 const CategoryCourese = (props: Props) => {
   const dispatch: DispatchType = useDispatch();
   const { coursesCategary, coursesCategaryList } = useSelector((state: RootState) => state.quanLyKhoaHocReducer)
-  console.log('coursesCategary', coursesCategary);
-  console.log('coursesCategaryList', coursesCategaryList);
   const categoryCode: any = useParams();
 
   const nameCategary = () => {
@@ -24,7 +22,6 @@ const CategoryCourese = (props: Props) => {
 
   const renderCourseCategoryList = () => {
     return coursesCategaryList.map((course: any, index: number) => {
-      console.log('course', course)
       if ((index + 1) % 2 === 0) {
         return (
           <div key={index} className="col-xl-3 col-lg-4 col-md-6   card-global-res">
@@ -125,7 +122,7 @@ const CategoryCourese = (props: Props) => {
     dispatch(getcourseCategaryListActionApi(categoryCode.id))
   }, [categoryCode.id])
   return (
-    <section className='category-courese'>
+    <section >
       <div className="title-course">
         <h3>KHÓA HỌC THEO DANH MỤC</h3>
         <p>HÃY CHỌN KHÓA HỌC MONG MUỐN !!!</p>

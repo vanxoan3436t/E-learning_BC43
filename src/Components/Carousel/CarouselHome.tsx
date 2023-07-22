@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 type Props = {}
 
 const CarouselHome = (props: Props) => {
   return (
-    <section className='carousel-home container-fluid">'>
+    <section className='carousel-home container-fluid' >
       <div className="overlay"></div>
       <div id="carouselExampleCaptions" className="carousel slide">
         <div className="carousel-indicators">

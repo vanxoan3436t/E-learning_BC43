@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { history } from '../..'
 import { useDispatch, useSelector } from 'react-redux'
@@ -12,18 +12,16 @@ const Header = (props: Props) => {
   const dispatch: DispatchType = useDispatch();
   const login: any = getStore('credentials')
   const keyInput = useRef('')
-  const {coursesCategary} = useSelector((state : RootState)=> state.quanLyKhoaHocReducer)
-// console.log('coursesCategary',coursesCategary )
-      // renderCourseCate
-      const renderCourseCate = () => {
-        return coursesCategary.map((coursesCategary : any, index : number) => {
-            return (
-                <li key={index}>
-                    <NavLink to={`/categorycourses/${coursesCategary.maDanhMuc}`} style={{textTransform:'uppercase'}}>{coursesCategary.tenDanhMuc}</NavLink>
-                </li>
-            )
-        })
-    }
+  const { coursesCategary } = useSelector((state: RootState) => state.quanLyKhoaHocReducer)
+  const renderCourseCate = () => {
+    return coursesCategary.map((coursesCategary: any, index: number) => {
+      return (
+        <li key={index}>
+          <NavLink to={`/categorycourses/${coursesCategary.maDanhMuc}`} style={{ textTransform: 'uppercase' }}>{coursesCategary.tenDanhMuc}</NavLink>
+        </li>
+      )
+    })
+  }
 
   // Đăng xuất
   const logOut = () => {
@@ -39,12 +37,12 @@ const Header = (props: Props) => {
   const handleLoginLink = () => {
     if (login) {
       let loginAccount = JSON.parse(login)
-      // console.log('loginAccount.taiKhoan', loginAccount.taiKhoan)
-      return <div className="header-avatar">
+      return <div className="header-avatar nav-item">
         {loginAccount.maLoaiNguoiDung === 'GV' ? <span className='header-set'>  <NavLink to="/admin/usermanagement"><i className="fa-solid fa-gear text-warning"></i></NavLink> </span> : <></>}
         <NavLink className='to-info' to='/info'>
           <img className='your-avatar' src="https://nld.mediacdn.vn/291774122806476800/2022/3/19/20200403104047-41cb-16476717856591379514951.jpg" alt="avarta" />
-          <span className='logout' onClick={() => {logOut()
+          <span className='logout' onClick={() => {
+            logOut()
           }}><NavLink to='/'><i className="fa-solid fa-right-to-bracket text-danger"></i></NavLink></span>
         </NavLink>
       </div>
@@ -65,14 +63,25 @@ const Header = (props: Props) => {
       await history.push(`/search/${keyInput.current}`);
     }
   }
-  useEffect(()=> {
-   dispatch( courseCategaryActionApi());
-  },[])
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollPosition(position);
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.addEventListener('scroll', handleScroll)
+    }
+  }, [])
+  useEffect(() => {
+    dispatch(courseCategaryActionApi());
+  }, [])
   return (
-    <header className='header white-bg sticky-on container '>
-      <div id="sticky-placeholder"></div>
-      <div className="header-top ">
-        <div className="container-fluid">
+    <header className={`header white-bg sticky-on container-custom ${scrollPosition > 91.5 ? "sticky" : ""}`}>
+      <div id='topbar-wrap' className="header-top">
+        <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-9">
               <div className="header-top_info">
@@ -148,9 +157,10 @@ const Header = (props: Props) => {
         </div>
       </div>
 
-      <div id='navbar-wrap' className="white-bg header-bottom navbar-wrap container">
-        <div className="container-fuild ">
+      <div id='navbar-wrap' className="white-bg header-bottom container-custom navbar-wrap ">
+        <div className="container-fluid">
           <div className="header-bottom_row d-flex justify-content-between align-items-center">
+
             <div className="header-bottom_col logo">
               <div>
                 <NavLink to={'/'} className='logo_link'>
@@ -166,7 +176,7 @@ const Header = (props: Props) => {
                     <li className="nav-sub">
                       <NavLink to={'/'} >DANH MỤC</NavLink>
                       <ul className='main-menu_dropdown'>
-                      {renderCourseCate()}
+                        {renderCourseCate()}
                         {/* <li><NavLink to={'/'}>LẬP TRÌNH BACKEND</NavLink></li>
                         <li><NavLink to={'/'}>THIẾT KẾ WEB</NavLink></li>
                         <li><NavLink to={'/'}>LẬP TRÌNH DI ĐỘNG</NavLink></li>
@@ -206,15 +216,13 @@ const Header = (props: Props) => {
                 </button>
               </div>
             </form>
+
             <div className="header-bottom_col">
               {handleLoginLink()}
             </div>
-
           </div>
         </div>
       </div>
-
-
     </header >
   )
 }
