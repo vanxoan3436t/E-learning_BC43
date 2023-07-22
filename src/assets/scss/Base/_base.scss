@@ -1,0 +1,18 @@
+.container-custom{
+    padding: 0 185px;
+    @media (max-width: 1666px)
+    {
+        padding: 0 60px;
+    }
+    @media (max-width: 1339.98px)
+    {
+        padding: 0 0px;
+    }
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.col-xl-3{
+    max-width: 1200px;
+}

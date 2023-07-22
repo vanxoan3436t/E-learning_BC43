@@ -37,8 +37,8 @@ const Header = (props: Props) => {
   const handleLoginLink = () => {
     if (login) {
       let loginAccount = JSON.parse(login)
-      return <div className="header-avatar nav-item">
-        {loginAccount.maLoaiNguoiDung === 'GV' ? <span className='header-set'>  <NavLink to="/admin/usermanagement"><i className="fa-solid fa-gear text-warning"></i></NavLink> </span> : <></>}
+      return <div className="header-avatar">
+         {loginAccount.maLoaiNguoiDung === 'GV' ? <span className='header-set'>  <NavLink to="/admin/usermanagement"><i className="fa-solid fa-gear text-warning"></i></NavLink> </span> : <></>}
         <NavLink className='to-info' to='/info'>
           <img className='your-avatar' src="https://nld.mediacdn.vn/291774122806476800/2022/3/19/20200403104047-41cb-16476717856591379514951.jpg" alt="avarta" />
           <span className='logout' onClick={() => {
@@ -79,10 +79,10 @@ const Header = (props: Props) => {
     dispatch(courseCategaryActionApi());
   }, [])
   return (
-    <header className={`header white-bg sticky-on container-custom ${scrollPosition > 91.5 ? "sticky" : ""}`}>
-      <div id='topbar-wrap' className="header-top">
-        <div className="container">
-          <div className="row align-items-center">
+    <header className={`header white-bg sticky-on  ${scrollPosition > 91.5 ? "sticky" : ""}`}>
+      <div id='topbar-wrap' className="header-top container-custom">
+        <div className="container-fluid">
+          <div className="row align-items-center ">
             <div className="col-lg-9">
               <div className="header-top_info">
 
@@ -157,10 +157,9 @@ const Header = (props: Props) => {
         </div>
       </div>
 
-      <div id='navbar-wrap' className="white-bg header-bottom container-custom navbar-wrap ">
+      <div id='navbar-wrap' className="white-bg header-bottom navbar-wrap container-custom">
         <div className="container-fluid">
-          <div className="header-bottom_row d-flex justify-content-between align-items-center">
-
+          <div className="header-bottom_row d-flex justify-content-between align-items-center ">
             <div className="header-bottom_col logo">
               <div>
                 <NavLink to={'/'} className='logo_link'>
@@ -168,7 +167,6 @@ const Header = (props: Props) => {
                 </NavLink>
               </div>
             </div>
-
             <div className="header-bottom_col">
               <div className="main-menu">
                 <nav className="main-menu_nav">
@@ -177,12 +175,6 @@ const Header = (props: Props) => {
                       <NavLink to={'/'} >DANH MỤC</NavLink>
                       <ul className='main-menu_dropdown'>
                         {renderCourseCate()}
-                        {/* <li><NavLink to={'/'}>LẬP TRÌNH BACKEND</NavLink></li>
-                        <li><NavLink to={'/'}>THIẾT KẾ WEB</NavLink></li>
-                        <li><NavLink to={'/'}>LẬP TRÌNH DI ĐỘNG</NavLink></li>
-                        <li><NavLink to={'/'}>LẬP TRÌNH FRONT END</NavLink></li>
-                        <li><NavLink to={'/'}>LẬP TRÌNH FULL STACK</NavLink></li>
-                        <li><NavLink to={'/'}>TƯ DUY LẬP TRÌNH</NavLink></li> */}
                       </ul>
                     </li>
                     <li className="nav-sub">
@@ -201,7 +193,6 @@ const Header = (props: Props) => {
                     </li>
                     <li className="nav-sub">
                       <NavLink to={'/'} >THÔNG TIN</NavLink>
-                      {/* để tạm link qua info dễ qua lại  */}
                     </li>
                   </ul>
                 </nav>

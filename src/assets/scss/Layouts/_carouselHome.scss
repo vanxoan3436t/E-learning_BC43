@@ -3,12 +3,13 @@
 .carousel-home {
     background-color: #fff;
     position: relative;
-padding-left: 0;
-padding-right: 0;
-padding: 177.5px 0 0 0;
-@media screen and (max-width:991.98px) {
-    padding: 91.5px 0 0 0;
-   }
+    padding-left: 0;
+    padding-right: 0;
+    padding: 177.5px 0 0 0;
+    @media screen and (max-width:991.98px) {
+        padding: 91.5px 0 0 0;
+    }
+
     .overlay {
         background-color: $bg-c2-primary ;
         width: 100%;

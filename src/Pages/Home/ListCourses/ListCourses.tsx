@@ -239,10 +239,10 @@ export default function ListCourses({ }: Props) {
 
         })
     }
-    return (<div className='list-couser-category'>
+    return (<div className='list-couser-category '>
         {/* Course Popular */}
         <div className='popular-course'>
-            <h6>
+            <h6 className='ms-3 mt-5'>
             Khóa học phổ biến
             </h6>
         <div className='row mt-4'>
@@ -251,14 +251,14 @@ export default function ListCourses({ }: Props) {
         </div>
         {/* Course Student */}
         <div className='mt-5'>
-            <h6><span >Khóa học tham khảo</span></h6>
+            <h6 className='ms-3'>Khóa học tham khảo</h6>
             <div className='row'>
                 {renderCourseStudent()}
             </div>
         </div>
         {/* Course Student */}
         <div className='mt-5'>
-            <h6><span >Khóa học Front End React Js</span></h6>
+            <h6 className='ms-3'>Khóa học Front End React Js</h6>
             <div className='row'>
                 {renderCourseReact()}
             </div>
