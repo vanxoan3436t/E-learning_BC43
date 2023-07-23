@@ -33,14 +33,14 @@ const Header = (props: Props) => {
     });
     window.location.reload();
   }
-  //xử lí đăng nhập
+  //xử lí đăng nhập 
   const handleLoginLink = () => {
     if (login) {
       let loginAccount = JSON.parse(login)
       return <div className="header-avatar">
          {loginAccount.maLoaiNguoiDung === 'GV' ? <span className='header-set'>  <NavLink to="/admin/usermanagement"><i className="fa-solid fa-gear text-warning"></i></NavLink> </span> : <></>}
         <NavLink className='to-info' to='/info'>
-          <img className='your-avatar' src="https://nld.mediacdn.vn/291774122806476800/2022/3/19/20200403104047-41cb-16476717856591379514951.jpg" alt="avarta" />
+          <img className='your-avatar' src="/img/avatar-rose.jpg" alt="avarta" />
           <span className='logout' onClick={() => {
             logOut()
           }}><NavLink to='/'><i className="fa-solid fa-right-to-bracket text-danger"></i></NavLink></span>

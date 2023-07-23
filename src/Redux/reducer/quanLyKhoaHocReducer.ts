@@ -1,10 +1,7 @@
-import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { getStoreJson, http, httpNonAuth } from '../../util/config';
 import { DispatchType } from '../configStote';
-import { AddCourseModal } from '../../Pages/Admin/CourseManagement/ModalAddCourse';
 import swal from 'sweetalert';
-
-//detail
 export interface NguoiTAO {
     taiKhoan: string;
     hoTen: string;
@@ -41,11 +38,11 @@ export interface StateDefault {
 }
 
 const initialState: StateDefault = {
-    coursesList: [],// gọi api luôn khi load trang 
+    coursesList: [],
     courseDetail: [],
-    coursesCategary: [],// kiểu ở trên navlink danh mục
-    coursesCategaryList: [],// gọi api sau khi ấn vô navlink page danh mục khóa học
-    coursesSearchList: [],// gọi api sau khi ấn tìm kiếm
+    coursesCategary: [],
+    coursesCategaryList: [],
+    coursesSearchList: [],
     coursesPagination: {},
 
 }
@@ -56,6 +53,9 @@ const quanLyKhoaHocReducer = createSlice({
     reducers: {
         getCoursesListAction: (state: StateDefault, action: PayloadAction<[]>) => {
             state.coursesList = action.payload
+        },
+        getDetailAction: (state: StateDefault, action: PayloadAction<[]>) => {
+            state.courseDetail = action.payload
         },
         getSearchListAction: (state: StateDefault, action: PayloadAction<[]>) => {
             state.coursesSearchList = action.payload
@@ -69,7 +69,7 @@ const quanLyKhoaHocReducer = createSlice({
     }
 });
 
-export const { getCoursesListAction, getSearchListAction, getCoursesCategaryAction, getCoursesCategaryListAction } = quanLyKhoaHocReducer.actions
+export const { getCoursesListAction, getSearchListAction, getCoursesCategaryAction, getCoursesCategaryListAction, getDetailAction } = quanLyKhoaHocReducer.actions
 
 export default quanLyKhoaHocReducer.reducer
 
@@ -87,7 +87,7 @@ export default quanLyKhoaHocReducer.reducer
 export const courseCategaryActionApi = () => {
     return async (dispatch: DispatchType) => {
         try {
-            const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc?tenDanhMuc`)
+            const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc?tenDanhMuc`);
             const action: PayloadAction<DanhMucKhoaHoc[]> = getCoursesCategaryAction(result.data)
             dispatch(action);
         } catch (err) {
@@ -111,23 +111,67 @@ export const getcourseCategaryListActionApi = (key: string) => {
 export const getListCourseActionApi = () => {
     return async (dispacth: DispatchType) => {
         try {
-            const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01`)
+            const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01`);
             const action: PayloadAction<CourseDetail[]> = getCoursesListAction(result.data);
-            dispacth(action)
+            dispacth(action);
         } catch (err) {
-            console.log('err', err)
+            console.log('err', err);
         }
     }
 }
+//get Detail
+export const getDetailActionApi = (key: string) => {
+    return async (dispacth: DispatchType) => {
+        try {
+            const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${key}`);
+            const action: PayloadAction<CourseDetail[]> = getDetailAction(result.data);
+            dispacth(action);
+        } catch (error) {
+            console.log('error', error);
+        };
+    }
+}
+
+// Regist Course
+export const registerCourseActionApi = async (key : string) => {
+    const credentailLocal = getStoreJson('credentials')
+    if (credentailLocal) {
+        const valuesRegisCoure = {
+            taiKhoan: credentailLocal.taiKhoan,
+            maKhoaHoc: key
+        }
+        try {
+            const  result = await http.post('/api/QuanLyKhoaHoc/DangKyKhoaHoc', valuesRegisCoure)
+            if (result.request?.status === 200) {
+            swal({
+                title: "Đăng kí thành công",
+                icon: "success",
+                timer: 1800,
+               
+            });
+        }
+        } catch (err) {
+            swal({
+                title: 'ĐÃ ĐĂNG KÍ RỒI HOẶC CHƯA ĐĂNG NHẬP !',
+                icon: "warning",
+                text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
+                timer: 2000,
+            });
+            console.log('err', err);
+        }
+    }
+}
+
+
 
 export const searchAsyncActionApi = (key: string) => {
     return async (dispacth: DispatchType) => {
         try {
             const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${key}&MaNhom=GP01`)
-            const action: PayloadAction<CourseDetail[]> = getSearchListAction(result.data);
-            dispacth(action)
-        } catch (error) {
-            console.log('error', error)
+            const action: PayloadAction<CourseDetail[]> = getDetailAction(result.data);
+            dispacth(action);
+        } catch (err) {
+            console.log('err', err);
         };
     }
 }
@@ -137,10 +181,9 @@ export const searchCoursesAsyncActionApi = (key: string) => {
         try {
             const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${key}&MaNhom=GP01`)
             const action: PayloadAction<CourseDetail[]> = getCoursesListAction(result.data);
-            dispacth(action)
-            console.log('action.payload', action.payload)
-        } catch (error) {
-            console.log('error', error)
+            dispacth(action);
+        } catch (err) {
+            console.log('err', err);
         };
     }
 }
@@ -161,8 +204,7 @@ export const addCourseActionApi = (values: any) => {
 
         try {
             // console.log(formData.get('hinhAnh'))
-            const result = await http.post('/api/QuanLyKhoaHoc/ThemKhoaHocUploadHinh', formData)
-            console.log('resukt', result.data)
+            const result = await http.post('/api/QuanLyKhoaHoc/ThemKhoaHocUploadHinh', formData);
             if (result.request.status === 200) {
                 // formik.resetForm()
                 swal({
@@ -170,18 +212,18 @@ export const addCourseActionApi = (values: any) => {
                     icon: "success",
                     timer: 2000,
                 });
-
                 // dispatch(getListCourse) phải gọi 6 danh sách khóa học
 
             }
 
-        } catch (errors) {
+        } catch (err) {
             swal({
                 // title: errors.response?.data,
                 icon: "warning",
                 text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
                 timer: 2000,
             });
+            console.log('err', err);
         }
     }
 

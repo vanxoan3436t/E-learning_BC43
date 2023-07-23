@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { DispatchType, RootState } from '../../Redux/configStote';
 import { getStoreJson } from '../../util/config';
-import { getUserInfoActionApi, updateUserInfoActionApi, } from '../../Redux/reducer/quanLyNguoiDungReducer';
+import { getUserInfoActionApi, updateUserInfoActionApi, userCancelCourseActionApi, } from '../../Redux/reducer/quanLyNguoiDungReducer';
 import * as Yup from 'yup'
 import { useFormik } from 'formik';
 type Props = {}
@@ -66,9 +66,8 @@ const Info = (props: Props) => {
               <div className="col-xl-2">
                 <NavLink className='btn  btn--common btn-primary' to='/info'
                   onClick={() => {
-                    console.log('course.maKhoaHoc', course.maKhoaHoc)
-                    // const action = userCancelCourse(course.maKhoaHoc)
-                    // dispatch(action)
+                    const action = userCancelCourseActionApi(course.maKhoaHoc)
+                    dispatch(action)
                   }
                   }>
                   Hủy Khóa Học
@@ -128,7 +127,7 @@ const Info = (props: Props) => {
           <div className="col-lg-3 col-md-4">
             <div className="info-left">
               <div className='info-avatar'>
-                <img src="https://static-images.vnncdn.net/files/publish/2023/6/29/001rose-1879.jpg" alt="avarta" />
+                <img src="/img/rose-info.jpg" alt="avarta" />
               </div>
               <h6>Rosé</h6>
               <p>Lập trình viên BlackPink</p>
@@ -259,7 +258,10 @@ const Info = (props: Props) => {
                     <h6>Khoá học của tôi</h6>
                     <form action="">
                       <div className="search-main">
-                        <input type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true' />
+                        <input type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true'  onChange={(e) => {
+                          setSearchTerm(e.target.value)
+                        console.log('e.target.value', e.target.value)
+                        }}/>
                         <button className="search_button">
                           <i className="fas fa-search"></i>
                         </button>

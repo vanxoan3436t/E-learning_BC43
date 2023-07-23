@@ -1,5 +1,5 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { USER_LOGIN, getStore, getStoreJson, http, httpNonAuth, setStoreJson } from '../../util/config';
+import { USER_LOGIN, getStoreJson, http, httpNonAuth, setStoreJson } from '../../util/config';
 import { UserLoginFrm, UserSignUpFrm } from '../../Pages/LoginRegister/Login';
 import { history } from '../..';
 import { DispatchType } from '../configStote';
@@ -87,9 +87,6 @@ const quanLyNguoiDungReducer = createSlice({
   name: 'quanLyNguoiDungReducer',
   initialState,
   reducers: {
-    // credentials: (state: UserState, action: PayloadAction<{}>) => {
-    //   state.credentials = action.payload
-    // },
     signUpAction: (state: UserState, action: PayloadAction<UserSignUp>) => {
       state.userSignUp = action.payload
     },
@@ -102,6 +99,9 @@ const quanLyNguoiDungReducer = createSlice({
     getListUserAction: (state: UserState, action: PayloadAction<[]>) => {
       state.userArray = action.payload
     }
+    // getListNotRegisterAction: (state: UserState, action: PayloadAction<[]>) => {
+    //   state.UserListNotRegister = action.payload
+    // }
   },
   extraReducers: (builder) => {
     /*
@@ -159,10 +159,19 @@ export const loginAsyncActionApi = createAsyncThunk('loginAsyncActionApi', async
   }
   return result.data
 });
+
+//userRegister course not login
+// export const userNotloginRegis = (key : string) => {
+//   return (dispatch : DispatchType) => {
+
+//       const action : PayloadAction<[]> = getListNotRegisterAction(key)
+//       dispatch(action)
+//   }
+// }
+
 //Đăng kí
 export const signUpAsyncActionApi = createAsyncThunk('signUpAsyncActionApi', async (userSignUp: UserSignUpFrm) => {
   const result = await httpNonAuth.post(`/api/QuanLyNguoiDung/DangKy`, userSignUp);
-  console.log('result', result)
   return result.data
 });
 // Lấy thông tin người dùng
@@ -202,37 +211,51 @@ export const updateUserInfoActionApi = (values: UserUpdateFrm) => {
 //Hủy khóa học (phải đăng kí khóa học - mới hủy khóa học)
 export const userCancelCourseActionApi = (key: string) => {
   return async (dispacth: DispatchType,) => {
-
-    try {
-      const result = await http.post(`/api/QuanLyKhoaHoc/HuyGhiDanh`, key)
-      if (result.request?.status === 200) {
-
+    const credentailLocal = getStoreJson('credentials')
+    if (credentailLocal) {
+      const valuesRegisCoure = {
+        taiKhoan: credentailLocal.taiKhoan,
+        maKhoaHoc: key
+    }
+      try {
+        const result = await http.post(`/api/QuanLyKhoaHoc/HuyGhiDanh`, valuesRegisCoure);
+        if (result.request?.status === 200) {
+          swal({
+            // title: err.response?.data,
+            title: "Hủy đăng kí thành công",
+            icon: "success",
+            timer: 1500,
+          });
+         dispacth(getUserInfoActionApi());
+        }
+      } catch (err: any) {
+        swal({
+          // title: err.response?.data,
+          title: "k được rồi",
+          icon: "warning",
+          timer: 2000,
+        });
       }
-      const action: PayloadAction<{}> = upDateInfoAction(result.data);
-      dispacth(action)
-    } catch (err: any) {
-
     }
   }
 }
 
 export const getUserArrActionApi = () => {
   return async (dispatch: DispatchType) => {
-    const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa?=1`)
+    const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa?=1`);
     const action: PayloadAction<UserArr[]> = getListUserAction(result.data);
-    dispatch(action)
+    dispatch(action);
   }
 }
 
 export const searchUserActionApi = (key: string) => {
   return async (dispacth: DispatchType) => {
     try {
-      const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa=${key}`)
+      const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa=${key}`);
       const action: PayloadAction<UserArr[]> = getListUserAction(result.data);
-      dispacth(action)
-      console.log('action.payload', action.payload)
-    } catch (error) {
-      console.log('error', error)
+      dispacth(action);
+    } catch (err) {
+      console.log('err', err);
     };
   }
 }
@@ -241,7 +264,7 @@ export const addUserActionApi = (values: UserModel) => {
 
   return async (dispatch: DispatchType) => {
     try {
-      const result = await http.post(`/api/QuanLyNguoiDung/ThemNguoiDung`,values)
+      const result = await http.post(`/api/QuanLyNguoiDung/ThemNguoiDung`, values);
       if (result.request?.status === 200) {
         swal({
           title: "Thêm thành công",
@@ -249,8 +272,7 @@ export const addUserActionApi = (values: UserModel) => {
           timer: 2000,
         });
       }
-      dispatch(getUserArrActionApi());//dữ liệu thêm người dùng đã được gửi thành công trên sever backend nên ta chỉ cần dispacth lại(gọi lại hàm lấy danh sách người dùng và render lại)
-    
+      dispatch(getUserArrActionApi());
     } catch (err) {
       swal({
         // title: errors.response?.data,
@@ -258,6 +280,7 @@ export const addUserActionApi = (values: UserModel) => {
         text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
         timer: 2000,
       });
+      console.log('err', err);
     }
   }
 }
