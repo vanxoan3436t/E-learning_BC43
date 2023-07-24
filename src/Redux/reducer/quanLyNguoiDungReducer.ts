@@ -2,9 +2,10 @@ import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { USER_LOGIN, getStoreJson, http, httpNonAuth, setStoreJson } from '../../util/config';
 import { UserLoginFrm, UserSignUpFrm } from '../../Pages/LoginRegister/Login';
 import { history } from '../..';
-import { DispatchType } from '../configStote';
+import { DispatchType, RootState } from '../configStote';
 import swal from 'sweetalert';
 import { UserUpdateFrm } from '../../Pages/Info/Info';
+import { useSelector } from 'react-redux';
 export interface ChiTietKhoaHocGhiDanh {
   maKhoaHoc: string;
   tenKhoaHoc: string;
@@ -216,7 +217,7 @@ export const userCancelCourseActionApi = (key: string) => {
       const valuesRegisCoure = {
         taiKhoan: credentailLocal.taiKhoan,
         maKhoaHoc: key
-    }
+      }
       try {
         const result = await http.post(`/api/QuanLyKhoaHoc/HuyGhiDanh`, valuesRegisCoure);
         if (result.request?.status === 200) {
@@ -226,7 +227,7 @@ export const userCancelCourseActionApi = (key: string) => {
             icon: "success",
             timer: 1500,
           });
-         dispacth(getUserInfoActionApi());
+          dispacth(getUserInfoActionApi());
         }
       } catch (err: any) {
         swal({
@@ -240,47 +241,78 @@ export const userCancelCourseActionApi = (key: string) => {
   }
 }
 
-export const getUserArrActionApi = () => {
-  return async (dispatch: DispatchType) => {
-    const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa?=1`);
-    const action: PayloadAction<UserArr[]> = getListUserAction(result.data);
-    dispatch(action);
-  }
-}
+//Lấy thông tin tài khoản xử lí trang admin
+// export const userUpdateActionApi = (values: string) => {
+//   return async (dispacth: DispatchType,) => {
+//     const infoUser = useSelector((state : RootState | any) => state.quanLyNguoiDungReducer.userArray);
+//       let infoAcc: any = infoUser.find((c: any) => c.taiKhoan === values)
+//       if (infoUser) {
 
-export const searchUserActionApi = (key: string) => {
-  return async (dispacth: DispatchType) => {
-    try {
-      const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa=${key}`);
+//         try {
+//           const result = await http.post(`/api/QuanLyNguoiDung/ThongTinTaiKhoan`, values);
+//           const action: PayloadAction<{}> = upDateInfoAction(result.data);
+//           if (result.request?.status === 200) {
+//             swal({
+//               // title: err.response?.data,
+//               title: "Cập nhật thành công !",
+//               icon: "success",
+//               timer: 1500,
+//             });
+//             dispacth(action);
+//           }
+//         } catch (err: any) {
+//           swal({
+//             // title: err.response?.data,
+//             title: "k được rồi",
+//             icon: "warning",
+//             timer: 2000,
+//           });
+//         }
+//       }
+//     }
+//   }
+
+  export const getUserArrActionApi = () => {
+    return async (dispatch: DispatchType) => {
+      const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa?=1`);
       const action: PayloadAction<UserArr[]> = getListUserAction(result.data);
-      dispacth(action);
-    } catch (err) {
-      console.log('err', err);
-    };
-  }
-}
-//Thêm người dùng
-export const addUserActionApi = (values: UserModel) => {
-
-  return async (dispatch: DispatchType) => {
-    try {
-      const result = await http.post(`/api/QuanLyNguoiDung/ThemNguoiDung`, values);
-      if (result.request?.status === 200) {
-        swal({
-          title: "Thêm thành công",
-          icon: "success",
-          timer: 2000,
-        });
-      }
-      dispatch(getUserArrActionApi());
-    } catch (err) {
-      swal({
-        // title: errors.response?.data,
-        icon: "warning",
-        text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
-        timer: 2000,
-      });
-      console.log('err', err);
+      dispatch(action);
     }
   }
-}
+
+  export const searchUserActionApi = (key: string) => {
+    return async (dispacth: DispatchType) => {
+      try {
+        const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa=${key}`);
+        const action: PayloadAction<UserArr[]> = getListUserAction(result.data);
+        dispacth(action);
+      } catch (err) {
+        console.log('err', err);
+      };
+    }
+  }
+  //Thêm người dùng
+  export const addUserActionApi = (values: UserModel) => {
+
+    return async (dispatch: DispatchType) => {
+      try {
+        const result = await http.post(`/api/QuanLyNguoiDung/ThemNguoiDung`, values);
+        if (result.request?.status === 200) {
+          swal({
+            title: "Thêm thành công",
+            icon: "success",
+            timer: 2000,
+          });
+        }
+        dispatch(getUserArrActionApi());
+      } catch (err) {
+        swal({
+          // title: errors.response?.data,
+          icon: "warning",
+          text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
+          timer: 2000,
+        });
+        console.log('err', err);
+      }
+    }
+  }

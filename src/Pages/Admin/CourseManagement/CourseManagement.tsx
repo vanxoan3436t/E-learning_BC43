@@ -95,15 +95,15 @@ export default function CourseManagement({ }: Props) {
             <tr style={{ width: '100%' }}>
               <th className="align-middle text-break text-wrap" style={{ width: '7%' }} >
                 <span className='hide'>STT</span>
-                {/* <span className='unhide'>STT</span> */}
+             
               </th>
               <th className="align-middle text-break text-wrap" style={{ width: '15%' }}>
                 <span className='hide'>Mã khóa học</span>
-                {/* <span className='unhide'>Mã KH</span> */}
+               
               </th>
               <th className="align-middle text-break text-wrap" style={{ width: '15%' }} >
                 <span className='hide'>Tên khóa học</span>
-                {/* <span className='unhide'>Tên KH</span> */}
+         
               </th>
               <th className="align-middle text-break text-wrap" style={{ width: '14%' }}>
                 <span >Hình ảnh</span>

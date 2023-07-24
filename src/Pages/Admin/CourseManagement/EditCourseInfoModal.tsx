@@ -1,8 +1,14 @@
-import React from 'react'
-
+import { useFormik } from 'formik'
+import { useDispatch } from 'react-redux';
+import * as Yup from 'yup';
+import { DispatchType } from '../../../Redux/configStote';
+import { http } from '../../../util/config';
+import { UserModel, getUserArrActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer';
+import swal from 'sweetalert';
 type Props = {}
 
 export default function EditCourseInfoModal({}: Props) {
+
   return (
     <div className="modal fade" id="editInfoCourse">
      <div className="modal-dialog form-course">
@@ -14,7 +20,7 @@ export default function EditCourseInfoModal({}: Props) {
           </header>
           {/* Modal body */}
           <div className="modal-body">
-            <form className="d-flex flex-wrap " role="form">
+            <form className="d-flex flex-wrap " >
               <div className="form-group col-6">
                 <div className="input-group">
                   <div className="input-group-prepend">

@@ -71,6 +71,7 @@ export default function ModalAddUser({ }: Props) {
                   </div>
                   <input name='taiKhoan' className='form-control input-sm' placeholder='Tài Khoản' type='text' onChange={addUserFrm.handleChange} onBlur={addUserFrm.handleBlur} />
                 </div>
+                {addUserFrm.errors.taiKhoan && <div className="text-err text-danger text-left">{addUserFrm.errors.taiKhoan}</div>}
               </div>
               <div className="form-group">
                 <div className="input-group">
@@ -81,6 +82,7 @@ export default function ModalAddUser({ }: Props) {
                   </div>
                   <input name='hoTen' className='form-control input-sm' placeholder='Họ và tên' type='text' onChange={addUserFrm.handleChange} onBlur={addUserFrm.handleBlur} />
                 </div>
+                {addUserFrm.errors.hoTen && <div className="text-err text-danger text-left">{addUserFrm.errors.hoTen}</div>}
               </div>
               <div className="form-group">
                 <div className="input-group">
@@ -91,6 +93,7 @@ export default function ModalAddUser({ }: Props) {
                   </div>
                   <input name='email' className='form-control input-sm' placeholder='Email' type='email' onChange={addUserFrm.handleChange} onBlur={addUserFrm.handleBlur} />
                 </div>
+                {addUserFrm.errors.email && <div className="text-err text-danger text-left">{addUserFrm.errors.email}</div>}
               </div>
               <div className="form-group">
                 <div className="input-group">
@@ -101,6 +104,7 @@ export default function ModalAddUser({ }: Props) {
                   </div>
                   <input name='matKhau' className='form-control input-sm' placeholder='Mật khẩu' type='password' onChange={addUserFrm.handleChange} onBlur={addUserFrm.handleBlur} />
                 </div>
+                {addUserFrm.errors.matKhau && <div className="text-err text-danger text-left">{addUserFrm.errors.matKhau}</div>}
               </div>
               <div className="form-group">
                 <div className="input-group">
@@ -111,6 +115,7 @@ export default function ModalAddUser({ }: Props) {
                   </div>
                   <input name='soDT' className='form-control input-sm' placeholder='Số điện thoại' type='text' onChange={addUserFrm.handleChange} onBlur={addUserFrm.handleBlur} />
                 </div>
+                {addUserFrm.errors.soDT && <div className="text-err text-danger text-left">{addUserFrm.errors.soDT}</div>}
               </div>
               <div className="form-group">
                 <div className="input-group">
@@ -125,6 +130,7 @@ export default function ModalAddUser({ }: Props) {
                     <option value="HV">Học viên</option>
                   </select>
                 </div>
+                {addUserFrm.errors.maLoaiNguoiDung && <div className="text-err text-danger text-left">{addUserFrm.errors.maLoaiNguoiDung}</div>}
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Đóng</button>

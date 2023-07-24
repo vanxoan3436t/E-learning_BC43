@@ -9,7 +9,6 @@ type Props = {}
 
 const Search = (props: Props) => {
   let key: any = useParams();
-// console.log('key.key', key.key)
   const dispatch: DispatchType = useDispatch();
   const { coursesSearchList } = useSelector((state: RootState) => state.quanLyKhoaHocReducer);
   useEffect(() => {

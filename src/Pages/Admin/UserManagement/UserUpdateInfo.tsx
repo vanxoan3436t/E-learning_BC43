@@ -11,7 +11,7 @@ type Props = {
 }
 // phải kết nối logic modal với các page ,là truyền thông tin xem trước ròi mới sử lí chức năng
 const UserUpdateInfo = (props: Props) => {
-  const infoUser = getStoreJson('credentials')
+  const infoUser = getStoreJson('credentials');
   const dispatch: DispatchType = useDispatch();
   // console.log('userUpdate', props)
 

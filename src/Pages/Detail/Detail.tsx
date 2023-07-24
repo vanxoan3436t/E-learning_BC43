@@ -294,7 +294,6 @@ useEffect(() => {
                 <button className='btnGlobal btn-preview' onClick={() => {
                   if (getStoreJson('credentials')) {
                     registerCourseActionApi(kword.id)
-                    console.log('AA', getStoreJson('credentials'))
                   } else {
                     swal({
                      title:'Cần đăng nhập để đăng kí !',

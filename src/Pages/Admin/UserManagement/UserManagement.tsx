@@ -7,7 +7,7 @@ import UserRegisterModal from './UserRegisterModal'
 import { useDispatch, useSelector } from 'react-redux'
 import { DispatchType, RootState } from '../../../Redux/configStote'
 import ReactPaginate from 'react-paginate'
-import { UserArr, getUserArrActionApi, searchUserActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer'
+import { UserArr, getUserArrActionApi, searchUserActionApi, upDateInfoAction, updateUserInfoActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer'
 import swal from 'sweetalert'
 import { http } from '../../../util/config'
 import { AxiosError } from 'axios'
@@ -36,6 +36,10 @@ export default function UserManagement({ }: Props) {
     console.log(`User requested page number ${e.selected}, which is offset ${newOffset}`);
     setItemOffset(newOffset);
   };
+  //SUA
+  const [userUpdate, setUserUpdate] = useState({})
+  const updateUser = (i: any) => {setUserUpdate(i)}
+  console.log('userUpdate', userUpdate)
   //Search
   const handleChange = (e: any) => {
     const { value } = e.target;
@@ -52,7 +56,7 @@ export default function UserManagement({ }: Props) {
   }, [keyRef.current]);
 
   //XOA
-  const deleteUser = async (i : string) => {
+  const deleteUser = async (i: string) => {
     try {
       let result = await http.delete(`/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${i}`)
       if (result.request.status === 200) {
@@ -65,7 +69,7 @@ export default function UserManagement({ }: Props) {
       }
 
     } catch {
-//const err = AxiosError HÃY HỌC CÁCH SỬ DỤNG 
+      //const err = AxiosError HÃY HỌC CÁCH SỬ DỤNG 
       swal({
         title: 'Tài khoản đã ghi danh hoặc không tồn tại. Không thể xóa !',
         icon: "warning",
@@ -77,7 +81,7 @@ export default function UserManagement({ }: Props) {
 
   //render danh sách người dùng
   const renderUserList = (currentItems: any) => {
-    return currentItems.map((item: UserArr, index: number) => {
+    return currentItems.map((item: any, index: number) => {
       return <tr style={{ width: '100%' }} key={index}>
         <td className="align-middle text-break text-wrap" style={{ width: '5%' }}>{itemOffset + index + 1}</td>
         <td className="align-middle text-break text-wrap" style={{ width: '13%' }} >{item.taiKhoan}</td>
@@ -91,7 +95,9 @@ export default function UserManagement({ }: Props) {
             {/* <span className='hide'>Ghi danh</span> */}
             {/* <span className='unhide'>Thêm</span> */}
           </button>
-          <button onClick={() => { }} className="btn btn-warning m-1 text-wrap" data-bs-toggle="modal" data-bs-target="#editUserInfo">Sửa</button>
+          <button onClick={() => {
+            updateUser(item)
+          }} className="btn btn-warning m-1 text-wrap" data-bs-toggle="modal" data-bs-target="#editUserInfo">Sửa</button>
           <button onClick={() => { deleteUser(item.taiKhoan) }} className="btn btn-danger mx-1 text-wrap" >Xóa</button>
         </td>
       </tr>
@@ -155,7 +161,7 @@ export default function UserManagement({ }: Props) {
       {/* modal ghi danh */}
       <UserRegisterModal />
       {/* modal chỉnh sửa thông tin người dùng */}
-      <EditUserInfoModal />
+      <EditUserInfoModal userUpdate={userUpdate} />
       <ReactPaginate
         nextLabel="Sau >"
         pageRangeDisplayed={3}
@@ -178,3 +184,4 @@ export default function UserManagement({ }: Props) {
     </div>
   )
 }
+////
