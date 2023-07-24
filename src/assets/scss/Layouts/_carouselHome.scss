@@ -6,8 +6,21 @@
     padding-left: 0;
     padding-right: 0;
     padding: 177.5px 0 0 0;
+
     @media screen and (max-width:991.98px) {
         padding: 91.5px 0 0 0;
+    }
+
+    @media screen and (max-width:575.98px) {
+        height: 600px;
+    }
+
+    @media screen and (max-width:414px) {
+        height: 540px;
+    }
+
+    @media screen and (max-width:375px) {
+        height: 590px;
     }
 
     .overlay {
@@ -21,6 +34,18 @@
     }
 
     #carouselExampleCaptions {
+        @media screen and (max-width:575.98px) {
+            height: 86vw;
+        }
+
+        @media screen and (max-width:414px) {
+            height: 109vw;
+        }
+
+        @media screen and (max-width:414px) {
+            height: 133vw;
+        }
+
         .carousel-indicators {
             z-index: 9;
 
@@ -49,6 +74,7 @@
                 width: 100%;
                 background-image: url(../../../../public/img/img-carousel1.jpg);
                 background-repeat: no-repeat;
+                background-position: center;
 
                 &:nth-child(2) {
                     background-image: url(../../../../public/img/img-carousel4.jpg);
@@ -58,14 +84,43 @@
                     background-image: url(../../../../public/img/img-carousel6.jpg);
                 }
 
+                @media screen and (max-width:575.98px) {
+                    height: 67%;
+                }
+
+                @media screen and (max-width:414px) {
+                    height: 79%;
+                }
+
+                @media screen and (max-width:375px) {
+                    height: 100%;
+                }
+
                 .carousel-caption {
                     text-align: left;
                     bottom: 9rem;
                     left: 10%;
                     z-index: 2;
 
-                    .col-6 {
-                        width: 52%;
+                    @media screen and (max-width:991.98px) {
+                        left: 3%;
+                    }
+
+                    @media screen and (max-width:991.98px) {
+                        bottom: 1rem;
+                    }
+
+                    div {
+                        width: 75%;
+
+                        @media screen and (max-width:991.98px) {
+                            width: 100%;
+                        }
+
+                        @media screen and (max-width:575.98px) {
+                            width: 115%;
+
+                        }
 
                         span {
                             color: $text-c0-white;
@@ -78,6 +133,11 @@
                             margin-bottom: 30px;
                             position: relative;
                             animation-delay: 0.4s;
+
+                            @media screen and (max-width:414px) {
+                                font-size: $fs-c6;
+                                margin-bottom: 15px;
+                            }
 
                             &::before {
                                 content: "";
@@ -104,10 +164,19 @@
                             margin-bottom: 46px;
                             max-width: 570px;
                             animation-delay: 0.6s;
+
+                            @media screen and (max-width:575.98px) {
+                                font-size: $fs-3xl;
+                                margin-bottom: 15px;
+                            }
+
+                            @media screen and (max-width:414px) {
+                                font-size: 1.8rem;
+
+                            }
                         }
 
                         p {
-
                             color: $text-c0-white;
                             font-size: $fs-c6 ;
                             font-weight: $fw-regular;
@@ -115,6 +184,16 @@
                             margin-bottom: 50px;
                             max-width: 570px;
                             animation-delay: 0.8s;
+
+                            @media screen and (max-width:575.98px) {
+
+                                margin-bottom: 15px;
+                            }
+
+                            @media screen and (max-width:414px) {
+
+                                font-size: 1rem;
+                            }
 
                             ul {
                                 padding-left: 16px;

@@ -3,7 +3,7 @@
 @import './CaseHome/case';
 @import './BlogsHome/blogs';
 @import './ContactHome/contact';
-@import './Services/ServicesHome';
+@import './Services/servicesHome';
 @import './CategoryCourses/categoryCoursesHome';
 
 .info-coure-box {
@@ -135,6 +135,7 @@
     }
 
     .popular-course {
+       
         h6 {
             color: $text-c0-primary;
 
@@ -155,7 +156,7 @@
         color: $text-c3-dark;
 
         @media screen and (max-width:767.98px) {
-            font-size: $fs-c8;
+            font-size: $fs-c4;
         }
 
         @media screen and (max-width:575.98px) {

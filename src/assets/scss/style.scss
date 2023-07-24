@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;900&display=swap');
 @import 'animate.css';
-@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 @import './Base/base';
 //Helpers
@@ -38,8 +38,22 @@
     justify-content: center;
     margin-top: 1.5rem;
 
+    &:last-of-type {
+        @media screen and (max-width : 1200px) {
+            display: none;
+        }
+
+        @media screen and (max-width : 767.98px) {
+            display: block;
+        }
+        @media screen and (max-width : 767.98px) {
+            display: none;
+        }
+    }
+
     @media screen and (max-width:767.98px) {
         margin-top: 50px;
+
     }
 
     .stiker-card {
@@ -52,7 +66,7 @@
         background-color: $bg-c1-primary;
 
         @media screen and (max-width:767.98px) {
-            top: 326px;
+            top: 236px;
         }
 
         @media screen and (max-width:575.98px) {
@@ -68,6 +82,7 @@
         }
     }
 
+    //
     .card-global {
         position: relative;
         display: flex;
@@ -84,14 +99,16 @@
 
 
         @media screen and (max-width:767.98px) {
-            min-width: 540px;
-            width: 540px;
+            // min-width: 540px;
+            // width: 540px;
+            min-width: 300px;
+            width: 300px;
 
             .card-icon {
-                font-size: 1.8rem;
+                font-size: 1rem;
             }
         }
-
+     
         @media screen and (max-width:575.98px) {
             min-width: 370px;
             width: 370px;
@@ -115,10 +132,12 @@
 
             height: 185px;
             min-height: 185px;
-
+            
             @media screen and (max-width:767.98px) {
-                min-height: 360px;
-                height: 360px;
+                // min-height: 360px;
+                // height: 360px;
+                min-height: 260px;
+            height: 260px;
             }
 
             @media screen and (max-width:575.98px) {
@@ -149,7 +168,7 @@
                 color: $text-c2-dark;
 
                 @media screen and (max-width:767.98px) {
-                    font-size: $fs-3xl;
+                    font-size: $fs-c10;
                 }
 
                 @media screen and (max-width:575.98px) {
@@ -182,7 +201,10 @@
             align-items: center;
             padding: 5px 20px;
             border-top: 1px solid rgba(0, 0, 0, .125);
-
+            @media screen and (max-width:414px) {
+             
+                    padding: 5px 10px;
+            }
             @media screen and (max-width:414px) {
                 .color-card-title {
                     font-size: 1rem;
@@ -244,11 +266,11 @@
                         }
 
                         &:first-of-type {
-                            font-size: $fs-c6;
+                            font-size: $fs-c1;
                         }
 
                         &:nth-child(2) {
-                            font-size: $fs-c12;
+                            font-size: $fs-c8;
                         }
                     }
 
@@ -278,7 +300,7 @@
             visibility: visible;
             opacity: 1;
         }
-
+        //
         .sub-card {
             position: absolute;
             visibility: hidden;
@@ -298,15 +320,22 @@
             border: 1px solid rgba(0, 0, 0, .125);
             box-shadow: 0 0 10px 4px rgba(0, 0, 0, .1);
 
-
-            @media screen and (max-width:991.98px) {//
+            @media screen and (max-width:1200px) {
+                //
                 top: 104%;
-                right: -13%;
+                right: 0%;
+            }
+
+            @media screen and (max-width:991.98px) {
+                //
+                top: 104%;
+                // right: -13%;
             }
 
             @media screen and (max-width:767.98px) {
-                width: 110%;
-                left: -6%;
+                width: 105%;
+                right: -3%;
+
 
                 &::before {
                     width: 10%;
@@ -314,10 +343,11 @@
             }
 
             @media screen and (max-width:414px) {
-                left: -5%;
+                // left: -5%;
 
             }
 
+            //
             &::before {
                 content: "";
                 position: absolute;
@@ -329,26 +359,27 @@
                 border-bottom: 15px solid transparent;
                 border-right: 15px solid $text-c0-white;
 
-                @media screen and (max-width:1199.98px) {
+                @media screen and (max-width:1200px) {
                     top: -6%;
                     left: 50%;
                     border-left: 15px solid transparent;
                     border-bottom: 15px solid $text-c0-white;
                     border-right: 15px solid transparent;
                 }
-
+                @media screen and (max-width:991.98px) {
+                    top: -6%;
+                    border-left: 15px solid transparent;
+                    border-bottom: 15px solid $text-c0-white;
+                    border-right: 15px solid transparent;
+                }
                 @media screen and (max-width:767.98px) {
-                    top: -9%;
+                    left: 46%;
+                    top: -7%;
                     width: 8%;
                     height: 8%;
                     border-left: 25px solid transparent;
                     border-bottom: 25px solid $text-c0-white;
                     border-right: 25px solid transparent;
-                }
-
-                @media screen and (max-width:767.98px) {
-                    top: -8%;
-
                 }
 
                 @media screen and (max-width:414px) {
@@ -449,16 +480,18 @@
     }
 
     .move-sub-card {
+
+        //
         .sub-card {
             left: -106%;
 
-            // @media screen and (max-width:1199.98px) {
-            //     left: -13%;
-            //     top: 104%;
-            // }
+            @media screen and (max-width:1200px) {
+                left: 0%;
+                top: 104%;
+            }
 
             @media screen and (max-width:991.98px) {
-                left: -13%;
+                // left: -13%;
                 top: 104%;
             }
 
@@ -469,7 +502,7 @@
                 left: 100%;
                 border-right: none;
 
-                @media screen and (max-width:1199.98px) {
+                @media screen and (max-width:1200px) {
                     top: -6%;
                     left: 50%;
                     border-left: 15px solid transparent;
@@ -483,30 +516,32 @@
                     border-bottom: 25px solid $text-c0-white;
                     border-right: 25px solid transparent;
                     border-left: 25px solid transparent;
-                    top: -9%;
+                    top: -7%;
+                    left: 46%;
+
                 }
 
                 @media screen and (max-width:575.98px) {}
 
                 @media screen and (max-width:414px) {
-                    top: -40px;
+                    // top: -40px;
                 }
             }
         }
 
         @media screen and (max-width:767.98px) {
             .sub-card {
-                left: -6%;
-                top: 105%;
+                left: -2%;
+                top: 104%;
             }
         }
 
-        @media screen and (max-width:575.98px) {
-            .sub-card {
-                left: -5.5%;
-                top: 106%;
-            }
-        }
+        // @media screen and (max-width:575.98px) {
+        //     .sub-card {
+        //         left: -5.5%;
+        //         top: 106%;
+        //     }
+        // }
     }
 
     .title-maker {

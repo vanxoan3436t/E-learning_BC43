@@ -35,22 +35,27 @@ $lg: 1199.98px;
     }
 }
 
-.show {
-    display: block;
-    @media screen and (max-width:767.98px) {
-     
-    }
-    @media screen and (max-width:575.98px) {
+@media screen and (max-width:991.98px){
     
-    }
-    @media screen and (max-width:414px) {
-       //ipplus
-    }
-    @media screen and (max-width:375px) {
-      //ip
-    }
 }
-
+@media screen and (max-width:767.98px){
+    
+}
+@media screen and (max-width:575.98px){
+    
+}
+@media screen and (max-width:414px){
+    
+}
+@media screen and (max-width:375px){
+    
+}
+.show {
+ display: inline-block!important;
+}
+.hide{
+    display: none;
+}
 .logo {
     width: 104px;
 }
@@ -74,7 +79,6 @@ $lg: 1199.98px;
 
 .section-heading__title_small {
     color: $text-c0-primary;
-    ;
     font-size: $fs-c4;
     font-weight: $fw-medium;
     position: relative;
@@ -83,7 +87,9 @@ $lg: 1199.98px;
     letter-spacing: 1.6px;
     display: inline-block;
     margin-bottom: 28px;
-
+    @media screen and (max-width:414px){
+        font-size: $fs-c2;
+    }
     &::before {
         position: absolute;
         top: 50%;
@@ -191,6 +197,9 @@ $lg: 1199.98px;
     text-transform: uppercase;
     background-color: $bg-c0-primary;
     padding-top: 235.5px;
+    @media  screen and (max-width:991.98px){
+        padding-top: 148.5px;
+    }
     h3,
     p {
         color: $text-c0-white;
@@ -219,11 +228,6 @@ $lg: 1199.98px;
         width: 100%;
         background: transparent;
         outline: transparent;
-
-        @include ScreenSize($lg) {
-            // position: absolute;
-
-        }
     }
 
     .search_button {
@@ -236,11 +240,6 @@ $lg: 1199.98px;
         top: 50%;
         transform: translateY(-50%);
 
-        @include ScreenSize($lg) {
-            // position: absolute;
-            // font-size: 26px;
-            // display: none;
-        }
     }
 }
 
@@ -249,11 +248,22 @@ $lg: 1199.98px;
         object-fit: fill;
         width: 100%;
         height: 255px;
-        min-height: 200px;
+        min-height: 255px;
+        @media screen and (max-width: 991.98px){
+          min-height: 380px;
+          height: 380px;
+        }
+        @media screen and (max-width: 414px){
+            min-height: 220px;
+            height: 220px;
+          }
     }
 
     .card-net-content * {
         margin-bottom: 5px;
+        @media screen and (max-width: 991.98px){
+            margin-top: 8px;
+        }
     }
 
     .card-net-content {
@@ -264,18 +274,6 @@ $lg: 1199.98px;
         .icon-net-card {
             .text-card-title {
                 padding-right: 15px;
-
-                // .icon-oclock {
-                //     color: #f5c002;
-                // }
-
-                // .icon-calendar {
-                //     color: #f06f68;
-                // }
-
-                // .icon-level {
-                //     color: #65c9ff;
-                // }
             }
         }
 

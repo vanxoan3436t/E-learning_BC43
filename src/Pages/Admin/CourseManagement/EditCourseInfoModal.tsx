@@ -9,6 +9,8 @@ type Props = {}
 
 export default function EditCourseInfoModal({}: Props) {
 
+
+  
   return (
     <div className="modal fade" id="editInfoCourse">
      <div className="modal-dialog form-course">

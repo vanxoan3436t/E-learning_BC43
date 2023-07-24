@@ -6,18 +6,25 @@ import { DispatchType, RootState } from '../../Redux/configStote'
 import { getStore } from '../../util/config'
 import swal from 'sweetalert'
 import { courseCategaryActionApi } from '../../Redux/reducer/quanLyKhoaHocReducer'
+import ButtonMouseEvent from '../ButtonProps/ButtonMouseEvent'
 type Props = {
 }
+
+interface Screen {
+  width: number,
+  height?: number
+}
 const Header = (props: Props) => {
+
   const dispatch: DispatchType = useDispatch();
-  const login: any = getStore('credentials')
-  const keyInput = useRef('')
-  const { coursesCategary } = useSelector((state: RootState) => state.quanLyKhoaHocReducer)
+  const login: any = getStore('credentials');
+  const keyInput = useRef('');
+  const { coursesCategary } = useSelector((state: RootState) => state.quanLyKhoaHocReducer);
   const renderCourseCate = () => {
     return coursesCategary.map((coursesCategary: any, index: number) => {
       return (
         <li key={index}>
-          <NavLink to={`/categorycourses/${coursesCategary.maDanhMuc}`} style={{ textTransform: 'uppercase' }}>{coursesCategary.tenDanhMuc}</NavLink>
+          <NavLink className="dropdown-item" to={`/categorycourses/${coursesCategary.maDanhMuc}`} style={{ textTransform: 'uppercase' }}>{coursesCategary.tenDanhMuc}</NavLink>
         </li>
       )
     })
@@ -38,7 +45,7 @@ const Header = (props: Props) => {
     if (login) {
       let loginAccount = JSON.parse(login)
       return <div className="header-avatar">
-         {loginAccount.maLoaiNguoiDung === 'GV' ? <span className='header-set'>  <NavLink to="/admin/usermanagement"><i className="fa-solid fa-gear text-warning"></i></NavLink> </span> : <></>}
+        {loginAccount.maLoaiNguoiDung === 'GV' ? <span className='header-set'>  <NavLink to="/admin/usermanagement"><i className="fa-solid fa-gear text-warning"></i></NavLink> </span> : <></>}
         <NavLink className='to-info' to='/info'>
           <img className='your-avatar' src="/img/avatar-rose.jpg" alt="avarta" />
           <span className='logout' onClick={() => {
@@ -47,7 +54,7 @@ const Header = (props: Props) => {
         </NavLink>
       </div>
     } else {
-      return <NavLink className='btn btn--common btn-primary' to='/login'>
+      return <NavLink className='btn btn--common ' to='/login'>
         Đăng Nhập
         <i className="fa-solid fa-arrow-right"></i>
       </NavLink>
@@ -69,18 +76,64 @@ const Header = (props: Props) => {
     const position = window.scrollY;
     setScrollPosition(position);
   };
+
+  const [classState, setToggleClass] = useState(false);
+  // const [screen, setScreen] = useState<Screen>({
+  //   width: window.innerWidth,
+  //   height: window.innerHeight
+  // });
+
+  // const changeDevice = () => {
+  //   if (classState) {
+  //     console.log('123', 123)
+  //   }
+  //   // console.log('123', 123)
+  //   setScreen({
+
+  //     width: window.innerWidth,
+  //     height: window.innerHeight
+  //   })
+  // }
+
+
+  // const changeClass = () => {
+  //   if (classState) {
+  //     setToggleClass(true)
+  //   }
+  //   return setToggleClass(false)
+  // }
+  // useEffect(() => {
+
+  //   window.addEventListener('load', changeDevice);
+  //   window.addEventListener('resize', changeDevice);
+  //   if (screen.width < 991.98) {
+  //     setToggleClass(true)
+  //   }
+  //   return () => {
+  //     window.removeEventListener('load', changeDevice);
+  //     window.removeEventListener('resize', changeDevice);
+  //     if (screen.width > 991.98) {
+  //       setToggleClass(false)
+  //     }
+  //   }
+
+  // }, [])
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => {
       window.addEventListener('scroll', handleScroll)
     }
   }, [])
+
+
   useEffect(() => {
     dispatch(courseCategaryActionApi());
+    // changeClass();
+
   }, [])
-  return (
+  return (<>
     <header className={`header white-bg sticky-on  ${scrollPosition > 91.5 ? "sticky" : ""}`}>
-      <div id='topbar-wrap' className="header-top container-custom">
+      <div id='topbar-wrap' className="header-top container-custom d-none d-lg-block">
         <div className="container-fluid">
           <div className="row align-items-center ">
             <div className="col-lg-9">
@@ -157,64 +210,65 @@ const Header = (props: Props) => {
         </div>
       </div>
 
-      <div id='navbar-wrap' className="white-bg header-bottom navbar-wrap container-custom">
+
+      <div id='navbar-wrap' className={`white-bg header-bottom navbar-wrap container-custom header-mobile`}>
         <div className="container-fluid">
-          <div className="header-bottom_row d-flex justify-content-between align-items-center ">
-            <div className="header-bottom_col logo">
-              <div>
-                <NavLink to={'/'} className='logo_link'>
-                  <img src="/img/elearning-logo.png" alt="logo" />
-                </NavLink>
-              </div>
-            </div>
-            <div className="header-bottom_col">
-              <div className="main-menu">
-                <nav className="main-menu_nav">
-                  <ul className='d-flex'>
-                    <li className="nav-sub">
-                      <NavLink to={'/'} >DANH MỤC</NavLink>
-                      <ul className='main-menu_dropdown'>
-                        {renderCourseCate()}
-                      </ul>
-                    </li>
-                    <li className="nav-sub">
-                      <NavLink to={'/'} >KHOÁ HỌC</NavLink>
-                    </li>
-                    <li className="nav-sub">
-                      <NavLink to={'/'} >BLOG</NavLink>
-                    </li>
-                    <li className="nav-sub">
-                      <NavLink to={'/'} >SỰ KIỆN</NavLink>
-                      <ul className='main-menu_dropdown'>
-                        <li><NavLink to={'/'}>SỰ KIỆN SALE CUỐI NĂM</NavLink></li>
-                        <li><NavLink to={'/'}>SỰ KIỆN GIÁNG SINH</NavLink></li>
-                        <li><NavLink to={'/'}>SỰ KIỆN NOEL</NavLink></li>
-                      </ul>
-                    </li>
-                    <li className="nav-sub">
-                      <NavLink to={'/'} >THÔNG TIN</NavLink>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
+          <div className="main-menu">
+            <nav className="main-menu-nav navbar navbar-expand-lg ">
+              <NavLink className="logo" to='/'>
+                <img src="/img/elearning-logo.png" alt="logo" />
+              </NavLink>
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span className='fa-solid fa-bars'></span>
+              </button>
 
-            <form className="header-bottom_col" onSubmit={handleSubmitSearch}>
-              <div className="search-main d-flex justify-content-between">
-                <input onInput={handleChange} type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true' />
-                <button className="search_button">
-                  <i className="fas fa-search"></i>
-                </button>
-              </div>
-            </form>
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav me-auto mb-lg-0">
+                  <li className="nav-item">
+                    <NavLink className="nav-link active" aria-current="page" to="/">Trang trủ</NavLink>
+                  </li>
+                  <li className="nav-item ">
+                    <NavLink className="nav-link " to='/'>
+                      DANH MỤC KHÓA HỌC  <i className="fa-solid fa-arrow-down"></i>
+                    </NavLink>
+                    <ul className=" main-menu_dropdown">
+                      {renderCourseCate()}
+                    </ul>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to={'/'} >BLOG</NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to={'/'} >Sự kiện</NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to={'/'} >Thông tin</NavLink>
+                  </li>
+              
+                </ul>
 
-            <div className="header-bottom_col">
-              {handleLoginLink()}
-            </div>
+                <form className="search-main d-flex justify-content-between" onSubmit={handleSubmitSearch}>
+                  <input onInput={handleChange} type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true' />
+                  <button className="search_button">
+                    <i className="fas fa-search"></i>
+                  </button>
+                </form>
+                {handleLoginLink()}
+              </div>
+
+            </nav>
+
           </div>
+          {/*  
+
+            
+
+  */}
         </div>
       </div>
     </header >
+
+  </>
   )
 }
 

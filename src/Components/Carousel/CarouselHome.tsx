@@ -21,7 +21,7 @@ const CarouselHome = (props: Props) => {
                 <div className="col-6">
                   <span className='wow animate__animated animate__fadeInUp animate-delay' >Khởi đầu sự nghiệp của bạn</span>
                   <h2 className='wow animate__animated animate__fadeInUp animate-delay'>BẮT ĐẦU SỰ NGHIỆP LẬP TRÌNH TẠI E-LEARNING</h2>
-                  <p className='wow animate__animated animate__fadeInUp animate-delay'>“E-Learning Academy là học viện tiên phong tại Việt Nam áp dụng phương pháp đào tạo Active Learning và Flipped Learning thông qua các dự án thực tiễn trong lĩnh vực đào tạo CNTT. Học viên sẽ đóng vai trò là một Scrum member trong mô hình Agile để trở thành một lập trình chuyên nghiệp, đáp ứng mọi nhu cầu tuyển dụng của Doanh nghiệp.” <br />
+                  <p className='carousel-caption-text wow animate__animated animate__fadeInUp animate-delay'>“E-Learning Academy là học viện tiên phong tại Việt Nam áp dụng phương pháp đào tạo Active Learning và Flipped Learning thông qua các dự án thực tiễn trong lĩnh vực đào tạo CNTT. Học viên sẽ đóng vai trò là một Scrum member trong mô hình Agile để trở thành một lập trình chuyên nghiệp, đáp ứng mọi nhu cầu tuyển dụng của Doanh nghiệp.” <br />
                     _ E-LEARNING CEO</p>
                   <NavLink to='/' className="btn btn--common btn-primary wow animate__animated animate__fadeInUp animate-delay" data-animation="fadeInUp" data-delay="1s" tabIndex={-1} >
                     Xem chi tiết

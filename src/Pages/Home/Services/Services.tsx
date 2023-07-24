@@ -210,42 +210,42 @@ const Services = (props: Props) => {
 
                                 <div className="tab-pane fade " id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                     <div className="services-partners overflow-hidden mb-20">
-                                        <ul className="services-partners__wrapper overflow-hidden">
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay">
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-01.png" alt='service-1' /></a>
+                                        <ul className="services-partners__wrapper overflow-hidden ">
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay">
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-01.png" alt='service-1' /></a>
                                             </li>
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_3">
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-02.png" alt='service-2' /></a>
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay-0_3">
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-02.png" alt='service-2' /></a>
                                             </li>
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_4" >
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-03.png" alt='service-3' /></a>
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay-0_4" >
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-03.png" alt='service-3' /></a>
                                             </li>
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_5">
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-04.png" alt='service-4' /></a>
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay-0_5">
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-04.png" alt='service-4' /></a>
                                             </li>
-                                            <li className="services-partners__item animate__animated animate__fadeInUp animate-delay-0_6">
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-05.png" alt='service-5' /></a>
+                                            <li className="services-partners__item  animate__animated animate__fadeInUp animate-delay-0_6">
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-05.png" alt='service-5' /></a>
                                             </li>
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_7" >
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-06.png" alt='service-6' /></a>
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay-0_7" >
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-06.png" alt='service-6' /></a>
                                             </li>
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_8" >
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-07.png" alt='service-7' /></a>
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay-0_8" >
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-07.png" alt='service-7' /></a>
                                             </li>
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-0_9">
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-08.png" alt='service-8' /></a>
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay-0_9">
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-08.png" alt='service-8' /></a>
                                             </li>
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-1">
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-09.png" alt='service-9' /></a>
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay-1">
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-09.png" alt='service-9' /></a>
                                             </li>
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-1_1">
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-10.png" alt='service-10' /></a>
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay-1_1">
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-10.png" alt='service-10' /></a>
                                             </li>
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-1_2">
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-11.png" alt='service-11' /></a>
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay-1_2">
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-11.png" alt='service-11' /></a>
                                             </li>
-                                            <li className="services-partners__item wow animate__animated animate__fadeInUp animate-delay-1_5">
-                                                <a className="services-partners__item_link" href='/'><img src="./img/services-img-12.png" alt='service-12' /></a>
+                                            <li className="services-partners__item  wow animate__animated animate__fadeInUp animate-delay-1_5">
+                                                <a className="services-partners__item _link" href='/'><img src="./img/services-img-12.png" alt='service-12' /></a>
                                             </li>
                                         </ul>
                                     </div>

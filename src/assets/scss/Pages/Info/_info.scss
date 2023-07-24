@@ -16,6 +16,10 @@
             padding: 20px;
             min-height: 500px;
 
+            @media screen and (max-width: 767.98px) {
+                min-height: 400px;
+            }
+
             .info-avatar {
                 img {
                     width: 150px;
@@ -160,9 +164,16 @@
                     justify-content: space-between;
                     align-items: center;
 
+                    @media screen and (max-width:414px) {
+                        display: block;
+                        h6{
+                            margin-bottom: 10px;
+                        }
+                    }
+
                     h6 {
                         text-transform: uppercase;
-                        font-size: $fs-c5;
+                        font-size: 1rem;
                     }
 
                     form {
@@ -224,7 +235,8 @@
 
                 .modal-footer {
                     border-top: none;
-padding: 0;
+                    padding: 0;
+
                     button {
                         border-radius: 5px;
                         padding: 10px;

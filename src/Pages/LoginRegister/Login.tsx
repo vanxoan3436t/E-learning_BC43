@@ -25,7 +25,7 @@ export interface UserSignUpFrm {
 }
 
 const Login = (props: Props) => {
-  const [classState, toggleClass] = useState(false)
+  const [classState, toggleClass] = useState(false);
   const dispatch: DispatchType = useDispatch();
   //formSingup
   const signUpFrm = useFormik<UserSignUpFrm>({
