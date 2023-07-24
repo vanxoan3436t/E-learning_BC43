@@ -60,7 +60,7 @@ export default function CourseManagement({ }: Props) {
         <td className="align-middle text-break text-wrap" style={{ width: '13%' }}>{item.nguoiTao.hoTen} </td>
         <td className='align-middle' style={{ width: '25%' }}>
           <button onClick={() => { }} type="button" className="btn btn-primary mx-1 text-wrap" data-bs-toggle="modal" data-bs-target="#courseReg" >
-            <span className='hide'>Ghi danh</span>
+            <span >Ghi danh</span>
             {/* <span className='unhide'>Reg</span> */}
           </button>
           <button onClick={() => { }} className="btn btn-warning m-1 text-wrap" data-bs-toggle="modal" data-bs-target="#editInfoCourse">Sửa</button>
@@ -94,15 +94,15 @@ export default function CourseManagement({ }: Props) {
           <thead className="text-dark bg-light">
             <tr style={{ width: '100%' }}>
               <th className="align-middle text-break text-wrap" style={{ width: '7%' }} >
-                <span className='hide'>STT</span>
+                <span >STT</span>
              
               </th>
               <th className="align-middle text-break text-wrap" style={{ width: '15%' }}>
-                <span className='hide'>Mã khóa học</span>
+                <span >Mã khóa học</span>
                
               </th>
               <th className="align-middle text-break text-wrap" style={{ width: '15%' }} >
-                <span className='hide'>Tên khóa học</span>
+                <span >Tên khóa học</span>
          
               </th>
               <th className="align-middle text-break text-wrap" style={{ width: '14%' }}>

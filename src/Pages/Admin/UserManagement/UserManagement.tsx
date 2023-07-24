@@ -20,15 +20,15 @@ export default function UserManagement({ }: Props) {
   const userArray = useSelector((state: RootState) => state.quanLyNguoiDungReducer.userArray);
   const keyRef = useRef('');
   //Pagination
-  const [currentItems, setCurrentItems] = useState([]);//mục hiện tại
-  const [pageCount, setPageCount] = useState(0);// số lượng trang
-  const [itemOffset, setItemOffset] = useState(0);//mục tắt đặt
+  const [currentItems, setCurrentItems] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
     const endOffset = itemOffset + 5;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-    setCurrentItems(userArray && userArray.slice(itemOffset, endOffset));//array.slice(from, until)
-    setPageCount(Math.ceil(userArray && userArray?.length / 5));//Math.ceil là hàm làm tròn số vd: 50.95 trả về 51 hoặc 50.45 trả về 50
+    setCurrentItems(userArray && userArray.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(userArray && userArray?.length / 5));
   }, [itemOffset, userArray]);
 
   const handlePageClick = (e: any) => {
@@ -69,7 +69,6 @@ export default function UserManagement({ }: Props) {
       }
 
     } catch {
-      //const err = AxiosError HÃY HỌC CÁCH SỬ DỤNG 
       swal({
         title: 'Tài khoản đã ghi danh hoặc không tồn tại. Không thể xóa !',
         icon: "warning",
@@ -92,8 +91,6 @@ export default function UserManagement({ }: Props) {
         <td style={{ width: '27%' }}>
           <button type="button" className="btn btn-primary mx-1 text-wrap" data-bs-toggle="modal" data-bs-target="#userReg" >
             Ghi danh
-            {/* <span className='hide'>Ghi danh</span> */}
-            {/* <span className='unhide'>Thêm</span> */}
           </button>
           <button onClick={() => {
             updateUser(item)
@@ -126,25 +123,25 @@ export default function UserManagement({ }: Props) {
           <thead className="text-dark bg-light">
             <tr style={{ width: '100%' }}>
               <th className="align-middle text-break text-wrap" style={{ width: '7%' }} >
-                <span className='hide'>STT</span>
-                {/* <span className='unhide'>STT</span> */}
+                <span >STT</span>
+       
               </th>
               <th className="align-middle text-break text-wrap" style={{ width: '13%' }}>
-                <span className='hide'>Tài khoản</span>
-                {/* <span className='unhide'>TK</span> */}
+                <span >Tài khoản</span>
+           
               </th>
               <th className="align-middle text-break text-wrap" style={{ width: '7%' }} >
-                <span className='hide'>Người dùng</span>
-                {/* <span className='unhide'>ND</span> */}
+                <span >Người dùng</span>
+             
               </th>
               <th className="align-middle text-break text-wrap" style={{ width: '15%' }}>
-                <span className='hide'>Họ và tên</span>
-                {/* <span className='unhide'>Họ Tên</span> */}
+                <span >Họ và tên</span>
+            
               </th>
               <th className="align-middle text-break text-wrap" style={{ width: '21%' }}>Email</th>
               <th className="align-middle text-break text-wrap" style={{ width: '12%' }}>
-                <span className='hide'>Số điện thoại</span>
-                {/* <span className='unhide'>Điện thoại</span> */}
+                <span >Số điện thoại</span>
+             
               </th>
 
               <th className="align-middle" style={{ width: '25%' }}><em className="fa fa-cog text-wrap" /></th>

@@ -277,7 +277,7 @@ const Info = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="info-modal-update modal fade " id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="info-modal-update modal fade " id="update-info" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">

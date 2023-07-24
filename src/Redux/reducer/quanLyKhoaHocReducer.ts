@@ -168,7 +168,7 @@ export const searchAsyncActionApi = (key: string) => {
     return async (dispacth: DispatchType) => {
         try {
             const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${key}&MaNhom=GP01`)
-            const action: PayloadAction<CourseDetail[]> = getDetailAction(result.data);
+            const action: PayloadAction<CourseDetail[]> = getSearchListAction(result.data);
             dispacth(action);
         } catch (err) {
             console.log('err', err);
