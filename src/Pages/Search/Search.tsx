@@ -20,7 +20,7 @@ const Search = (props: Props) => {
         <div className="my-course-item" key={index}>
           <div className="row">
             <div className="col-xl-3 col-lg-4">
-              <img className='img-net' src={course.hinhAnh} alt="..." />
+              <img className='img-net' src={course.hinhAnh} alt="..."  onError={(e: any) => { e.target.onError = null; e.target.src = "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg" }}/>
             </div>
             <div className="col-xl-7 col-lg-6 card-net-content">
               <h6>{course.tenKhoaHoc}</h6>
@@ -43,8 +43,8 @@ const Search = (props: Props) => {
               </div>
 
             </div>
-            <div className="col-xl-2">
-              <NavLink className='btn  btn--common btn-primary' to='/detail'
+            <div className="col-xl-2 btn-card">
+              <NavLink className='btn btn--common btn-primary' to={`/detail/${course.maKhoaHoc}`}
               >
                 Xem chi tiết
                 <i className="fa-solid fa-arrow-right"></i>

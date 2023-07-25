@@ -86,7 +86,7 @@ export default function UserManagement({ }: Props) {
         <td className="align-middle text-break text-wrap" style={{ width: '13%' }} >{item.taiKhoan}</td>
         <td className="align-middle text-break text-wrap" style={{ width: '5%' }} >{item.maLoaiNguoiDung}</td>
         <td className="align-middle text-break text-wrap" style={{ width: '15%' }} >{item.hoTen}</td>
-        <td className="align-middle text-break text-wrap" style={{ width: '25%' }} >{item.email}</td>
+        <td className="align-middle text-break text-wrap" style={{ width: '22%' }} >{item.email}</td>
         <td className="align-middle text-break text-wrap" style={{ width: '10%' }} >{item.soDt}</td>
         <td style={{ width: '27%' }}>
           <button type="button" className="btn btn-primary mx-1 text-wrap" data-bs-toggle="modal" data-bs-target="#userReg" >

@@ -172,7 +172,7 @@ useEffect(() => {
               <div className='box-course-learn'>
                 <h6>Những gì bạn sẽ học</h6>
                 <div className='row'>
-                  <div className="col-6">
+                  <div className="col-xs-12 col-sm-6">
                     <ul>
                       <li><i className='fas fa-check'></i><NavLink to=' '>Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện với người dùng và phản ứng nhanh</NavLink></li>
                       <li><i className='fas fa-check'></i><NavLink to=' '>Đăng ký công việc được trả lương cao hoặc làm freelancer trong một trong những lĩnh vực được yêu cầu nhiều nhất mà bạn có thể tìm thấy trong web dev ngay bây giờ</NavLink></li>
@@ -181,7 +181,7 @@ useEffect(() => {
                         Tìm hiểu tất cả về React Hooks và React Components</NavLink></li>
                     </ul>
                   </div>
-                  <div className="col-6">
+                  <div className=" col-xs-12 col-sm-6">
                     <ul>
                       <li><i className='fas fa-check'></i><NavLink to=' '>
                         Thông thạo chuỗi công cụ hỗ trợ React, bao gồm cú pháp Javascript NPM, Webpack, Babel và ES6 / ES2015</NavLink></li>

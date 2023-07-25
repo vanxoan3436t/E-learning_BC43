@@ -39,15 +39,17 @@
             .slick-next {
                 position: static;
                 transform: translate(0, 0);
+
+                &::before {
+                    display: none;
+                }
             }
 
             .slick-list {
                 .slick-track {
-
                     .slick-slide {
                         div {
                             .case-item {
-
                                 padding: 0 20px;
                                 transition: all 0.4s ease;
                                 position: relative;
@@ -87,13 +89,16 @@
                                     transition: all 0.4s ease;
 
                                     h5 {
-
                                         margin-bottom: 2px;
                                         transition: all 0.4s ease;
 
                                         a {
                                             color: $text-c0-white;
-                                            font-size: $fs-c12 ;
+                                            font-size: $fs-c12;
+
+                                            @media screen and (max-width:1200px) {
+                                                font-size: $fs-c8;
+                                            }
                                         }
                                     }
 
@@ -108,8 +113,5 @@
                 }
             }
         }
-
-
-
     }
 }

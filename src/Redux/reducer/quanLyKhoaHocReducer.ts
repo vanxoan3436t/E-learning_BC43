@@ -162,8 +162,6 @@ export const registerCourseActionApi = async (key : string) => {
     }
 }
 
-
-
 export const searchAsyncActionApi = (key: string) => {
     return async (dispacth: DispatchType) => {
         try {
@@ -199,26 +197,21 @@ export const addCourseActionApi = (values: any) => {
             } else {
                 formData.append('hinhAnh', values.hinhAnh, values.hinhAnh.name)
             }
-            // console.log(formData.get('hinhAnh'))
         }
 
         try {
-            // console.log(formData.get('hinhAnh'))
             const result = await http.post('/api/QuanLyKhoaHoc/ThemKhoaHocUploadHinh', formData);
             if (result.request.status === 200) {
-                // formik.resetForm()
                 swal({
                     title: "Thêm thành công",
                     icon: "success",
                     timer: 2000,
                 });
-                // dispatch(getListCourse) phải gọi 6 danh sách khóa học
 
             }
 
         } catch (err) {
             swal({
-                // title: errors.response?.data,
                 icon: "warning",
                 text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
                 timer: 2000,

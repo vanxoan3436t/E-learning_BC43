@@ -236,7 +236,6 @@ export default function ListCourses({ }: Props) {
                     </div>
                 )
             }
-
         })
     }
     return (<div className='list-couser-category '>
@@ -245,7 +244,7 @@ export default function ListCourses({ }: Props) {
             <h6 className='ms-3 mt-5'>
             Khóa học phổ biến
             </h6>
-        <div className='row mt-4'>
+        <div className='row '>
             {renderCoursePopular()}
         </div>
         </div>

@@ -105,12 +105,12 @@ const BlogsHome = (props: Props) => {
                     <div className="blog-item__article">
                       <span className="blog-item__date">7 7 2021</span>
                       <h3 className="blog-item__title">
-                        <NavLink to="https://www.youtube.com/watch?v=8hIrStY3aYg">
-                        Nhạc hay cho dev :))
+                        <NavLink to="https://youtu.be/MQE0Y29sNgE">
+                        Nhạc hay cho dev 
                         </NavLink>
                       </h3>
                       <p >
-                      'A Flute Girl' Most Beautiful Chinese Flute Music "Endless love"  <br /> <br />
+                      'A Flute Girl' Most Beautiful Chinese Flute Music "Endless love"  <br /> <br /> 
                       </p>
                       <ul >
                         <li >

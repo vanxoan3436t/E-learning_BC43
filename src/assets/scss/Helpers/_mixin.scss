@@ -5,8 +5,6 @@ $xs: 575.98px;
 $sm: 767.98px;
 $md: 991.98px;
 $lg: 1199.98px;
-
-
 @mixin ScreenSize ($type) {
     @if $type ==$i6 {
         @media screen and (max-width:$i6) {
@@ -34,28 +32,14 @@ $lg: 1199.98px;
         }
     }
 }
-
-@media screen and (max-width:991.98px){
-    
-}
-@media screen and (max-width:767.98px){
-    
-}
-@media screen and (max-width:575.98px){
-    
-}
-@media screen and (max-width:414px){
-    
-}
-@media screen and (max-width:375px){
-    
-}
 .show {
- display: inline-block!important;
+    display: inline-block !important;
 }
-.hide{
+
+.hide {
     display: none;
 }
+
 .logo {
     width: 104px;
 }
@@ -67,6 +51,10 @@ $lg: 1199.98px;
 .section-button {
     display: flex;
     justify-content: flex-end;
+
+    @media screen and (max-width:767.98px) {
+        justify-content: flex-start;
+    }
 }
 
 .section-bg-common {
@@ -87,9 +75,11 @@ $lg: 1199.98px;
     letter-spacing: 1.6px;
     display: inline-block;
     margin-bottom: 28px;
-    @media screen and (max-width:414px){
+
+    @media screen and (max-width:414px) {
         font-size: $fs-c2;
     }
+
     &::before {
         position: absolute;
         top: 50%;
@@ -197,8 +187,13 @@ $lg: 1199.98px;
     text-transform: uppercase;
     background-color: $bg-c0-primary;
     padding-top: 235.5px;
-    @media  screen and (max-width:991.98px){
+
+    @media screen and (max-width:991.98px) {
         padding-top: 148.5px;
+    }
+    @media screen and (max-width:575.98px) {
+        padding:84.5px 30px 30px 30px;
+
     }
     h3,
     p {
@@ -249,19 +244,22 @@ $lg: 1199.98px;
         width: 100%;
         height: 255px;
         min-height: 255px;
-        @media screen and (max-width: 991.98px){
-          min-height: 380px;
-          height: 380px;
+
+        @media screen and (max-width: 991.98px) {
+            min-height: 380px;
+            height: 380px;
         }
-        @media screen and (max-width: 414px){
+
+        @media screen and (max-width: 414px) {
             min-height: 220px;
             height: 220px;
-          }
+        }
     }
 
     .card-net-content * {
         margin-bottom: 5px;
-        @media screen and (max-width: 991.98px){
+
+        @media screen and (max-width: 991.98px) {
             margin-top: 8px;
         }
     }

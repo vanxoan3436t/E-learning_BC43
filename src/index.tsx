@@ -15,6 +15,8 @@ import UserManageme from './Pages/Admin/UserManagement/UserManagement';
 import CourseManagement from './Pages/Admin/CourseManagement/CourseManagement';
 import CategoryCourese from './Pages/CategoryCourses/CategoryCourses';
 import Detail from './Pages/Detail/Detail';
+import ResponsiveItem from './Templates/ResponsiveItem';
+import PageNotFound from './Components/PageNot/PageNotFound';
 
 export const history: any = createBrowserHistory();
 
@@ -39,9 +41,9 @@ root.render(
                     </Route>
                     <Route path='*' element={<Navigate to='/' />}></Route>
                 </Route>
-                <Route path='admin' element={<AdminTemplate />}>
+                <Route path='admin' element={<ResponsiveItem component={AdminTemplate} mobileComponent={PageNotFound} />}>
                     <Route index element={<UserManageme />}></Route>
-                    <Route path='coursemanagement' element={<CourseManagement />}></Route>
+                    <Route path='coursemanagement' element={<CourseManagement/>}></Route>
                     <Route path="*" element={<Navigate to="/admin" />}></Route>
                 </Route>
                 <Route path='login' element={<Login />}>

@@ -6,7 +6,7 @@ const InfoCoureHome = (props: Props) => {
     return (
         <div className="info-coure-box  section-bg-common">
 
-            <div className="info-course-home container">
+            <div className="info-course-home ">
                 <h3 className='section-heading__title_small'>Thông tin quan trọng</h3>
                 <div className="info-gird">
                     <div className="info-item-home wow animate__animated animate__fadeInDown animate-delay">

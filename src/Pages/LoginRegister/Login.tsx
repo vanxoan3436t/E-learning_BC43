@@ -6,8 +6,6 @@ import { loginAsyncActionApi, signUpAsyncActionApi } from '../../Redux/reducer/q
 import { DispatchType } from '../../Redux/configStote'
 import { useDispatch } from 'react-redux'
 import * as Yup from 'yup'
-import { history } from '../..'
-import { setStore, setStoreJson } from '../../util/config'
 type Props = {}
 
 export interface UserLoginFrm {
@@ -37,28 +35,27 @@ const Login = (props: Props) => {
       soDT: "",
       maNhom: "GP1",
     },
-    // validationSchema: Yup.object().shape({
-    //   taiKhoan: Yup.string()
-    //     .min(3, 'Tài khoản quá ít kí tự')
-    //     .max(16, 'Tài khoản quá 16 kí tự')
-    //     .required('Tài khoản không được để trống'),
+    validationSchema: Yup.object().shape({
+      taiKhoan: Yup.string()
+        .min(3, 'Tài khoản quá ít kí tự')
+        .max(16, 'Tài khoản quá 16 kí tự')
+        .required('Tài khoản không được để trống'),
 
-    //   matKhau: Yup.string()
-    //     .required('Tài khoản không được để trống')
-    //     .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/, 'Mật khẩu phải ít nhất 8 tự gồm chữ, số, và kí tự đặc biệt'),
+      matKhau: Yup.string()
+        .required('Tài khoản không được để trống')
+        .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/, 'Mật khẩu phải ít nhất 8 tự gồm chữ, số, và kí tự đặc biệt'),
 
-    //   hoTen: Yup.string()
-    //     .required('Tên không được để trống')
-    //     .matches(/^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/, 'Chỉ nhập kí tự chữ'),
+      hoTen: Yup.string()
+        .required('Tên không được để trống')
+        .matches(/^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/, 'Chỉ nhập kí tự chữ'),
 
-    //   email: Yup.string().email('Email không hợp lệ').required('Email không được để trống'),
+      email: Yup.string().email('Email không hợp lệ').required('Email không được để trống'),
 
-    //   soDT: Yup.string()
-    //     .required('Số điện thoại không được để trống')
-    //     .matches(/([\+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/, 'Số điện thoại chưa đúng định đạng'),
-    // }),
-    onSubmit: (values: UserSignUpFrm) => {// handleLogin sẽ ở đây
-      console.log('values', values)
+      soDT: Yup.string()
+        .required('Số điện thoại không được để trống')
+        .matches(/([\+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/, 'Số điện thoại chưa đúng định đạng'),
+    }),
+    onSubmit: (values: UserSignUpFrm) => {
       const actionApi = signUpAsyncActionApi(values)
       dispatch(actionApi);
     }
@@ -108,13 +105,12 @@ const Login = (props: Props) => {
 
             <form onSubmit={signUpFrm.handleSubmit} action="#" className={`sign-up-form`}>
               <h2 className='login-title'>Đăng kí</h2>
-
               <div className="input-field">
                 <i className="fa-solid fa-user"></i>
                 <input type="text" placeholder="Tài khoản" name="taiKhoan" onInput={signUpFrm.handleChange} />
                 {signUpFrm.errors.taiKhoan ? <div className='message-err text-danger'>{signUpFrm.errors.taiKhoan}</div> : <div className='message'></div>}
               </div>
-           
+
               <div className="input-field">
                 <i className="fa-solid fa-file-signature"></i>
                 <input type="text" placeholder="Họ Tên" name='hoTen' onInput={signUpFrm.handleChange} />
@@ -122,7 +118,7 @@ const Login = (props: Props) => {
               </div>
               <div className="input-field">
                 <i className="fa-solid fa-envelope"></i>
-                <input type="email" placeholder="Email" name="email" onInput={signUpFrm.handleChange}/>
+                <input type="email" placeholder="Email" name="email" onInput={signUpFrm.handleChange} />
                 {signUpFrm.errors.email ? <div className='message-err text-danger'>{signUpFrm.errors.email}</div> : <div className='message'></div>}
               </div>
               <div className="input-field">
@@ -140,6 +136,7 @@ const Login = (props: Props) => {
                 onChange={signUpFrm.handleChange}
                 name='maNhom'
               >
+                <option value="">Chọn nhóm người dùng</option>
                 <option value="GP01">GP01</option>
                 <option value="GP02">GP02</option>
                 <option value="GP03">GP03</option>
@@ -162,7 +159,6 @@ const Login = (props: Props) => {
               </div>
             </form>
           </div>
-
         </div>
 
         <div className="panels-container">
@@ -171,8 +167,7 @@ const Login = (props: Props) => {
               <h3>Tài Khoản Mới</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, pariatur.</p>
               <ButtonMouseEvent value={`Đăng Kí`} className={`btn transparent`} handleClick={() => {
-                toggleClass(true)
-                console.log('classState', classState)
+                toggleClass(true);
               }} />
 
             </div>
@@ -185,9 +180,7 @@ const Login = (props: Props) => {
               <h3>Đã Có Tài Khoản</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, pariatur.</p>
               <ButtonMouseEvent value={`Đăng Nhập`} className={`btn transparent`} handleClick={() => {
-                toggleClass(false)
-                console.log('classState', classState)
-
+                toggleClass(false);
               }} />
 
             </div>
