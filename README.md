@@ -1,4 +1,4 @@
-Do phần đa chỉ có 1 người code nên là sẽ không tạo nhánh tránh việc merge nhánh lỗi và gây mất thêm thời gian 
+ chỉ có 1 người code nên là sẽ không tạo nhánh tránh việc merge nhánh lỗi và gây mất thêm thời gian 
 
 
 
