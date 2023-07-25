@@ -1,12 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import Slider from "react-slick";
-
-
 type Props = {}
-
 const Case = (props: Props) => {
-
     var settings = {
         dots: false,
         infinite: true,
@@ -15,8 +11,33 @@ const Case = (props: Props) => {
         autoplay: true,
         autoplaySpeed: 2000,
         pauseOnHover: true,
-       
-  
+        initialSlide: 0,
+        slickprev:false,
+        responsive: [
+            {
+              breakpoint: 1400,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+              }
+            },
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
       };
     return (
         <section className='case'>

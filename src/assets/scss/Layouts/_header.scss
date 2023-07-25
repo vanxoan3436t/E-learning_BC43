@@ -106,7 +106,9 @@
                         position: relative;
                     }
 
-                    a {}
+                    @media screen and (max-width:575.98px) {
+                        padding: 0;
+                    }
 
                     .navbar-toggler {
                         // position: absolute;
@@ -181,6 +183,15 @@
                                         left: 40%;
                                         background: $bg-c3-white;
                                     }
+
+                                    @media screen and (max-width: 414px) {
+                                        left: 3%;
+                                        top: 100%;
+
+                                        a {
+                                            font-size: 0.85rem;
+                                        }
+                                    }
                                 }
 
                                 a {
@@ -199,6 +210,12 @@
                                     @media screen and (max-width:991.98px) {
                                         padding: 12px 6px;
                                         text-align: left;
+
+                                    }
+
+                                    @media screen and (max-width:575.98px) {
+                                        font-size: 0.9rem;
+
                                     }
 
                                     &::before,
@@ -336,7 +353,6 @@
                     .btn--common,
                     .header-avatar {
                         @media screen and (max-width:991.98px) {
-
                             position: absolute;
                             top: 19%;
                             right: 11%;
@@ -349,6 +365,7 @@
                         @media screen and (max-width:575.98px) {
                             position: revert;
                             margin-left: 0;
+                            margin-bottom: 10px;
                         }
                     }
 

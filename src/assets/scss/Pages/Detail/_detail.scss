@@ -1,8 +1,6 @@
 .detail-coures {
-    //
-
     .detail-coures-content {
-        .btn-preview{
+        .btn-preview {
             padding: 5px;
             background-color: transparent;
             border: 1px solid $text-c0-primary;
@@ -11,11 +9,14 @@
             color: $text-c0-primary;
             transition: all .5s;
         }
+
         padding: 50px;
 
-        // right
-        .title-detail-course {}
+        @media screen and (max-width:414px) {
+            padding: 20px;
+        }
 
+        // right
         .head-detail-course {
             padding: 30px 0;
 
@@ -51,6 +52,10 @@
                 .review-detail {
                     text-align: right;
 
+                    @media screen and (max-width:991.98px) {
+                        text-align: left;
+                    }
+
                     span {
                         font-weight: $fw-semiBold;
 
@@ -59,8 +64,6 @@
                             font-size: 20px;
                         }
                     }
-
-                    p {}
                 }
             }
         }
@@ -81,20 +84,18 @@
             }
 
             .row {
-                .col-6 {
-                    ul {
-                        li {
-                            padding: 5px 0;
-                            text-align: justify;
+                ul {
+                    li {
+                        padding: 5px 0;
+                        text-align: justify;
 
-                            i {
-                                margin-right: 5px;
-                                color: $text-c0-primary;
-                            }
+                        i {
+                            margin-right: 5px;
+                            color: $text-c0-primary;
+                        }
 
-                            a {
-                                color: $text-c2-dark;
-                            }
+                        a {
+                            color: $text-c2-dark;
                         }
                     }
                 }
@@ -109,6 +110,7 @@
             }
 
             .course-detail-item {
+
                 .course-detail-content {
                     padding: 20px 0;
 
@@ -119,16 +121,33 @@
                         margin-bottom: 20px;
                         background-color: #dcdcdc24;
 
+                        @media screen and (max-width:414px) {
+                            display: inline-block;
+                        }
+
                         p {
                             padding: 0 10px;
                         }
 
-                        span {text-transform: uppercase;
+                        span {
+                            text-transform: uppercase;
                             font-size: 22px;
                             font-weight: 400;
-                            margin-right: 20px;}
+                            margin-right: 20px;
 
-                        button {   }
+                            @media screen and (max-width:414px) {
+                                font-size: $fs-c4;
+                            }
+                        }
+
+
+                        .btn-preview {
+                            @media screen and (max-width:414px) {
+                                margin-top: 5px;
+                                font-size: $fs-c1;
+                            }
+                        }
+
                     }
 
                     .lesson-container {
@@ -138,6 +157,12 @@
                             justify-content: space-between;
                             align-items: center;
                             box-shadow: 1px 1px 2px 1px rgba(239, 244, 190, .27);
+
+                            @media screen and (max-width:414px) {
+                                flex-direction: column;
+                                align-items: start;
+                                gap: 3px;
+                            }
 
                             span {
                                 color: $text-c3-dark;
@@ -155,6 +180,18 @@
                         }
                     }
                 }
+
+                &:first-of-type {
+                    @media screen and (max-width:414px) {
+                        .section-course {
+                            padding-right: 32%;
+
+                            span {
+                                margin-right: 5%;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -166,45 +203,56 @@
             margin-bottom: 15px;
             padding: 10px 30px;
             box-shadow: 1px 1px 10px 4px #dadada;
-            img {margin: 0 -20px;
+
+            img {
+                margin: 0 -20px;
                 min-height: 210px;
             }
 
             .course-price {
                 padding: 30px 0;
                 text-align: right;
-                p {font-weight: $fw-medium;
+
+                p {
+                    font-weight: $fw-medium;
                     font-size: 25px;
-                    i{
+
+                    i {
                         margin-right: 10px;
                         color: $text-c0-yellow;
                     }
                 }
             }
 
-            button {}
-
             .side-bar-detail-content {
                 ul {
                     li {
                         display: flex;
-    align-items: center;
-    padding: 20px 0;
-    justify-content: space-between;
-    border-bottom: 1px solid #f2f1f1;
+                        align-items: center;
+                        padding: 20px 0;
+                        justify-content: space-between;
+                        border-bottom: 1px solid #f2f1f1;
+
                         p {
-                            color:$text-c1-dark ;
-                            span {    color:$text-c2-dark;
-                                font-weight: $fw-medium;}
+                            color: $text-c1-dark ;
+
+                            span {
+                                color: $text-c2-dark;
+                                font-weight: $fw-medium;
+                            }
                         }
 
-                        i {    font-size: 20px;
-                            color: $text-c0-primary;}
+                        i {
+                            font-size: 20px;
+                            color: $text-c0-primary;
+                        }
                     }
                 }
-                .form-coupon{
+
+                .form-coupon {
                     padding: 20px 0;
-                    input{
+
+                    input {
                         width: 100%;
                         outline: none;
                         padding: 3px 10px;

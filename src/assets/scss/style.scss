@@ -9,7 +9,6 @@
 //vendors
 @import './Base/reset';
 //Components
-@import './Base/customizeBrowser';
 @import './Components/buttons';
 //Layouts
 @import './Layouts/header';
@@ -17,22 +16,15 @@
 @import './Layouts/carouselHome';
 //Pages
 @import './Pages/Home/home';
-@import './Pages/Login/Login';
-@import './Pages/Search/Search';
+@import './Pages/Login/login';
+@import './Pages/Search/search';
 @import './Pages/Admin/AdminTemplate';
 @import './Pages/Info/info';
 @import './Pages/CategoryCourses/categoryCourses';
 @import './Pages/Detail/detail';
-//reponsive 
-// Responsive :
-// tất cả trình duyệt trên máy tính,
-// tất cả trình duyệt trên điện thoại, ipad
-//rộng - cao
-// + iphone6-7-8 :375 - 667
-// + iphone6-7-8 plus :414 - 736
-// + ipad : 768 - 1024
-// + desktop 1200 trở lên
-
+@import './Pages/PageNotFound/page-404';
+@import './Pages/Login/loginMobile';
+//phần sử dụng chung cho wed
 .card-global-res {
     display: flex;
     justify-content: center;
@@ -82,7 +74,6 @@
         }
     }
 
-    //
     .card-global {
         position: relative;
         display: flex;
@@ -99,8 +90,6 @@
 
 
         @media screen and (max-width:767.98px) {
-            // min-width: 540px;
-            // width: 540px;
             min-width: 300px;
             width: 300px;
 
@@ -134,8 +123,6 @@
             min-height: 185px;
             
             @media screen and (max-width:767.98px) {
-                // min-height: 360px;
-                // height: 360px;
                 min-height: 260px;
             height: 260px;
             }
@@ -156,7 +143,6 @@
 
             }
         }
-
         .card-body-global {
             flex: 1 1 auto;
             min-height: 1px;
@@ -321,15 +307,12 @@
             box-shadow: 0 0 10px 4px rgba(0, 0, 0, .1);
 
             @media screen and (max-width:1200px) {
-                //
                 top: 104%;
                 right: 0%;
             }
 
             @media screen and (max-width:991.98px) {
-                //
                 top: 104%;
-                // right: -13%;
             }
 
             @media screen and (max-width:767.98px) {
@@ -342,12 +325,6 @@
                 }
             }
 
-            @media screen and (max-width:414px) {
-                // left: -5%;
-
-            }
-
-            //
             &::before {
                 content: "";
                 position: absolute;
@@ -480,8 +457,6 @@
     }
 
     .move-sub-card {
-
-        //
         .sub-card {
             left: -106%;
 
@@ -491,7 +466,6 @@
             }
 
             @media screen and (max-width:991.98px) {
-                // left: -13%;
                 top: 104%;
             }
 
@@ -524,7 +498,6 @@
                 @media screen and (max-width:575.98px) {}
 
                 @media screen and (max-width:414px) {
-                    // top: -40px;
                 }
             }
         }
@@ -535,13 +508,6 @@
                 top: 104%;
             }
         }
-
-        // @media screen and (max-width:575.98px) {
-        //     .sub-card {
-        //         left: -5.5%;
-        //         top: 106%;
-        //     }
-        // }
     }
 
     .title-maker {

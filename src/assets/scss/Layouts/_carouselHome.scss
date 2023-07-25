@@ -10,9 +10,9 @@
     @media screen and (max-width:991.98px) {
         padding: 91.5px 0 0 0;
     }
-
     @media screen and (max-width:575.98px) {
-        height: 600px;
+        height: 560px;
+        padding: 51.5px 0 0 0;
     }
 
     @media screen and (max-width:414px) {
@@ -20,7 +20,7 @@
     }
 
     @media screen and (max-width:375px) {
-        height: 590px;
+        height: 549px;
     }
 
     .overlay {
@@ -39,10 +39,10 @@
         }
 
         @media screen and (max-width:414px) {
-            height: 109vw;
+            height: 115vw;
         }
 
-        @media screen and (max-width:414px) {
+        @media screen and (max-width:375px) {
             height: 133vw;
         }
 
@@ -89,7 +89,7 @@
                 }
 
                 @media screen and (max-width:414px) {
-                    height: 79%;
+                    height: 86.5%;
                 }
 
                 @media screen and (max-width:375px) {
@@ -106,8 +106,8 @@
                         left: 3%;
                     }
 
-                    @media screen and (max-width:991.98px) {
-                        bottom: 1rem;
+                    @media screen and (max-width:575.98px) {
+                        bottom: 2rem;
                     }
 
                     div {

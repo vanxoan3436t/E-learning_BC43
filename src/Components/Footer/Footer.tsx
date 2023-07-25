@@ -9,7 +9,7 @@ const Footer = (props: Props) => {
       <div className="footer-top">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 col-md-6 mb-30">
+            <div className="col-lg-4 col-md-6  col-sm-12 mb-30">
               <div className="footer-widget">
                 <div className="footer-logo mb-30">
                   <NavLink to={'/'}>
@@ -50,7 +50,7 @@ const Footer = (props: Props) => {
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-6 mb-25">
+            <div className="col-lg-2 col-md-6 col-sm-6 mb-25">
               <div className="footer-widget">
                 <div className="footer-widget_title">
                   <h3 >Khoá Học</h3>
@@ -74,7 +74,7 @@ const Footer = (props: Props) => {
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-6 mb-25">
+            <div className="col-lg-2 col-md-6 col-sm-6 mb-25">
               <div className="footer-widget">
                 <div className="footer-widget_title">
                   <h3 >Hỗ Trợ</h3>
@@ -98,7 +98,7 @@ const Footer = (props: Props) => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-6 mb-25">
+            <div className="col-lg-4 col-md-6 col-sm-12  mb-25">
               <div className="footer-widget">
                 <div className="footer-widget_title">
                   <h3 >Đăng kí Tư Vấn</h3>
