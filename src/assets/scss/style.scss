@@ -16,13 +16,14 @@
 @import './Layouts/carouselHome';
 //Pages
 @import './Pages/Home/home';
-@import './Pages/Login/Login';
+@import './Pages/Login/login';
 @import './Pages/Search/search';
 @import './Pages/Admin/AdminTemplate';
 @import './Pages/Info/info';
 @import './Pages/CategoryCourses/categoryCourses';
 @import './Pages/Detail/detail';
 @import './Pages/PageNotFound/page-404';
+@import './Pages/Login/loginMobile';
 //phần sử dụng chung cho wed
 .card-global-res {
     display: flex;

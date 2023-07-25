@@ -1,0 +1,323 @@
+@import '../../Helpers/variables';
+
+// .login-mobile {
+// // background-color: #2085db;
+//     .login-form {   
+//         position: relative;
+//         width: 100%;
+//         background-color: $bg-c0-white;
+//         // min-width: 100vh;
+//         overflow: hidden;
+//         height: 930px;
+//         border-radius: 20px;
+
+//         @media screen and (max-width :1199.98px) {}
+
+//         &::before {
+//             content: none;
+//             position: absolute;
+//             height: 1960px;
+//             width: 2000px;
+//             top: -10%;
+//             right: 48%;
+//             background-image: linear-gradient(-45deg, #2085db 0%, #498adb 100%);
+//             transform: translateY(-50%);
+//             border-radius: 50%;
+//             z-index: 6;
+//             transition: 1.8s ease-in-out;
+
+//             // width: 1000px;
+//             // top: -99%;
+//             // right: -6%;
+//         }
+
+//         .form-container {
+//             position: absolute;
+//             width: 100%;
+//             height: 100%;
+//             top: 0;
+//             left: 0;
+
+//             .signin-signup {
+//                 padding: 0;
+
+//                 &:nth-child(1) {
+//                     position: absolute;
+//                     top: 35%;
+//                     left: 20%;
+//                     transform: revert;
+//                     display: revert;
+//                     grid-template-columns: 1fr;
+//                     z-index: 8;
+//                     form {
+//                         z-index: 2;
+//                         transition: 1.1s 0.4s ease-in-out;
+//                     }
+
+//                 }
+
+//                 form {
+//                     display: flex;
+//                     justify-content: center;
+//                     flex-direction: column;
+//                     align-items: center;
+//                     padding: 0 5rem;
+
+//                     .login-title {
+//                         font-size: 2.5rem;
+//                         color: $text-c2-dark;
+//                         margin-bottom: 10px;
+
+//                     }
+
+//                     select {
+//                         border: none;
+
+//                         &:focus-visible {
+//                             outline: none;
+//                         }
+//                     }
+
+//                     .input-field {
+//                         max-width: 380px;
+//                         width: 100%;
+//                         height: 55px;
+//                         background-color: $bg-c1-white;
+//                         margin: 15px 0;
+//                         border-radius: 55px;
+//                         display: grid;
+//                         grid-template-columns: 15% 85%;
+//                         padding: 0 0.4rem;
+//                         position: relative;
+
+//                         i {
+//                             text-align: center;
+//                             line-height: 55px;
+//                             color: $text-c0-primary;
+//                             font-size: $fs-c12;
+//                         }
+
+//                         input {
+//                             background: none;
+//                             outline: none;
+//                             border: none;
+//                             line-height: 1;
+//                             font-weight: $fw-semiBold;
+//                             font-size: $fs-c6;
+//                             color: $text-c2-dark;
+//                             border-radius: 15px;
+
+//                             &:placeholder-shown {
+//                                 color: $text-c1-dark;
+//                                 font-weight: $fw-medium ;
+//                             }
+//                         }
+
+//                         .message-err {
+//                             width: 100%;
+//                             position: absolute;
+//                             bottom: -45%;
+//                             left: 1%;
+//                             margin: 0;
+//                         }
+//                     }
+
+//                     .btn {
+//                         width: 150px;
+//                         height: 49px;
+//                         outline: none;
+//                         border: none;
+//                         border-radius: 48px;
+//                         text-transform: uppercase;
+//                         margin: 10px 0;
+//                         transition: all .5s;
+//                         padding: 11px 23px 11px 35px
+//                     }
+
+//                     .social-text {
+//                         padding: 0.7rem 0;
+//                     }
+
+//                     .social-media {
+//                         display: flex;
+//                         justify-content: center;
+
+//                         .social_list {
+//                             height: 46px;
+//                             width: 46px;
+//                             margin: 0 0.45rem;
+//                             display: flex;
+//                             justify-content: center;
+//                             align-items: center;
+//                             text-decoration: none;
+//                             background: $bg-c1-white;
+//                             font-size: $fs-c9;
+//                             border-radius: 20%;
+//                             transition: all 0.5s;
+
+//                             &:hover i {
+//                                 color: $text-c0-white;
+//                             }
+
+//                             .fa-facebook-f {
+//                                 color: #4064ac;
+//                             }
+
+//                             .fa-google-plus-g {
+//                                 color: #257892;
+//                             }
+
+//                             .fa-linkedin-in {
+//                                 color: #0554f2;
+//                             }
+
+//                             &:hover.fb {
+//                                 background: #4064ac;
+//                             }
+
+//                             &:hover.gg {
+//                                 background: #257892;
+//                             }
+
+//                             &:hover.in {
+//                                 background: #0554f2;
+//                             }
+//                         }
+
+
+//                     }
+//                 }
+
+//                 .sign-up-form {
+//                     position: revert;
+//                     z-index: 1;
+//                     opacity: 0;
+//                 }
+//             }
+//         }
+
+//         .panels-container {
+//             // background-color: #2085db;
+//             position: absolute;
+//             width: 100%;
+//             height: 100%;
+//             top: 0;
+//             left: 0;
+//             display: revert;
+//             grid-template-columns: repeat(2, 1fr);
+
+//             .panel {
+//                 display: revert;
+//                 flex-direction: column;
+//                 align-items: center;
+//                 justify-content: center;
+//                 text-align: center;
+//                 z-index: 7;
+
+//                 .content {
+
+//                     transition: .9s .6s ease-in-out;
+
+//                     h3 {
+//                         font-weight: $fw-semiBold;
+//                         line-height: 1;
+//                         font-size: $fs-c12;
+//                         // color: $text-c0-white;
+//                     }
+
+//                     p {
+//                         font-size: $fs-c5;
+//                         padding: 0.7rem 0;
+//                         // color: $text-c0-white;
+//                     }
+
+//                     .btn.transparent {
+//                         margin: 0;
+//                         background: $bg-c5-primary;
+//                         border: 2px solid $text-c3-primary;
+//                         width: 160px;
+//                         height: 52px;
+//                         font-weight: $fw-semiBold;
+//                         font-size: $fs-c12 ;
+//                         border-radius: 5px;
+//                         color: $text-c0-white;
+//                     }
+//                 }
+
+//                 .img-login {
+//                     max-width: 360%;
+//                     transition: 1.1s .4s ease-in-out;
+
+//                 }
+
+//             }
+
+//             .left-panel {
+//                 padding: 0;
+//                 padding: 0;
+//                 margin-top: 16vw;
+//             }
+
+//             .right-panel {
+//                padding: 0;
+
+//                 .img-login {
+//                     max-width: 171%;
+//                 }
+
+//                 .content,
+//                 .img-login {
+//                     transform: translateX(800px);
+//                 }
+//             }
+//         }
+
+//         &.sign-up-mode::before {
+//             transform: translate(100%, -50%);
+//             right: 52%;
+//         }
+
+//         &.sign-up-mode {
+
+//             .left-panel .img-login,
+//             .left-panel .content {
+//                 transform: translate(-800px);
+//             }
+
+//             .right-panel .img-login,
+//             .right-panel .content {
+//                 transform: translateX(0%);
+//             }
+
+//             .left-panel {
+//                 pointer-events: none;
+//             }
+
+//             .right-panel {
+//                 pointer-events: all;
+//                 transform: translateY(-28vw);
+
+//             }
+
+//             .signin-signup .sign-up-form {
+//                 opacity: 1;
+//                 left: -25%;
+//                 transition: 1.1s .4s ease-in-out;
+//                 transform: translateY(26%);
+//             }
+
+//             .signin-signup:nth-child(1) {
+
+//                 transform: translateX(800px);
+//                 transition: 1.1s .4s ease-in-out;
+
+//             }
+
+//             .sign-in-form {
+//                 z-index: 1;
+
+//             }
+
+//         }
+//     }
+// }

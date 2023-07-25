@@ -104,7 +104,7 @@ const Login = (props: Props) => {
           <div className="signin-signup">
 
             <form onSubmit={signUpFrm.handleSubmit} action="#" className={`sign-up-form`}>
-              <h2 className='login-title'>Đăng kí</h2>
+              <h2 className='login-title'>Đăng Ký</h2>
               <div className="input-field">
                 <i className="fa-solid fa-user"></i>
                 <input type="text" placeholder="Tài khoản" name="taiKhoan" onInput={signUpFrm.handleChange} />
