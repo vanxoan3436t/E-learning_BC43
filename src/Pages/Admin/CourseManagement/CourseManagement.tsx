@@ -77,7 +77,6 @@ export default function CourseManagement({ }: Props) {
                 <input type="text" placeholder='Nhập vào khóa học cần tìm' className='header-search_input form-control' data-ms-editor='true' name='keyword' onInput={handleChange} />
               </form>
             </div>
-            {/* Login info */}
             <LoginInfo />
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import  { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { history } from '../..'
 import { useDispatch, useSelector } from 'react-redux'
@@ -6,11 +6,9 @@ import { DispatchType, RootState } from '../../Redux/configStote'
 import { getStore } from '../../util/config'
 import swal from 'sweetalert'
 import { courseCategaryActionApi } from '../../Redux/reducer/quanLyKhoaHocReducer'
-type Props = {
-}
-
+import ModeToggle from '../../theme/ModeToggle'
+type Props = {}
 const Header = (props: Props) => {
-
   const dispatch: DispatchType = useDispatch();
   const login: any = getStore('credentials');
   const keyInput = useRef('');
@@ -78,7 +76,6 @@ const Header = (props: Props) => {
       window.addEventListener('scroll', handleScroll);
     }
   }, [])
-
 
   useEffect(() => {
     dispatch(courseCategaryActionApi());
@@ -162,7 +159,6 @@ const Header = (props: Props) => {
         </div>
       </div>
 
-
       <div id='navbar-wrap' className={`white-bg header-bottom navbar-wrap container-custom header-mobile`}>
         <div className="container-fluid">
           <div className="main-menu">
@@ -171,7 +167,7 @@ const Header = (props: Props) => {
                 <img src="/img/elearning-logo.png" alt="logo" />
               </NavLink>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-             <span className='fa-solid fa-bars'></span>
+                <span className='fa-solid fa-bars'></span>
               </button>
 
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -196,7 +192,7 @@ const Header = (props: Props) => {
                   <li className="nav-item">
                     <NavLink className="nav-link" to={'/'} >Thông tin</NavLink>
                   </li>
-              
+
                 </ul>
 
                 <form className="search-main d-flex justify-content-between" onSubmit={handleSubmitSearch}>
@@ -208,12 +204,13 @@ const Header = (props: Props) => {
                 {handleLoginLink()}
               </div>
             </nav>
-            <div className="dark-light">
-            <i className="fa-solid fa-moon"></i>
-              
-            </div>
+
           </div>
         </div>
+
+        <span className="dark-light">
+          <ModeToggle />
+        </span>
       </div>
     </header >
   </>

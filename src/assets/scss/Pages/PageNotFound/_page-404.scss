@@ -14,12 +14,19 @@
         color: #fff;
         padding: 0 145px;
         display: inline-block;
-        @media screen and (max-width:576px){
-            padding:0 100px ;
+
+        @media screen and (max-width:576px) {
+            padding: 0 100px;
             transform: translate(9vw, 65vh);
         }
-        @media screen and (max-width:414px){
-            padding:0 92px ;
+
+        @media screen and (max-width:550px) {
+            padding: 0 96px;
+            transform: translate(4vw, 65vh);
+        }
+
+        @media screen and (max-width:414px) {
+            padding: 0 92px;
             transform: translate(9vw, 65.5vh);
             font-size: 30px;
         }

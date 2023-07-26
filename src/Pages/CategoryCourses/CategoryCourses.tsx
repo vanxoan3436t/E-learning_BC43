@@ -24,7 +24,7 @@ const CategoryCourese = (props: Props) => {
     return coursesCategaryList.map((course: any, index: number) => {
       if ((index + 1) % 2 === 0) {
         return (
-          <div key={index} className="col-xl-3 col-lg-4 col-md-6   card-global-res">
+          <div key={index} className="col-xl-3 col-lg-4 col-md-6 card-global-res">
             <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global move-sub-card">
               <img src={course.hinhAnh} onError={(e: any) => { e.target.onError = null; e.target.src = "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg" }} alt="..."/>
               <span className='stiker-card'>{course.tenKhoaHoc.length <= 10 ? course.tenKhoaHoc : "Lập trình web"}</span>

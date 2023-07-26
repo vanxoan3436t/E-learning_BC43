@@ -34,3 +34,11 @@
 .col-xl-3 {
     max-width: 1200px;
 }
+
+//bach to top
+.scroll-to-top {
+    @media screen and (max-width:575.98px) {
+        right: 22px !important;
+        bottom: 34px !important;
+    }
+}

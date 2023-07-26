@@ -39,8 +39,6 @@ const ResponsiveItem = (props: Props) => {
     if(screen.width < 992 && props.mobileComponent) {
         Component = props.mobileComponent;
     }
-
-console.log('Component', Component)
   return (
     <Component />
   )

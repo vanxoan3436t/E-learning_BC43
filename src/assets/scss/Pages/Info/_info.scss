@@ -186,6 +186,11 @@
 
                 .my-course-item {
                     margin: 30px 0;
+                    div{
+                        .btn--common {
+                            margin-top: 5px;
+                        }
+                    }
                 }
             }
         }

@@ -1,6 +1,117 @@
-.dark-light{
+$dark-primary: #191b1c;
+
+.dark-light {
     position: absolute;
-    top: 0%;
-    right: 1%;
-    display: none;
+    top: 26%;
+    right: 40%;
+@media screen and (max-width: 1280px){
+    right: 40%;
+}
+@media screen and (max-width: 1199.98px){
+    right: 30%;
+}
+@media screen and (max-width: 991.98px){
+    top: 2.5vw;
+    right: 8%;
+}
+@media screen and (max-width: 767.98px){
+    right: 9.5%;
+    top: 3.1vw;
+}
+@media screen and (max-width: 575.98px){
+    right: 13%;
+    top: 1vw;
+}
+@media screen and (max-width: 414px){
+   top: 1.5vw;
+   right: 18%;
+}
+    .css-15qnkk1-MuiButtonBase-root-MuiButton-root {
+        padding: 0;
+        display: inline-block;
+        min-width: 100%;
+        font-size: 26px;
+        cursor: pointer;
+        @media screen and (max-width: 414px){
+         font-size: 24px;
+           
+        }
+        &:hover {
+            background-color: transparent;
+        }
+
+        .fa-moon {
+            margin-right: 4px;
+            transform: rotate(-12deg);
+            color: $dark-primary;
+        }
+
+        .fa-sun {
+            color: $text-c0-white;
+        }
+    }
+}
+
+[data-mui-color-scheme="dark"] {
+
+    body,
+    .header,
+    .header-bottom,
+    .navbar-wrap,
+    .content-layout,
+    .info-coure-box,
+    .card-global,
+    .sub-card,
+    .services-home,
+    .services__item,
+    .contact,
+    .main-menu_dropdown,
+    .footer,
+    .admin,
+    .details,
+    table .align-middle,
+    .dropdown-menu,
+    .dropdown-menu li a,
+    .form-user,
+   
+    .modal-content,
+    .page-link-pages,
+    .footer-form input,
+    .social_list a,
+    .form-coupon input,.blog-item::before  {
+        background-color: $dark-primary !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span,p,
+    .search_button,
+    .nav-link,
+    .main-menu_dropdown li a,
+    .section-heading__title_small,
+    .services__item_icon,
+    .services__item_title a,
+    .services__item_content a,
+    .blog-item__title a,
+    .card-footer div p:nth-child(2),
+    .text-discripts,
+    .box-course-learn .row ul li a,
+    .detail-coures-content .btn-preview,
+    .color-card-title,
+    .blog-item__article ul li i ,table thead tr th,td , .page-link-pages ,.login-info span::after,.dropdown-item
+    {
+        color: $text-c0-white !important;
+    }
+}
+
+.admin {
+    .dark-light {
+        top: 28%;
+        right: 32%;
+
+    }
 }

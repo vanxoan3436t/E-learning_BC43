@@ -1,7 +1,9 @@
 @import '../../Components/reactPaginate';
+
 .admin {
     background: $bg-c5-primary;
     padding: 20px;
+    height: 100vh;
 
     .admin-body {
         display: flex;
@@ -18,6 +20,7 @@
             padding: 5px 10px;
             min-height: 90vh;
             text-align: center;
+            border-radius: 10px;
 
             .admin-body-left-header {
                 padding-top: 1.5rem;
@@ -27,6 +30,12 @@
                     background-color: $bg-c1-white;
                     border-color: $bg-c1-white;
                     border-radius: 3px;
+                }
+            }
+
+            .dark-light {
+                .fa-moon {
+                    color: $text-c0-white
                 }
             }
 
@@ -214,7 +223,7 @@
                         }
                     }
 
-                   
+
                 }
 
                 .modal-footer {
@@ -304,6 +313,7 @@
         }
     }
 }
+
 form {
     .form-group {
         margin-bottom: 1.5rem;
@@ -346,11 +356,17 @@ form {
                 font-weight: $fw-regular ;
             }
         }
+
         .text-err {
             position: absolute;
         }
     }
 }
+
 .show {
     display: inline-block;
+}
+
+.ant-layout-content {
+    height: 0 !important;
 }

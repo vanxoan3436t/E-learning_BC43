@@ -41,6 +41,9 @@ $lg: 1199.98px;
 
 .logo {
     width: 104px;
+    img{
+        border-radius: 0 15px 0 15px ;
+    }
 }
 
 .white-bg {
@@ -205,7 +208,7 @@ $lg: 1199.98px;
     border: 1px solid #e2e2e2;
     border-radius: 5px;
     padding: 10px 22px;
-    width: 330px;
+    width: 300px;
     position: relative;
     padding-right: 45px;
 

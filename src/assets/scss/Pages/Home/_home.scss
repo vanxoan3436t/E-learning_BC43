@@ -127,11 +127,14 @@
 
 //danh sách khóa học toàn bộ wedsize
 .list-couser-category {
-    padding:0 50px 50px 50px;
-
+    padding:0 50px 58px 50px;
+    @media screen and (min-width: 1201px) {
+      overflow: hidden;
+    }
     @media screen and (max-width: 1200px) {
         padding: 0;
     }
+
 
     .popular-course {
        

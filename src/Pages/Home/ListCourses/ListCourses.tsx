@@ -11,7 +11,7 @@ export default function ListCourses({ }: Props) {
     const renderCoursePopular = () => {
         return coursesList?.slice(0, 4).map((course : CourseDetail, index : number) => {
             return (
-                <div key={index} className="col-sm-6 col-md-4 col-xxl-3 card-global-res">
+                <div key={index} className="col-sm-6 col-md-4 col-xl-3 card-global-res">
                     <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global">
                         <img src={course.hinhAnh} onError={(e: any) => { e.target.onError = null; e.target.src = "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg" }} alt="..." />
                         <span className='stiker-card'>{course.tenKhoaHoc.length > 5 ? course.tenKhoaHoc : "Lập trình web"}</span>
@@ -36,7 +36,6 @@ export default function ListCourses({ }: Props) {
                     </NavLink>
                 </div>
             )
-
         })
     }
 
@@ -44,7 +43,7 @@ export default function ListCourses({ }: Props) {
         return coursesList?.slice(5, 9).map((course : CourseDetail, index : number) => {
             if ((index + 1) % 2 === 0) {
                 return (
-                    <div key={index} className="col-sm-6 col-md-4 col-xxl-3 card-global-res mt-4">
+                    <div key={index} className="col-sm-6 col-md-4 col-xl-3 card-global-res mt-4">
                         <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global move-sub-card ">
                             <img src={course.hinhAnh} onError={(e: any) => { e.target.onError = null; e.target.src = "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg" }} alt="..." />
                             <span className='stiker-card'>{course?.tenKhoaHoc?.length <= 10 ? course.tenKhoaHoc : "Lập trình web"}</span>
@@ -62,7 +61,7 @@ export default function ListCourses({ }: Props) {
                                     <span className='ms-2 color-card-title'>Elon Musk</span>
                                 </div>
                                 <div>
-                                    <p>800.000<sup>đ</sup></p>
+                                    <p>900.000<sup>đ</sup></p>
                                     <p>400.000<sup>đ</sup><i className="fas fa-tag iconTag"></i></p>
                                 </div>
 
@@ -91,7 +90,7 @@ export default function ListCourses({ }: Props) {
 
             } else {
                 return (
-                    <div key={index} className="col-sm-6 col-md-4 col-xxl-3 card-global-res mt-4">
+                    <div key={index} className="col-sm-6 col-md-4 col-xl-3 card-global-res mt-4">
                         <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global ">
                             <img src={course.hinhAnh} onError={(e: any) => { e.target.onError = null; e.target.src = "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg" }} alt="..." />
                             <span className='stiker-card'>{course?.tenKhoaHoc?.length <= 10 ? course.tenKhoaHoc : "Lập trình web"}</span>
@@ -109,7 +108,7 @@ export default function ListCourses({ }: Props) {
                                     <span className='ms-2 color-card-title'>Elon Musk</span>
                                 </div>
                                 <div>
-                                    <p>800.000<sup>đ</sup></p>
+                                    <p>900.000<sup>đ</sup></p>
                                     <p>400.000<sup>đ</sup><i className="fas fa-tag iconTag"></i></p>
                                 </div>
 
@@ -143,7 +142,7 @@ export default function ListCourses({ }: Props) {
         return coursesList?.slice(7, 11).map((course : CourseDetail, index : number) => {
             if ((index + 1) % 2 === 0) {
                 return (
-                    <div key={index} className="col-sm-6 col-md-4 col-xxl-3 card-global-res mt-4">
+                    <div key={index} className="col-sm-6 col-md-4 col-xl-3 card-global-res mt-4">
                         <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global move-sub-card">
                             <img src={course.hinhAnh} onError={(e: any) => { e.target.onError = null; e.target.src = "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg" }} alt="..." />
                             <span className='stiker-card'>{course.tenKhoaHoc.length <= 10 ? course.tenKhoaHoc : "Lập trình web"}</span>
@@ -161,7 +160,7 @@ export default function ListCourses({ }: Props) {
                                     <span className='ms-2 color-card-title'>Elon Musk</span>
                                 </div>
                                 <div>
-                                    <p>800.000<sup>đ</sup></p>
+                                    <p>900.000<sup>đ</sup></p>
                                     <p>400.000<sup>đ</sup><i className="fas fa-tag iconTag"></i></p>
                                 </div>
 
@@ -190,7 +189,7 @@ export default function ListCourses({ }: Props) {
 
             } else {
                 return (
-                    <div key={index} className="col-sm-6 col-md-4 col-xxl-3 card-global-res mt-4">
+                    <div key={index} className="col-sm-6 col-md-4 col-xl-3 card-global-res mt-4">
                         <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global">
                             <img src={course.hinhAnh} onError={(e: any) => { e.target.onError = null; e.target.src = "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg" }} alt="..." />
                             <span className='stiker-card'>{course.tenKhoaHoc.length <= 10 ? course.tenKhoaHoc : "Lập trình web"}</span>
@@ -208,7 +207,7 @@ export default function ListCourses({ }: Props) {
                                     <span className='ms-2 color-card-title'>Elon Musk</span>
                                 </div>
                                 <div>
-                                    <p>800.000<sup>đ</sup></p>
+                                    <p>900.000<sup>đ</sup></p>
                                     <p>400.000<sup>đ</sup><i className="fas fa-tag iconTag"></i></p>
                                 </div>
 
