@@ -4,38 +4,54 @@ $dark-primary: #191b1c;
     position: absolute;
     top: 26%;
     right: 40%;
-@media screen and (max-width: 1280px){
-    right: 40%;
-}
-@media screen and (max-width: 1199.98px){
-    right: 30%;
-}
-@media screen and (max-width: 991.98px){
-    top: 2.5vw;
-    right: 8%;
-}
-@media screen and (max-width: 767.98px){
-    right: 9.5%;
-    top: 3.1vw;
-}
-@media screen and (max-width: 575.98px){
-    right: 13%;
-    top: 1vw;
-}
-@media screen and (max-width: 414px){
-   top: 1.5vw;
-   right: 18%;
-}
-    .css-15qnkk1-MuiButtonBase-root-MuiButton-root {
+
+    @media screen and (max-width: 1280px) {
+        right: 40%;
+    }
+
+    @media screen and (max-width: 1199.98px) {
+        right: 30%;
+    }
+
+    @media screen and (max-width: 991.98px) {
+        top: 2.5vw;
+        right: 8%;
+    }
+
+    @media screen and (max-width: 767.98px) {
+        right: 9.5%;
+        top: 3.1vw;
+    }
+
+    @media screen and (max-width: 575.98px) {
+        right: 13%;
+        top: 1vw;
+    }
+
+    @media screen and (max-width: 414px) {
+        top: 1.5vw;
+        right: 18%;
+    }
+
+    button {
         padding: 0;
         display: inline-block;
         min-width: 100%;
-        font-size: 26px;
+
         cursor: pointer;
-        @media screen and (max-width: 414px){
-         font-size: 24px;
-           
+
+        i {
+            font-size: 26px;
+            display: inline-block;
+            margin-top: 0.65rem;
+
+            @media screen and (max-width: 414px) {
+                font-size: 24px;
+
+            }
         }
+
+
         &:hover {
             background-color: transparent;
         }
@@ -73,12 +89,13 @@ $dark-primary: #191b1c;
     .dropdown-menu,
     .dropdown-menu li a,
     .form-user,
-   
+
     .modal-content,
     .page-link-pages,
     .footer-form input,
     .social_list a,
-    .form-coupon input,.blog-item::before  {
+    .form-coupon input,
+    .blog-item::before {
         background-color: $dark-primary !important;
     }
 
@@ -88,7 +105,8 @@ $dark-primary: #191b1c;
     h4,
     h5,
     h6,
-    span,p,
+    span,
+    p,
     .search_button,
     .nav-link,
     .main-menu_dropdown li a,
@@ -102,8 +120,12 @@ $dark-primary: #191b1c;
     .box-course-learn .row ul li a,
     .detail-coures-content .btn-preview,
     .color-card-title,
-    .blog-item__article ul li i ,table thead tr th,td , .page-link-pages ,.login-info span::after,.dropdown-item
-    {
+    .blog-item__article ul li i,
+    table thead tr th,
+    td,
+    .page-link-pages,
+    .login-info span::after,
+    .dropdown-item {
         color: $text-c0-white !important;
     }
 }
