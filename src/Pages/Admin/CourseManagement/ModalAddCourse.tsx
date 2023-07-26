@@ -26,9 +26,6 @@ export default function ModalAddCourse({ }: Props) {
   const [thumb, setThumb] = useState('../Img/ImgLogo/logo512.png')
   // const coursesCategary = useSelector((state: RootState) => state.quanLyKhoaHocReducer.coursesCategary);
   const userArray = useSelector((state: RootState) => state.quanLyNguoiDungReducer.userArray);
-
-  // console.log('coursesCategary', coursesCategary)
-
   // addcoursefrm with add courses
   const addCourseFrm = useFormik<AddCourseModal>({
     initialValues: {
@@ -80,11 +77,8 @@ export default function ModalAddCourse({ }: Props) {
 
 
   )
-  const obCourCategary: {} = {
-
-  }
   useEffect(() => {
-    // dispatch(courseCategory)//cần gọi Api list các khóa học ở Navlink danh mục khóa học
+    // dispatch(courseCategory)
   }, [])
   return (
     <div className="modal fade" id="addCourse" tabIndex={-1} aria-hidden="true">

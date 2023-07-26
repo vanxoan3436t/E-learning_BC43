@@ -22,10 +22,8 @@ const Info = (props: Props) => {
   const [searchTerm, setSearchTerm] = useState('');
   const dispatch: DispatchType = useDispatch();
   const infoUser = getStoreJson('credentials');
-  // const loginAccount = getStoreJson('credentials');
   const { ...userPersonalInfo } = useSelector((state: RootState) => state.quanLyNguoiDungReducer.userPersonalInfo);
   let { chiTietKhoaHocGhiDanh, taiKhoan, maLoaiNguoiDung, email, maNhom, soDT, hoTen } = { ...userPersonalInfo };
-
   // RenderCourser
   const RenderUserCourses = () => {
     if (chiTietKhoaHocGhiDanh) {
@@ -304,11 +302,9 @@ const Info = (props: Props) => {
                 </div>
               </form>
             </div>
-
           </div>
         </div>
       </div>
-
     </section>
   </>
   )

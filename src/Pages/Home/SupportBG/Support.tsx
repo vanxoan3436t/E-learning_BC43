@@ -1,10 +1,7 @@
 import React from 'react'
-
 type Props = {}
-
 const Support = (props: Props) => {
   return (
-    
     <div className='support--bg secondary-bg-color'>
         <div className="container">
             <div className="row">

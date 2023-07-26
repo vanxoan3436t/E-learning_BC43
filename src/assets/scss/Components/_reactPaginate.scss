@@ -6,7 +6,6 @@
     border-radius: 0.25rem;
     margin-bottom: 10px;
 
-   
     .page-item {
         .page-link-pages {
             position: relative;
@@ -16,7 +15,7 @@
             line-height: 1.25;
             color: #000;
             background-color: #fff;
-            border: 2px solid $bg-c5-primary;//lười
+            border: 2px solid $bg-c5-primary;
             border-radius: 5px;
             &:hover{
                 z-index: 2;

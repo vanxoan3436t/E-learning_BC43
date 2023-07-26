@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import LoginInfo from '../../../Components/LoginInfo/LoginInfo'
 import ModalAddCourse from './ModalAddCourse'
 import CoursRegisterModal from './CoursRegisterModal'
@@ -8,12 +7,8 @@ import ReactPaginate from 'react-paginate';
 import { DispatchType, RootState } from '../../../Redux/configStote'
 import { useDispatch, useSelector } from 'react-redux'
 import { CourseDetail, getListCourseActionApi, searchCoursesAsyncActionApi } from '../../../Redux/reducer/quanLyKhoaHocReducer'
-import { useFormik } from 'formik'
 
 type Props = {}
-export interface SearchFrm {
-  keyword: string
-}
 export default function CourseManagement({ }: Props) {
   const dispatch: DispatchType = useDispatch();
   const coursesList = useSelector((state: RootState) => state.quanLyKhoaHocReducer.coursesList);
@@ -61,7 +56,6 @@ export default function CourseManagement({ }: Props) {
         <td className='align-middle' style={{ width: '25%' }}>
           <button onClick={() => { }} type="button" className="btn btn-primary mx-1 text-wrap" data-bs-toggle="modal" data-bs-target="#courseReg" >
             <span >Ghi danh</span>
-            {/* <span className='unhide'>Reg</span> */}
           </button>
           <button onClick={() => { }} className="btn btn-warning m-1 text-wrap" data-bs-toggle="modal" data-bs-target="#editInfoCourse">Sửa</button>
           <button onClick={() => { }} className="btn btn-danger mx-1" >Xóa</button>
@@ -125,11 +119,9 @@ export default function CourseManagement({ }: Props) {
           </tbody>
         </table>
       </div>
-      {/* modal thêm người dùng */}
+
       <ModalAddCourse />
-      {/* Modal ghi danh khóa học */}
       <CoursRegisterModal />
-      {/* modal chỉnh sửa thông tin khóa học */}
       <EditCourseInfoModal />
       <ReactPaginate
         nextLabel="Sau >"

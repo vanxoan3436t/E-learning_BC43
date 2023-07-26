@@ -2,21 +2,6 @@
     padding: 50px 0 50px;
 
     .container {
-        // @media screen and (max-width:1198.98px) {
-        //     max-width: 960px;
-        // }
-
-        // @media screen and (max-width:991.98px) {
-        //     max-width: 720px;
-        // }
-
-        // @media screen and (max-width:767.98px) {
-        //     max-width: 540px;
-        // }
-
-        // @media screen and (max-width:414px) {
-        //     max-width: 340px;
-        // }
         .row:nth-child(1) {
             margin-bottom: 25px;
 
@@ -75,10 +60,6 @@
                         border-right: 1px solid $text-c2-white;
                         position: relative;
                         transition: all 0.4s ease;
-
-                        @media screen and (max-width:1199.98px) {
-                            // height: 523px;
-                        }
 
                         &::before {
                             position: absolute;

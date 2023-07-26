@@ -78,17 +78,9 @@ const Contact = (props: Props) => {
                                 <div className="col-md-6">
                                     <select className="contact-form__input" name="subject" >
                                         <option value={1}>Chọn chủ đề của bạn</option>
-                                        <option value={1}>Chọn chủ đề của bạn 2</option>
-                                        <option value={1}>Chọn chủ đề của bạn 3</option>
-
-
+                                        <option value={2}>Chọn chủ đề của bạn 2</option>
+                                        <option value={3}>Chọn chủ đề của bạn 3</option>
                                     </select>
-                                    {/* <div className="nice-select contact-form__input" tabIndex={0}>
-                                        <span className="current">Chọn chủ đề của bạn</span>
-                                        <ul className="list">
-                                            <li data-value={1} className="option selected focus">Chọn chủ đề của bạn</li>
-                                        </ul>
-                                    </div> */}
                                 </div>
                                 <div className="col-md-12">
                                     <textarea className="contact-form__input contact-form__input_textarea" name="message" placeholder="Message" spellCheck="false" data-ms-editor="true" defaultValue={""} />

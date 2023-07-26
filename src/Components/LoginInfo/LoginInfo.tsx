@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { getStoreJson } from '../../util/config'
-// import { logOut } from '../../Redux/reducer/quanLyNguoiDungReducer'
-import { history } from '../..'
 import swal from 'sweetalert'
 import UserUpdateInfo from '../../Pages/Admin/UserManagement/UserUpdateInfo'
 
@@ -13,11 +11,7 @@ const LoginInfo = (props: Props) => {
   const [UserUpdate, setUserUpdate] = useState({});
   const updateUser = (i: any) => {
    i && setUserUpdate(i)
-    // console.log('UserUpdate', UserUpdate)
-    // console.log('credentail', credentail)
   }
-  useEffect(() => {
-  }, [])
   const infoUser = getStoreJson('credentials')
   return (
     <div className="login-info col-5 ms-auto">
@@ -32,7 +26,6 @@ const LoginInfo = (props: Props) => {
         <ul className="dropdown-menu">
           <li><NavLink className="dropdown-item" to="" data-bs-toggle="modal" data-bs-target="#userUpdateInfo" onClick={() => {
             updateUser(credentail)
-
           }}>Cập nhật thông tin</NavLink></li>
           <li><NavLink className="dropdown-item" to="/" onClick={() => {
             localStorage.removeItem("credentials");
@@ -44,8 +37,6 @@ const LoginInfo = (props: Props) => {
           }}>Đăng xuất</NavLink></li>
         </ul>
       </span>
-      {/* modal Cập nhật thông tin*/}
-
       <UserUpdateInfo />
     </div>
   )

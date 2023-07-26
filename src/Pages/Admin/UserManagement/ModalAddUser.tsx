@@ -1,12 +1,9 @@
 import { useFormik } from 'formik'
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
-import { UserModel, addUserActionApi, getListUserAction,  } from '../../../Redux/reducer/quanLyNguoiDungReducer';
+import { addUserActionApi  } from '../../../Redux/reducer/quanLyNguoiDungReducer';
 import { DispatchType } from '../../../Redux/configStote';
-import { PayloadAction } from '@reduxjs/toolkit';
-import swal from 'sweetalert';
-import { http } from '../../../util/config';
 type Props = {}
 
 export default function ModalAddUser({ }: Props) {

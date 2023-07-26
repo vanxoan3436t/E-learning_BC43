@@ -1,4 +1,3 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 type Props = {}
@@ -14,7 +13,7 @@ const Footer = (props: Props) => {
                 <div className="footer-logo mb-30">
                   <NavLink to={'/'}>
                     <h4>E-Learning</h4>
-                    </NavLink>
+                  </NavLink>
                 </div>
                 <div className="footer-widget_text">
                   <p>Bắt đầu sự nghiệp lập trình
@@ -46,10 +45,8 @@ const Footer = (props: Props) => {
                     </li>
                   </ul>
                 </div>
-
               </div>
             </div>
-
             <div className="col-lg-2 col-md-6 col-sm-6 mb-25">
               <div className="footer-widget">
                 <div className="footer-widget_title">
@@ -108,14 +105,11 @@ const Footer = (props: Props) => {
                   <input type="text" placeholder='Email' spellCheck='false' data-ms-editor='true' />
                   <input type="text" placeholder='Số Điện Thoại' spellCheck='false' data-ms-editor='true' />
                   <div className="section-button ">
-                  <NavLink to='/' className='btn  btn--common btn-primary '>Gửi Đăng Kí
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </NavLink>
-
-                </div>
+                    <NavLink to='/' className='btn  btn--common btn-primary '>Gửi Đăng Kí
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </NavLink>
+                  </div>
                 </form>
-                
-
               </div>
             </div>
           </div>
@@ -133,7 +127,6 @@ const Footer = (props: Props) => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </footer>

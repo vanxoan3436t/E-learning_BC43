@@ -13,14 +13,11 @@
             min-width: 80px;
             max-width: 80px;
             background: $bg-c3-primary;
-            // background-size: cover;
             color: #fff;
             transition: all .3s;
-            // border-radius: 10px 10px;
             padding: 5px 10px;
             min-height: 90vh;
             text-align: center;
-
 
             .admin-body-left-header {
                 padding-top: 1.5rem;
@@ -55,8 +52,6 @@
             }
 
         }
-
-
     }
 
     .details {
@@ -259,10 +254,6 @@
                                 margin-bottom: 1rem;
 
                                 .input-group {
-                                    input {}
-
-                                    ul {}
-
                                     .set-height {
                                         height: 50vh;
                                         width: 35vw;
@@ -277,11 +268,9 @@
 
                             }
 
-
                         }
 
                         &:nth-child(2) {
-
                             table {
                                 width: 100%;
                                 margin-bottom: 1rem;
@@ -307,9 +296,6 @@
                             }
 
                         }
-
-                        &:nth-child(3) {}
-
 
                     }
 

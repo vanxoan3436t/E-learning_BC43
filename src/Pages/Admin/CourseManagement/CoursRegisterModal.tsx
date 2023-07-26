@@ -15,8 +15,7 @@ export default function CoursRegisterModal({ }: Props) {
                                 <h5 className="col-3" id="URM-title"> Chọn người dùng</h5>
                                 <form className='form-group col-6'>
                                     <div className="input-group float-left ">
-                                        <input name='hoTen' placeholder="Tên người dùng" data-bs-toggle="dropdown" type="text" className="form-control input-dropdown" aria-label="Text input with segmented dropdown button" />
-                                        {/* <button data-reference="parent" data-boundary="window" type="button" className="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false"></button> */}
+                                        <input name='hoTen' placeholder="Tên người dùng" data-bs-toggle="dropdown" type="text" className="form-control input-dropdown" aria-label="Text"/> 
 
                                         <ul className="dropdown-menu set-height">
                                             {/* {renderUserListNotRegister(UserListNotRegister)} */}
@@ -55,7 +54,7 @@ export default function CoursRegisterModal({ }: Props) {
                                 <tbody>
                                     {/* {renderUserListNotConfirmed(notConfirmedItems)} */}
                                     <tr>
-                                        <td className="align-middle" scope="row"> 1</td>
+                                        <td className="align-middle" > 1</td>
                                         <td className="align-middle">item.taiKhoan</td>
                                         <td className="align-middle">item.hoTen</td>
                                         <td>
@@ -65,7 +64,7 @@ export default function CoursRegisterModal({ }: Props) {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td className="align-middle" scope="row"> 1</td>
+                                        <td className="align-middle" > 1</td>
                                         <td className="align-middle">item.taiKhoan</td>
                                         <td className="align-middle">item.hoTen</td>
                                         <td>

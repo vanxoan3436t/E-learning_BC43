@@ -1,20 +1,16 @@
-import React, { useEffect } from 'react'
-import { getStoreJson, http } from '../../../util/config'
+import { getStoreJson } from '../../../util/config'
 import { useDispatch } from 'react-redux';
 import { DispatchType } from '../../../Redux/configStote';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { UserModel, getUserInfoActionApi, updateUserInfoActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer';
+import { UserModel, updateUserInfoActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer';
 
 type Props = {
 
 }
-// phải kết nối logic modal với các page ,là truyền thông tin xem trước ròi mới sử lí chức năng
 const UserUpdateInfo = (props: Props) => {
   const infoUser = getStoreJson('credentials');
   const dispatch: DispatchType = useDispatch();
-  // console.log('userUpdate', props)
-
   const updateFrm = useFormik<UserModel>({
     initialValues: {
       taiKhoan: infoUser?.taiKhoan,
@@ -51,12 +47,8 @@ const UserUpdateInfo = (props: Props) => {
       const actionApi = updateUserInfoActionApi(values);
       dispatch(actionApi);
     }
-
   })
 
-  useEffect(() => {
-    // dispatch(getUserInfoActionApi());
-  }, [])
   return (
     <div className="modal fade" id="userUpdateInfo" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog">

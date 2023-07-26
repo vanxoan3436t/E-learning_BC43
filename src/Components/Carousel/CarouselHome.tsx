@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-
 type Props = {}
 
 const CarouselHome = (props: Props) => {

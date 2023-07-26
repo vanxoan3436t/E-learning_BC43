@@ -1,7 +1,5 @@
 import React from 'react'
 import { CounterUpPage } from '../../../util/methord'
-
-
 type Props = {}
 
 const NumberUp = (props: Props) => {

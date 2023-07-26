@@ -1,16 +1,6 @@
-import { useFormik } from 'formik'
-import { useDispatch } from 'react-redux';
-import * as Yup from 'yup';
-import { DispatchType } from '../../../Redux/configStote';
-import { http } from '../../../util/config';
-import { UserModel, getUserArrActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer';
-import swal from 'sweetalert';
 type Props = {}
 
 export default function EditCourseInfoModal({}: Props) {
-
-
-  
   return (
     <div className="modal fade" id="editInfoCourse">
      <div className="modal-dialog form-course">
@@ -113,7 +103,6 @@ export default function EditCourseInfoModal({}: Props) {
                   // }}
                   // onBlur={formik.handleBlur} type="file" id="hinhAnh" 
                   />
-                  {/* <label className="custom-file-label text-left" htmlFor="hinhAnh"></label> */}
 
                 </div>
 

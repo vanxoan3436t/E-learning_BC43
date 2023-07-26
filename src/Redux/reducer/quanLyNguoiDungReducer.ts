@@ -2,10 +2,9 @@ import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { USER_LOGIN, getStoreJson, http, httpNonAuth, setStoreJson } from '../../util/config';
 import { UserLoginFrm, UserSignUpFrm } from '../../Pages/LoginRegister/Login';
 import { history } from '../..';
-import { DispatchType, RootState } from '../configStote';
+import { DispatchType } from '../configStote';
 import swal from 'sweetalert';
 import { UserUpdateFrm } from '../../Pages/Info/Info';
-import { useSelector } from 'react-redux';
 export interface ChiTietKhoaHocGhiDanh {
   maKhoaHoc: string;
   tenKhoaHoc: string;
@@ -120,7 +119,6 @@ const quanLyNguoiDungReducer = createSlice({
 export const { getUserInfoAction, upDateInfoAction, getListUserAction } = quanLyNguoiDungReducer.actions
 
 export default quanLyNguoiDungReducer.reducer
-
 //----------create action async
 //Đăng nhập
 export const loginAsyncActionApi = createAsyncThunk('loginAsyncActionApi', async (userlogin: UserLoginFrm) => {

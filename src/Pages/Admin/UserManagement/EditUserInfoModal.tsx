@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { DispatchType, RootState } from '../../../Redux/configStote'
-import { useDispatch, useSelector } from 'react-redux'
+import { DispatchType } from '../../../Redux/configStote'
+import { useDispatch } from 'react-redux'
 import { useFormik } from 'formik';
 import { UserModel, getUserArrActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer';
 import * as Yup from 'yup';
@@ -11,11 +11,6 @@ export interface Props {
   userUpdate: string | any,
 }
 export default function EditUserInfoModal(props: Props): JSX.Element {
-  // const userArray = useSelector((state : RootState) => state.quanLyNguoiDungReducer.userArray)
-  let taiKhoan: any = props.userUpdate.taiKhoan
-   console.log('taiKhoan', taiKhoan)
-  //  let itemTaiKhoan : any= userArray.find((c : any) =>  c.taiKhoan === taiKhoan);
-  //  console.log('itemTaiKhoan', itemTaiKhoan)
   const dispatch: DispatchType = useDispatch()
   const updateUser = async (values: UserModel )=> {
     try {

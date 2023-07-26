@@ -12,7 +12,6 @@ export interface UserLoginFrm {
   taiKhoan: string,
   matKhau: string,
 }
-
 export interface UserSignUpFrm {
   taiKhoan: string,
   matKhau: string,
@@ -21,7 +20,6 @@ export interface UserSignUpFrm {
   soDT: string,
   maNhom: string,
 }
-
 const Login = (props: Props) => {
   const [classState, toggleClass] = useState(false);
   const dispatch: DispatchType = useDispatch();
@@ -60,7 +58,7 @@ const Login = (props: Props) => {
       dispatch(actionApi);
     }
   })
-
+//formSignin
   const loginFrm = useFormik<UserLoginFrm>({
     initialValues: {
       taiKhoan: '',
@@ -79,7 +77,6 @@ const Login = (props: Props) => {
 
             <form onSubmit={loginFrm.handleSubmit} action="#" className={`sign-in-form ${!classState ? 'animate__animated animate__fadeInRight animate__delay-3s' : ''}`}>
               <h2 className='login-title'>Đăng Nhập</h2>
-
               <div className="input-field">
                 <i className="fa-solid fa-user"></i>
                 <input type="text" placeholder="Tài khoản" name="taiKhoan" onInput={loginFrm.handleChange} value={loginFrm.values.taiKhoan} />
@@ -87,12 +84,9 @@ const Login = (props: Props) => {
               <div className="input-field">
                 <i className="fa-solid fa-lock"></i>
                 <input type="password" placeholder="Mật khẩu" name='matKhau' onInput={loginFrm.handleChange} value={loginFrm.values.matKhau} />
-
               </div>
               <input type="submit" className='btn btn--common btn-primary' value='Đăng nhập' />
-
               <p className='social-text'>Hoặc đăng nhập bằng </p>
-
               <div className="social-media">
                 <NavLink to="/" className="social_list fb"><i className="fab fa-facebook-f" /></NavLink>
                 <NavLink to="/" className="social_list gg"><i className="fab fa-google-plus-g" /></NavLink>
@@ -102,7 +96,6 @@ const Login = (props: Props) => {
           </div>
 
           <div className="signin-signup">
-
             <form onSubmit={signUpFrm.handleSubmit} action="#" className={`sign-up-form`}>
               <h2 className='login-title'>Đăng Ký</h2>
               <div className="input-field">
@@ -110,7 +103,6 @@ const Login = (props: Props) => {
                 <input type="text" placeholder="Tài khoản" name="taiKhoan" onInput={signUpFrm.handleChange} />
                 {signUpFrm.errors.taiKhoan ? <div className='message-err text-danger'>{signUpFrm.errors.taiKhoan}</div> : <div className='message'></div>}
               </div>
-
               <div className="input-field">
                 <i className="fa-solid fa-file-signature"></i>
                 <input type="text" placeholder="Họ Tên" name='hoTen' onInput={signUpFrm.handleChange} />
@@ -169,20 +161,17 @@ const Login = (props: Props) => {
               <ButtonMouseEvent value={`Đăng Kí`} className={`btn transparent`} handleClick={() => {
                 toggleClass(true);
               }} />
-
             </div>
             <img src="https://cdn.dribbble.com/users/1201592/screenshots/8898860/media/d4fd70463d621a19d4a64e2f88e7798f.gif" alt="img-signup" className='img-login' />
-
           </div>
 
-          <div className="panel  right-panel">
+          <div className="panel right-panel">
             <div className="content">
               <h3>Đã Có Tài Khoản</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, pariatur.</p>
               <ButtonMouseEvent value={`Đăng Nhập`} className={`btn transparent`} handleClick={() => {
                 toggleClass(false);
               }} />
-
             </div>
             <img src="https://cdn.dribbble.com/users/1201592/screenshots/7799068/media/4a6fd0e415aafb6d151e6b54bc313042.png" alt="img-signup" className='img-login' />
           </div>

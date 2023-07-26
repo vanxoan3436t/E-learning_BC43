@@ -74,8 +74,6 @@
                                 p {
                                     color: $text-c1-dark;
                                 }
-
-                                span {}
                             }
                         }
                     }
@@ -111,17 +109,8 @@
                     }
 
                     .navbar-toggler {
-                        // position: absolute;
-                        // right: 2%;
-                        // top: 22%;
                         font-size: $fs-c10;
                         border-color: $text-c1-primary;
-
-                        @media screen and (max-width:767.98px) {
-                            // top: 30%;
-
-
-                        }
 
                         .fa-solid {
                             color: $text-c0-primary;
@@ -129,7 +118,6 @@
 
                         &:focus {
                             box-shadow: none;
-                            // top: 7%
                         }
                     }
 
@@ -278,7 +266,6 @@
 
                         .search-main {
                             @media screen and (max-width:991.98px) {
-                                // width: 300px;
                                 position: absolute;
                                 top: 20%;
                                 left: 23%;
@@ -310,9 +297,6 @@
                     .header-avatar {
                         margin: 0 28px 0 10px;
                         display: flex;
-
-
-
                         .header-set {
                             display: inline-flex;
                             align-items: center;

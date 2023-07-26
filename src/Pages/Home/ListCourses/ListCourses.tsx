@@ -141,7 +141,6 @@ export default function ListCourses({ }: Props) {
     }
     const renderCourseReact = () => {
         return coursesList?.slice(7, 11).map((course : CourseDetail, index : number) => {
-            // console.log(course.maKhoaHoc);
             if ((index + 1) % 2 === 0) {
                 return (
                     <div key={index} className="col-sm-6 col-md-4 col-xxl-3 card-global-res mt-4">

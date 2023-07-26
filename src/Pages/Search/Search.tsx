@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, useSearchParams, useParams, Params } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import { DispatchType, RootState } from '../../Redux/configStote'
 import { CourseDetail, searchAsyncActionApi } from '../../Redux/reducer/quanLyKhoaHocReducer'
 
-
 type Props = {}
-
 const Search = (props: Props) => {
   let key: any = useParams();
   const dispatch: DispatchType = useDispatch();
@@ -200,7 +198,6 @@ const Search = (props: Props) => {
               </h6>
               <div className="course-search-result mt-3">
                 {renderSearchPage()}
-
               </div>
             </div>
           </div>

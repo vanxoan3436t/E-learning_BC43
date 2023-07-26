@@ -4,10 +4,7 @@ import { NavLink } from 'react-router-dom'
 type Props = {}
 
 const Services = (props: Props) => {
-
-
     return (
-
         <section className='services-home'>
             <div className="container">
                 <div className="row">
@@ -22,7 +19,6 @@ const Services = (props: Props) => {
                         </div>
                     </div>
                 </div>
-
                 <div className="services__navbar">
                     <div className="row">
                         <div className="col-sm-12">
@@ -44,8 +40,6 @@ const Services = (props: Props) => {
                                 </li>
                             </ul>
                         </div>
-
-
                     </div >
                 </div >
 
@@ -202,7 +196,7 @@ const Services = (props: Props) => {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div className="tab-pane fade " id="awards" role="tabpanel" aria-labelledby="awards-tab">
                                     <div className="row">
                                         <div className="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp animate-delay" >
@@ -246,15 +240,12 @@ const Services = (props: Props) => {
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div >
         </section >
-
     )
 }
 

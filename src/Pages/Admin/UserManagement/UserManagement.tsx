@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import LoginInfo from '../../../Components/LoginInfo/LoginInfo'
 import ModalAddUser from './ModalAddUser'
 import EditUserInfoModal from './EditUserInfoModal'
@@ -7,7 +6,7 @@ import UserRegisterModal from './UserRegisterModal'
 import { useDispatch, useSelector } from 'react-redux'
 import { DispatchType, RootState } from '../../../Redux/configStote'
 import ReactPaginate from 'react-paginate'
-import { UserArr, getUserArrActionApi, searchUserActionApi, upDateInfoAction, updateUserInfoActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer'
+import {  getUserArrActionApi, searchUserActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer'
 import swal from 'sweetalert'
 import { http } from '../../../util/config'
 import { AxiosError } from 'axios'
@@ -39,7 +38,6 @@ export default function UserManagement({ }: Props) {
   //SUA
   const [userUpdate, setUserUpdate] = useState({})
   const updateUser = (i: any) => {setUserUpdate(i)}
-  console.log('userUpdate', userUpdate)
   //Search
   const handleChange = (e: any) => {
     const { value } = e.target;
@@ -65,7 +63,7 @@ export default function UserManagement({ }: Props) {
           icon: "success",
           timer: 2000,
         });
-        dispatch(getUserArrActionApi())
+        dispatch(getUserArrActionApi());
       }
 
     } catch {
@@ -153,11 +151,9 @@ export default function UserManagement({ }: Props) {
           </tbody>
         </table>
       </div>
-      {/* modal thêm người dùng */}
+
       <ModalAddUser />
-      {/* modal ghi danh */}
       <UserRegisterModal />
-      {/* modal chỉnh sửa thông tin người dùng */}
       <EditUserInfoModal userUpdate={userUpdate} />
       <ReactPaginate
         nextLabel="Sau >"
@@ -181,4 +177,3 @@ export default function UserManagement({ }: Props) {
     </div>
   )
 }
-////

@@ -6,14 +6,9 @@ import { DispatchType, RootState } from '../../Redux/configStote'
 import { getStore } from '../../util/config'
 import swal from 'sweetalert'
 import { courseCategaryActionApi } from '../../Redux/reducer/quanLyKhoaHocReducer'
-import ButtonMouseEvent from '../ButtonProps/ButtonMouseEvent'
 type Props = {
 }
 
-interface Screen {
-  width: number,
-  height?: number
-}
 const Header = (props: Props) => {
 
   const dispatch: DispatchType = useDispatch();
@@ -77,59 +72,16 @@ const Header = (props: Props) => {
     setScrollPosition(position);
   };
 
-  const [classState, setToggleClass] = useState(false);
-  // const [screen, setScreen] = useState<Screen>({
-  //   width: window.innerWidth,
-  //   height: window.innerHeight
-  // });
-
-  // const changeDevice = () => {
-  //   if (classState) {
-  //     console.log('123', 123)
-  //   }
-  //   // console.log('123', 123)
-  //   setScreen({
-
-  //     width: window.innerWidth,
-  //     height: window.innerHeight
-  //   })
-  // }
-
-
-  // const changeClass = () => {
-  //   if (classState) {
-  //     setToggleClass(true)
-  //   }
-  //   return setToggleClass(false)
-  // }
-  // useEffect(() => {
-
-  //   window.addEventListener('load', changeDevice);
-  //   window.addEventListener('resize', changeDevice);
-  //   if (screen.width < 991.98) {
-  //     setToggleClass(true)
-  //   }
-  //   return () => {
-  //     window.removeEventListener('load', changeDevice);
-  //     window.removeEventListener('resize', changeDevice);
-  //     if (screen.width > 991.98) {
-  //       setToggleClass(false)
-  //     }
-  //   }
-
-  // }, [])
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.addEventListener('scroll', handleScroll)
+      window.addEventListener('scroll', handleScroll);
     }
   }, [])
 
 
   useEffect(() => {
     dispatch(courseCategaryActionApi());
-    // changeClass();
-
   }, [])
   return (<>
     <header className={`header white-bg sticky-on  ${scrollPosition > 91.5 ? "sticky" : ""}`}>
@@ -255,19 +207,15 @@ const Header = (props: Props) => {
                 </form>
                 {handleLoginLink()}
               </div>
-
             </nav>
-
+            <div className="dark-light">
+            <i className="fa-solid fa-moon"></i>
+              
+            </div>
           </div>
-          {/*  
-
-            
-
-  */}
         </div>
       </div>
     </header >
-
   </>
   )
 }

@@ -174,34 +174,6 @@ const LoginMobile = (props: Props) => {
                         </form>
                     </div>
                 </div>
-
-                {/* <div className="panels-container">
-          <div className="panel left-panel">
-            <div className="content">
-              <h3>Tài Khoản Mới</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, pariatur.</p>
-              <ButtonMouseEvent value={`Đăng Kí`} className={`btn transparent`} handleClick={() => {
-                toggleClass(true);
-              }} />
-
-            </div>
-            {/* <img src="https://cdn.dribbble.com/users/1201592/screenshots/8898860/media/d4fd70463d621a19d4a64e2f88e7798f.gif" alt="img-signup" className='img-login' /> 
-
-          </div>
-
-          <div className="panel  right-panel">
-            <div className="content">
-              <h3>Đã Có Tài Khoản</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, pariatur.</p>
-              <ButtonMouseEvent value={`Đăng Nhập`} className={`btn transparent`} handleClick={() => {
-                toggleClass(false);
-              }} />
-
-            </div>
-            {/* <img src="https://cdn.dribbble.com/users/1201592/screenshots/7799068/media/4a6fd0e415aafb6d151e6b54bc313042.png" alt="img-signup" className='img-login' /> 
-          </div>
-        </div> 
-*/}
             </div>
         </section>
     )

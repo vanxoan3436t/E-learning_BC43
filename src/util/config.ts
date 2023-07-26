@@ -1,7 +1,5 @@
 import axios from "axios";
 import { history } from "..";
-// import  jwt_decode  from 
-
 //setup hằng số
 export const DOMAIN = 'https://elearningnew.cybersoft.edu.vn';
 export const USER_LOGIN = 'userLogin';
@@ -20,7 +18,6 @@ export const httpNonAuth = axios.create({
 
 
 export const { getStoreJson, setStoreJson, getStore, setStore, clearStorage } = {
-    //  tại sao lại dùng any vì local stote của mình khi parse ra ob ra format model ,user login ... sẽ ra nhiều kiểu format  
     getStoreJson: (name: string): any => {
         if (localStorage.getItem(name)) {
             const strResult: string | null | any = localStorage.getItem(name);
@@ -38,11 +35,11 @@ export const { getStoreJson, setStoreJson, getStore, setStore, clearStorage } = 
     setStore: (name: string, data: string): void => {
         localStorage.setItem(name, data);
     },
-    clearStorage: (name: string): any => {//removeItem xoá 
+    clearStorage: (name: string): any => {
         localStorage.removeItem(name)
     }
 }
-httpNonAuth.interceptors.request.use((config: any) => {//cấu hình cho page không cần đăng nhập 
+httpNonAuth.interceptors.request.use((config: any) => {
     config.baseURL = DOMAIN;
     config.headers = { ...config.headers }
     config.headers.tokenCybersoft = TOKEN_CYBERSOFT;
@@ -52,7 +49,7 @@ httpNonAuth.interceptors.request.use((config: any) => {//cấu hình cho page kh
     console.log('err', err)
 
 });
-http.interceptors.request.use((config: any) => {//cấu hình cho page cần đăng nhập 
+http.interceptors.request.use((config: any) => {
     config.headers = { ...config.headers }
     let token = getStoreJson('credentials')?.accessToken;
     config.headers.Authorization = `Bearer ${token}`;
@@ -60,7 +57,6 @@ http.interceptors.request.use((config: any) => {//cấu hình cho page cần đ�
     return config
 }, err => {
     console.log('err', err)
-    // return Promise.reject(err)
 });
 
 //Cấu hình cho response (kết quả trả về từ api)
@@ -76,8 +72,6 @@ http.interceptors.response.use((res) => {
             alert('Không đủ quyền truy cập vào trang này !');
             history.push('/admin/login');
         }
-        // return Promise.reject(err);
         console.log('err', err)
     }
-}
-)
+})
