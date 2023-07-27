@@ -46,8 +46,6 @@ httpNonAuth.interceptors.request.use((config: any) => {
     return config
 }, err => {
     // return Promise.reject(err)
-    console.log('err', err)
-
 });
 http.interceptors.request.use((config: any) => {
     config.headers = { ...config.headers }
@@ -56,7 +54,7 @@ http.interceptors.request.use((config: any) => {
     config.headers.tokenCybersoft = TOKEN_CYBERSOFT;
     return config
 }, err => {
-    console.log('err', err)
+    // console.log('err', err)
 });
 
 //Cấu hình cho response (kết quả trả về từ api)
@@ -64,7 +62,7 @@ http.interceptors.response.use((res) => {
     return res;
 }, (err) => {
     //Xử lý lỗi cho api bị lỗi theo status code 
-    console.log(err);
+    // console.log(err);
     if (err.response?.status === 401) {
         alert('Đăng nhập để vào trang này !')
         history.push('/login')
@@ -72,6 +70,6 @@ http.interceptors.response.use((res) => {
             alert('Không đủ quyền truy cập vào trang này !');
             history.push('/admin/login');
         }
-        console.log('err', err)
+        // console.log('err', err)
     }
 })

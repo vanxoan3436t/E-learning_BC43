@@ -21,10 +21,12 @@
                         display: flex;
                         justify-content: space-between;
                     }
+
                     @media screen and (max-width:414px) {
                         display: block;
-                   
+
                     }
+
                     .filter-item {
                         margin-bottom: 10px;
 
@@ -101,28 +103,32 @@
             }
 
             .course-search-result {
-                .my-course-item{
+                .my-course-item {
                     border: 0.5px solid $text-c1-white;
                     border-radius: 5px;
                     padding: 0 10px;
                     margin-bottom: 10px;
                 }
-                .btn-card{
-                    @media screen and (max-width: 1199.98px) {
-                       display: flex;
-                       justify-content: flex-end;
-                    }
-                .btn--common {
-                    padding: 12px 5px;
 
-                    i {
-                        margin-left: 0;
+                .btn-card {
+                    @media screen and (max-width: 1199.98px) {
+                        display: flex;
+                        justify-content: flex-end;
                     }
 
-                    @media screen and (max-width: 1199.98px) {
-                        transform: translateY(-100%);
+                    .btn--common {
+                        padding: 12px 5px;
+                        margin-top: 10px;
+
+                        i {
+                            margin-left: 0;
+                        }
+
+                        @media screen and (max-width: 1199.98px) {
+                            transform: translateY(-100%);
+                        }
                     }
-                }}
+                }
             }
         }
     }

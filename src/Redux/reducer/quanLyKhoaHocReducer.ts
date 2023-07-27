@@ -79,7 +79,7 @@ export const courseCategaryActionApi = () => {
             const action: PayloadAction<DanhMucKhoaHoc[]> = getCoursesCategaryAction(result.data)
             dispatch(action);
         } catch (err) {
-            console.log('err', err);
+            // console.log('err', err);
         }
     }
 }
@@ -91,7 +91,7 @@ export const getcourseCategaryListActionApi = (key: string) => {
             const action: PayloadAction<CourseDetail[]> = getCoursesCategaryListAction(result.data);
             dispacth(action);
         } catch (err) {
-            console.log('err', err);
+            // console.log('err', err);
         }
     }
 }
@@ -103,7 +103,7 @@ export const getListCourseActionApi = () => {
             const action: PayloadAction<CourseDetail[]> = getCoursesListAction(result.data);
             dispacth(action);
         } catch (err) {
-            console.log('err', err);
+            // console.log('err', err);
         }
     }
 }
@@ -115,7 +115,7 @@ export const getDetailActionApi = (key: string) => {
             const action: PayloadAction<CourseDetail[]> = getDetailAction(result.data);
             dispacth(action);
         } catch (error) {
-            console.log('error', error);
+            // console.log('error', error);
         };
     }
 }
@@ -145,7 +145,7 @@ export const registerCourseActionApi = async (key : string) => {
                 text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
                 timer: 2000,
             });
-            console.log('err', err);
+            // console.log('err', err);
         }
     }
 }
@@ -157,7 +157,7 @@ export const searchAsyncActionApi = (key: string) => {
             const action: PayloadAction<CourseDetail[]> = getSearchListAction(result.data);
             dispacth(action);
         } catch (err) {
-            console.log('err', err);
+            // console.log('err', err);
         };
     }
 }
@@ -169,7 +169,7 @@ export const searchCoursesAsyncActionApi = (key: string) => {
             const action: PayloadAction<CourseDetail[]> = getCoursesListAction(result.data);
             dispacth(action);
         } catch (err) {
-            console.log('err', err);
+            // console.log('err', err);
         };
     }
 }
@@ -202,7 +202,7 @@ export const addCourseActionApi = (values: any) => {
                 text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
                 timer: 2000,
             });
-            console.log('err', err);
+            // console.log('err', err);
         }
     }
 

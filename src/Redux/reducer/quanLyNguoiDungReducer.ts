@@ -153,7 +153,7 @@ export const signUpAsyncActionApi = createAsyncThunk('signUpAsyncActionApi', asy
     }
     return result.data
   } catch (err) {
-  console.log('err', err)
+  // console.log('err', err)
     swal({
       title: "Đăng ký thất bại ,kiểm tra lại thông tin !",
       icon: "warning",
@@ -244,7 +244,7 @@ export const searchUserActionApi = (key: string) => {
       const action: PayloadAction<UserArr[]> = getListUserAction(result.data);
       dispacth(action);
     } catch (err) {
-      console.log('err', err);
+      // console.log('err', err);
     };
   }
 }
@@ -269,7 +269,7 @@ export const addUserActionApi = (values: UserModel) => {
         text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
         timer: 2000,
       });
-      console.log('err', err);
+      // console.log('err', err);
     }
   }
 }
