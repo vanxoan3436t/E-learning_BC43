@@ -212,14 +212,12 @@ $lg: 1199.98px;
     position: relative;
     padding-right: 45px;
 
-    @include ScreenSize($lg) {
-        width: 180px;
-    }
-
-    @include ScreenSize($md) {
-        width: 330px;
-    }
-
+@media screen and (max-width: 1199.98px){
+    width: 180px;
+}
+@media screen and (max-width: 991.98px){
+    width: 330px;
+}
     .search_input {
         border: 1px solid transparent;
         width: 100%;

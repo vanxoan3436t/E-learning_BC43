@@ -176,10 +176,17 @@
                         font-size: 1rem;
                     }
 
-                    form {
+
+               form{
                         .search-main {
                             padding: 8px 20px;
                             width: 320px;
+                            @media  screen and (max-width:575.98px){
+                                width: 284px;
+                            }
+                            @media  screen and (max-width:375px){
+                                width: 275px;
+                            }
                         }
                     }
                 }
