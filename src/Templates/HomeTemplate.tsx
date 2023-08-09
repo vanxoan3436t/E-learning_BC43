@@ -14,7 +14,7 @@ const HomeTemplate: React.FC = ({ }: Props): JSX.Element => {
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
-            <ScrollToTop smooth color='#fff' style={{borderRadius:'50%',background:'#0554f2'}} width='1.3rem' height='1.2rem'/>
+            <ScrollToTop smooth color='#fff' style={{borderRadius:'50%'}} width='1.3rem' height='1.2rem'/>
         </>
     )
 }

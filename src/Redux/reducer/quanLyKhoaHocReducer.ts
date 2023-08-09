@@ -74,49 +74,33 @@ export default quanLyKhoaHocReducer.reducer
 // ------------------create action async
 export const courseCategaryActionApi = () => {
     return async (dispatch: DispatchType) => {
-        try {
             const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc?tenDanhMuc`);
             const action: PayloadAction<DanhMucKhoaHoc[]> = getCoursesCategaryAction(result.data)
             dispatch(action);
-        } catch (err) {
-            // console.log('err', err);
-        }
     }
 }
 
 export const getcourseCategaryListActionApi = (key: string) => {
     return async (dispacth: DispatchType) => {
-        try {
             const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${key}&MaNhom=GP01`);
             const action: PayloadAction<CourseDetail[]> = getCoursesCategaryListAction(result.data);
             dispacth(action);
-        } catch (err) {
-            // console.log('err', err);
-        }
     }
 }
 
 export const getListCourseActionApi = () => {
     return async (dispacth: DispatchType) => {
-        try {
             const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01`);
             const action: PayloadAction<CourseDetail[]> = getCoursesListAction(result.data);
             dispacth(action);
-        } catch (err) {
-            // console.log('err', err);
-        }
     }
 }
 //get Detail
 export const getDetailActionApi = (key: string) => {
     return async (dispacth: DispatchType) => {
-        try {
             const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${key}`);
             const action: PayloadAction<CourseDetail[]> = getDetailAction(result.data);
             dispacth(action);
-        } catch (error) {
-            // console.log('error', error);
-        };
     }
 }
 
@@ -132,20 +116,18 @@ export const registerCourseActionApi = async (key : string) => {
             const  result = await http.post('/api/QuanLyKhoaHoc/DangKyKhoaHoc', valuesRegisCoure)
             if (result.request?.status === 200) {
             swal({
-                title: "Đăng kí thành công",
+                title: result.data,
                 icon: "success",
                 timer: 1800,
-               
             });
         }
-        } catch (err) {
+        } catch (err: any) {
             swal({
-                title: 'ĐÃ ĐĂNG KÍ RỒI HOẶC CHƯA ĐĂNG NHẬP !',
+              title: err.response.data,
                 icon: "warning",
                 text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
                 timer: 2000,
             });
-            // console.log('err', err);
         }
     }
 }
@@ -156,8 +138,12 @@ export const searchAsyncActionApi = (key: string) => {
             const result = await httpNonAuth.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${key}&MaNhom=GP01`)
             const action: PayloadAction<CourseDetail[]> = getSearchListAction(result.data);
             dispacth(action);
-        } catch (err) {
-            // console.log('err', err);
+        } catch (err : any) {
+            swal({
+                title: err.response.data,
+                  icon: "warning",
+                  timer: 2000,
+              });
         };
     }
 }
@@ -169,7 +155,7 @@ export const searchCoursesAsyncActionApi = (key: string) => {
             const action: PayloadAction<CourseDetail[]> = getCoursesListAction(result.data);
             dispacth(action);
         } catch (err) {
-            // console.log('err', err);
+       
         };
     }
 }
@@ -202,7 +188,6 @@ export const addCourseActionApi = (values: any) => {
                 text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
                 timer: 2000,
             });
-            // console.log('err', err);
         }
     }
 

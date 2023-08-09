@@ -15,19 +15,18 @@ export default function EditUserInfoModal(props: Props): JSX.Element {
   const updateUser = async (values: UserModel )=> {
     try {
       let result = await http.put('/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung', values)
-      console.log('result.data', result.data)
       if (result.request.status === 200) {
         swal({
-          title: "Cập nhật thành công",
+          title: `Tài khoản ${result.data.taiKhoan} `,
+          text:'Cập nhật thành công',
           icon: "success",
           timer: 2000,
         });
         dispatch(getUserArrActionApi)
       }
-    } catch (err) {
-      console.log('err', err)
+    } catch (err : any) {
       swal({
-        //  title: errors.response?.data,
+         title: err.response?.data,
         icon: "warning",
         text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
         timer: 2000,
@@ -64,7 +63,7 @@ export default function EditUserInfoModal(props: Props): JSX.Element {
       updateUser(values);
     }
   })
-
+//
   useEffect(() => {
   }, [props.userUpdate])
   return (
@@ -84,7 +83,7 @@ export default function EditUserInfoModal(props: Props): JSX.Element {
                       <i className='fa-solid fa-user'></i>
                     </span>
                   </div>
-                  <input name='taiKhoan' className='form-control input-sm' placeholder='Tài Khoản' type='text' onBlur={updateFrm.handleBlur} onInput={updateFrm.handleChange} disabled value={updateFrm.values.taiKhoan = props.userUpdate?.taiKhoan} />
+                  <input name='taiKhoan' className='form-control input-sm' placeholder='Tài Khoản' type='text' onBlur={updateFrm.handleBlur} onInput={updateFrm.handleChange} value={updateFrm.values.taiKhoan = props.userUpdate?.taiKhoan} disabled/>
                 </div>
                 {updateFrm.errors.taiKhoan && <div className="text-err text-danger text-left">{updateFrm.errors.taiKhoan}</div>}
               </div>

@@ -63,8 +63,8 @@ const Header = (props: Props) => {
       await history.push(`/search/${keyInput.current}`);
     }
   }
+// header fix
   const [scrollPosition, setScrollPosition] = useState(0);
-
   const handleScroll = () => {
     const position = window.scrollY;
     setScrollPosition(position);

@@ -1,15 +1,5 @@
-Bài này mỗi em code A kia bỏ rồi
+Bài này :
 1 người code nên là sẽ không tạo nhánh tránh việc merge nhánh lỗi và gây mất thêm thời gian 
-
-
-
-
-
-
-
-
-
-
 
 # Getting Started with Create React App
 

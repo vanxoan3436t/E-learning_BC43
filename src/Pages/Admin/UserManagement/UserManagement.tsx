@@ -59,16 +59,16 @@ export default function UserManagement({ }: Props) {
       let result = await http.delete(`/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${i}`)
       if (result.request.status === 200) {
         swal({
-          title: "Xóa thành công",
+          title: result.data,
           icon: "success",
           timer: 2000,
         });
         dispatch(getUserArrActionApi());
       }
 
-    } catch {
+    } catch(err : any) {
       swal({
-        title: 'Tài khoản đã ghi danh hoặc không tồn tại. Không thể xóa !',
+        title:err.response?.data,
         icon: "warning",
         text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
         timer: 2000,

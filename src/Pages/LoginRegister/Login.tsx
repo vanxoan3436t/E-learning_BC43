@@ -85,7 +85,7 @@ const Login = (props: Props) => {
                 <i className="fa-solid fa-lock"></i>
                 <input type="password" placeholder="Mật khẩu" name='matKhau' onInput={loginFrm.handleChange} value={loginFrm.values.matKhau} />
               </div>
-              <input type="submit" className='btn btn--common btn-primary' value='Đăng nhập' />
+              <input type="submit" className='btn btn--common btn-primary btn-page-login' value='Đăng nhập' />
               <p className='social-text'>Hoặc đăng nhập bằng </p>
               <div className="social-media">
                 <NavLink to="/" className="social_list fb"><i className="fab fa-facebook-f" /></NavLink>
@@ -141,7 +141,7 @@ const Login = (props: Props) => {
                 <option value="GP010">GP010</option>
               </select>
 
-              <input type="submit" className='btn btn--common btn-primary' value='Đăng kí' />
+              <input type="submit" className='btn btn--common btn-primary btn-page-login' value='Đăng kí' />
               <p className='social-text'>Hoặc đăng kí bằng </p>
 
               <div className="social-media">

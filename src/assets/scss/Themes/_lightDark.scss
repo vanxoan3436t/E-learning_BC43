@@ -1,4 +1,5 @@
-$dark-primary: #191b1c;
+$dark-primary: #38393a;
+$dark-button: #7b7e83;
 
 .dark-light {
     position: absolute;
@@ -69,6 +70,40 @@ $dark-primary: #191b1c;
 }
 
 [data-mui-color-scheme="dark"] {
+    .secondary-bg-color {
+        margin-bottom: 15px !important;
+        box-shadow: 0px 10px 15px 5px rgba(105, 105, 110, 0.32);
+    }
+
+    header.sticky-on.sticky .navbar-wrap {
+        box-shadow: 0px 7px 30px 0px rgb(116 112 112 / 37%);
+    }
+
+    .btn--common,
+    .blog-item__tags,
+    .contact-form__button,
+    .scroll-to-top,
+    .services__item_overlay,
+    .services__navbar_link.nav-link.active,
+    .services__navbar_link::before,
+    .stiker-card,
+    .btn-sub-card,
+    .info-overlay {
+        background: $dark-button !important;
+        font-weight: 600 !important;
+    }
+
+    .navbar-collapse ul li a::before,
+    .footer-widget_title h3::before,
+    .section-heading__title_small::before,
+    .carousel-caption div span::before {
+        background-color: $bg-c0-white !important;
+    }
+
+    .footer-form input {
+        border-color: $text-c0-white !important;
+        color: $text-c0-white !important;
+    }
 
     body,
     .header,
@@ -89,7 +124,7 @@ $dark-primary: #191b1c;
     .dropdown-menu,
     .dropdown-menu li a,
     .form-user,
-
+    .secondary-bg-color,
     .modal-content,
     .page-link-pages,
     .footer-form input,
@@ -125,8 +160,16 @@ $dark-primary: #191b1c;
     td,
     .page-link-pages,
     .login-info span::after,
-    .dropdown-item {
+    .dropdown-item,
+    .services__tech_icon,
+    .info-item-content div i,
+    .contact-form__input,
+    .header-top_info_icon i::before,
+    .course-name i {
         color: $text-c0-white !important;
+    }
+    .btn-page-login {
+        background: $bg-c1-primary !important;
     }
 }
 

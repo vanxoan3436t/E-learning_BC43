@@ -5,9 +5,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { UserModel, updateUserInfoActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer';
 
-type Props = {
-
-}
+type Props = {}
 const UserUpdateInfo = (props: Props) => {
   const infoUser = getStoreJson('credentials');
   const dispatch: DispatchType = useDispatch();
@@ -43,7 +41,6 @@ const UserUpdateInfo = (props: Props) => {
       maLoaiNguoiDung: Yup.string().required('Vui lòng chọn người dùng !'),
   }),
     onSubmit: (values: UserModel) => {
-      console.log('values', values)
       const actionApi = updateUserInfoActionApi(values);
       dispatch(actionApi);
     }
@@ -65,7 +62,7 @@ const UserUpdateInfo = (props: Props) => {
                       <i className='fa-solid fa-user'></i>
                     </div>
                   </div>
-                  <input name='taiKhoan' className='form-control input-sm' placeholder='Tài Khoản' type='text' value={updateFrm.values.taiKhoan}  onBlur={updateFrm.handleBlur} onChange={updateFrm.handleChange}/>
+                  <input name='taiKhoan' className='form-control input-sm' placeholder='Tài Khoản' type='text' value={updateFrm.values.taiKhoan} disabled  onBlur={updateFrm.handleBlur} onChange={updateFrm.handleChange}/>
                 
                 </div>
                 {updateFrm.errors.taiKhoan && <div className="text-err text-danger text-left">{updateFrm.errors.taiKhoan}</div>}
@@ -134,7 +131,7 @@ const UserUpdateInfo = (props: Props) => {
 
               <div className="modal-footer">
                 <button type="button" className="btn btn-danger" data-bs-dismiss='modal'>Đóng</button>
-                <button type="submit" className="btn" data-bs-dismiss="modal">Cập nhật</button>
+                <button type="submit" className="btn" >Cập nhật</button>
               </div>
             </form>
           </div>

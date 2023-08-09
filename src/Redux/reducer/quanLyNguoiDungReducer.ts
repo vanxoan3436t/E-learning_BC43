@@ -122,22 +122,30 @@ export default quanLyNguoiDungReducer.reducer
 //----------create action async
 //Đăng nhập
 export const loginAsyncActionApi = createAsyncThunk('loginAsyncActionApi', async (userlogin: UserLoginFrm) => {
-  const result = await http.post(`/api/QuanLyNguoiDung/DangNhap`, userlogin);
-  setStoreJson('credentials', result.data)
-  const maLoaiNguoiDung = result.data.maLoaiNguoiDung;
-  if (result.request?.status === 200) {
-    swal({
-      title: "Đăng nhập thành công !",
-      icon: "success",
-      timer: 1350,
-    });
-    if (maLoaiNguoiDung === 'GV') {
-      history.push('/admin/')
-    } else {
-      history.push('/')
+  try {
+    const result = await http.post(`/api/QuanLyNguoiDung/DangNhap`, userlogin);
+    setStoreJson('credentials', result.data)
+    const maLoaiNguoiDung = result.data.maLoaiNguoiDung;
+    if (result.request?.status === 200) {
+      swal({
+        title: `${result.data.taiKhoan} Đăng nhập thành công!`,
+        icon: "success",
+        timer: 1350,
+      });
+      if (maLoaiNguoiDung === 'GV') {
+        history.push('/admin/')
+      } else {
+        history.push('/')
+      }
     }
+    return result.data
+  } catch (err: any) {
+    swal({
+      title: err.response?.data,
+      icon: "warning",
+      timer: 2000,
+    });
   }
-  return result.data
 });
 
 //Đăng kí
@@ -145,6 +153,7 @@ export const signUpAsyncActionApi = createAsyncThunk('signUpAsyncActionApi', asy
   try {
     const result = await httpNonAuth.post(`/api/QuanLyNguoiDung/DangKy`, userSignUp);
     if (result.request?.status === 200) {
+      console.log('result', result)
       swal({
         title: "Đăng ký thành công hãy đăng nhập",
         icon: "success",
@@ -152,16 +161,13 @@ export const signUpAsyncActionApi = createAsyncThunk('signUpAsyncActionApi', asy
       });
     }
     return result.data
-  } catch (err) {
-  // console.log('err', err)
+  } catch (err: any) {
     swal({
-      title: "Đăng ký thất bại ,kiểm tra lại thông tin !",
+      title: err.response?.data,
       icon: "warning",
       timer: 2000,
     });
   }
-
-
 });
 // Lấy thông tin người dùng
 export const getUserInfoActionApi = () => {
@@ -185,13 +191,11 @@ export const updateUserInfoActionApi = (values: UserUpdateFrm) => {
       }
       const action: PayloadAction<{}> = upDateInfoAction(result.data);
       dispacth(action)
-    } catch (err) {
+    } catch (err : any) {
       swal({
-        // title: err.response?.data,
-        title: "Kiểm tra lại email ",
+        title: err.response?.data,
         icon: "warning",
         timer: 2000,
-
       });
     }
   }
@@ -210,8 +214,7 @@ export const userCancelCourseActionApi = (key: string) => {
         const result = await http.post(`/api/QuanLyKhoaHoc/HuyGhiDanh`, valuesRegisCoure);
         if (result.request?.status === 200) {
           swal({
-            // title: err.response?.data,
-            title: "Hủy đăng kí thành công",
+            title: result.data,
             icon: "success",
             timer: 1500,
           });
@@ -219,8 +222,7 @@ export const userCancelCourseActionApi = (key: string) => {
         }
       } catch (err: any) {
         swal({
-          // title: err.response?.data,
-          title: "k được rồi",
+          title: err.response?.data,
           icon: "warning",
           timer: 2000,
         });
@@ -239,37 +241,31 @@ export const getUserArrActionApi = () => {
 
 export const searchUserActionApi = (key: string) => {
   return async (dispacth: DispatchType) => {
-    try {
       const result = await httpNonAuth.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa=${key}`);
       const action: PayloadAction<UserArr[]> = getListUserAction(result.data);
       dispacth(action);
-    } catch (err) {
-      // console.log('err', err);
-    };
   }
 }
 //Thêm người dùng
 export const addUserActionApi = (values: UserModel) => {
-
   return async (dispatch: DispatchType) => {
     try {
       const result = await http.post(`/api/QuanLyNguoiDung/ThemNguoiDung`, values);
       if (result.request?.status === 200) {
         swal({
-          title: "Thêm thành công",
+          title: `Đã thêm tài khoản ${result.data.taiKhoan} thành công`,
           icon: "success",
           timer: 2000,
         });
       }
       dispatch(getUserArrActionApi());
-    } catch (err) {
+    } catch (err: any) {
       swal({
-        // title: errors.response?.data,
+        title: err.response?.data,
         icon: "warning",
         text: 'Đã xảy ra lỗi vui lòng quay lại trang chủ hoặc thử lại',
         timer: 2000,
       });
-      // console.log('err', err);
     }
   }
 }

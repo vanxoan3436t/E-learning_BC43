@@ -44,6 +44,6 @@ export default function App({ }: Props) {
                 <Route path="*" element={<Navigate to="/login" />}></Route>
             </Route>
         </Routes>
-        </>
+    </>
     )
 }
