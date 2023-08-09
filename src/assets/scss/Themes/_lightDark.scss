@@ -100,7 +100,7 @@ $dark-button: #7b7e83;
         background-color: $bg-c0-white !important;
     }
 
-    .footer-form input {
+    .footer-form input,.detail-coures-content .btn-preview {
         border-color: $text-c0-white !important;
         color: $text-c0-white !important;
     }
@@ -165,7 +165,7 @@ $dark-button: #7b7e83;
     .info-item-content div i,
     .contact-form__input,
     .header-top_info_icon i::before,
-    .course-name i {
+    .course-name i,.detail-course-intro i,.box-course-learn .row ul li i,.lesson-content span i,.side-bar-detail-content ul li i {
         color: $text-c0-white !important;
     }
     .btn-page-login {
