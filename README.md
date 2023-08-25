@@ -1,5 +1,5 @@
-Bài này :
-1 người code nên là sẽ không tạo nhánh tránh việc merge nhánh lỗi và gây mất thêm thời gian 
+Bài này : 2 người nhưng anh đồng môn bỏ bê rồi nên là
+1 người code sẽ không tạo nhánh tránh việc merge nhánh lỗi và gây mất thêm thời gian 
 
 # Getting Started with Create React App
 
