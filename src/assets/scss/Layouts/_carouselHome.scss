@@ -10,17 +10,10 @@
     @media screen and (max-width:991.98px) {
         padding: 91.5px 0 0 0;
     }
+
     @media screen and (max-width:575.98px) {
         height: 556px;
         padding: 51.5px 0 0 0;
-    }
-
-    @media screen and (max-width:414px) {
-        height: 540px;
-    }
-
-    @media screen and (max-width:375px) {
-        height: 549px;
     }
 
     .overlay {
@@ -34,17 +27,6 @@
     }
 
     #carouselExampleCaptions {
-        @media screen and (max-width:575.98px) {
-            height: 86vw;
-        }
-
-        @media screen and (max-width:414px) {
-            height: 115vw;
-        }
-
-        @media screen and (max-width:375px) {
-            height: 133vw;
-        }
 
         .carousel-indicators {
             z-index: 9;
@@ -66,8 +48,20 @@
         }
 
         .carousel-inner {
-            height: calc(100vh - 170px);
+            height: 560px;
             position: relative;
+
+            @media screen and (min-width:592px) and (max-width:724px) {
+                height: 600px;
+            }
+
+            @media screen and (max-width:591.98px) {
+                height: 530px;
+            }
+
+            @media screen and (max-width:575.98px) {
+                height: 504.5px;
+            }
 
             .carousel-item {
                 height: 100%;
@@ -78,43 +72,51 @@
 
                 &:nth-child(2) {
                     background-image: url(../../../../public/img/img-carousel4.jpg);
+
+                    .carousel-caption {
+                        bottom: 45px;
+
+                        p {
+                            margin-bottom: 70px;
+
+                        }
+
+                        @include ScreenSize($i6plus) {
+                            bottom: 30px;
+
+                            p {
+                                margin-bottom: revert;
+
+                            }
+                        }
+                    }
                 }
 
                 &:nth-child(3) {
                     background-image: url(../../../../public/img/img-carousel6.jpg);
                 }
 
-                @media screen and (max-width:575.98px) {
-                    height: 66%;
-                }
-
-                @media screen and (max-width:414px) {
-                    height: 86.5%;
-                }
-
-                @media screen and (max-width:375px) {
-                    height: 100%;
-                }
-
                 .carousel-caption {
+
                     text-align: left;
-                    bottom: 9rem;
-                    left: 10%;
+                    bottom: 30px;
+                    left: 4vw;
                     z-index: 2;
 
-                    @media screen and (max-width:991.98px) {
-                        left: 3%;
-                    }
-
-                    @media screen and (max-width:575.98px) {
-                        bottom: 2rem;
+                    @media screen and (max-width:415px) {
+                        bottom: 60px;
                     }
 
                     div {
-                        width: 75%;
+                        width: 100%;
 
                         @media screen and (max-width:991.98px) {
                             width: 100%;
+                        }
+
+                        @media screen and (max-width:591.98px) {
+                            width: 110%;
+
                         }
 
                         @media screen and (max-width:575.98px) {
@@ -134,7 +136,7 @@
                             position: relative;
                             animation-delay: 0.4s;
 
-                            @media screen and (max-width:414px) {
+                            @media screen and (max-width:415px) {
                                 font-size: $fs-c6;
                                 margin-bottom: 15px;
                             }
@@ -165,13 +167,18 @@
                             max-width: 570px;
                             animation-delay: 0.6s;
 
+                            @media screen and (max-width:591.98px) {
+                                font-size: $fs-3xl;
+                                margin-bottom: 15px;
+                            }
+
                             @media screen and (max-width:575.98px) {
                                 font-size: $fs-3xl;
                                 margin-bottom: 15px;
                             }
 
-                            @media screen and (max-width:414px) {
-                                font-size: 1.8rem;
+                            @media screen and (max-width:415px) {
+                                font-size: 1.5rem;
 
                             }
                         }
@@ -190,7 +197,7 @@
                                 margin-bottom: 15px;
                             }
 
-                            @media screen and (max-width:414px) {
+                            @media screen and (max-width:415px) {
 
                                 font-size: 1rem;
                             }

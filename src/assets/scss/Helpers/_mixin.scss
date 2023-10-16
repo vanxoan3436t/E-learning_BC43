@@ -1,36 +1,48 @@
-$i6: 375px;
-$i6plus: 414px;
+$i6: 376px;
+$i6plus: 415px;
 $xs: 575.98px;
 $sm: 767.98px;
 $md: 991.98px;
 $lg: 1199.98px;
+
 @mixin ScreenSize ($type) {
     @if $type ==$i6 {
         @media screen and (max-width:$i6) {
             @content;
         }
     }
-     @else if $type ==$i6plus {
+
+    @else if $type ==$i6plus {
         @media screen and (max-width:$i6plus) {
             @content;
         }
     }
-     @else if $type ==$xs {
+
+    @else if $type ==$xs {
         @media screen and (max-width:$xs) {
             @content;
         }
-    } 
+    }
+
+    @else if $type ==$sm {
+        @media screen and (max-width:$sm) {
+            @content;
+        }
+    }
+
     @else if $type ==$md {
         @media screen and (max-width:$md) {
             @content;
         }
     }
-     @if $type == $lg {
+
+    @if $type ==$lg {
         @media screen and (max-width:$lg) {
             @content;
         }
     }
 }
+
 .show {
     display: inline-block !important;
 }
@@ -39,12 +51,7 @@ $lg: 1199.98px;
     display: none;
 }
 
-.logo {
-    width: 104px;
-    img{
-        border-radius: 0 15px 0 15px ;
-    }
-}
+
 
 .white-bg {
     background-color: $bg-c0-white;
@@ -193,10 +200,12 @@ $lg: 1199.98px;
     @media screen and (max-width:991.98px) {
         padding-top: 148.5px;
     }
+
     @media screen and (max-width:575.98px) {
-        padding:84.5px 30px 30px 30px;
+        padding: 84.5px 30px 30px 30px;
 
     }
+
     h3,
     p {
         color: $text-c0-white;
@@ -212,12 +221,14 @@ $lg: 1199.98px;
     position: relative;
     padding-right: 45px;
 
-@media screen and (max-width: 1199.98px){
-    width: 180px;
-}
-@media screen and (max-width: 991.98px){
-    width: 330px;
-}
+    @media screen and (max-width: 1199.98px) {
+        width: 180px;
+    }
+
+    @media screen and (max-width: 991.98px) {
+        width: 330px;
+    }
+
     .search_input {
         border: 1px solid transparent;
         width: 100%;

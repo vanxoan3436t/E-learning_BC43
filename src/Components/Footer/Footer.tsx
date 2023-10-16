@@ -122,7 +122,7 @@ const Footer = (props: Props) => {
             <div className="col-sm-12">
               <div className="footer_copyright">
                 <p >
-                  © Bản quyền E-Learning 2017 - 2023 - Empower by <NavLink to="/">E-Learning</NavLink>
+                  © Bản quyền E-Learning 2022 - 2023 - Empower by <NavLink to="https://www.facebook.com/zoan.ty">Văn Xoạn</NavLink>
                 </p>
               </div>
             </div>
