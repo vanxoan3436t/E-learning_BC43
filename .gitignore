@@ -4,3 +4,10 @@
 /node_modules
 # production
 /build
+
+# ban đầu dự án có 2 người xây dựng nhưng về sau 1 thành viên bỏ, nên chỉ có tôi lập trình
+
+# Initially the project had 2 developers but later 1 member quit, so it was only me programming
+
+# Hiện tại còn nhiều thiếu sót và chưa hoàn trong phần Quản lý khóa học : thêm khóa học, Ghi danh, Sửa, Xóa khóa học vs Quản lý học viên: Ghi danh học viên . Sẽ hoàn thành trong thời gian sớm nhất
+#link hiện tại dự án: 

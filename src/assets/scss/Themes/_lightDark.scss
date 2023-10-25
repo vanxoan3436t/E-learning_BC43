@@ -195,13 +195,30 @@ $dark-button: #7b7e83;
     .btn-page-login {
         background: $bg-c1-primary !important;
     }
+
+    //page admin 
+    .paginationPages .page-item .page-link-pages{
+        border-color: #ffffff55;
+    }
+    .paginationPages .page-item.active .page-link-pages{
+        border-color: #fff;
+
+    }
+
+    .admin .admin-body .admin-body-left{
+        background:$bg-c0-dark ;
+    }
+
+    .admin {
+        
+        .dark-light {
+            right: 7px!important;
+       background: $bg-c0-white!important;
+            .fa-sun{
+                color: #000!important;
+            }
+        } 
+    }
+   
 }
 
-.admin {
-    .dark-light {
-        position: absolute;
-        top: 10%;
-        right: 32%;
-        // do tài khoản admin hiện tại không được cung cấp nữa nên scss phần này có thể có bug hiển thị
-    }
-}
