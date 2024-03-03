@@ -169,7 +169,7 @@ const Header = (props: Props) => {
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className='fa-solid fa-bars'></span>
               </button>
-
+ 
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-lg-0">
                   <li className="nav-item">
@@ -193,7 +193,9 @@ const Header = (props: Props) => {
                     <NavLink className="nav-link" to={'/'} >Thông tin</NavLink>
                   </li>
                 </ul>
-
+                <span className="dark-light">
+                  <ModeToggle />
+                </span>
                 <form className="search-main d-flex justify-content-between" onSubmit={handleSubmitSearch}>
                   <input onInput={handleChange} type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true' />
                   <button className="search_button">
@@ -205,9 +207,6 @@ const Header = (props: Props) => {
             </nav>
           </div>
         </div>
-        <span className="dark-light">
-          <ModeToggle />
-        </span>
       </div>
     </header >
   </>

@@ -2,43 +2,14 @@ $dark-primary: #2c3136;
 $dark-button: #7b7e83;
 
 .dark-light {
-    position: absolute;
-    top: 26%;
-    right: 40%;
-
-    @media screen and (max-width: 1280px) {
-        right: 40%;
-    }
-
-    @media screen and (max-width: 1199.98px) {
-        right: 30%;
-    }
-
-    @media screen and (max-width: 991.98px) {
-        top: 2.5vw;
-        right: 8%;
-    }
-
-    @media screen and (max-width: 767.98px) {
-        right: 9.5%;
-        top: 3.1vw;
-    }
-
-    @media screen and (max-width: 575.98px) {
-        right: 13%;
-        top: 1vw;
-    }
-
-    @media screen and (max-width: 414px) {
-        top: 1.5vw;
-        right: 18%;
-    }
+    background: $bg-c1-primary;
+    border-radius: 5px;
+    margin-right: 10px;
 
     button {
         padding: 0;
         display: inline-block;
         min-width: 100%;
-
         cursor: pointer;
 
         i {
@@ -46,7 +17,7 @@ $dark-button: #7b7e83;
             display: inline-block;
             margin-top: 0.65rem;
 
-            @media screen and (max-width: 414px) {
+            @media screen and (max-width: 415px) {
                 font-size: 24px;
 
             }
@@ -57,19 +28,65 @@ $dark-button: #7b7e83;
             background-color: transparent;
         }
 
-        .fa-moon {
-            margin-right: 4px;
-            transform: rotate(-12deg);
-            color: $dark-primary;
+        .fa-solid {
+            color: $text-c0-white;
+            padding: 0px 10px 10px 10px;
         }
 
-        .fa-sun {
-            color: $text-c0-white;
+        .fa-moon {
+            transform: rotate(-12deg);
+
         }
     }
+
+    @media screen and (max-width: 991.98px) {
+        position: absolute;
+        top: 20%;
+        left: 16%;
+    }
+
+    @media screen and (max-width: 767.98px) {
+        top: 4.9%;
+        left: 57%;
+    }
+
+    @media screen and (max-width: 600px) {
+        left: 48%;
+
+    }
+
+    @media screen and (max-width: 575.98px) {
+        top: 1.9%;
+        left: 81%;
+
+        button {
+            i {
+                margin-top: 0.4rem;
+            }
+
+            .fa-solid {
+                padding: 0px 5px 5px 5px;
+
+            }
+        }
+
+
+    }
+
+    @media screen and (max-width: 415px) {
+        left: 77%;
+        top: 2.8%;
+    }
+
+    @media screen and (max-width: 376px) {
+        left: 74%;
+        top: 2.2%;
+    }
+
 }
 
 [data-mui-color-scheme="dark"] {
+
     .secondary-bg-color {
         margin-bottom: 15px !important;
         box-shadow: 0px 10px 15px 5px rgba(105, 105, 110, 0.32);
@@ -88,9 +105,9 @@ $dark-button: #7b7e83;
     .services__navbar_link::before,
     .stiker-card,
     .btn-sub-card,
-    .info-overlay {
+    .info-overlay,
+    .dark-light {
         background: $dark-button !important;
-        font-weight: 600 !important;
     }
 
     .navbar-collapse ul li a::before,
@@ -135,6 +152,7 @@ $dark-button: #7b7e83;
         background-color: $dark-primary !important;
     }
 
+    //text
     h1,
     h2,
     h3,
@@ -143,7 +161,8 @@ $dark-button: #7b7e83;
     h6,
     span,
     p,
-    .search_button,
+    .search-main .search_input,
+    .search-main .search_input::placeholder,
     .nav-link,
     .main-menu_dropdown li a,
     .section-heading__title_small,
@@ -195,19 +214,42 @@ $dark-button: #7b7e83;
     }
 
     .login-info .dropdown button:focus {
-        box-shadow: 0 0 0 0.2rem rgb(178 182 189 / 72%)!important   ;
+        box-shadow: 0 0 0 0.2rem rgb(178 182 189 / 72%) !important;
     }
 
-    .modal-body table thead tr th{
-color: $text-c2-dark!important;
+    .modal-body table thead tr th {
+        color: $text-c2-dark !important;
+    }
+
+    .admin .admin-body .admin-body-left,.user-management .card-header-left button,.course-management .card-header-left button,#tableDanhSach .btn-primary {
+        background: $bg-c0-dark!important;
+    }
+
+    .admin .details table thead tr th,.admin .details table thead tr{
+        border-color: #fff;
     }
 }
 
+//page admin 
+.paginationPages .page-item .page-link-pages {
+    border-color: #ffffff55;
+}
+
+.paginationPages .page-item.active .page-link-pages {
+    border-color: #fff;
+
+}
+
+
+
 .admin {
+
     .dark-light {
-        top: 10%;
-        right: 32%;
+        right: 7px !important;
+        background: $bg-c0-white !important;
 
+        .fa-sun {
+            color: #000 !important;
+        }
     }
-
 }

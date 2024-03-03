@@ -1,5 +1,5 @@
-Bài này :
-1 người code nên là sẽ không tạo nhánh tránh việc merge nhánh lỗi và gây mất thêm thời gian 
+Bài này : 2 người nhưng anh đồng môn bỏ bê rồi nên là
+1 người code sẽ không tạo nhánh tránh việc merge nhánh lỗi và gây mất thêm thời gian 
 
 Git Commit message :
 -feat: Một tính năng mới (feature)
@@ -11,6 +11,9 @@ Git Commit message :
 -test: Thêm test case còn thiếu, sửa unit test,...
 -build: Những thay đổi ảnh hưởng đến quá trình build 
 -ci:Thay đổi file cấu hình hoặc script Ci
+
+Muốn thêm những thay đổi nhỏ không đáng kể và tránh bị lắt nhắt, dùng git commit --amend
+git commit --amend --no-edit
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

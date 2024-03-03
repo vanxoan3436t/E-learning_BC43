@@ -94,7 +94,13 @@
     }
 
     .header-bottom {
+        .logo {
+            width: 55px;
+
+        }
+
         position: relative;
+
         div {
             .main-menu {
                 nav {
@@ -137,7 +143,6 @@
                             }
 
                             @media screen and (max-width:767.98px) {
-
                                 flex-direction: column;
                                 margin-bottom: 20px;
                             }
@@ -262,104 +267,120 @@
                                         }
                                     }
                                 }
-                            }
-                        }
 
-                        .search-main {
-                            @media screen and (max-width:991.98px) {
-                                position: absolute;
-                                top: 20%;
-                                left: 23%;
-                            }
+                                /*có thể dùng bản navbar mobile sẽ không cần thay đổi width ở đây , 
+                                vì nếu text bị thay đổi(dài ra chả hạn) ở Back-end thì ta lại phải thay đổi width*/
+                                @include ScreenSize($sm) {
+                                    width: 30vw;
+                                }
 
-                            @media screen and (max-width:767.98px) {
-
-                                position: revert;
-                                margin-bottom: 15px;
-
-                                .search_button {
-                                    display: none;
+                                @include ScreenSize($xs) {
+                                    width: 34vw;
+                                }
+                                @include ScreenSize($i6plus) {
+                                    width: 44vw;
+                                }
+                                @include ScreenSize($i6) {
+                                    width: 50vw;
                                 }
                             }
                         }
                     }
-
-                    .btn--common {
-                        margin-left: 10px;
-                        padding: 12px 20px;
-                        background-color: #0554f2;
-                        color: #fff;
-
-                        @media screen and (max-width:991.98px) {
-                            padding: 11px 26px;
-                        }
-                    }
-
-                    .header-avatar {
-                        margin: 0 28px 0 10px;
-                        display: flex;
-                        .header-set {
-                            display: inline-flex;
-                            align-items: center;
-                            margin-right: 5px;
-                            cursor: pointer;
-
-                        }
-
-                        .to-info {
-                            position: relative;
-                            display: inline-block;
-                            width: 50px;
-                            height: 50px;
-
-                            .your-avatar {
-                                width: 100%;
-                                height: 100%;
-                                border-radius: 50%;
-                                object-fit: cover;
-                            }
-
-                            .logout {
-                                position: absolute;
-                                top: 18%;
-                                right: 1%;
-                                opacity: 0;
-                                transition: .5s;
-                            }
-
-                            &:hover .logout {
-                                opacity: 1;
-                                right: -55%;
-                                transition: .5s;
-                            }
-                        }
-                    }
-
-                    .btn--common,
-                    .header-avatar {
-                        @media screen and (max-width:991.98px) {
-                            position: absolute;
-                            top: 19%;
-                            right: 11%;
-                        }
-
-                        @media screen and (max-width:767.98px) {
-                            top: 5%;
-                        }
-
-                        @media screen and (max-width:575.98px) {
-                            position: revert;
-                            margin-left: 0;
-                            margin-bottom: 10px;
-                        }
-                    }
-
-
                 }
             }
+        }
 
+        .search-main {
+            @media screen and (max-width:991.98px) {
+                position: absolute;
+                top: 20%;
+                left: 23%;
+            }
+
+            @media screen and (max-width:767.98px) {
+
+                position: revert;
+                margin-bottom: 15px;
+
+                .search_button {
+                    display: none;
+                }
+            }
         }
     }
+
+    .btn--common {
+        margin-left: 10px;
+        padding: 12px 20px;
+        background-color: #0554f2;
+        color: #fff;
+
+        @media screen and (max-width:991.98px) {
+            padding: 11px 26px;
+        }
+    }
+
+    .header-avatar {
+        margin: 0 28px 0 10px;
+        display: flex;
+
+        .header-set {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 5px;
+            cursor: pointer;
+
+        }
+
+        .to-info {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+
+            .your-avatar {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .logout {
+                position: absolute;
+                top: 18%;
+                right: 1%;
+                opacity: 0;
+                transition: .5s;
+            }
+
+            &:hover .logout {
+                opacity: 1;
+                right: -55%;
+                transition: .5s;
+            }
+        }
+    }
+
+    .btn--common,
+    .header-avatar {
+        @media screen and (max-width:991.98px) {
+            position: absolute;
+            top: 19%;
+            right: 11%;
+        }
+
+        @media screen and (max-width:767.98px) {
+            top: 5%;
+        }
+
+        @media screen and (max-width:575.98px) {
+            position: revert;
+            margin-left: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+
 }
 
 header.sticky-on.sticky .navbar-wrap {
