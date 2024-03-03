@@ -2,6 +2,7 @@
 
 .body-login {
     background-image: linear-gradient(-90deg, #8ebfee 0%, #8eb8e4 100%);
+    height: 100vh;
 
     .login-form {
         position: relative;
@@ -9,7 +10,7 @@
         background-color: $bg-c0-white;
         min-width: 100vh;
         overflow: hidden;
-        height: 969px;
+        height: 100%;
         border-radius: 20px;
 
         @media screen and (max-width :1199.98px) {
