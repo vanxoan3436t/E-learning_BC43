@@ -370,3 +370,21 @@ form {
 .ant-layout-content {
     height: 0 !important;
 }
+
+.admin {
+    .admin-body{
+        .admin-body-left{
+            .dark-light {
+                position: absolute;
+                top: 77px;
+                right: 11px;
+               background: $bg-c0-white!important;
+               .fa-moon,.fa-sun{
+                color: #000;
+        
+               }
+            }
+        }
+    }
+    
+}
