@@ -1,4 +1,4 @@
-$dark-primary: #38393a;
+$dark-primary: #2c3136;
 $dark-button: #7b7e83;
 
 .dark-light {
@@ -100,7 +100,8 @@ $dark-button: #7b7e83;
         background-color: $bg-c0-white !important;
     }
 
-    .footer-form input,.detail-coures-content .btn-preview {
+    .footer-form input,
+    .detail-coures-content .btn-preview {
         border-color: $text-c0-white !important;
         color: $text-c0-white !important;
     }
@@ -165,11 +166,40 @@ $dark-button: #7b7e83;
     .info-item-content div i,
     .contact-form__input,
     .header-top_info_icon i::before,
-    .course-name i,.detail-course-intro i,.box-course-learn .row ul li i,.lesson-content span i,.side-bar-detail-content ul li i {
+    .course-name i,
+    .detail-course-intro i,
+    .box-course-learn .row ul li i,
+    .lesson-content span i,
+    .side-bar-detail-content ul li i,
+    .login-info .dropdown button {
         color: $text-c0-white !important;
     }
+
     .btn-page-login {
         background: $bg-c1-primary !important;
+    }
+
+    .page-link-pages {
+        border-color: #bdd0e5b3 !important;
+
+        &:hover {
+            border-color: $text-c0-white !important;
+
+        }
+    }
+
+    .page-item.active .page-link-pages {
+        border-color: $text-c0-white !important;
+        background: $bg-c0-white !important;
+        color: $text-c0-dark !important;
+    }
+
+    .login-info .dropdown button:focus {
+        box-shadow: 0 0 0 0.2rem rgb(178 182 189 / 72%)!important   ;
+    }
+
+    .modal-body table thead tr th{
+color: $text-c2-dark!important;
     }
 }
 
@@ -179,4 +209,5 @@ $dark-button: #7b7e83;
         right: 32%;
 
     }
+
 }

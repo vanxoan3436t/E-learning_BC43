@@ -4,7 +4,7 @@ import { history } from "..";
 export const DOMAIN = 'https://elearningnew.cybersoft.edu.vn';
 export const USER_LOGIN = 'userLogin';
 export const COURSEDETAIL = 'courseDetail';
-export const TOKEN_CYBERSOFT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA0MyIsIkhldEhhblN0cmluZyI6IjA0LzExLzIwMjMiLCJIZXRIYW5UaW1lIjoiMTY5OTA1NjAwMDAwMCIsIm5iZiI6MTY2OTQ4MjAwMCwiZXhwIjoxNjk5MjAzNjAwfQ.7A1g8RqPPK_ttr9NYitsWT7Cbe11nz4qye-QxZ_b8fk';
+export const TOKEN_CYBERSOFT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJDT0RFIFdJVEggTUVOVE9SIFRIw4FORyAyIiwiSGV0SGFuU3RyaW5nIjoiMDEvMDkvMjAyNCIsIkhldEhhblRpbWUiOiIxNzI1MTQ4ODAwMDAwIiwibmJmIjoxNzA2NzIwNDAwLCJleHAiOjE3MjUyOTY0MDB9.eD1cwprT529UK3XwL1cUQz8OkQjsFEzbMCQwLmI9f0U';
 
 //interceptor
 export const http = axios.create({

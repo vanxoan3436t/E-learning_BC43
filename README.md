@@ -1,6 +1,16 @@
 Bài này :
 1 người code nên là sẽ không tạo nhánh tránh việc merge nhánh lỗi và gây mất thêm thời gian 
 
+Git Commit message :
+-feat: Một tính năng mới (feature)
+-fix: Sửa lỗi (fix bug)
+-docs: Cập nhật tài liệu (sửa document)
+-style: Thêm khoảng trắng, format code, thiếu dấu chấm phẩy
+-refactor:Đổi tên hàm, tên biến dễ hiểu hơn, tách hàm con, xóa code thừa,..
+-perf: Cải tiến hiệu năng
+-test: Thêm test case còn thiếu, sửa unit test,...
+-build: Những thay đổi ảnh hưởng đến quá trình build 
+-ci:Thay đổi file cấu hình hoặc script Ci
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

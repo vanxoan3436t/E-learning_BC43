@@ -6,10 +6,10 @@ import { CourseDetail } from '../../../Redux/reducer/quanLyKhoaHocReducer';
 type Props = {}
 
 export default function ListCourses({ }: Props) {
-    const  coursesList = useSelector((state : any )=> state.quanLyKhoaHocReducer.coursesList);
- 
+    const coursesList = useSelector((state: any) => state.quanLyKhoaHocReducer.coursesList);
+
     const renderCoursePopular = () => {
-        return coursesList?.slice(0, 4).map((course : CourseDetail, index : number) => {
+        return coursesList?.slice(0, 4).map((course: CourseDetail, index: number) => {
             return (
                 <div key={index} className="col-sm-6 col-md-4 col-xl-3 card-global-res">
                     <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global">
@@ -40,7 +40,7 @@ export default function ListCourses({ }: Props) {
     }
 
     const renderCourseStudent = () => {
-        return coursesList?.slice(5, 9).map((course : CourseDetail, index : number) => {
+        return coursesList?.slice(5, 9).map((course: CourseDetail, index: number) => {
             if ((index + 1) % 2 === 0) {
                 return (
                     <div key={index} className="col-sm-6 col-md-4 col-xl-3 card-global-res mt-4">
@@ -139,7 +139,7 @@ export default function ListCourses({ }: Props) {
         })
     }
     const renderCourseReact = () => {
-        return coursesList?.slice(7, 11).map((course : CourseDetail, index : number) => {
+        return coursesList?.slice(7, 11).map((course: CourseDetail, index: number) => {
             if ((index + 1) % 2 === 0) {
                 return (
                     <div key={index} className="col-sm-6 col-md-4 col-xl-3 card-global-res mt-4">
@@ -214,7 +214,7 @@ export default function ListCourses({ }: Props) {
                             </div>
                             <div className='sub-card'>
                                 <div className='sub-card-head'>
-                                    <img src='/img/tony-stark.webp'  alt="..." />
+                                    <img src='/img/tony-stark.webp' alt="..." />
                                     <span className='ms-1 color-card-title'>Elun Musk Ricard</span>
                                 </div>
                                 <h6>BOOTCAMP - LẬP TRÌNH FULL STACK TỪ ZERO ĐẾN CÓ VIỆC</h6>
@@ -240,11 +240,11 @@ export default function ListCourses({ }: Props) {
         {/* Course Popular */}
         <div className='popular-course'>
             <h6 className='ms-3 mt-5'>
-            Khóa học phổ biến
+                Khóa học phổ biến
             </h6>
-        <div className='row '>
-            {renderCoursePopular()}
-        </div>
+            <div className='row '>
+                {renderCoursePopular()}
+            </div>
         </div>
         {/* Course Student */}
         <div className='mt-5'>

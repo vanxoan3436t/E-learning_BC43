@@ -30,8 +30,7 @@ export default function App({ }: Props) {
                     </Route>
                 </Route>
                 <Route path="detail">
-                    <Route path=':id' element={< Detail />}>
-                    </Route>
+                    <Route path=':id' element={< Detail />}></Route>
                 </Route>
                 <Route path='*' element={<Navigate to='/' />}></Route>
             </Route>

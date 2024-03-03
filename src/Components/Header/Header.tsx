@@ -1,4 +1,4 @@
-import  { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { history } from '../..'
 import { useDispatch, useSelector } from 'react-redux'
@@ -63,7 +63,7 @@ const Header = (props: Props) => {
       await history.push(`/search/${keyInput.current}`);
     }
   }
-// header fix
+  // header fix
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
     const position = window.scrollY;
@@ -163,8 +163,8 @@ const Header = (props: Props) => {
         <div className="container-fluid">
           <div className="main-menu">
             <nav className="main-menu-nav navbar navbar-expand-lg ">
-              <NavLink className="logo" to='/'>
-                <img src="/img/elearning-logo.png" alt="logo" />
+              <NavLink className="logo" to='/' style={{width: '94px'}}>
+                <img src="./img/logo-vanxoan.png" alt="logo" />
               </NavLink>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className='fa-solid fa-bars'></span>
@@ -192,7 +192,6 @@ const Header = (props: Props) => {
                   <li className="nav-item">
                     <NavLink className="nav-link" to={'/'} >Thông tin</NavLink>
                   </li>
-
                 </ul>
 
                 <form className="search-main d-flex justify-content-between" onSubmit={handleSubmitSearch}>
@@ -204,10 +203,8 @@ const Header = (props: Props) => {
                 {handleLoginLink()}
               </div>
             </nav>
-
           </div>
         </div>
-
         <span className="dark-light">
           <ModeToggle />
         </span>

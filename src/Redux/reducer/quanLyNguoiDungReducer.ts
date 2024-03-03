@@ -101,7 +101,6 @@ const quanLyNguoiDungReducer = createSlice({
     }
   },
   extraReducers: (builder) => {
-    // Xử lý dữ liệu trả về api
     builder.addCase(loginAsyncActionApi.pending, (state: UserState, action) => {
     }).addCase(loginAsyncActionApi.fulfilled, (state: UserState, action: PayloadAction<UserLoginApi>) => {
       state.userLogin = action.payload;
