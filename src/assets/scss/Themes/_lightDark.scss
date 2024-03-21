@@ -19,8 +19,8 @@ $dark-button: #7b7e83;
         align-items: center;
         cursor: pointer;
         padding: 0;
+        height: 100%;
 
-        // background-color: #fff;
         i {
             display: inline-block;
             padding: 10px;
@@ -30,7 +30,6 @@ $dark-button: #7b7e83;
 
         .fa-solid {
             color: $text-c0-white;
-            // padding: 0px 10px 10px 10px;
         }
 
         .fa-moon {
@@ -38,54 +37,18 @@ $dark-button: #7b7e83;
         }
     }
 
-    @media screen and (max-width: 991.98px) {
-        // justify-content: center;
-        // position: absolute;
-        // top: 20%;
-        // left: 16%;
-    }
-
-    @media screen and (max-width: 767.98px) {
-        // top: 4.9%;
-        // left: 57%;
-    }
-
-    @media screen and (max-width: 600px) {
-        left: 48%;
-
-    }
-
-    @media screen and (max-width: 575.98px) {
-        top: 1.9%;
-        left: 81%;
-
-        button {
-            i {
-                margin-top: 0.4rem;
-            }
-
-            .fa-solid {
-                padding: 0px 5px 5px 5px;
-
-            }
-        }
-
-
-    }
-
-    @media screen and (max-width: 415px) {
-        left: 77%;
-        top: 2.8%;
-    }
-
-    @media screen and (max-width: 376px) {
-        left: 74%;
-        top: 2.2%;
-    }
-
 }
 
 [data-mui-color-scheme="dark"] {
+    //footer
+    .footer-bottom {
+        border-color: $dark-button !important;
+
+        p {
+            color: #bcc0c5 !important;
+        }
+    }
+    //footer
 
     //header-csss
     .main-menu_dropdown {
@@ -94,16 +57,20 @@ $dark-button: #7b7e83;
             border-top: 0;
         }
     }
-.fa-xmark{
-    &:hover{
-        color: $dark-primary;
+
+    .fa-xmark {
+        &:hover {
+            color: $dark-primary;
+        }
     }
-}
+
     //header-csss
     .main-menu_dropdown .contact-form__button,
     .section-button a,
     .card-header-left button,
-    .btn--common {
+    .btn--common,
+    .contact-form__button,
+    .scroll-to-top {
         &:hover {
             border-color: #fff !important;
             box-shadow: 0px 0px 15px 10px rgba(105, 105, 110, 0.32) !important;
@@ -163,7 +130,6 @@ $dark-button: #7b7e83;
     }
 
     .secondary-bg-color {
-        margin-bottom: 15px !important;
         box-shadow: 0px 10px 15px 5px rgba(105, 105, 110, 0.32);
     }
 
@@ -266,7 +232,10 @@ $dark-button: #7b7e83;
     .lesson-content span i,
     .side-bar-detail-content ul li i,
     .login-info .dropdown button,
-    .search_button {
+    .search_button,
+    .box-search,
+    .form-coupon input,
+    .form-coupon input::placeholder {
         color: $text-c0-white !important;
     }
 
@@ -355,9 +324,6 @@ $dark-button: #7b7e83;
     border-color: #fff;
 
 }
-
-
-
 .admin {
     .admin-body-left-header {
         margin-bottom: 10px;
@@ -376,6 +342,4 @@ $dark-button: #7b7e83;
             color: #000 !important;
         }
     }
-
-
 }

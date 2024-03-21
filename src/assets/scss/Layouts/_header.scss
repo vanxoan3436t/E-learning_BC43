@@ -136,6 +136,7 @@
 
           .navbar-collapse {
             flex-basis: 100%;
+
             ul {
               margin-bottom: 10px;
 
@@ -357,7 +358,6 @@
   .d-block-edit {
     @media screen and (min-width: 991.98px) {
       display: flex !important;
-
     }
   }
 
@@ -369,7 +369,7 @@
 
     .dark-light,
     .search-main,
-    .btn--common, .header-avatar {
+    .btn--common{
       height: 100%;
     }
 
@@ -378,8 +378,8 @@
       justify-content: center;
       align-items: center;
     }
-     
-  
+
+
     @media screen and (max-width:991.98px) {
       position: absolute;
       top: -8%;
@@ -430,6 +430,9 @@
 
       .btn--common {
         margin: 0px;
+      }
+      .header-avatar{
+        margin-left:0 ;
       }
     }
 

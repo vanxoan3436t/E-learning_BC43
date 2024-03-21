@@ -108,8 +108,8 @@ const Header = (props: Props) => {
                     <i className="fa-solid fa-clock"></i>
                   </div>
                   <div className="header-top_info_text ">
-                    <p className='fs-13'>Thứ 2 - Thứ 7:</p>
-                    <span>9am - 8pm</span>
+                    <p className='fs-13'>Thứ 2 - Thứ 6:</p>
+                    <span>9am - 6pm</span>
                   </div>
                 </div>
 
@@ -129,7 +129,7 @@ const Header = (props: Props) => {
                   </div>
                   <div className="header-top_info_text">
                     <p>Email chúng tôi:</p>
-                    <span>elearning@gmail.com</span>
+                    <span>tech_learning@gmail.com</span>
                   </div>
                 </div>
 

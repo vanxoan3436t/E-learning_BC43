@@ -25,19 +25,18 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAFY_bVXQBEy-Siz7P_3hyOSI4wim5wK0Q",
-  authDomain: "tech-learning-613a2.firebaseapp.com",
-  projectId: "tech-learning-613a2",
-  storageBucket: "tech-learning-613a2.appspot.com",
-  messagingSenderId: "547542045141",
-  appId: "1:547542045141:web:a01631aba7ef552ea4ad5c",
-  measurementId: "G-FDMP7CD2N1"
+  apiKey: "AIzaSyA_c6k_YwdArfvsSYGvwCc_qEtzOwJUvgM",
+  authDomain: "tech-learning-60070.firebaseapp.com",
+  projectId: "tech-learning-60070",
+  storageBucket: "tech-learning-60070.appspot.com",
+  messagingSenderId: "358090409710",
+  appId: "1:358090409710:web:e1f3c0a6a0ab7e042f55ff",
+  measurementId: "G-TWYQSG2GPC"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
 
 export const history: any = createBrowserHistory();
 
