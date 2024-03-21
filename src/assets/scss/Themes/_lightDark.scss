@@ -6,48 +6,48 @@ $dark-button: #7b7e83;
     border-radius: 5px;
     margin-right: 10px;
 
+    .table-hover>tbody>tr:hover>* {
+        --bs-table-accent-bg: rgba(0, 0, 0, 0.075);
+    }
+
     button {
-        padding: 0;
-        display: inline-block;
         min-width: 100%;
+        height: 48px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
+        padding: 0;
 
+        // background-color: #fff;
         i {
-            font-size: 26px;
             display: inline-block;
-            margin-top: 0.65rem;
-
-            @media screen and (max-width: 415px) {
-                font-size: 24px;
-
-            }
-        }
-
-
-        &:hover {
-            background-color: transparent;
+            padding: 10px;
+            color: #fff;
+            font-size: 26px;
         }
 
         .fa-solid {
             color: $text-c0-white;
-            padding: 0px 10px 10px 10px;
+            // padding: 0px 10px 10px 10px;
         }
 
         .fa-moon {
             transform: rotate(-12deg);
-
         }
     }
 
     @media screen and (max-width: 991.98px) {
-        position: absolute;
-        top: 20%;
-        left: 16%;
+        // justify-content: center;
+        // position: absolute;
+        // top: 20%;
+        // left: 16%;
     }
 
     @media screen and (max-width: 767.98px) {
-        top: 4.9%;
-        left: 57%;
+        // top: 4.9%;
+        // left: 57%;
     }
 
     @media screen and (max-width: 600px) {
@@ -86,6 +86,81 @@ $dark-button: #7b7e83;
 }
 
 [data-mui-color-scheme="dark"] {
+
+    //header-csss
+    .main-menu_dropdown {
+        @media screen and (max-width: 767.98px) {
+            border: .5px solid #fff;
+            border-top: 0;
+        }
+    }
+.fa-xmark{
+    &:hover{
+        color: $dark-primary;
+    }
+}
+    //header-csss
+    .main-menu_dropdown .contact-form__button,
+    .section-button a,
+    .card-header-left button,
+    .btn--common {
+        &:hover {
+            border-color: #fff !important;
+            box-shadow: 0px 0px 15px 10px rgba(105, 105, 110, 0.32) !important;
+        }
+    }
+
+    .blog-item {
+        border-top: 1px solid rgba(237, 237, 237, 0.39) !important;
+        border-bottom: 1px solid rgba(237, 237, 237, 0.39) !important;
+        border-left: 0.5px solid rgba(237, 237, 237, 0.39) !important;
+        border-right: 0.5px solid rgba(237, 237, 237, 0.39) !important;
+
+        &:hover {
+            border-color: #fff !important;
+        }
+
+        &::before {
+            background: #ffffff5d !important;
+        }
+
+        &:hover::before {
+            opacity: 0 !important;
+            background: #fff !important;
+        }
+    }
+
+    .card-global {
+        .sub-card {
+            box-shadow: 0px 0px 15px 10px rgba(105, 105, 110, 0.32) !important;
+            border: 0.5px solid rgba(255, 255, 255, 0.5) !important;
+
+            &::before {
+                border-right-color: $dark-primary !important;
+
+                @media screen and (max-width: 1200px) {
+                    border-right-color: transparent !important;
+                    border-bottom-color: $dark-primary !important;
+                }
+            }
+        }
+    }
+
+    .move-sub-card {
+        .sub-card {
+            border: 0.5px solid rgba(255, 255, 255, 0.5) !important;
+
+            &::before {
+                border-left-color: $dark-primary !important;
+
+                @media screen and (max-width: 1200px) {
+                    border-left-color: transparent !important;
+                    border-bottom-color: $dark-primary !important;
+                }
+            }
+        }
+
+    }
 
     .secondary-bg-color {
         margin-bottom: 15px !important;
@@ -190,7 +265,8 @@ $dark-button: #7b7e83;
     .box-course-learn .row ul li i,
     .lesson-content span i,
     .side-bar-detail-content ul li i,
-    .login-info .dropdown button {
+    .login-info .dropdown button,
+    .search_button {
         color: $text-c0-white !important;
     }
 
@@ -221,12 +297,52 @@ $dark-button: #7b7e83;
         color: $text-c2-dark !important;
     }
 
-    .admin .admin-body .admin-body-left,.user-management .card-header-left button,.course-management .card-header-left button,#tableDanhSach .btn-primary {
-        background: $bg-c0-dark!important;
+    .card-footer div p:nth-child(2) {
+        font-weight: 500;
+        color: #f15a5a !important;
     }
 
-    .admin .details table thead tr th,.admin .details table thead tr{
+    .admin .admin-body .admin-body-left,
+    .user-management .card-header-left button,
+    .course-management .card-header-left button,
+    #tableDanhSach .btn-primary {
+        background: $bg-c0-dark !important;
+    }
+
+    .admin .details table thead tr th,
+    .admin .details table thead tr {
         border-color: #fff;
+    }
+
+    .table-hover>tbody>tr:hover>* {
+        --bs-table-accent-bg: #676879;
+    }
+
+    .admin {
+        .details {
+            .dropdown-menu {
+                border: 1px solid #fff !important;
+                background-color: #fff !important;
+                box-shadow: 0px 0px 15px 10px rgba(105, 105, 110, 0.32) !important;
+
+                li {
+                    z-index: 100;
+                    position: relative;
+                    background-color: #fff !important;
+
+                    .dropdown-item {
+                        background-color: #fff !important;
+                        color: $dark-primary !important;
+
+                        &:hover {
+                            color: #fff !important;
+                            background-color: $dark-button !important;
+
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -243,13 +359,23 @@ $dark-button: #7b7e83;
 
 
 .admin {
+    .admin-body-left-header {
+        margin-bottom: 10px;
+    }
 
     .dark-light {
-        right: 7px !important;
         background: $bg-c0-white !important;
+        margin-right: 0;
+        width: 40px;
+
+        button {
+            height: 36px;
+        }
 
         .fa-sun {
             color: #000 !important;
         }
     }
+
+
 }

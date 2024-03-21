@@ -15,6 +15,30 @@ import Detail from './Pages/Detail/Detail';
 import ResponsiveItem from './Templates/ResponsiveItem';
 import PageNotFound from './Components/PageNot/PageNotFound';
 import LoginMobile from './Pages/LoginRegister/LoginMobile';
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAFY_bVXQBEy-Siz7P_3hyOSI4wim5wK0Q",
+  authDomain: "tech-learning-613a2.firebaseapp.com",
+  projectId: "tech-learning-613a2",
+  storageBucket: "tech-learning-613a2.appspot.com",
+  messagingSenderId: "547542045141",
+  appId: "1:547542045141:web:a01631aba7ef552ea4ad5c",
+  measurementId: "G-FDMP7CD2N1"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+
 export const history: any = createBrowserHistory();
 
 type Props = {}

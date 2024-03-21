@@ -216,10 +216,11 @@ $lg: 1199.98px;
 .search-main {
     border: 1px solid #e2e2e2;
     border-radius: 5px;
-    padding: 10px 22px;
+    padding: 8px 22px;
     width: 300px;
     position: relative;
     padding-right: 45px;
+    z-index: 1;
 
     @media screen and (max-width: 1199.98px) {
         width: 180px;
@@ -246,6 +247,15 @@ $lg: 1199.98px;
         top: 50%;
         transform: translateY(-50%);
 
+        .fa-xmark {
+            z-index: 2;
+            padding: 8px 10px;
+
+            &:hover {
+                background-color: #edf3ef;
+                border-radius: 4px;
+            }
+        }
     }
 }
 

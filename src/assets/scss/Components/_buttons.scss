@@ -10,6 +10,7 @@
     display: inline-flex;
     align-items: center;
     letter-spacing: 0.01em;
+    white-space: nowrap;
     @media screen and (max-width:414px){
      padding: 10px 12px;
     }

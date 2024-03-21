@@ -14,12 +14,12 @@ import ListCourses from './ListCourses/ListCourses'
 
 type Props = {}
 const Home = (props: Props) => {
-  const dispatch : DispatchType= useDispatch()
+  const dispatch: DispatchType = useDispatch()
 
-const getDataListCourse = async () => {
-  const actionApi = getListCourseActionApi()
-dispatch (actionApi)
-}
+  const getDataListCourse = async () => {
+    const actionApi = getListCourseActionApi()
+    dispatch(actionApi)
+  }
   useEffect(() => {
     getDataListCourse()
 
@@ -28,7 +28,7 @@ dispatch (actionApi)
     <div >
       <CarouselHome></CarouselHome>
       <InfoCoureHome></InfoCoureHome>
-     <ListCourses></ListCourses>
+      <ListCourses></ListCourses>
       <NumberUp></NumberUp>
       <Services></Services>
       <Support></Support>

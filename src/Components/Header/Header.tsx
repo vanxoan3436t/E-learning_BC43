@@ -9,6 +9,7 @@ import { courseCategaryActionApi } from '../../Redux/reducer/quanLyKhoaHocReduce
 import ModeToggle from '../../theme/ModeToggle'
 type Props = {}
 const Header = (props: Props) => {
+  const [navbarToggler, setNavbarToggler] = useState(false);
   const dispatch: DispatchType = useDispatch();
   const login: any = getStore('credentials');
   const keyInput = useRef('');
@@ -22,7 +23,14 @@ const Header = (props: Props) => {
       )
     })
   }
-
+  // 
+  const handleClickNavbarToggle = () => {
+    if (navbarToggler === true) {
+      setNavbarToggler(false);
+    } else if (navbarToggler === false) {
+      setNavbarToggler(true);
+    }
+  }
   // Đăng xuất
   const logOut = () => {
     localStorage.removeItem("credentials");
@@ -53,14 +61,21 @@ const Header = (props: Props) => {
       </NavLink>
     }
   }
+  const [searchValue, setSearchValue] = useState('')
   const handleChange = (e: any) => {
     const { value } = e.target;
-    keyInput.current = value
+    setSearchValue(value);
+    keyInput.current = searchValue;
+  }
+
+  const deleteSearchValue = (e: any) => {
+    e.preventDefault();
+    setSearchValue('');
   }
   const handleSubmitSearch = async (e: any) => {
     e.preventDefault();
     if (keyInput.current !== '') {
-      await history.push(`/search/${keyInput.current}`);
+      await history.push(`/search/${searchValue}`);
     }
   }
   // header fix
@@ -162,14 +177,16 @@ const Header = (props: Props) => {
       <div id='navbar-wrap' className={`white-bg header-bottom navbar-wrap container-custom header-mobile`}>
         <div className="container-fluid">
           <div className="main-menu">
-            <nav className="main-menu-nav navbar navbar-expand-lg ">
-              <NavLink className="logo" to='/' style={{width: '94px'}}>
+            <nav className="main-menu-nav navbar navbar-expand-lg">
+              <NavLink className="logo" to='/'>
                 <img src="./img/logo-vanxoan.png" alt="logo" />
               </NavLink>
-              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button
+                onClick={() => { handleClickNavbarToggle() }}
+                className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className='fa-solid fa-bars'></span>
               </button>
- 
+
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-lg-0">
                   <li className="nav-item">
@@ -179,7 +196,7 @@ const Header = (props: Props) => {
                     <NavLink className="nav-link " to='/'>
                       DANH MỤC KHÓA HỌC  <i className="fa-solid fa-arrow-down"></i>
                     </NavLink>
-                    <ul className=" main-menu_dropdown">
+                    <ul className="main-menu_dropdown">
                       {renderCourseCate()}
                     </ul>
                   </li>
@@ -193,19 +210,45 @@ const Header = (props: Props) => {
                     <NavLink className="nav-link" to={'/'} >Thông tin</NavLink>
                   </li>
                 </ul>
+                <div className={`d-block d-block-edit ${navbarToggler === true ? '' : 'd-none'}`}>
+                  <div className={`nav-box-button `}>
+                    <span className="dark-light">
+                      <ModeToggle />
+                    </span>
+                    <form className="search-main d-flex justify-content-between" onSubmit={handleSubmitSearch}>
+                      <input value={searchValue} onInput={handleChange} type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true' />
+                      <button className="search_button">
+                        <i className={`fas fa-search ${searchValue === '' ? 'd-block' : 'd-none'}`}></i>
+                        <i
+                          onClick={deleteSearchValue}
+                          className={`fa-solid fa-xmark ${searchValue !== '' ? 'd-block' : 'd-none'}`}></i>
+                      </button>
+                    </form>
+                    {handleLoginLink()}
+                  </div>
+                </div>
+              </div>
+            </nav>
+
+            <div className={`d-block ${navbarToggler === false ? '' : 'd-none'}`}>
+              <div className={`nav-box-button nav-box-button-lg `}>
                 <span className="dark-light">
                   <ModeToggle />
                 </span>
                 <form className="search-main d-flex justify-content-between" onSubmit={handleSubmitSearch}>
-                  <input onInput={handleChange} type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true' />
+                  <input value={searchValue} onInput={handleChange} type="text" placeholder='Tìm kiếm' className='search_input' data-ms-editor='true' />
                   <button className="search_button">
-                    <i className="fas fa-search"></i>
+                    <i className={`fas fa-search ${searchValue === '' ? 'd-block' : 'd-none'}`}></i>
+                    <i
+                      onClick={deleteSearchValue}
+                      className={`fa-solid fa-xmark ${searchValue !== '' ? 'd-block' : 'd-none'}`}></i>
                   </button>
                 </form>
                 {handleLoginLink()}
               </div>
-            </nav>
+            </div>
           </div>
+
         </div>
       </div>
     </header >

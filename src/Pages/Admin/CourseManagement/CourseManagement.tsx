@@ -71,7 +71,7 @@ export default function CourseManagement({ }: Props) {
           <div className='col-auto me-auto card-header-left'>
             <button className='btn btn-modal1' id='btnThem' data-bs-toggle="modal" data-bs-target="#addCourse">Thêm Khóa Học</button>
           </div>
-          <div className="col-7 row ms-auto card-header-right ">
+          <div className="col-7 row ms-auto card-header-right">
             <div className='col-7 p-1'>
               <form action="#" onSubmit={handleSubmit}>
                 <input type="text" placeholder='Nhập vào khóa học cần tìm' className='header-search_input form-control' data-ms-editor='true' name='keyword' onInput={handleChange} />
