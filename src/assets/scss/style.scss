@@ -24,11 +24,13 @@
 @import './Pages/Detail/detail';
 @import './Pages/PageNotFound/page-404';
 @import './Themes/lightDark';
+
 //phần sử dụng chung cho wed
 .card-global-res {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
+
     &:last-of-type {
         @media screen and (max-width : 1199.98px) {
             display: none;
@@ -92,7 +94,7 @@
                 font-size: 1rem;
             }
         }
-     
+
         @media screen and (max-width:575.98px) {
             min-width: 370px;
             width: 370px;
@@ -113,13 +115,13 @@
         }
 
         img {
-
+            object-fit: cover;
             height: 185px;
             min-height: 185px;
-            
+
             @media screen and (max-width:767.98px) {
                 min-height: 260px;
-            height: 260px;
+                height: 260px;
             }
 
             @media screen and (max-width:575.98px) {
@@ -138,6 +140,7 @@
 
             }
         }
+
         .card-body-global {
             flex: 1 1 auto;
             min-height: 1px;
@@ -182,10 +185,12 @@
             align-items: center;
             padding: 5px 20px;
             border-top: 1px solid rgba(0, 0, 0, .125);
+
             @media screen and (max-width:414px) {
-             
-                    padding: 5px 10px;
+
+                padding: 5px 10px;
             }
+
             @media screen and (max-width:414px) {
                 .color-card-title {
                     font-size: 1rem;
@@ -281,6 +286,7 @@
             visibility: visible;
             opacity: 1;
         }
+
         //
         .sub-card {
             position: absolute;
@@ -338,12 +344,14 @@
                     border-bottom: 15px solid $text-c0-white;
                     border-right: 15px solid transparent;
                 }
+
                 @media screen and (max-width:991.98px) {
                     top: -6%;
                     border-left: 15px solid transparent;
                     border-bottom: 15px solid $text-c0-white;
                     border-right: 15px solid transparent;
                 }
+
                 @media screen and (max-width:767.98px) {
                     left: 46%;
                     top: -7%;
@@ -492,8 +500,7 @@
 
                 @media screen and (max-width:575.98px) {}
 
-                @media screen and (max-width:414px) {
-                }
+                @media screen and (max-width:414px) {}
             }
         }
 

@@ -14,7 +14,7 @@ export interface UserUpdateFrm {
   soDT: string,
   maLoaiNguoiDung: string,
   maNhom: string,
-  email: string,
+  email: string
 }
 
 const Info = (props: Props) => {

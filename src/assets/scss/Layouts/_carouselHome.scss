@@ -66,13 +66,13 @@
             .carousel-item {
                 height: 100%;
                 width: 100%;
-                background-image: url(../../../../public/img/img-carousel1.jpg);
+                background-image: url(../../../../public/img/img-carousel1.jpg)!important;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-position-y: 0%;
 
                 &:nth-child(2) {
-                    background-image: url(../../../../public/img/img-carousel4.jpg);
+                    background-image: url(../../../../public/img/img-carousel4.jpg)!important;
 
                     .carousel-caption {
                         bottom: 45px;
@@ -94,7 +94,7 @@
                 }
 
                 &:nth-child(3) {
-                    background-image: url(../../../../public/img/img-carousel6.jpg);
+                    background-image: url(../../../../public/img/img-carousel6.jpg)!important;
                 }
 
                 .carousel-caption {

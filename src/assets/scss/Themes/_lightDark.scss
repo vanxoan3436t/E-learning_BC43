@@ -2,7 +2,6 @@ $dark-primary: #2c3136;
 $dark-button: #7b7e83;
 
 .dark-light {
-    background: $bg-c1-primary;
     border-radius: 5px;
     margin-right: 10px;
 
@@ -10,17 +9,20 @@ $dark-button: #7b7e83;
         --bs-table-accent-bg: rgba(0, 0, 0, 0.075);
     }
 
-    button {
+    .button-dark-light {
+        background: $bg-c1-primary;
+        outline: none;
         min-width: 100%;
-        height: 48px;
-        width: 40px;
+        width: 32px;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
         padding: 0;
         height: 100%;
-
+        border: 0px;
+        border-radius: 5px;
+        margin-right: 10px;
         i {
             display: inline-block;
             padding: 10px;
@@ -39,7 +41,8 @@ $dark-button: #7b7e83;
 
 }
 
-[data-mui-color-scheme="dark"] {
+.dark {
+
     //footer
     .footer-bottom {
         border-color: $dark-button !important;
@@ -48,6 +51,7 @@ $dark-button: #7b7e83;
             color: #bcc0c5 !important;
         }
     }
+
     //footer
 
     //header-csss
@@ -147,7 +151,7 @@ $dark-button: #7b7e83;
     .stiker-card,
     .btn-sub-card,
     .info-overlay,
-    .dark-light {
+    .dark-light .button-dark-light{
         background: $dark-button !important;
     }
 
@@ -324,18 +328,20 @@ $dark-button: #7b7e83;
     border-color: #fff;
 
 }
+
 .admin {
     .admin-body-left-header {
         margin-bottom: 10px;
     }
 
     .dark-light {
-        background: $bg-c0-white !important;
+       
         margin-right: 0;
         width: 40px;
 
-        button {
+        .button-dark-light {
             height: 36px;
+            background: $bg-c0-white !important;
         }
 
         .fa-sun {
