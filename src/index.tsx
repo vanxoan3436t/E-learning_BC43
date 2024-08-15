@@ -6,8 +6,8 @@ import './assets/scss/style.scss'
 import { Provider } from 'react-redux';
 import { store } from './Redux/configStote';
 import App from './App';
-import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles';
-import theme from './theme';
+// import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles';
+// import theme from './theme';
 
 export const history: any = createBrowserHistory();
 
@@ -17,9 +17,9 @@ const root = ReactDOM.createRoot(
 root.render(
     <Provider store={store} >
         <HistoryRouter history={history}>
-            <CssVarsProvider theme={theme}>
+            {/* <CssVarsProvider theme={theme}> */}
                 <App />
-            </CssVarsProvider>
+            {/* </CssVarsProvider> */}
         </HistoryRouter>
     </Provider>
 );
