@@ -16,7 +16,6 @@
 @import './Layouts/carouselHome';
 //Pages
 @import './Pages/Home/home';
-@import './Pages/Login/login';
 @import './Pages/Search/search';
 @import './Pages/Admin/AdminTemplate';
 @import './Pages/Info/info';
@@ -24,7 +23,7 @@
 @import './Pages/Detail/detail';
 @import './Pages/PageNotFound/page-404';
 @import './Themes/lightDark';
-
+@import './Pages/Login/_login.scss';
 //phần sử dụng chung cho wed
 .card-global-res {
     display: flex;
