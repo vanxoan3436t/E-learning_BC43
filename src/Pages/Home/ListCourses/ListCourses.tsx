@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { CourseDetail } from '../../../Redux/reducer/quanLyKhoaHocReducer';
+import { history } from '../../..';
 
 type Props = {}
 
@@ -78,7 +79,11 @@ export default function ListCourses({ }: Props) {
                                     <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
                                     <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
                                 </div>
-                                <button className='btn-global btn-sub-card'><NavLink to={`/detail/${course.maKhoaHoc}`}>Xem chi tiết</NavLink></button>
+                                <button className='btn-global btn-sub-card' onClick={() => {
+                                    history.push(`/detail/${course?.maKhoaHoc}`)
+                                }}>
+                                    Xem chi tiết
+                                </button>
 
                             </div>
                             <div className='card-sale'>
@@ -125,7 +130,11 @@ export default function ListCourses({ }: Props) {
                                     <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
                                     <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
                                 </div>
-                                <button className='btn-global btn-sub-card'><NavLink to={`/detail/${course.maKhoaHoc}`}>Xem chi tiết</NavLink></button>
+                                <button className='btn-global btn-sub-card' onClick={() => {
+                                    history.push(`/detail/${course?.maKhoaHoc}`)
+                                }}>
+                                    Xem chi tiết
+                                </button>
 
                             </div>
                             <div className='card-sale'>
@@ -177,7 +186,11 @@ export default function ListCourses({ }: Props) {
                                     <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
                                     <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
                                 </div>
-                                <button className='btn-global btn-sub-card'><NavLink to={`/detail/${course.maKhoaHoc}`}>Xem chi tiết</NavLink></button>
+                                <button className='btn-global btn-sub-card' onClick={() => {
+                                    history.push(`/detail/${course?.maKhoaHoc}`)
+                                }}>
+                                    Xem chi tiết
+                                </button>
 
                             </div>
                             <div className='card-sale'>
@@ -186,8 +199,8 @@ export default function ListCourses({ }: Props) {
                         </NavLink>
                     </div>
                 )
-
-            } else {
+            }
+            else {
                 return (
                     <div key={index} className="col-sm-6 col-md-4 col-xl-3 card-global-res mt-4">
                         <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global">
@@ -224,7 +237,11 @@ export default function ListCourses({ }: Props) {
                                     <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
                                     <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
                                 </div>
-                                <button className='btn-global btn-sub-card'><NavLink to={`/detail/${course.maKhoaHoc}`}>Xem chi tiết</NavLink></button>
+                                <button className='btn-global btn-sub-card' onClick={() => {
+                                    history.push(`/detail/${course?.maKhoaHoc}`)
+                                }}>
+                                    Xem chi tiết
+                                </button>
 
                             </div>
                             <div className='card-sale'>

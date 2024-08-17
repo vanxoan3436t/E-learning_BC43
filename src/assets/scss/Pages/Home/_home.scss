@@ -61,7 +61,7 @@
                 }
 
                 .info-item-content {
-                    div {
+                    .info-item-content-title {
                         position: relative;
                         z-index: 2;
                         display: flex;
@@ -80,7 +80,7 @@
                         }
                     }
 
-                    p {
+                    .info-item-content-text {
                         position: relative;
                         z-index: 2;
 

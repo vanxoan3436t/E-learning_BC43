@@ -113,9 +113,10 @@
                                 font-size: 1.25rem;
                                 line-height: 1.5;
                                 border-radius: 0.3rem;
+                                outline: none;
 
                                 &:focus {
-                                    outline: 0;
+                                    outline: none;
                                     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
                                 }
                             }
@@ -135,11 +136,8 @@
                                         }
                                     }
                                 }
-
                             }
-
                         }
-
                     }
                 }
             }
@@ -184,7 +182,6 @@
         .modal {
             .modal-content {
                 .head-form {
-
                     margin: 2% auto 10%;
                     text-align: center;
                     margin-bottom: 0;
@@ -194,8 +191,6 @@
                         margin-bottom: 0;
 
                     }
-
-
                 }
 
                 .modal-body {
@@ -372,19 +367,21 @@ form {
 }
 
 .admin {
-    .admin-body{
-        .admin-body-left{
+    .admin-body {
+        .admin-body-left {
             .dark-light {
                 // position: absolute;
                 top: 77px;
                 right: 11px;
-               background: $bg-c0-white!important;
-               .fa-moon,.fa-sun{
-                color: #000;
-        
-               }
+                background: $bg-c0-white !important;
+
+                .fa-moon,
+                .fa-sun {
+                    color: #000;
+
+                }
             }
         }
     }
-    
+
 }

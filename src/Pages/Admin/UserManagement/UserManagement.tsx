@@ -9,7 +9,6 @@ import ReactPaginate from 'react-paginate'
 import {  getUserArrActionApi, searchUserActionApi } from '../../../Redux/reducer/quanLyNguoiDungReducer'
 import swal from 'sweetalert'
 import { http } from '../../../util/config'
-import { AxiosError } from 'axios'
 
 type Props = {}
 
@@ -25,14 +24,14 @@ export default function UserManagement({ }: Props) {
 
   useEffect(() => {
     const endOffset = itemOffset + 5;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(userArray && userArray.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(userArray && userArray?.length / 5));
   }, [itemOffset, userArray]);
 
   const handlePageClick = (e: any) => {
     const newOffset = e.selected * 5 % userArray.length;
-    console.log(`User requested page number ${e.selected}, which is offset ${newOffset}`);
+    // console.log(`User requested page number ${e.selected}, which is offset ${newOffset}`);
     setItemOffset(newOffset);
   };
   //SUA

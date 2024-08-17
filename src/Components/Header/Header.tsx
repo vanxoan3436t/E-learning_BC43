@@ -15,13 +15,19 @@ const Header = (props: Props) => {
   const keyInput = useRef('');
   const { coursesCategary } = useSelector((state: RootState) => state.quanLyKhoaHocReducer);
   const renderCourseCate = () => {
-    return coursesCategary.map((coursesCategary: any, index: number) => {
-      return (
-        <li key={index}>
-          <NavLink className="dropdown-item" to={`/categorycourses/${coursesCategary.maDanhMuc}`} style={{ textTransform: 'uppercase' }}>{coursesCategary.tenDanhMuc}</NavLink>
-        </li>
-      )
-    })
+    return coursesCategary.map((coursesCategary: any, index: number) => (
+      <li key={index}>
+        <NavLink
+          className="dropdown-item"
+          to={`/categorycourses/${coursesCategary.maDanhMuc}`}
+          style={{ textTransform: 'uppercase' }}
+        >
+          {coursesCategary.tenDanhMuc}
+        </NavLink>
+      </li>
+
+    )
+    )
   }
   // 
   const handleClickNavbarToggle = () => {
@@ -46,12 +52,20 @@ const Header = (props: Props) => {
     if (login) {
       let loginAccount = JSON.parse(login)
       return <div className="header-avatar">
-        {loginAccount.maLoaiNguoiDung === 'GV' ? <span className='header-set'>  <NavLink to="/admin/usermanagement"><i className="fa-solid fa-gear text-warning"></i></NavLink> </span> : <></>}
+        {loginAccount.maLoaiNguoiDung === 'GV' ?
+          <span className='header-set'>
+            <NavLink to="/admin/usermanagement">
+              <i className="fa-solid fa-gear text-warning"></i>
+            </NavLink>
+          </span>
+          : <></>}
         <NavLink className='to-info' to='/info'>
           <img className='your-avatar' src="/img/avatar-rose.jpg" alt="avarta" />
           <span className='logout' onClick={() => {
             logOut()
-          }}><NavLink to='/'><i className="fa-solid fa-right-to-bracket text-danger"></i></NavLink></span>
+          }}>
+            {/* <button onClick={()=> (history.push('/'))}><i className="fa-solid fa-right-to-bracket text-danger"></i></button> */}
+          </span>
         </NavLink>
       </div>
     } else {
@@ -192,12 +206,22 @@ const Header = (props: Props) => {
                   <li className="nav-item">
                     <NavLink className="nav-link active" aria-current="page" to="/">Trang trủ</NavLink>
                   </li>
-                  <li className="nav-item ">
-                    <NavLink className="nav-link " to='/'>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to='/'>
                       DANH MỤC KHÓA HỌC  <i className="fa-solid fa-arrow-down"></i>
                     </NavLink>
                     <ul className="main-menu_dropdown">
-                      {renderCourseCate()}
+                      {coursesCategary.map((coursesCategary: any, index: number) => (
+                        <li key={index}>
+                          <NavLink
+                            className="dropdown-item"
+                            to={`/categorycourses/${coursesCategary.maDanhMuc}`}
+                            style={{ textTransform: 'uppercase' }}
+                          >
+                            {coursesCategary.tenDanhMuc}
+                          </NavLink>
+                        </li>
+                      ))}
                     </ul>
                   </li>
                   <li className="nav-item">
