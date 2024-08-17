@@ -138,7 +138,7 @@ export default function EditUserInfoModal(props: Props): JSX.Element {
                       <i className='fa-solid fa-user'></i>
                     </span>
                   </div>
-                  <select className='form-control' name="maLoaiNguoiDung" id="" onBlur={updateFrm.handleBlur} onInput={updateFrm.handleChange} value={updateFrm.values.maLoaiNguoiDung }>
+                  <select className='form-control' name="maLoaiNguoiDung" onBlur={updateFrm.handleBlur} onInput={updateFrm.handleChange} value={updateFrm.values.maLoaiNguoiDung }>
                     <option value="">Loại người dùng</option>
                     <option value="GV">Giáo vụ</option>
                     <option value="HV">Học viên</option>

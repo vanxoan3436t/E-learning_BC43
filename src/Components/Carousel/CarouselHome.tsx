@@ -37,7 +37,7 @@ const CarouselHome = (props: Props) => {
                 <div className="col-6">
                   <span className='wow animate__animated animate__fadeInUp animate-delay'>Khám phá khoá học của Tech-learning</span>
                   <h2 className='wow animate__animated animate__fadeInUp animate-delay'>TECH-Learning : ĐÀO TẠO LẬP TRÌNH THEO LỘ TRÌNH DỰ ÁN</h2>
-                  <p className='wow animate__animated animate__fadeInUp animate-delay'>
+                  <div className='wow animate__animated animate__fadeInUp animate-delay'>
                     <ul>
                       <li>Bootcamp - Lập trình Front End từ Zero đến có việc</li>
                       <li>Bootcamp - Lập trình Fullstack JavaScript từ Zero đến có việc</li>
@@ -45,7 +45,7 @@ const CarouselHome = (props: Props) => {
                       <li>Bootcamp - Lập trình Back-End JAVA từ Zero đến có việc</li>
                       <li>Bootcamp - Cấp tốc - Lập trình Fullstack từ Zero</li>
                     </ul>
-                  </p>
+                  </div>
                   <NavLink to='/' className="btn btn--common btn-primary wow animate__animated animate__fadeInUp animate-delay" data-animation="fadeInUp" data-delay="1s" tabIndex={-1} >
                     Xem chi tiết
                     <i className="fa-solid fa-arrow-right"></i>

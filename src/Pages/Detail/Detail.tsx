@@ -10,114 +10,122 @@ import swal from 'sweetalert'
 type Props = {}
 
 export default function Detail({ }: Props) {
-  const dispatch : DispatchType = useDispatch();
-const kword : any = useParams();
-
+  const dispatch: DispatchType = useDispatch();
+  const kword: any = useParams();
   const { courseDetail, coursesList } = useSelector((state: any) => state.quanLyKhoaHocReducer)
   const renderCourseRelated = () => {
-    return coursesList?.slice(7, 11).map((course : CourseDetail, index : number) => {
-        if ((index + 1) % 2 === 0) {
-          return (
-            <div key={index} className="col-xl-3 col-lg-4 col-md-6   card-global-res">
-              <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global move-sub-card">
-                <img src={course.hinhAnh} onError={(e: any) => { e.target.onError = null; e.target.src = "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg" }}  alt="..."/>
-                <span className='stiker-card'>{course.tenKhoaHoc.length <= 10 ? course.tenKhoaHoc : "Lập trình web"}</span>
-                <div className="card-body-global">
-                  <h6 className="">{course.moTa.length > 100 ? course.moTa.substring(0, 50) + '...' : 'Lập trình hiện đang là xu hướng trên toàn thế giới...'}</h6>
-                  <div className='card-icon'>
-                    <span><i className="far fa-clock icon-oclock"></i>8 giờ</span>
-                    <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
-                    <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
-                  </div>
+    return coursesList?.slice(7, 11).map((course: CourseDetail, index: number) => {
+      if ((index + 1) % 2 === 0) {
+        return (
+          <div key={index} className="col-xl-3 col-lg-4 col-md-6   card-global-res">
+            <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global move-sub-card">
+              <img src={course.hinhAnh} onError={(e: any) => { e.target.onError = null; e.target.src = "https://codersera.com/blog/wp-content/uploads/2019/12/Learn-Reactjs-672x372.jpeg" }} alt="..." />
+              <span className='stiker-card'>{course.tenKhoaHoc.length <= 10 ? course.tenKhoaHoc : "Lập trình web"}</span>
+              <div className="card-body-global">
+                <h6 className="">{course.moTa.length > 100 ? course.moTa.substring(0, 50) + '...' : 'Lập trình hiện đang là xu hướng trên toàn thế giới...'}</h6>
+                <div className='card-icon'>
+                  <span><i className="far fa-clock icon-oclock"></i>8 giờ</span>
+                  <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
+                  <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
                 </div>
-                <div className='card-footer'>
-                  <div className='title-maker'>
-                    <div className='img-card-footer'><img className='' src='/img/tony-stark.webp' alt="" /></div>
-                    <span className='ms-2 color-card-title'>Tony Stark</span>
-                  </div>
-                  <div>
-                    <p>900.000<sup>đ</sup></p>
-                    <p>400.000<sup>đ</sup><i className="fas fa-tag icon-tag"></i></p>
-                  </div>
-  
+              </div>
+              <div className='card-footer'>
+                <div className='title-maker'>
+                  <div className='img-card-footer'><img className='' src='/img/tony-stark.webp' alt="" /></div>
+                  <span className='ms-2 color-card-title'>Tony Stark</span>
                 </div>
-                <div className='sub-card'>
-                  <div className='sub-card-head'>
-                    <img src='/img/tony-stark.webp' alt="" />
-                    <span className='ms-1 color-card-title'>Elun Musk Ricard</span>
-                  </div>
-                  <h6>BOOTCAMP - LẬP TRÌNH FULL STACK TỪ ZERO ĐẾN CÓ VIỆC</h6>
-                  <p className='color-card-title'>Đã có hơn 6200 bạn đăng kí học và có việc làm thông qua chương trình đào tạo Bootcamp Lập trình Front End chuyên nghiệp. Khóa học 100% thực hành cường độ cao theo dự án thực tế và kết nối doanh nghiệp hỗ trợ tìm việc ngay sau khi học...</p>
-                  <div className='card-icon'>
-                    <span><i className="far fa-clock icon-oclock"></i>8 giờ</span>
-                    <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
-                    <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
-                  </div>
-                  <button className='btn-card-global btn-sub-card'><NavLink to={`/detail/${course.maKhoaHoc}`}>Xem chi tiết</NavLink></button>
-  
+                <div>
+                  <p>900.000<sup>đ</sup></p>
+                  <p>400.000<sup>đ</sup><i className="fas fa-tag icon-tag"></i></p>
                 </div>
-                <div className='card-sale'>
-                  <span>Yêu thích</span>
+
+              </div>
+              <div className='sub-card'>
+                <div className='sub-card-head'>
+                  <img src='/img/tony-stark.webp' alt="" />
+                  <span className='ms-1 color-card-title'>Elun Musk Ricard</span>
                 </div>
-              </NavLink>
-            </div>
-          )
-        }
-        else {
-          return (
-            <div key={index} className="col-xl-3 col-lg-4 col-md-6   card-global-res">
-              <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global">
-                <img src={course.hinhAnh} alt="..." />
-                <span className='stiker-card'>{course.tenKhoaHoc.length <= 10 ? course.tenKhoaHoc : "Lập trình web"}</span>
-                <div className="card-body-global">
-                  <h6 className="">{course.moTa.length > 100 ? course.moTa.substring(0, 50) + '...' : 'Lập trình hiện đang là xu hướng trên toàn thế giới...'}</h6>
-                  <div className='card-icon'>
-                    <span><i className="far fa-clock icon-oclock"></i>8 giờ</span>
-                    <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
-                    <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
-                  </div>
+                <h6>BOOTCAMP - LẬP TRÌNH FULL STACK TỪ ZERO ĐẾN CÓ VIỆC</h6>
+                <p className='color-card-title'>Đã có hơn 6200 bạn đăng kí học và có việc làm thông qua chương trình đào tạo Bootcamp Lập trình Front End chuyên nghiệp. Khóa học 100% thực hành cường độ cao theo dự án thực tế và kết nối doanh nghiệp hỗ trợ tìm việc ngay sau khi học...</p>
+                <div className='card-icon'>
+                  <span><i className="far fa-clock icon-oclock"></i>8 giờ</span>
+                  <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
+                  <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
                 </div>
-                <div className='card-footer'>
-                  <div className='title-maker'>
-                    <div className='img-card-footer'><img className='' src='/img/tony-stark.webp' alt="..." /></div>
-                    <span className='ms-2 color-card-title'>Tony Stark</span>
-                  </div>
-                  <div>
-                    <p>900.000<sup>đ</sup></p>
-                    <p>400.000<sup>đ</sup><i className="fas fa-tag icon-tag"></i></p>
-                  </div>
-  
+                <button className='btn-global btn-sub-card' onClick={() => {
+                  history.push(`/detail/${course?.maKhoaHoc}`)
+                }}>
+                  Xem chi tiết
+                </button>
+
+
+              </div>
+              <div className='card-sale'>
+                <span>Yêu thích</span>
+              </div>
+            </NavLink>
+          </div>
+        )
+      }
+      else {
+        return (
+          <div key={index} className="col-xl-3 col-lg-4 col-md-6   card-global-res">
+            <NavLink to={`/detail/${course.maKhoaHoc}`} className="card-global">
+              <img src={course.hinhAnh} alt="..." />
+              <span className='stiker-card'>{course.tenKhoaHoc.length <= 10 ? course.tenKhoaHoc : "Lập trình web"}</span>
+              <div className="card-body-global">
+                <h6 className="">{course.moTa.length > 100 ? course.moTa.substring(0, 50) + '...' : 'Lập trình hiện đang là xu hướng trên toàn thế giới...'}</h6>
+                <div className='card-icon'>
+                  <span><i className="far fa-clock icon-oclock"></i>8 giờ</span>
+                  <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
+                  <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
                 </div>
-                <div className='sub-card'>
-                  <div className='sub-card-head'>
-                    <img src='/img/tony-stark.webp' alt="..." />
-                    <span className='ms-1 color-card-title'>Elun Musk Ricard</span>
-                  </div>
-                  <h6>BOOTCAMP - LẬP TRÌNH FULL STACK TỪ ZERO ĐẾN CÓ VIỆC</h6>
-                  <p className='color-card-title'>Đã có hơn 6200 bạn đăng kí học và có việc làm thông qua chương trình đào tạo Bootcamp Lập trình Front End chuyên nghiệp. Khóa học 100% thực hành cường độ cao theo dự án thực tế và kết nối doanh nghiệp hỗ trợ tìm việc ngay sau khi học...</p>
-                  <div className='card-icon'>
-                    <span><i className="far fa-clock icon-oclock"></i>8 giờ</span>
-                    <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
-                    <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
-                  </div>
-                  <button className='btn-card-global btn-sub-card'><NavLink to={`/detail/${course.maKhoaHoc}`}>Xem chi tiết</NavLink></button>
-  
+              </div>
+              <div className='card-footer'>
+                <div className='title-maker'>
+                  <div className='img-card-footer'><img className='' src='/img/tony-stark.webp' alt="..." /></div>
+                  <span className='ms-2 color-card-title'>Tony Stark</span>
                 </div>
-                <div className='card-sale'>
-                  <span>Yêu thích</span>
+                <div>
+                  <p>900.000<sup>đ</sup></p>
+                  <p>400.000<sup>đ</sup><i className="fas fa-tag icon-tag"></i></p>
                 </div>
-              </NavLink>
-            </div>
-          )
-        }
+
+              </div>
+              <div className='sub-card'>
+                <div className='sub-card-head'>
+                  <img src='/img/tony-stark.webp' alt="..." />
+                  <span className='ms-1 color-card-title'>Elun Musk Ricard</span>
+                </div>
+                <h6>BOOTCAMP - LẬP TRÌNH FULL STACK TỪ ZERO ĐẾN CÓ VIỆC</h6>
+                <p className='color-card-title'>Đã có hơn 6200 bạn đăng kí học và có việc làm thông qua chương trình đào tạo Bootcamp Lập trình Front End chuyên nghiệp. Khóa học 100% thực hành cường độ cao theo dự án thực tế và kết nối doanh nghiệp hỗ trợ tìm việc ngay sau khi học...</p>
+                <div className='card-icon'>
+                  <span><i className="far fa-clock icon-oclock"></i>8 giờ</span>
+                  <span><i className="far fa-calendar-alt icon-calendar"></i>4 tuần</span>
+                  <span><i className="fas fa-signal icon-level"></i>Tất cả</span>
+                </div>
+                <button className='btn-card-global btn-sub-card'>
+                  {/* <NavLink to={`/detail/${course.maKhoaHoc}`}> */}
+                  Xem chi tiết
+                  {/* </NavLink> */}
+                </button>
+
+              </div>
+              <div className='card-sale'>
+                <span>Yêu thích</span>
+              </div>
+            </NavLink>
+          </div>
+        )
+      }
 
     })
-}
+  }
 
-useEffect(() => {
-  dispatch(getDetailActionApi(kword.id));
-  dispatch(getListCourseActionApi())
-}, [kword.id])
+  useEffect(() => {
+    dispatch(getDetailActionApi(kword.id));
+    dispatch(getListCourseActionApi())
+  }, [kword.id])
   return (
     <>
       <section className='detail-coures'>
@@ -296,9 +304,9 @@ useEffect(() => {
                     registerCourseActionApi(kword.id)
                   } else {
                     swal({
-                     title:'Cần đăng nhập để đăng kí !',
-                     icon:'warning',
-                     timer:2000, 
+                      title: 'Cần đăng nhập để đăng kí !',
+                      icon: 'warning',
+                      timer: 2000,
                     })
                     // dispatch(userNotloginRegis(kword.id))
                     history.push('/login')

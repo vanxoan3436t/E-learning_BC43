@@ -121,7 +121,7 @@ export default function ModalAddUser({ }: Props) {
                       <i className='fa-solid fa-user'></i>
                     </span>
                   </div>
-                  <select className='form-control' name="maLoaiNguoiDung" id="" onChange={addUserFrm.handleChange} onBlur={addUserFrm.handleBlur}>
+                  <select className='form-control' name="maLoaiNguoiDung" onChange={addUserFrm.handleChange} onBlur={addUserFrm.handleBlur}>
                     <option value="">Loại người dùng</option>
                     <option value="GV">Giáo vụ</option>
                     <option value="HV">Học viên</option>
