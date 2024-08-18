@@ -23,7 +23,7 @@
 @import './Pages/Detail/detail';
 @import './Pages/PageNotFound/page-404';
 @import './Themes/lightDark';
-// @import './Pages/Login/_login.scss'; // đây là dòng số 26 bị lỗi
+@import './Pages/Login/_login.scss'; // đây là dòng số 26 bị lỗi
 //phần sử dụng chung cho wed
 .card-global-res {
     display: flex;
