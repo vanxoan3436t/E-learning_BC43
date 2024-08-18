@@ -2,28 +2,28 @@
 @import 'animate.css';
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-@import './Base/base';
+@import './assets/scss/Base/base';
 //Helpers
-@import './Helpers/variables';
-@import './Helpers/mixin';
+@import './assets/scss/Helpers/variables';
+@import './assets/scss/Helpers/mixin';
 //vendors
-@import './Base/reset';
+@import './assets/scss/Base/reset';
 //Components
-@import './Components/buttons';
+@import './assets/scss/Components/buttons';
 //Layouts
-@import './Layouts/header';
-@import './Layouts/footer';
-@import './Layouts/carouselHome';
+@import './assets/scss/Layouts/header';
+@import './assets/scss/Layouts/footer';
+@import './assets/scss/Layouts/carouselHome';
 //Pages
-@import './Pages/Home/home';
-@import './Pages/Search/search';
-@import './Pages/Admin/AdminTemplate';
-@import './Pages/Info/info';
-@import './Pages/CategoryCourses/categoryCourses';
-@import './Pages/Detail/detail';
-@import './Pages/PageNotFound/page-404';
-@import './Themes/lightDark';
-@import './Pages/Login/_login.scss'; // đây là dòng số 26 bị lỗi
+@import './assets/scss/Pages/Home/home';
+@import './assets/scss/Pages/Search/search';
+@import './assets/scss/Pages/Admin/AdminTemplate';
+@import './assets/scss/Pages/Info/info';
+@import './assets/scss/Pages/CategoryCourses/categoryCourses';
+@import './assets/scss/Pages/Detail/detail';
+@import './assets/scss/Pages/PageNotFound/page-404';
+@import './assets/scss/Themes/lightDark';
+@import './assets/scss/Pages/Login/login.scss'; // đây là dòng số 26 bị lỗi
 //phần sử dụng chung cho wed
 .card-global-res {
     display: flex;
