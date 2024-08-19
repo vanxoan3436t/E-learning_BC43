@@ -83,11 +83,11 @@ const Info = (props: Props) => {
   // updateFrm form 
   const updateFrm = useFormik<UserUpdateFrm>({
     initialValues: {
-      taiKhoan: infoUser.taiKhoan,
+      taiKhoan: infoUser?.taiKhoan,
       matKhau: "",
       hoTen: "",
       soDT: "",
-      maLoaiNguoiDung: infoUser.maLoaiNguoiDung,
+      maLoaiNguoiDung: infoUser?.maLoaiNguoiDung,
       maNhom: "GP01",
       email: "",
     },

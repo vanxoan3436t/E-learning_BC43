@@ -291,14 +291,12 @@ $dark-button: #7b7e83;
         --bs-table-accent-bg: #676879;
     }
 
-    .admin {
-        .details {
             .dropdown-menu {
                 border: 1px solid #fff !important;
                 background-color: #fff !important;
                 box-shadow: 0px 0px 15px 10px rgba(105, 105, 110, 0.32) !important;
 
-                li {
+                .dropdown-menu-li {
                     z-index: 100;
                     position: relative;
                     background-color: #fff !important;
@@ -315,8 +313,7 @@ $dark-button: #7b7e83;
                     }
                 }
             }
-        }
-    }
+
 }
 
 //page admin 

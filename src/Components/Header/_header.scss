@@ -1,3 +1,6 @@
+@import '../../assets/scss/Helpers/variables';
+@import '../../assets/scss/Helpers/mixin';
+
 .main-menu_nav ul .nav-sub a::before {
   &::before {
     content: "";
@@ -339,17 +342,10 @@
         object-fit: cover;
       }
 
-      .logout {
-        position: absolute;
-        top: 18%;
-        right: 1%;
-        opacity: 0;
+      .dropdown-menu{
         transition: .5s;
       }
-
-      &:hover .logout {
-        opacity: 1;
-        right: -55%;
+      &:focus .dropdown-menu {
         transition: .5s;
       }
     }

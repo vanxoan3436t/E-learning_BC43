@@ -1,9 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-type Props = {}
+// type Props = {}
 
-export default function CoursRegisterModal({ }: Props) {
+export default function CoursRegisterModal() {
     return (
         <div className="modal fade" id="courseReg">
             <div className="modal-dialog form-course">
@@ -120,7 +120,7 @@ export default function CoursRegisterModal({ }: Props) {
                                 <tbody>
                                     {/* {renderUserListConfirmed(confirmedItems)} */}
                                     <tr>
-                                        <td className="align-middle" scope="row"> 1</td>
+                                        <td className="align-middle" > 1</td>
                                         <td className="align-middle">item.taiKhoan</td>
                                         <td className="align-middle">item.hoTen</td>
                                         <td>
@@ -129,7 +129,7 @@ export default function CoursRegisterModal({ }: Props) {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td className="align-middle" scope="row"> 1</td>
+                                        <td className="align-middle" > 1</td>
                                         <td className="align-middle">item.taiKhoan</td>
                                         <td className="align-middle">item.hoTen</td>
                                         <td>
