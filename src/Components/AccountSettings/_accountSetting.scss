@@ -3,6 +3,12 @@
 .dropdown-menu {
   margin-bottom: 0 !important;
   margin-top: 10px !important;
+  left: unset !important;
+  right: 0;
+
+  @media screen and (max-width: 575.98px) {
+    left: 0 !important;
+  }
 
   .dropdown-menu-li {
     text-transform: unset !important;
