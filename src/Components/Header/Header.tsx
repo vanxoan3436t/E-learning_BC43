@@ -4,9 +4,10 @@ import { history } from '../..'
 import { useDispatch, useSelector } from 'react-redux'
 import { DispatchType, RootState } from '../../Redux/configStote'
 import { getStore } from '../../util/config'
-import swal from 'sweetalert'
 import { courseCategaryActionApi } from '../../Redux/reducer/quanLyKhoaHocReducer'
 import ModeToggle from '../../theme/ModeToggle'
+import AccountSettings from '../AccountSettings/AccountSettings'
+import './_header.scss'
 type Props = {}
 const Header = (props: Props) => {
   const [navbarToggler, setNavbarToggler] = useState(false);
@@ -14,22 +15,7 @@ const Header = (props: Props) => {
   const login: any = getStore('credentials');
   const keyInput = useRef('');
   const { coursesCategary } = useSelector((state: RootState) => state.quanLyKhoaHocReducer);
-  const renderCourseCate = () => {
-    return coursesCategary.map((coursesCategary: any, index: number) => (
-      <li key={index}>
-        <NavLink
-          className="dropdown-item"
-          to={`/categorycourses/${coursesCategary.maDanhMuc}`}
-          style={{ textTransform: 'uppercase' }}
-        >
-          {coursesCategary.tenDanhMuc}
-        </NavLink>
-      </li>
 
-    )
-    )
-  }
-  // 
   const handleClickNavbarToggle = () => {
     if (navbarToggler === true) {
       setNavbarToggler(false);
@@ -37,16 +23,7 @@ const Header = (props: Props) => {
       setNavbarToggler(true);
     }
   }
-  // Đăng xuất
-  const logOut = () => {
-    localStorage.removeItem("credentials");
-    swal({
-      title: "Đăng xuất thành công !",
-      icon: "success",
-      timer: 2000,
-    });
-    window.location.reload();
-  }
+
   //xử lí đăng nhập 
   const handleLoginLink = () => {
     if (login) {
@@ -54,19 +31,16 @@ const Header = (props: Props) => {
       return <div className="header-avatar">
         {loginAccount.maLoaiNguoiDung === 'GV' ?
           <span className='header-set'>
-            <NavLink to="/admin/usermanagement">
+          <NavLink to="/admin/usermanagement">
               <i className="fa-solid fa-gear text-warning"></i>
-            </NavLink>
+            </NavLink> 
           </span>
           : <></>}
-        <NavLink className='to-info' to='/info'>
+        <div className='to-info' data-bs-toggle="dropdown" aria-expanded="false">
           <img className='your-avatar' src="/img/avatar-rose.jpg" alt="avarta" />
-          <span className='logout' onClick={() => {
-            logOut()
-          }}>
-            {/* <button onClick={()=> (history.push('/'))}><i className="fa-solid fa-right-to-bracket text-danger"></i></button> */}
-          </span>
-        </NavLink>
+            <AccountSettings/>
+
+        </div>
       </div>
     } else {
       return <NavLink className='btn btn--common ' to='/login'>

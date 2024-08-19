@@ -16,7 +16,6 @@
         .info-gird {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            color: $text-c0-white;
             gap: 20px;
 
             @media screen and (max-width:991.98px) {
@@ -103,6 +102,7 @@
                 &:hover {
                     border-radius: 5px;
                     border-left: 2px solid transparent;
+                    color: $text-c0-white;
                 }
 
                 &:hover .info-overlay {

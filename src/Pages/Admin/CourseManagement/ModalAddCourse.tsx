@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
-import { DispatchType, RootState } from '../../../Redux/configStote';
+// import { DispatchType, RootState } from '../../../Redux/configStote';
 import { useFormik } from 'formik';
 type Props = {
 
@@ -22,10 +22,10 @@ export interface AddCourseModal {
 }
 
 export default function ModalAddCourse({ }: Props) {
-  const dispatch: DispatchType = useDispatch();
+  // const dispatch: DispatchType = useDispatch();
   const [thumb, setThumb] = useState('../Img/ImgLogo/logo512.png')
   // const coursesCategary = useSelector((state: RootState) => state.quanLyKhoaHocReducer.coursesCategary);
-  const userArray = useSelector((state: RootState) => state.quanLyNguoiDungReducer.userArray);
+  // const userArray = useSelector((state: RootState) => state.quanLyNguoiDungReducer.userArray);
   // addcoursefrm with add courses
   const addCourseFrm = useFormik<AddCourseModal>({
     initialValues: {
@@ -97,7 +97,7 @@ export default function ModalAddCourse({ }: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-user" /></span>
                   </div>
-                  <input type="text" name="maKhoaHoc" id="tknv" className="form-control input-sm" placeholder="Mã khóa học" onInput={addCourseFrm.handleChange} onBlur={addCourseFrm.handleBlur} />
+                  <input type="text" name="maKhoaHoc" className="form-control input-sm" placeholder="Mã khóa học" onInput={addCourseFrm.handleChange} onBlur={addCourseFrm.handleBlur} />
                 </div>
                 {addCourseFrm.touched.maKhoaHoc && addCourseFrm.errors.maKhoaHoc && <div className="text-danger text-left">{addCourseFrm.errors.maKhoaHoc}</div>} 
               </div>
@@ -106,7 +106,7 @@ export default function ModalAddCourse({ }: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-address-book" /></span>
                   </div>
-                  <input type="name" name="tenKhoaHoc" id="name" className="form-control input-sm" placeholder="Tên khóa học" onInput={addCourseFrm.handleChange} onBlur={addCourseFrm.handleBlur} />
+                  <input type="name" name="tenKhoaHoc" className="form-control input-sm" placeholder="Tên khóa học" onInput={addCourseFrm.handleChange} onBlur={addCourseFrm.handleBlur} />
                 </div>
                 {addCourseFrm.touched.tenKhoaHoc && addCourseFrm.errors.tenKhoaHoc && <div className="text-danger text-left">{addCourseFrm.errors.tenKhoaHoc}</div>}
               </div>
@@ -130,7 +130,9 @@ export default function ModalAddCourse({ }: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-calendar" /></span>
                   </div>
-                  <input type="text" name="ngayTao" id="datepicker" className="form-control" placeholder="Ngày tạo" onInput={addCourseFrm.handleChange} onBlur={addCourseFrm.handleBlur} />
+                  <input type="text" name="ngayTao" 
+                  // id="datepicker" 
+                  className="form-control" placeholder="Ngày tạo" onInput={addCourseFrm.handleChange} onBlur={addCourseFrm.handleBlur} />
                 </div>
                 {addCourseFrm.touched.ngayTao && addCourseFrm.errors.ngayTao && <div className="text-danger text-left">{addCourseFrm.errors.ngayTao}</div>}
               </div>
@@ -140,7 +142,7 @@ export default function ModalAddCourse({ }: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-user" /></span>
                   </div>
-                  <input type="number" name="danhGia" id="tknv" className="form-control input-sm" placeholder="Đánh giá" onInput={addCourseFrm.handleChange} onBlur={addCourseFrm.handleBlur} />
+                  <input type="number" name="danhGia"  className="form-control input-sm" placeholder="Đánh giá" onInput={addCourseFrm.handleChange} onBlur={addCourseFrm.handleBlur} />
                 </div>
                 {addCourseFrm.touched.danhGia && addCourseFrm.errors.danhGia && <div className="text-danger text-left">{addCourseFrm.errors.danhGia}</div>}
               </div>
@@ -149,7 +151,7 @@ export default function ModalAddCourse({ }: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-address-book" /></span>
                   </div>
-                  <input type="number" name="luotXem" id="name" className="form-control input-sm" placeholder="Lượt xem" onInput={addCourseFrm.handleChange} onBlur={addCourseFrm.handleBlur} />
+                  <input type="number" name="luotXem" className="form-control input-sm" placeholder="Lượt xem" onInput={addCourseFrm.handleChange} onBlur={addCourseFrm.handleBlur} />
                 </div>
                 {addCourseFrm.touched.luotXem && addCourseFrm.errors.luotXem && <div className="text-danger text-left">{addCourseFrm.errors.luotXem}</div>}
               </div>
@@ -234,8 +236,12 @@ export default function ModalAddCourse({ }: Props) {
               {/* Modal footer */}
               <div className="modal-footer col-12" id="modal-footer">
 
-                <button id="btnDong" type="button" className="btn btn-danger" data-dismiss="modal">Đóng</button>
-                <button id="btnThem" type="submit" className="btn btn-success">Thêm khóa học</button>
+                <button
+                //  id="btnDong" 
+                type="button" className="btn btn-danger" data-dismiss="modal">Đóng</button>
+                <button
+                //  id="btnThem" 
+                 type="submit" className="btn btn-success">Thêm khóa học</button>
               </div>
             </form>
           </div>

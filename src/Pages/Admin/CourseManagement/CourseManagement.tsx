@@ -8,8 +8,10 @@ import { DispatchType, RootState } from '../../../Redux/configStote'
 import { useDispatch, useSelector } from 'react-redux'
 import { CourseDetail, getListCourseActionApi, searchCoursesAsyncActionApi } from '../../../Redux/reducer/quanLyKhoaHocReducer'
 
-type Props = {}
-export default function CourseManagement({ }: Props) {
+// type Props = {}
+export default function CourseManagement(
+  // { }: Props
+) {
   const dispatch: DispatchType = useDispatch();
   const coursesList = useSelector((state: RootState) => state.quanLyKhoaHocReducer.coursesList);
   const keyRef = useRef('');
@@ -20,13 +22,13 @@ export default function CourseManagement({ }: Props) {
 
   useEffect(() => {
     const endOffset = itemOffset + 5;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(coursesList && coursesList.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(coursesList && coursesList.length / 5));
   }, [itemOffset, coursesList]);
   const handlePageClick = (event: any) => {
     const newOffset = event.selected * 5 % coursesList.length;
-    console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
+    // console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
     setItemOffset(newOffset);
   };
 //Search
@@ -54,11 +56,11 @@ export default function CourseManagement({ }: Props) {
         <td className="align-middle text-break" style={{ width: '11%' }}>{item.luotXem}</td>
         <td className="align-middle text-break text-wrap" style={{ width: '13%' }}>{item.nguoiTao.hoTen} </td>
         <td className='align-middle' style={{ width: '25%' }}>
-          <button onClick={() => { }} type="button" className="btn btn-primary mx-1 text-wrap" data-bs-toggle="modal" data-bs-target="#courseReg" >
+          <button  type="button" className="btn btn-primary mx-1 text-wrap" data-bs-toggle="modal" data-bs-target="#courseReg" >
             <span >Ghi danh</span>
           </button>
-          <button onClick={() => { }} className="btn btn-warning m-1 text-wrap" data-bs-toggle="modal" data-bs-target="#editInfoCourse">Sửa</button>
-          <button onClick={() => { }} className="btn btn-danger mx-1" >Xóa</button>
+          <button  className="btn btn-warning m-1 text-wrap" data-bs-toggle="modal" data-bs-target="#editInfoCourse">Sửa</button>
+          <button  className="btn btn-danger mx-1" >Xóa</button>
         </td>
       </tr>
     })

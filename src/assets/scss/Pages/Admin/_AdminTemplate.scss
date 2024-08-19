@@ -59,7 +59,6 @@
                     }
                 }
             }
-
         }
     }
 
@@ -87,12 +86,19 @@
                         color: $text-c0-white;
                         padding: 8px 12px
                     }
-
                 }
 
                 .card-header-right {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
                     .login-info {
-                        span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .login-info-nameUser {
                             text-align: right;
                             color: $text-c2-dark;
                             font-weight: $fw-semiBold;
@@ -106,13 +112,10 @@
                             object-fit: cover;
 
                         }
-
-                        .dropdown {
                             button {
                                 padding: 0.5rem 1rem;
                                 font-size: 1.25rem;
                                 line-height: 1.5;
-                                border-radius: 0.3rem;
                                 outline: none;
 
                                 &:focus {
@@ -121,20 +124,9 @@
                                 }
                             }
 
-                            .dropdown-menu {
-                                margin-top: 15px !important;
-
-                                li {
-                                    .dropdown-item {
-                                        color: $text-c2-dark;
-                                        font-weight: $fw-medium;
-                                        background: $bg-c0-white;
-
-                                        &:hover {
-                                            color: $text-c0-white;
-                                            background: $bg-c5-primary;
-                                        }
-                                    }
+                            .dropdown-menu {                      
+                                .dropdown-show-modal {
+                                    display: inline-block !important;
                                 }
                             }
                         }
@@ -306,7 +298,6 @@
                 }
             }
         }
-    }
 }
 
 form {

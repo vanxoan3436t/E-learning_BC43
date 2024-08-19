@@ -13,6 +13,7 @@ import Detail from './Pages/Detail/Detail';
 import ResponsiveItem from './Templates/ResponsiveItem';
 import PageNotFound from './Components/PageNot/PageNotFound';
 import LoginMobile from './Pages/LoginRegister/LoginMobile';
+import './style.scss'
 
 type Props = {}
 export default function App({ }: Props) {

@@ -1,0 +1,34 @@
+@import '../../assets/scss/Helpers/variables';
+
+.dropdown-menu {
+  margin-bottom: 0 !important;
+  margin-top: 10px !important;
+
+  .dropdown-menu-li {
+    text-transform: unset !important;
+    padding: 0 !important;
+    width: 100% !important;
+
+    .dropdown-item {
+      color: $text-c2-dark !important;
+      font-weight: $fw-medium !important;
+      background: $bg-c0-white !important;
+      padding: 0.25rem 1rem !important;
+      white-space: nowrap !important;
+      font-size: 1rem !important;
+
+      &:hover {
+        color: $text-c0-white !important;
+        background: $bg-c5-primary !important;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .dropdown-show-modal {
+    display: none !important;
+  }
+}

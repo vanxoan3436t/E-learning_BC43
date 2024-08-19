@@ -1,6 +1,6 @@
-type Props = {}
+// type Props = {}
 
-export default function EditCourseInfoModal({}: Props) {
+export default function EditCourseInfoModal() {
   return (
     <div className="modal fade" id="editInfoCourse">
      <div className="modal-dialog form-course">
@@ -18,7 +18,7 @@ export default function EditCourseInfoModal({}: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-user" /></span>
                   </div>
-                  <input type="text" name="maKhoaHoc" id="tknv" className="form-control input-sm" placeholder="Mã khóa học" />
+                  <input type="text" name="maKhoaHoc"  className="form-control input-sm" placeholder="Mã khóa học" />
                 </div>
 
               </div>
@@ -27,7 +27,7 @@ export default function EditCourseInfoModal({}: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-address-book" /></span>
                   </div>
-                  <input type="name" name="tenKhoaHoc" id="name" className="form-control input-sm" placeholder="Tên khóa học" />
+                  <input type="name" name="tenKhoaHoc" className="form-control input-sm" placeholder="Tên khóa học" />
                 </div>
                 {/* {formik.touched.tenKhoaHoc && formik.errors.tenKhoaHoc && <div className="text-danger text-left">{formik.errors.tenKhoaHoc}</div>} */}
               </div>
@@ -36,8 +36,12 @@ export default function EditCourseInfoModal({}: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-briefcase" /></span>
                   </div>
-                  <select value='' className="form-control" name="maDanhMucKhoaHoc">
-                    <option value="">Danh mục khóa học</option>
+                  <select 
+                  // value=''
+                   className="form-control" name="maDanhMucKhoaHoc">
+                    <option
+                    //  value=""
+                     >Danh mục khóa học</option>
 
                     {/* {renderCourseList(coursesCategary)} */}
                   </select>
@@ -50,7 +54,9 @@ export default function EditCourseInfoModal({}: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-calendar" /></span>
                   </div>
-                  <input type="text" name="ngayTao" id="datepicker" className="form-control" placeholder="Ngày tạo" />
+                  <input type="text" name="ngayTao"
+                  //  id="datepicker" 
+                   className="form-control" placeholder="Ngày tạo" />
                 </div>
                 {/* {formik.touched.ngayTao && formik.errors.ngayTao && <div className="text-danger text-left">{formik.errors.ngayTao}</div>} */}
               </div>
@@ -60,7 +66,7 @@ export default function EditCourseInfoModal({}: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-user" /></span>
                   </div>
-                  <input type="number" name="danhGia" id="tknv" className="form-control input-sm" placeholder="Đánh giá" />
+                  <input type="number" name="danhGia" className="form-control input-sm" placeholder="Đánh giá" />
                 </div>
                 {/* {formik.touched.danhGia && formik.errors.danhGia && <div className="text-danger text-left">{formik.errors.danhGia}</div>} */}
               </div>
@@ -69,7 +75,7 @@ export default function EditCourseInfoModal({}: Props) {
                   <div className="input-group-prepend">
                     <span className="input-group-text"><i className="fa fa-address-book" /></span>
                   </div>
-                  <input type="number" name="luotXem" id="name" className="form-control input-sm" placeholder="Lượt xem" />
+                  <input type="number" name="luotXem" className="form-control input-sm" placeholder="Lượt xem" />
                 </div>
                 {/* {formik.touched.luotXem && formik.errors.luotXem && <div className="text-danger text-left">{formik.errors.luotXem}</div>} */}
               </div>
@@ -79,7 +85,9 @@ export default function EditCourseInfoModal({}: Props) {
                     <span className="input-group-text"><i className="fa fa-briefcase" /></span>
                   </div>
                   <select className="form-control" name="taiKhoanNguoiTao">
-                    <option value="">Người tạo</option>
+                    <option
+                    //  value=""
+                    >Người tạo</option>
                     {/* {renderCreatorList(userArray)} */}
                   </select>
                 </div>
@@ -151,8 +159,12 @@ export default function EditCourseInfoModal({}: Props) {
               {/* Modal footer */}
               <div className="modal-footer col-12" id="modal-footer">
 
-                <button id="btnDong" type="button" className="btn btn-danger" data-dismiss="modal">Đóng</button>
-                <button id="btnThem" type="submit" className="btn btn-success">Cập nhật</button>
+                <button
+                //  id="btnDong" 
+                type="button" className="btn btn-danger" data-dismiss="modal">Đóng</button>
+                <button 
+                // id="btnThem"
+                 type="submit" className="btn btn-success">Cập nhật</button>
               </div>
             </form>
           </div>

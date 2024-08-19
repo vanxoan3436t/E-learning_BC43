@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom'
 import { createBrowserHistory } from 'history';
-import './style.scss'
 import { Provider } from 'react-redux';
 import { store } from './Redux/configStote';
 import App from './App';
